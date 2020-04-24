@@ -2,7 +2,7 @@
 
 ## Hola mundo.
 
-Bienvenido al [Blog de Penserbjorne](penserbjorne.github.io).
+Bienvenido al [Blog de Penserbjorne](https://penserbjorne.github.io).
 
 Desde hace tiempo (ya bastantes años, que horror) tenia ganas de **escribir** en algún lugar que fuera **personal**, ¿sobre qué?, no lo sé, de lo que se me de la gana, sin restricciones ni filtros que no sean míos.
 
@@ -20,6 +20,6 @@ No esperen una redacción pulcra e impecable, claramente no soy un experto en te
 
 Por ahora el sitio esta alojado en GitHub Pages con un dominio de GitHub, pero espero en algún momento no tener flojera y comprar un dominio.
 
-So, **demos por inaugurado el [blog de Penserbjorne](penserbjorne.github.io), que la fuerza les acompañe**.
+So, **demos por inaugurado el [blog de Penserbjorne](https://penserbjorne.github.io), que la fuerza les acompañe**.
 
 **\#HappyHacking \#FeedTheFox**
