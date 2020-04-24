@@ -23,16 +23,15 @@ crear el sitio.
 estáticos que no requieren una base de datos o una lógica en el lado del
 servidor.
 
-Básicamente, elegí `Pelican` por *\"simplicidad\"*:
+Básicamente, elegí `Pelican` por "simplicidad":
 
 - Instalamos las herramientas necesarias de `Pelican`.
 - Escribimos en `Markdown`.
 - Generamos los archivos del sitio.
 - Publicamos el sitio en el servidor.
 
-Estos pasos son *\"sencillos\"* si estas acostumbradx a manejar herramientas
-en un terminal (la famosa ventanita negra), el cual, es mi caso, así que para
-mi sí es sencillo.
+Estos pasos son "sencillos" si estas acostumbradx a manejar herramientas
+en un terminal (la famosa ventanita negra), el cual, es mi caso.
 
 So, en esta entrada iré añadiendo las cosas que considero necesito tener a la
 mano para administrar el blog. Toda la documentación necesaria (y extendida) se
@@ -67,7 +66,7 @@ cd ~/path/to/project
 source bin/activate
 ```
 
-Sabremos que el entorno se ha activado por que la termina cambiara su apariencia
+Sabremos que el entorno se ha activado por que la terminal cambiará su apariencia
 a algo como lo siguiente.
 
 ```bash
@@ -122,8 +121,8 @@ yourproject/
 ├── output
 ├── tasks.py
 ├── Makefile
-├── pelicanconf.py       # Main settings file
-└── publishconf.py       # Settings to use when ready to publish
+├── pelicanconf.py
+└── publishconf.py
 ```
 
 Como podemos ver, es una estructura bien definida para el sitio. Esta estructura
@@ -145,12 +144,12 @@ carpeta (por ejemplo blog),  para que esta no se mezcle con lo de `virtualenv`.
 Básicamente estamos separando `virtualenv` y el repositorio en carpetas
 distintas, para evitar que nuestro entorno virtual se vaya al repositorio.
 
-Dentro de la carpeta del repositorio sera necesario crear una subcarpeta más. En
+Dentro de la carpeta del repositorio será necesario crear una subcarpeta más. En
 esta carpeta que llamaremos `pelican` es donde se encontrara los archivos fuente
 del sitio que son con los que trabaja `Pelican`, y dentro de esta subcarpeta es
-donde ejecutaremos el comando para la creación del proyecto. (Ya sé, ya sé,
+donde ejecutaremos el comando para la creación del proyecto (ya sé, ya sé,
   tanta carpeta marea, pero hay una razón para hacerlo así, por ahora confiá
-  en mi)
+  en mi).
 
 ```bash
 (entorno_virtual) usuario@equipo:~/path/to/project/user.github.io/pelican$ pelican-quickstart
@@ -189,11 +188,11 @@ en una carpeta llama `output`.
 
 En nuestro caso como estamos utilizando `GihHub Pages` tenemos la restricción de
 que el contenido sel sitio tiene que encontrarse en la raíz del repositorio en
-la rama `master`, por lo cual teneos que indicar que la salida sea en la raíz
-del repositorio (ves! Así tenemos la salida del sitio en la raíz del
+la rama `master`, por lo cual tenemos que indicar que la salida sea en la raíz
+del repositorio (ves! así tenemos la salida del sitio en la raíz del
   repositorio y los archivos fuente en la subcarpeta `pelican`).
 
-Para lo anterior (y estando en la subcarpeta `pelican` ejecutamos:
+Para lo anterior (y estando en la subcarpeta `pelican`) ejecutamos:
 
 ```bash
 # Generamos la salida HTML una carpeta arriba de donde estamos
@@ -216,7 +215,7 @@ Para acceder al sitio visitamos [http://localhost:8000/](http://localhost:8000/)
 , y listo, tendríamos que observar el sitio andando.
 
 Para poder estar trabajando con el sitio, es necesario cada vez que hagamos un
-cambio y modificación volver a generar los archivos.
+cambio o modificación volver a generar los archivos.
 
 # Creación de contenido
 

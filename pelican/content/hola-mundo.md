@@ -35,7 +35,7 @@ De estos temas, probablemente la mayoría este escrita a modo de
 
 No esperen una redacción pulcra e impecable, claramente no soy un experto en
 temas de redacción y narrativas, solo busco plasmar cosas que considere útiles e
-interesantes, so, **perdonen los horrores de redacción que puedan llegar a
+interesantes, **perdonen los horrores de redacción que puedan llegar a
 encontrar** :P
 
 Por ahora el sitio esta alojado en GitHub Pages con un dominio de GitHub, pero

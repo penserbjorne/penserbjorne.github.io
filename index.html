@@ -40,16 +40,15 @@ crear el sitio.</p>
 <p><a href="https://blog.getpelican.com/">Pelican</a> es una herramienta para generar sitios
 estáticos que no requieren una base de datos o una lógica en el lado del
 servidor.</p>
-<p>Básicamente, elegí <code>Pelican</code> por <em>\"simplicidad\"</em>:</p>
+<p>Básicamente, elegí <code>Pelican</code> por "simplicidad":</p>
 <ul>
 <li>Instalamos las herramientas necesarias de <code>Pelican</code>.</li>
 <li>Escribimos en <code>Markdown</code>.</li>
 <li>Generamos los archivos del sitio.</li>
 <li>Publicamos el sitio en el servidor.</li>
 </ul>
-<p>Estos pasos son <em>\"sencillos\"</em> si estas acostumbradx a manejar herramientas
-en un terminal (la famosa ventanita negra), el cual, es mi caso, así que para
-mi sí es sencillo.</p>
+<p>Estos pasos son "sencillos" si estas acostumbradx a manejar herramientas
+en un terminal (la famosa ventanita negra), el cual, es mi caso.</p>
 <p>So, en esta entrada iré añadiendo las cosas que considero necesito tener a la
 mano para administrar el blog. Toda la documentación necesaria (y extendida) se
 encuentra en <a href="https://docs.getpelican.com">el blog oficial de Pelican</a>, por lo
@@ -78,7 +77,7 @@ el entorno y activarlo.</p>
 </pre></div>
 
 
-<p>Sabremos que el entorno se ha activado por que la termina cambiara su apariencia
+<p>Sabremos que el entorno se ha activado por que la terminal cambiará su apariencia
 a algo como lo siguiente.</p>
 <div class="highlight"><pre><span></span><span class="o">(</span>entorno_virtual<span class="o">)</span> usuario@equipo:~/path/to/project$
 </pre></div>
@@ -122,8 +121,8 @@ el siguiente comando (aún no lo hagas, necesito aclarar algo antes).</p>
 ├── output
 ├── tasks.py
 ├── Makefile
-├── pelicanconf.py       <span class="c1"># Main settings file</span>
-└── publishconf.py       <span class="c1"># Settings to use when ready to publish</span>
+├── pelicanconf.py
+└── publishconf.py
 </pre></div>
 
 
@@ -143,12 +142,12 @@ sitio, que en todo caso, si no es un repositorio, valdría la pena crear una
 carpeta (por ejemplo blog),  para que esta no se mezcle con lo de <code>virtualenv</code>.</p>
 <p>Básicamente estamos separando <code>virtualenv</code> y el repositorio en carpetas
 distintas, para evitar que nuestro entorno virtual se vaya al repositorio.</p>
-<p>Dentro de la carpeta del repositorio sera necesario crear una subcarpeta más. En
+<p>Dentro de la carpeta del repositorio será necesario crear una subcarpeta más. En
 esta carpeta que llamaremos <code>pelican</code> es donde se encontrara los archivos fuente
 del sitio que son con los que trabaja <code>Pelican</code>, y dentro de esta subcarpeta es
-donde ejecutaremos el comando para la creación del proyecto. (Ya sé, ya sé,
+donde ejecutaremos el comando para la creación del proyecto (ya sé, ya sé,
   tanta carpeta marea, pero hay una razón para hacerlo así, por ahora confiá
-  en mi)</p>
+  en mi).</p>
 <div class="highlight"><pre><span></span><span class="o">(</span>entorno_virtual<span class="o">)</span> usuario@equipo:~/path/to/project/user.github.io/pelican$ pelican-quickstart
 </pre></div>
 
@@ -181,10 +180,10 @@ necesarios para generar la salida de <code>HTML</code>. La salida se almacena en
 en una carpeta llama <code>output</code>.</p>
 <p>En nuestro caso como estamos utilizando <code>GihHub Pages</code> tenemos la restricción de
 que el contenido sel sitio tiene que encontrarse en la raíz del repositorio en
-la rama <code>master</code>, por lo cual teneos que indicar que la salida sea en la raíz
-del repositorio (ves! Así tenemos la salida del sitio en la raíz del
+la rama <code>master</code>, por lo cual tenemos que indicar que la salida sea en la raíz
+del repositorio (ves! así tenemos la salida del sitio en la raíz del
   repositorio y los archivos fuente en la subcarpeta <code>pelican</code>).</p>
-<p>Para lo anterior (y estando en la subcarpeta <code>pelican</code> ejecutamos:</p>
+<p>Para lo anterior (y estando en la subcarpeta <code>pelican</code>) ejecutamos:</p>
 <div class="highlight"><pre><span></span><span class="c1"># Generamos la salida HTML una carpeta arriba de donde estamos</span>
 pelican content -o ..
 </pre></div>
@@ -203,7 +202,7 @@ pelican --listen -o ..
 <p>Para acceder al sitio visitamos <a href="http://localhost:8000/">http://localhost:8000/</a>
 , y listo, tendríamos que observar el sitio andando.</p>
 <p>Para poder estar trabajando con el sitio, es necesario cada vez que hagamos un
-cambio y modificación volver a generar los archivos.</p>
+cambio o modificación volver a generar los archivos.</p>
 <h1>Creación de contenido</h1>
 <p>Recordando la estructura del sitio, sabemos que las entradas del mismo
 van en la carpeta <code>content</code> de nuestra subcarpeta <code>pelican</code>. Ahí es donde
