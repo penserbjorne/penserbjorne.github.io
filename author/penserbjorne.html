@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
         <meta charset="utf-8" />
-        <title>Penserbjorne - penserbjorne</title>
+        <title>Penserbjorne - Penserbjorne</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
 </head>
 
@@ -11,12 +11,218 @@
                 <h1><a href="/">Penserbjorne</a></h1>
                 <nav><ul>
                     <li><a href="/category/init.html">init</a></li>
+                    <li><a href="/category/pelican.html">pelican</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/hola-mundo-es-MX.html">Hola Mundo</a></h1>
+                    <h1 class="entry-title"><a href="/pelican-i-creacion-de-un-blog-estatico-con-pelican-es-MX.html">Pelican (I), creación de un blog estático con Pelican</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2020-04-24T00:00:00-05:00">
+                Published: vie 24 abril 2020
+        </abbr>
+		<br />
+        <abbr class="modified" title="2020-04-24T00:00:00-05:00">
+                Updated: vie 24 abril 2020
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/penserbjorne.html">Penserbjorne</a>
+        </address>
+<p>In <a href="/category/pelican.html">pelican</a>.</p>
+<p>tags: <a href="/tag/blog-pelican.html">blog pelican</a> </p>
+</footer><!-- /.post-info --><h1>What is this?</h1>
+<p>Bueno, como primera entrada de notas, lo más lógico (para mi) es comenzar con la
+herramienta que esta haciendo posible esto, <code>Pelican</code>. Esto ira siendo una serie
+de entradas sobre como trabajar con <code>Pelican</code>, por ahora nos enfocaremos en
+crear el sitio.</p>
+<p><a href="https://blog.getpelican.com/">Pelican</a> es una herramienta para generar sitios
+estáticos que no requieren una base de datos o una lógica en el lado del
+servidor.</p>
+<p>Básicamente, elegí <code>Pelican</code> por <em>\"simplicidad\"</em>:</p>
+<ul>
+<li>Instalamos las herramientas necesarias de <code>Pelican</code>.</li>
+<li>Escribimos en <code>Markdown</code>.</li>
+<li>Generamos los archivos del sitio.</li>
+<li>Publicamos el sitio en el servidor.</li>
+</ul>
+<p>Estos pasos son <em>\"sencillos\"</em> si estas acostumbradx a manejar herramientas
+en un terminal (la famosa ventanita negra), el cual, es mi caso, así que para
+mi sí es sencillo.</p>
+<p>So, en esta entrada iré añadiendo las cosas que considero necesito tener a la
+mano para administrar el blog. Toda la documentación necesaria (y extendida) se
+encuentra en <a href="https://docs.getpelican.com">el blog oficial de Pelican</a>, por lo
+que si se necesita mayor información o detalle de algo, visitar el sitio oficial
+(recuerda siempre, <strong>#RTFM</strong>).</p>
+<p>En este momento me encuentro trabajando en un equipo con <code>Lubuntu 18.04</code> por
+lo cual las instrucciones de instalación serán para esta distribución.</p>
+<h1>Preparación del entorno</h1>
+<p>Dado que <code>Pelican</code> es una herramienta desarrollada con <code>Python</code> y lo mejor es
+buscar tener un entorno limpio, estaremos trabajando con <code>virtualenv</code>.</p>
+<div class="highlight"><pre><span></span><span class="c1"># Instalación del entorno</span>
+sudo apt install virtualenv
+
+<span class="c1"># Creación del entorno</span>
+virtualenv ~/path/to/project
+</pre></div>
+
+
+<p>Para comenzar a trabajar es necesario movernos a la carpeta donde se configuró
+el entorno y activarlo.</p>
+<div class="highlight"><pre><span></span><span class="c1"># Nos movemos a la carpeta creada</span>
+<span class="nb">cd</span> ~/path/to/project
+
+<span class="c1"># Activamos el entorno</span>
+<span class="nb">source</span> bin/activate
+</pre></div>
+
+
+<p>Sabremos que el entorno se ha activado por que la termina cambiara su apariencia
+a algo como lo siguiente.</p>
+<div class="highlight"><pre><span></span><span class="o">(</span>entorno_virtual<span class="o">)</span> usuario@equipo:~/path/to/project$
+</pre></div>
+
+
+<p>A partir de aquí podemos comenzar a trabajar con <code>Pelican</code> en un entorno aislado
+que no vaya a modificar nuestro sistema operativo.</p>
+<p>Una vez que hayamos terminado de trabajar en el sitio, podemos desactivar el
+entorno.</p>
+<div class="highlight"><pre><span></span><span class="c1"># Para desactivar virtualenv</span>
+deactivate
+</pre></div>
+
+
+<h1>Instalación de las herramientas</h1>
+<p>En este caso vamos a redactar el sitio en <code>Markdown</code>, por lo cual instalaremos
+lo necesario para que <code>Pelican</code> funcione con <code>Markdown</code>. Esto lo haremos a
+través de <code>pip</code> <strong>#PorquePython</strong>.</p>
+<p>Necesitaremos los paquetes de <code>pelican</code>, <code>Markdown</code> y <code>typogrify</code>.</p>
+<div class="highlight"><pre><span></span>pip install pelican Markdown typogrify
+</pre></div>
+
+
+<p>En caso de necesitar actualizar alguna de estas herramientas, se puede hacer
+también a través de <code>pip</code>.</p>
+<div class="highlight"><pre><span></span>pip install --upgrade pelican
+</pre></div>
+
+
+<h1>Creación del esqueleto del sitio</h1>
+<p>Para crear un proyecto con la estructura básica de <code>Pelican</code> basta con ejecutar
+el siguiente comando (aún no lo hagas, necesito aclarar algo antes).</p>
+<div class="highlight"><pre><span></span>pelican-quickstart
+</pre></div>
+
+
+<p>El comando creara una carpeta con la siguiente estructura:</p>
+<div class="highlight"><pre><span></span>yourproject/
+├── content
+│   └── <span class="o">(</span>pages<span class="o">)</span>
+├── output
+├── tasks.py
+├── Makefile
+├── pelicanconf.py       <span class="c1"># Main settings file</span>
+└── publishconf.py       <span class="c1"># Settings to use when ready to publish</span>
+</pre></div>
+
+
+<p>Como podemos ver, es una estructura bien definida para el sitio. Esta estructura
+es la que se encontrará alojada en el repositorio del sitio. Hay que tener en
+cuenta que actualmente estamos en la carpeta de <code>virtualenv</code>, así que aquí es
+donde vamos a clonar el repositorio, de tal modo que la carpeta actual tendría
+que verse así (asumiendo que ya clonamos el repositorio dentro de la carpeta de
+  virtualenv ¬¬):</p>
+<div class="highlight"><pre><span></span><span class="o">(</span>entorno_virtual<span class="o">)</span> usuario@equipo:~/path/to/project$ ls
+bin  include  lib  <span class="nb">local</span>  user.github.io  share
+</pre></div>
+
+
+<p>Como podemos observar, están las carpetas de <code>virtualenv</code> y el repositorio del
+sitio, que en todo caso, si no es un repositorio, valdría la pena crear una
+carpeta (por ejemplo blog),  para que esta no se mezcle con lo de <code>virtualenv</code>.</p>
+<p>Básicamente estamos separando <code>virtualenv</code> y el repositorio en carpetas
+distintas, para evitar que nuestro entorno virtual se vaya al repositorio.</p>
+<p>Dentro de la carpeta del repositorio sera necesario crear una subcarpeta más. En
+esta carpeta que llamaremos <code>pelican</code> es donde se encontrara los archivos fuente
+del sitio que son con los que trabaja <code>Pelican</code>, y dentro de esta subcarpeta es
+donde ejecutaremos el comando para la creación del proyecto. (Ya sé, ya sé,
+  tanta carpeta marea, pero hay una razón para hacerlo así, por ahora confiá
+  en mi)</p>
+<div class="highlight"><pre><span></span><span class="o">(</span>entorno_virtual<span class="o">)</span> usuario@equipo:~/path/to/project/user.github.io/pelican$ pelican-quickstart
+</pre></div>
+
+
+<p>De tal modo que la estructura de archivos debería de verse de la siguiente
+manera.</p>
+<div class="highlight"><pre><span></span>/path/to/project
+├── bin/          <span class="c1"># carpeta de virtualenv</span>
+├── include/      <span class="c1"># carpeta de virtualenv</span>
+├── lib/          <span class="c1"># carpeta de virtualenv</span>
+├── local/        <span class="c1"># carpeta de virtualenv</span>
+├── share/        <span class="c1"># carpeta de virtualenv</span>
+└── user.github.io/   <span class="c1"># carpeta del repositorio del sitio</span>
+    └── pelican/      <span class="c1"># carpeya con los archivos fuente del sitio</span>
+        ├── content             
+        │   └── <span class="o">(</span>pages<span class="o">)</span>
+        ├── output
+        ├── tasks.py
+        ├── Makefile
+        ├── pelicanconf.py
+        └── publishconf.py
+</pre></div>
+
+
+<h1>Generar y ejecutar el sitio</h1>
+<p>Para generar el contenido del sitio vamos a posicionarnos en la carpeta del
+repositorio (o la que hemos llamado blog).</p>
+<p><code>Pelican</code> cuenta con el comando <code>pelican content</code>, el cual revisa los archivos
+necesarios para generar la salida de <code>HTML</code>. La salida se almacena en automático
+en una carpeta llama <code>output</code>.</p>
+<p>En nuestro caso como estamos utilizando <code>GihHub Pages</code> tenemos la restricción de
+que el contenido sel sitio tiene que encontrarse en la raíz del repositorio en
+la rama <code>master</code>, por lo cual teneos que indicar que la salida sea en la raíz
+del repositorio (ves! Así tenemos la salida del sitio en la raíz del
+  repositorio y los archivos fuente en la subcarpeta <code>pelican</code>).</p>
+<p>Para lo anterior (y estando en la subcarpeta <code>pelican</code> ejecutamos:</p>
+<div class="highlight"><pre><span></span><span class="c1"># Generamos la salida HTML una carpeta arriba de donde estamos</span>
+pelican content -o ..
+</pre></div>
+
+
+<p>Esto generara los archivos <code>HTML</code> del sitio en la raíz del repositorio.</p>
+<p>Para visualizar el sitio contamos con el comando <code>pelican --listen</code> el cual
+levanta un servidor en el puerto 8080. En nuestro caso (y sin salir de la
+  subcarpeta) tendremos que indicar donde estan los archivos generados, por lo
+  cual vamos a ejecutar el siguiente comando:</p>
+<div class="highlight"><pre><span></span><span class="c1"># Levantamos el sitio indicando la salida de los archivos HTML</span>
+pelican --listen -o ..
+</pre></div>
+
+
+<p>Para acceder al sitio visitamos <a href="http://localhost:8000/">http://localhost:8000/</a>
+, y listo, tendríamos que observar el sitio andando.</p>
+<p>Para poder estar trabajando con el sitio, es necesario cada vez que hagamos un
+cambio y modificación volver a generar los archivos.</p>
+<h1>Creación de contenido</h1>
+<p>Recordando la estructura del sitio, sabemos que las entradas del mismo
+van en la carpeta <code>content</code> de nuestra subcarpeta <code>pelican</code>. Ahí es donde
+podremos comenzar a crear nuestros archivos en <code>Markdown</code>. Esto lo dejaremos
+para la siguiente entrada, es momento de pararse por un poco de agua, algo de
+comer y a estirar la espalda y las piernas.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/hola-mundo-es-MX.html" rel="bookmark"
+                           title="Permalink to Hola Mundo">Hola Mundo</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2020-04-11T00:00:00-05:00">
                 Published: sáb 11 abril 2020
@@ -31,22 +237,12 @@
         </address>
 <p>In <a href="/category/init.html">init</a>.</p>
 <p>tags: <a href="/tag/blog.html">blog</a> <a href="/tag/penserbjorne.html">penserbjorne</a> </p>
-</footer><!-- /.post-info --><p>Bienvenido al <a href="https://penserbjorne.github.io">Blog de Penserbjorne</a>.</p>
-<p>Desde hace tiempo (ya bastantes años, que horror) tenia ganas de <strong>escribir</strong> en algún lugar que fuera <strong>personal</strong>, ¿sobre qué?, no lo sé, de lo que se me de la gana, sin restricciones ni filtros que no sean míos.</p>
-<p>Dicho lo anterior (y ante lo evidente de que no sé realmente que carajos escribiré aquí), por lo pronto estaré escribiendo acerca de cuatro temas principales (por tratar de ponerle un poco de más orden):</p>
-<ul>
-<li><strong>Matemáticas</strong>.</li>
-<li><strong>Ingeniería</strong>, principalmente de temas de <strong>computación</strong>.</li>
-<li><strong>Software Libre y de Código Abierto</strong></li>
-<li><strong>Hacking y seguridad</strong> (lo que sea que eso signifique).</li>
-<li><strong>Hobbies</strong>, porque hay que dejar libertad a escribir de lo que sea xD.</li>
-</ul>
-<p>De estos temas, probablemente la mayoría este escrita a modo de <strong>tutoriales/resúmenes</strong> que en principio me ayuden a mi cómo <strong>guías de consulta rápida</strong> en mi día a día, y si me animo, en algún caso,<strong>alguna opinión o comentario personal sobre algún tema</strong>.</p>
-<p>No esperen una redacción pulcra e impecable, claramente no soy un experto en temas de redacción y narrativas, solo busco plasmar cosas que considere útiles e interesantes, so, <strong>perdonen los horrores de redacción que puedan llegar a encontrar</strong> :P</p>
-<p>Por ahora el sitio esta alojado en GitHub Pages con un dominio de GitHub, pero espero en algún momento no tener flojera y comprar un dominio.</p>
-<p>So, <strong>demos por inaugurado el <a href="https://penserbjorne.github.io">blog de Penserbjorne</a>, que la fuerza les acompañe</strong>.</p>
-<p><strong>#HappyHacking #FeedTheFox</strong></p>                </article>
-            </aside><!-- /#featured -->
+</footer><!-- /.post-info -->                <p>Inauguración del blog de Penserbjorne</p>
+                <a class="readmore" href="/hola-mundo-es-MX.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>links</h2>
