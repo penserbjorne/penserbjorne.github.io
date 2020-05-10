@@ -2,8 +2,8 @@
 Title: Pelican (I), creación de un blog estático con Pelican
 Date: 2020-04-24
 Modified: 2020-05-09
-Tags: blog pelican
-Keywords: blog pelican
+Tags: blog, pelican
+Keywords: blog, pelican
 Category: pelican
 Author: Penserbjorne
 Summary: Creación de un blog estático con Pelican

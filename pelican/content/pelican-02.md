@@ -2,8 +2,8 @@
 Title: Pelican (II), creación de entradas para un blog estático con Pelican
 Date: 2020-05-09
 Modified: 2020-05-09
-Tags: blog pelican
-Keywords: blog pelican
+Tags: blog, pelican
+Keywords: blog, pelican
 Category: pelican
 Author: Penserbjorne
 Summary: Creación de entradas para un blog estático con Pelican
@@ -115,7 +115,7 @@ A continuación una tabla con las etiquetas y para que sirven:
 | `date` | Fecha de publicación (e.g., YYYY-MM-DD HH:SS) |
 | `modified` | Fecha de modificación (e.g., YYYY-MM-DD HH:SS) |
 | `tags` | Tags del contenido, separados por comas |
-| `keywords` | Palabras claves del contenido |
+| `keywords` | Palabras claves del contenido, separadas por comas |
 | `category` | Categórica del contenido, solo una |
 | `slug` | Identificador utilizado en URLs y en traducciones |
 | `author` | Autor (uno) |
@@ -135,8 +135,8 @@ Para el caso de este blog, estamos utilizando las siguientes etiquetas:
 Title: Este es el titulo
 Date: 2020-05-09
 Modified: 2020-05-09
-Tags: blog pelican
-Keywords: blog pelican
+Tags: blog,pelican
+Keywords: blog,pelican
 Category: pelican
 Author: Penserbjorne
 Summary: Descripción del texto
