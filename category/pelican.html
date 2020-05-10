@@ -17,14 +17,14 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/pelican-i-creacion-de-un-blog-estatico-con-pelican-es-MX.html">Pelican (I), creación de un blog estático con Pelican</a></h1>
+                    <h1 class="entry-title"><a href="/pelican-ii-creacion-de-entradas-para-un-blog-estatico-con-pelican-es-MX.html">Pelican (II), creación de entradas para un blog estático con Pelican</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2020-04-24T00:00:00-05:00">
-                Published: vie 24 abril 2020
+        <abbr class="published" title="2020-05-09T00:00:00-05:00">
+                Published: sáb 09 mayo 2020
         </abbr>
 		<br />
-        <abbr class="modified" title="2020-04-24T00:00:00-05:00">
-                Updated: vie 24 abril 2020
+        <abbr class="modified" title="2020-05-09T00:00:00-05:00">
+                Updated: sáb 09 mayo 2020
         </abbr>
 
         <address class="vcard author">
@@ -33,127 +33,36 @@
 <p>In <a href="/category/pelican.html">pelican</a>.</p>
 <p>tags: <a href="/tag/blog-pelican.html">blog pelican</a> </p>
 </footer><!-- /.post-info --><h1>What is this?</h1>
-<p>Bueno, como primera entrada de notas, lo más lógico (para mi) es comenzar con la
-herramienta que esta haciendo posible esto, <code>Pelican</code>. Esto ira siendo una serie
-de entradas sobre como trabajar con <code>Pelican</code>, por ahora nos enfocaremos en
-crear el sitio.</p>
-<p><a href="https://blog.getpelican.com/">Pelican</a> es una herramienta para generar sitios
-estáticos que no requieren una base de datos o una lógica en el lado del
-servidor.</p>
-<p>Básicamente, elegí <code>Pelican</code> por "simplicidad":</p>
-<ul>
-<li>Instalamos las herramientas necesarias de <code>Pelican</code>.</li>
-<li>Escribimos en <code>Markdown</code>.</li>
-<li>Generamos los archivos del sitio.</li>
-<li>Publicamos el sitio en el servidor.</li>
-</ul>
-<p>Estos pasos son "sencillos" si estas acostumbradx a manejar herramientas
-en un terminal (la famosa ventanita negra), el cual, es mi caso.</p>
-<p>So, en esta entrada iré añadiendo las cosas que considero necesito tener a la
-mano para administrar el blog. Toda la documentación necesaria (y extendida) se
+<p>Weno weno, ¿de que va esta entrada? Pues de cómo escribir contenido (entradas)
+en el blog con <code>Pelican</code>. Esto es continuación de la
+<a href="/pelican-i-creacion-de-un-blog-estatico-con-pelican-es-MX.html">entrada anterior</a> en la cual vimos una ligera
+introducción a <code>Pelican</code>, cómo instalarlo y como ejecutarlo para ver andando el
+sitio.</p>
+<p>Como ya hemos dicho, toda la documentación necesaria (y extendida) se
 encuentra en <a href="https://docs.getpelican.com">el blog oficial de Pelican</a>, por lo
 que si se necesita mayor información o detalle de algo, visitar el sitio oficial
 (recuerda siempre, <strong>#RTFM</strong>).</p>
-<p>En este momento me encuentro trabajando en un equipo con <code>Lubuntu 18.04</code> por
-lo cual las instrucciones de instalación serán para esta distribución.</p>
-<h1>Preparación del entorno</h1>
-<p>Dado que <code>Pelican</code> es una herramienta desarrollada con <code>Python</code> y lo mejor es
-buscar tener un entorno limpio, estaremos trabajando con <code>virtualenv</code>.</p>
-<div class="highlight"><pre><span></span><span class="c1"># Instalación del entorno</span>
-sudo apt install virtualenv
-
-<span class="c1"># Creación del entorno</span>
-virtualenv ~/path/to/project
-</pre></div>
-
-
-<p>Para comenzar a trabajar es necesario movernos a la carpeta donde se configuró
-el entorno y activarlo.</p>
-<div class="highlight"><pre><span></span><span class="c1"># Nos movemos a la carpeta creada</span>
-<span class="nb">cd</span> ~/path/to/project
-
-<span class="c1"># Activamos el entorno</span>
-<span class="nb">source</span> bin/activate
-</pre></div>
-
-
-<p>Sabremos que el entorno se ha activado por que la terminal cambiará su apariencia
-a algo como lo siguiente.</p>
-<div class="highlight"><pre><span></span><span class="o">(</span>entorno_virtual<span class="o">)</span> usuario@equipo:~/path/to/project$
-</pre></div>
-
-
-<p>A partir de aquí podemos comenzar a trabajar con <code>Pelican</code> en un entorno aislado
-que no vaya a modificar nuestro sistema operativo.</p>
-<p>Una vez que hayamos terminado de trabajar en el sitio, podemos desactivar el
-entorno.</p>
-<div class="highlight"><pre><span></span><span class="c1"># Para desactivar virtualenv</span>
-deactivate
-</pre></div>
-
-
-<h1>Instalación de las herramientas</h1>
-<p>En este caso vamos a redactar el sitio en <code>Markdown</code>, por lo cual instalaremos
-lo necesario para que <code>Pelican</code> funcione con <code>Markdown</code>. Esto lo haremos a
-través de <code>pip</code> <strong>#PorquePython</strong>.</p>
-<p>Necesitaremos los paquetes de <code>pelican</code>, <code>Markdown</code> y <code>typogrify</code>.</p>
-<div class="highlight"><pre><span></span>pip install pelican Markdown typogrify
-</pre></div>
-
-
-<p>En caso de necesitar actualizar alguna de estas herramientas, se puede hacer
-también a través de <code>pip</code>.</p>
-<div class="highlight"><pre><span></span>pip install --upgrade pelican
-</pre></div>
-
-
-<h1>Creación del esqueleto del sitio</h1>
-<p>Para crear un proyecto con la estructura básica de <code>Pelican</code> basta con ejecutar
-el siguiente comando (aún no lo hagas, necesito aclarar algo antes).</p>
-<div class="highlight"><pre><span></span>pelican-quickstart
-</pre></div>
-
-
-<p>El comando creara una carpeta con la siguiente estructura:</p>
-<div class="highlight"><pre><span></span>yourproject/
-├── content
-│   └── <span class="o">(</span>pages<span class="o">)</span>
-├── output
-├── tasks.py
-├── Makefile
-├── pelicanconf.py
-└── publishconf.py
-</pre></div>
-
-
-<p>Como podemos ver, es una estructura bien definida para el sitio. Esta estructura
-es la que se encontrará alojada en el repositorio del sitio. Hay que tener en
-cuenta que actualmente estamos en la carpeta de <code>virtualenv</code>, así que aquí es
-donde vamos a clonar el repositorio, de tal modo que la carpeta actual tendría
-que verse así (asumiendo que ya clonamos el repositorio dentro de la carpeta de
-  virtualenv ¬¬):</p>
-<div class="highlight"><pre><span></span><span class="o">(</span>entorno_virtual<span class="o">)</span> usuario@equipo:~/path/to/project$ ls
-bin  include  lib  <span class="nb">local</span>  user.github.io  share
-</pre></div>
-
-
-<p>Como podemos observar, están las carpetas de <code>virtualenv</code> y el repositorio del
-sitio, que en todo caso, si no es un repositorio, valdría la pena crear una
-carpeta (por ejemplo blog),  para que esta no se mezcle con lo de <code>virtualenv</code>.</p>
-<p>Básicamente estamos separando <code>virtualenv</code> y el repositorio en carpetas
-distintas, para evitar que nuestro entorno virtual se vaya al repositorio.</p>
-<p>Dentro de la carpeta del repositorio será necesario crear una subcarpeta más. En
-esta carpeta que llamaremos <code>pelican</code> es donde se encontrara los archivos fuente
-del sitio que son con los que trabaja <code>Pelican</code>, y dentro de esta subcarpeta es
-donde ejecutaremos el comando para la creación del proyecto (ya sé, ya sé,
-  tanta carpeta marea, pero hay una razón para hacerlo así, por ahora confiá
-  en mi).</p>
-<div class="highlight"><pre><span></span><span class="o">(</span>entorno_virtual<span class="o">)</span> usuario@equipo:~/path/to/project/user.github.io/pelican$ pelican-quickstart
-</pre></div>
-
-
-<p>De tal modo que la estructura de archivos debería de verse de la siguiente
-manera.</p>
+<h1>Markdown</h1>
+<p>Una de las razones por las cuales elegimos <code>Pelican</code> como herramienta para
+escribir el blog es que tiene soporte para <code>Markdown</code>.</p>
+<p><code>Markdown</code> a grandes rasgos es un lenguaje de marcado ligero, esto significa que
+se escribe texto plano utilizando etiquetas que posteriormente serán convertidas
+a un formato más bonito, en este caso HTML.</p>
+<p>La ventaja de utilizar <code>Markdown</code> es que podemos enfocarnos simplemente en
+escribir utilizando cualquier editor de texto (simple o tan complejo como tu
+quieras) sabiendo que las etiquetas que estamos utilizando tendrán un
+formato agradable de leer.</p>
+<p>Si quieres aprender un poco más sobre <code>Markdown</code> te dejo su <a href="https://es.wikipedia.org/wiki/Markdown">entrada de
+<code>Wikipedia</code></a>,
+<a href="https://daringfireball.net/projects/markdown/">el sitio original de su publicación</a>
+y una <a href="https://markdown.es/sintaxis-markdown/">sheetcheat de sus etiquetas</a>
+para que veas lo sencillo que es.</p>
+<p>En este caso, la extensión del archivo <code>Markdown</code> que estaremos utilizando es
+<code>.md</code>.</p>
+<h1>¿Donde vamos a escribir?</h1>
+<p>Recordando la estructura del sitio, sabemos que las entradas del mismo
+van en la carpeta <code>content</code> de nuestra subcarpeta <code>pelican</code>. Ahí es donde
+podremos comenzar a crear nuestros archivos en <code>Markdown</code>.</p>
 <div class="highlight"><pre><span></span>/path/to/project
 ├── bin/          <span class="c1"># carpeta de virtualenv</span>
 ├── include/      <span class="c1"># carpeta de virtualenv</span>
@@ -161,7 +70,7 @@ manera.</p>
 ├── local/        <span class="c1"># carpeta de virtualenv</span>
 ├── share/        <span class="c1"># carpeta de virtualenv</span>
 └── user.github.io/   <span class="c1"># carpeta del repositorio del sitio</span>
-    └── pelican/      <span class="c1"># carpeya con los archivos fuente del sitio</span>
+    └── pelican/      <span class="c1"># carpeta con los archivos fuente del sitio</span>
         ├── content             
         │   └── <span class="o">(</span>pages<span class="o">)</span>
         ├── output
@@ -172,44 +81,211 @@ manera.</p>
 </pre></div>
 
 
-<h1>Generar y ejecutar el sitio</h1>
-<p>Para generar el contenido del sitio vamos a posicionarnos en la carpeta del
-repositorio (o la que hemos llamado blog).</p>
-<p><code>Pelican</code> cuenta con el comando <code>pelican content</code>, el cual revisa los archivos
-necesarios para generar la salida de <code>HTML</code>. La salida se almacena en automático
-en una carpeta llama <code>output</code>.</p>
-<p>En nuestro caso como estamos utilizando <code>GihHub Pages</code> tenemos la restricción de
-que el contenido sel sitio tiene que encontrarse en la raíz del repositorio en
-la rama <code>master</code>, por lo cual tenemos que indicar que la salida sea en la raíz
-del repositorio (ves! así tenemos la salida del sitio en la raíz del
-  repositorio y los archivos fuente en la subcarpeta <code>pelican</code>).</p>
-<p>Para lo anterior (y estando en la subcarpeta <code>pelican</code>) ejecutamos:</p>
-<div class="highlight"><pre><span></span><span class="c1"># Generamos la salida HTML una carpeta arriba de donde estamos</span>
-pelican content -o ..
+<p>Por lo que para añadir una nueva entrada bastará con crear un archivo nuevo en
+la carpeta <code>content</code> con la extensión <code>.md</code></p>
+<div class="highlight"><pre><span></span>/path/to/project
+├── bin/          <span class="c1"># carpeta de virtualenv</span>
+├── include/      <span class="c1"># carpeta de virtualenv</span>
+├── lib/          <span class="c1"># carpeta de virtualenv</span>
+├── local/        <span class="c1"># carpeta de virtualenv</span>
+├── share/        <span class="c1"># carpeta de virtualenv</span>
+└── user.github.io/   <span class="c1"># carpeta del repositorio del sitio</span>
+    └── pelican/      <span class="c1"># carpeta con los archivos fuente del sitio</span>
+        ├── content             
+        │   └── hola-mundo.md <span class="c1"># Entrada nueva</span>
+        ├── output
+        ├── tasks.py
+        ├── Makefile
+        ├── pelicanconf.py
+        └── publishconf.py
 </pre></div>
 
 
-<p>Esto generara los archivos <code>HTML</code> del sitio en la raíz del repositorio.</p>
-<p>Para visualizar el sitio contamos con el comando <code>pelican --listen</code> el cual
-levanta un servidor en el puerto 8080. En nuestro caso (y sin salir de la
-  subcarpeta) tendremos que indicar donde estan los archivos generados, por lo
-  cual vamos a ejecutar el siguiente comando:</p>
-<div class="highlight"><pre><span></span><span class="c1"># Levantamos el sitio indicando la salida de los archivos HTML</span>
+<p>En este caso hemos agregado el archivo <code>hola-mundo.md</code>. Al ejecutar el comando
+para generar el sitio <code>Pelican</code> tomara este archivo y lo procesara para darle
+la salida necesaria y general el sitio.</p>
+<p>Por lo tanto, para añadir más contenido a tu sitio basta con que lo agreguemos a
+esta carpeta.</p>
+<h1>¿Qué debe llevar una entrada?</h1>
+<p>Para una gestión adecuada del contenido en el sitio <code>Pelican</code> necesita conocer
+algunas cosas sobre el contenido que estamos generando. Para esto es necesario
+incluir algunas etiquetas al inicio del archivo que serán consideradas como
+<code>metadatos</code> por <code>Pelican</code>.</p>
+<p>A continuación una tabla con las etiquetas y para que sirven:</p>
+<table>
+<thead>
+<tr>
+<th>Metadata</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td>Titulo del artículo o de la página</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td>Fecha de publicación (e.g., YYYY-MM-DD HH:SS)</td>
+</tr>
+<tr>
+<td><code>modified</code></td>
+<td>Fecha de modificación (e.g., YYYY-MM-DD HH:SS)</td>
+</tr>
+<tr>
+<td><code>tags</code></td>
+<td>Tags del contenido, separados por comas</td>
+</tr>
+<tr>
+<td><code>keywords</code></td>
+<td>Palabras claves del contenido</td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td>Categórica del contenido, solo una</td>
+</tr>
+<tr>
+<td><code>slug</code></td>
+<td>Identificador utilizado en URLs y en traducciones</td>
+</tr>
+<tr>
+<td><code>author</code></td>
+<td>Autor (uno)</td>
+</tr>
+<tr>
+<td><code>authors</code></td>
+<td>Autores (más de uno)</td>
+</tr>
+<tr>
+<td><code>summary</code></td>
+<td>Pequeña descripción del contenido del artículo</td>
+</tr>
+<tr>
+<td><code>lang</code></td>
+<td>Idioma (en, fr, etc.)</td>
+</tr>
+<tr>
+<td><code>translation</code></td>
+<td>Indicamos si es un contenido traducido (true or false)</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>Estatus del contenido: borrador (draft), oculto (hidden), o publicado (published)</td>
+</tr>
+<tr>
+<td><code>template</code></td>
+<td>Nombre de la plantilla a utilizar para generar el contenido</td>
+</tr>
+<tr>
+<td><code>save_as</code></td>
+<td>Guardar el archivo con respecto a su dirección relativa</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td>URL a utilizar para el artículo o página</td>
+</tr>
+</tbody>
+</table>
+<p>Para el caso de este blog, estamos utilizando las siguientes etiquetas:</p>
+<div class="highlight"><pre><span></span><span class="err">---</span>
+<span class="c">Title: Este es el titulo</span>
+<span class="c">Date: 2020-05-09</span>
+<span class="c">Modified: 2020-05-09</span>
+<span class="c">Tags: blog pelican</span>
+<span class="c">Keywords: blog pelican</span>
+<span class="c">Category: pelican</span>
+<span class="c">Author: Penserbjorne</span>
+<span class="c">Summary: Descripción del texto</span>
+<span class="c">Lang: es-MX</span>
+<span class="c">Translation: false</span>
+<span class="c">Status: published</span>
+<span class="err">---</span>
+</pre></div>
+
+
+<p>Estas etiquetas se encuentran al inicio de cada archivo y están contenidas entre
+dos lineas de tres guiones medios <code>---</code> al inicio y al final, estas lineas no
+son obligatorias.</p>
+<p>En caso de no incluir estas etiquetas <code>Pelican</code> no podrá procesar el archivo ni
+procederá a convertirlo.</p>
+<h1>Ahora sí a escribir</h1>
+<p>Una vez que tenemos el archivo con su extensión <code>.md</code> y que le añadimos las
+etiquetas necesarias podemos comenzar a escribir su contenido en <code>Markdown</code>.</p>
+<p>Una vez que la entrada ha sido redactada podemos proceder a procesar el sitio
+para que se genere el archivo de salida. Esto lo hacemos con los comandos que
+vimos en la <a href="/pelican-i-creacion-de-un-blog-estatico-con-pelican-es-MX.html">entrada anterior</a> (que te recomiendo leer para que
+no te pierdas en la estructura de archivos y de trabajo que utilizamos aquí).</p>
+<div class="highlight"><pre><span></span><span class="c1"># Generamos la salida HTML una carpeta arriba de donde estamos</span>
+pelican content -o ..
+
+<span class="c1"># Levantamos el sitio indicando la salida de los archivos HTML</span>
 pelican --listen -o ..
 </pre></div>
 
 
-<p>Para acceder al sitio visitamos <a href="http://localhost:8000/">http://localhost:8000/</a>
-, y listo, tendríamos que observar el sitio andando.</p>
+<p>Para acceder al sitio en local visitamos
+<a href="http://localhost:8000/">http://localhost:8000/</a>, y listo, tendríamos que
+observar el sitio andando con nuestra entrada nueva.</p>
 <p>Para poder estar trabajando con el sitio, es necesario cada vez que hagamos un
-cambio o modificación volver a generar los archivos.</p>
-<h1>Creación de contenido</h1>
-<p>Recordando la estructura del sitio, sabemos que las entradas del mismo
-van en la carpeta <code>content</code> de nuestra subcarpeta <code>pelican</code>. Ahí es donde
-podremos comenzar a crear nuestros archivos en <code>Markdown</code>. Esto lo dejaremos
-para la siguiente entrada, es momento de pararse por un poco de agua, algo de
-comer y a estirar la espalda y las piernas.</p>                </article>
+cambio y modificación volver a generar los archivos.</p>
+<h1>Consideraciones de trabajo</h1>
+<p>Cada vez que regeneremos el sitio porque hemos realizado un cambio o hemos
+añadido contenido nuevo se van a generar los archivos <code>HTML</code> correspondientes,
+si observamos cuidadosamente veremos que los archivos viejos no se eliminan.</p>
+<p>Vamos a suponer que le cambiamos el nombre a una categoría o a un texto, sus
+archivos correspondientes en la versión anterior seguirán ahí, por lo que hay
+que limpiar el entorno de trabajo.</p>
+<p>Por el momento una opción burda es eliminar todos los archivos y carpetas del
+directorio raíz del repositorio y dejar exclusivamente la carpeta <code>pelican</code>.</p>
+<p>Lo sé, lo sé, esto no es lo más viable o factible a largo plazo, ¡pero oye!
+apenas vamos comenzando, por lo cual lo solucionaremos más adelante, por ahora
+solo no te asustes si ves contenido duplicado, eliminalo y ya.</p>
+<h1>Siguientes pasos</h1>
+<p>Ya tenemos nuestro primer <code>hola mundo</code> en el blog, basta con hacer push al repo
+para poder verlo andando en nuestra <code>GitHub Pages</code>.</p>
+<p>Esto es solo el comienzo, aún necesitamos seguir puliendo algunas cosas del
+sitio, ¿qué cosas?, para empezar, reemplazar el contenido que viene por default
+(esos enlaces en el <code>header</code> o en el <code>footer</code>), agregar algunas páginas y
+secciones como un <code>about</code>, configurar algunas cositas para que el contenido se
+organice por año, que los archivos que se tengan que eliminar se eliminen para
+que no haya contenido extraño, etc, etc.</p>
+<p>Cómo podemos ver aún hay otros detallitos que iremos revisando pero por ahora ya
+podemos tener el sitio andando y con algo de contenido, así que vamos a seguir
+con otras cosas y nos leemos pronto.</p>
+<p><a href="https://www.youtube.com/watch?v=NRI_8PUXx2A">See you in space cowboy ...</a></p>                </article>
             </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/pelican-i-creacion-de-un-blog-estatico-con-pelican-es-MX.html" rel="bookmark"
+                           title="Permalink to Pelican (I), creación de un blog estático con Pelican">Pelican (I), creación de un blog estático con Pelican</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2020-04-24T00:00:00-05:00">
+                Published: vie 24 abril 2020
+        </abbr>
+		<br />
+        <abbr class="modified" title="2020-05-09T00:00:00-05:00">
+                Updated: sáb 09 mayo 2020
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/penserbjorne.html">Penserbjorne</a>
+        </address>
+<p>In <a href="/category/pelican.html">pelican</a>.</p>
+<p>tags: <a href="/tag/blog-pelican.html">blog pelican</a> </p>
+</footer><!-- /.post-info -->                <p>Creación de un blog estático con Pelican</p>
+                <a class="readmore" href="/pelican-i-creacion-de-un-blog-estatico-con-pelican-es-MX.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>links</h2>
