@@ -111,6 +111,6 @@ daremos contexto al comando o a la acción.
 Debido a que no sé cual va a ser la longitud de cada maquina lo mejor será
 dedicar una entrada a cada una por lo que te invito pases a la siguiente entrada
 en la cual comenzaremos con la maquina
-[**Archetype**]({filename}./htb-02-starting-point-section-archetype.md).
+[**Archetype**]({filename}./htb-02-starting-point-archetype.md).
 
 `#HappyHacking`

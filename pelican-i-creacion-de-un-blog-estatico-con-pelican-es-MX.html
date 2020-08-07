@@ -8,8 +8,9 @@
 
 <body id="index" class="home">
         <header id="banner" class="body">
-                <h1><a href="/">Penserbjorne</a></h1>
+                <h1><a href="/">Penserbjorne </a></h1>
                 <nav><ul>
+                    <li><a href="/category/htb.html">htb</a></li>
                     <li><a href="/category/init.html">init</a></li>
                     <li class="active"><a href="/category/pelican.html">pelican</a></li>
                 </ul></nav>
@@ -64,37 +65,37 @@ lo cual las instrucciones de instalación serán para esta distribución.</p>
 <h1>Preparación del entorno</h1>
 <p>Dado que <code>Pelican</code> es una herramienta desarrollada con <code>Python</code> y lo mejor es
 buscar tener un entorno limpio, estaremos trabajando con <code>virtualenv</code>.</p>
-<div class="highlight"><pre><span></span><span class="c1"># Instalación del entorno</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Instalación del entorno</span>
 sudo apt install virtualenv
 
 <span class="c1"># Creación del entorno</span>
 virtualenv ~/path/to/project
-</pre></div>
+</code></pre></div>
 
 
 <p>Para comenzar a trabajar es necesario movernos a la carpeta donde se configuró
 el entorno y activarlo.</p>
-<div class="highlight"><pre><span></span><span class="c1"># Nos movemos a la carpeta creada</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Nos movemos a la carpeta creada</span>
 <span class="nb">cd</span> ~/path/to/project
 
 <span class="c1"># Activamos el entorno</span>
 <span class="nb">source</span> bin/activate
-</pre></div>
+</code></pre></div>
 
 
 <p>Sabremos que el entorno se ha activado por que la terminal cambiará su apariencia
 a algo como lo siguiente.</p>
-<div class="highlight"><pre><span></span><span class="o">(</span>entorno_virtual<span class="o">)</span> usuario@equipo:~/path/to/project$
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="o">(</span>entorno_virtual<span class="o">)</span> usuario@equipo:~/path/to/project$
+</code></pre></div>
 
 
 <p>A partir de aquí podemos comenzar a trabajar con <code>Pelican</code> en un entorno aislado
 que no vaya a modificar nuestro sistema operativo.</p>
 <p>Una vez que hayamos terminado de trabajar en el sitio, podemos desactivar el
 entorno.</p>
-<div class="highlight"><pre><span></span><span class="c1"># Para desactivar virtualenv</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Para desactivar virtualenv</span>
 deactivate
-</pre></div>
+</code></pre></div>
 
 
 <h1>Instalación de las herramientas</h1>
@@ -102,25 +103,25 @@ deactivate
 lo necesario para que <code>Pelican</code> funcione con <code>Markdown</code>. Esto lo haremos a
 través de <code>pip</code> <strong>#PorquePython</strong>.</p>
 <p>Necesitaremos los paquetes de <code>pelican</code>, <code>Markdown</code> y <code>typogrify</code>.</p>
-<div class="highlight"><pre><span></span>pip install pelican Markdown typogrify
-</pre></div>
+<div class="highlight"><pre><span></span><code>pip install pelican Markdown typogrify
+</code></pre></div>
 
 
 <p>En caso de necesitar actualizar alguna de estas herramientas, se puede hacer
 también a través de <code>pip</code>.</p>
-<div class="highlight"><pre><span></span>pip install --upgrade pelican
-</pre></div>
+<div class="highlight"><pre><span></span><code>pip install --upgrade pelican
+</code></pre></div>
 
 
 <h1>Creación del esqueleto del sitio</h1>
 <p>Para crear un proyecto con la estructura básica de <code>Pelican</code> basta con ejecutar
 el siguiente comando (aún no lo hagas, necesito aclarar algo antes).</p>
-<div class="highlight"><pre><span></span>pelican-quickstart
-</pre></div>
+<div class="highlight"><pre><span></span><code>pelican-quickstart
+</code></pre></div>
 
 
 <p>El comando creara una carpeta con la siguiente estructura:</p>
-<div class="highlight"><pre><span></span>yourproject/
+<div class="highlight"><pre><span></span><code>yourproject/
 ├── content
 │   └── <span class="o">(</span>pages<span class="o">)</span>
 ├── output
@@ -128,7 +129,7 @@ el siguiente comando (aún no lo hagas, necesito aclarar algo antes).</p>
 ├── Makefile
 ├── pelicanconf.py
 └── publishconf.py
-</pre></div>
+</code></pre></div>
 
 
 <p>Como podemos ver, es una estructura bien definida para el sitio. Esta estructura
@@ -137,9 +138,9 @@ cuenta que actualmente estamos en la carpeta de <code>virtualenv</code>, así qu
 donde vamos a clonar el repositorio, de tal modo que la carpeta actual tendría
 que verse así (asumiendo que ya clonamos el repositorio dentro de la carpeta de
   virtualenv ¬¬):</p>
-<div class="highlight"><pre><span></span><span class="o">(</span>entorno_virtual<span class="o">)</span> usuario@equipo:~/path/to/project$ ls
+<div class="highlight"><pre><span></span><code><span class="o">(</span>entorno_virtual<span class="o">)</span> usuario@equipo:~/path/to/project$ ls
 bin  include  lib  <span class="nb">local</span>  user.github.io  share
-</pre></div>
+</code></pre></div>
 
 
 <p>Como podemos observar, están las carpetas de <code>virtualenv</code> y el repositorio del
@@ -153,13 +154,13 @@ del sitio que son con los que trabaja <code>Pelican</code>, y dentro de esta sub
 donde ejecutaremos el comando para la creación del proyecto (ya sé, ya sé,
   tanta carpeta marea, pero hay una razón para hacerlo así, por ahora confiá
   en mi).</p>
-<div class="highlight"><pre><span></span><span class="o">(</span>entorno_virtual<span class="o">)</span> usuario@equipo:~/path/to/project/user.github.io/pelican$ pelican-quickstart
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="o">(</span>entorno_virtual<span class="o">)</span> usuario@equipo:~/path/to/project/user.github.io/pelican$ pelican-quickstart
+</code></pre></div>
 
 
 <p>De tal modo que la estructura de archivos debería de verse de la siguiente
 manera.</p>
-<div class="highlight"><pre><span></span>/path/to/project
+<div class="highlight"><pre><span></span><code>/path/to/project
 ├── bin/          <span class="c1"># carpeta de virtualenv</span>
 ├── include/      <span class="c1"># carpeta de virtualenv</span>
 ├── lib/          <span class="c1"># carpeta de virtualenv</span>
@@ -174,7 +175,7 @@ manera.</p>
         ├── Makefile
         ├── pelicanconf.py
         └── publishconf.py
-</pre></div>
+</code></pre></div>
 
 
 <h1>Generar y ejecutar el sitio</h1>
@@ -189,9 +190,9 @@ la rama <code>master</code>, por lo cual tenemos que indicar que la salida sea e
 del repositorio (ves! así tenemos la salida del sitio en la raíz del
   repositorio y los archivos fuente en la subcarpeta <code>pelican</code>).</p>
 <p>Para lo anterior (y estando en la subcarpeta <code>pelican</code>) ejecutamos:</p>
-<div class="highlight"><pre><span></span><span class="c1"># Generamos la salida HTML una carpeta arriba de donde estamos</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Generamos la salida HTML una carpeta arriba de donde estamos</span>
 pelican content -o ..
-</pre></div>
+</code></pre></div>
 
 
 <p>Esto generara los archivos <code>HTML</code> del sitio en la raíz del repositorio.</p>
@@ -199,9 +200,9 @@ pelican content -o ..
 levanta un servidor en el puerto 8080. En nuestro caso (y sin salir de la
   subcarpeta) tendremos que indicar donde estan los archivos generados, por lo
   cual vamos a ejecutar el siguiente comando:</p>
-<div class="highlight"><pre><span></span><span class="c1"># Levantamos el sitio indicando la salida de los archivos HTML</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Levantamos el sitio indicando la salida de los archivos HTML</span>
 pelican --listen -o ..
-</pre></div>
+</code></pre></div>
 
 
 <p>Para acceder al sitio visitamos <a href="http://localhost:8000/">http://localhost:8000/</a>

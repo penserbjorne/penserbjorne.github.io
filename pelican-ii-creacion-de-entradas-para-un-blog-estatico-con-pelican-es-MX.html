@@ -8,8 +8,9 @@
 
 <body id="index" class="home">
         <header id="banner" class="body">
-                <h1><a href="/">Penserbjorne</a></h1>
+                <h1><a href="/">Penserbjorne </a></h1>
                 <nav><ul>
+                    <li><a href="/category/htb.html">htb</a></li>
                     <li><a href="/category/init.html">init</a></li>
                     <li class="active"><a href="/category/pelican.html">pelican</a></li>
                 </ul></nav>
@@ -68,7 +69,7 @@ para que veas lo sencillo que es.</p>
 <p>Recordando la estructura del sitio, sabemos que las entradas del mismo
 van en la carpeta <code>content</code> de nuestra subcarpeta <code>pelican</code>. Ahí es donde
 podremos comenzar a crear nuestros archivos en <code>Markdown</code>.</p>
-<div class="highlight"><pre><span></span>/path/to/project
+<div class="highlight"><pre><span></span><code>/path/to/project
 ├── bin/          <span class="c1"># carpeta de virtualenv</span>
 ├── include/      <span class="c1"># carpeta de virtualenv</span>
 ├── lib/          <span class="c1"># carpeta de virtualenv</span>
@@ -83,12 +84,12 @@ podremos comenzar a crear nuestros archivos en <code>Markdown</code>.</p>
         ├── Makefile
         ├── pelicanconf.py
         └── publishconf.py
-</pre></div>
+</code></pre></div>
 
 
 <p>Por lo que para añadir una nueva entrada bastará con crear un archivo nuevo en
 la carpeta <code>content</code> con la extensión <code>.md</code></p>
-<div class="highlight"><pre><span></span>/path/to/project
+<div class="highlight"><pre><span></span><code>/path/to/project
 ├── bin/          <span class="c1"># carpeta de virtualenv</span>
 ├── include/      <span class="c1"># carpeta de virtualenv</span>
 ├── lib/          <span class="c1"># carpeta de virtualenv</span>
@@ -103,7 +104,7 @@ la carpeta <code>content</code> con la extensión <code>.md</code></p>
         ├── Makefile
         ├── pelicanconf.py
         └── publishconf.py
-</pre></div>
+</code></pre></div>
 
 
 <p>En este caso hemos agregado el archivo <code>hola-mundo.md</code>. Al ejecutar el comando
@@ -192,7 +193,7 @@ incluir algunas etiquetas al inicio del archivo que serán consideradas como
 </tbody>
 </table>
 <p>Para el caso de este blog, estamos utilizando las siguientes etiquetas:</p>
-<div class="highlight"><pre><span></span><span class="err">---</span>
+<div class="highlight"><pre><span></span><code><span class="err">---</span>
 <span class="c">Title: Este es el titulo</span>
 <span class="c">Date: 2020-05-09</span>
 <span class="c">Modified: 2020-05-09</span>
@@ -205,7 +206,7 @@ incluir algunas etiquetas al inicio del archivo que serán consideradas como
 <span class="c">Translation: false</span>
 <span class="c">Status: published</span>
 <span class="err">---</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Estas etiquetas se encuentran al inicio de cada archivo y están contenidas entre
@@ -220,12 +221,12 @@ etiquetas necesarias podemos comenzar a escribir su contenido en <code>Markdown<
 para que se genere el archivo de salida. Esto lo hacemos con los comandos que
 vimos en la <a href="/pelican-i-creacion-de-un-blog-estatico-con-pelican-es-MX.html">entrada anterior</a> (que te recomiendo leer para que
 no te pierdas en la estructura de archivos y de trabajo que utilizamos aquí).</p>
-<div class="highlight"><pre><span></span><span class="c1"># Generamos la salida HTML una carpeta arriba de donde estamos</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Generamos la salida HTML una carpeta arriba de donde estamos</span>
 pelican content -o ..
 
 <span class="c1"># Levantamos el sitio indicando la salida de los archivos HTML</span>
 pelican --listen -o ..
-</pre></div>
+</code></pre></div>
 
 
 <p>Para acceder al sitio en local visitamos
