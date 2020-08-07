@@ -9,7 +9,7 @@ Author: penserbjorne
 Summary: Inauguración del blog de Penserbjorne
 Lang: es-MX
 Translation: false
-Status: Published
+Status: published
 ---
 
 Bienvenido al [Blog de Penserbjorne](https://penserbjorne.github.io).
