@@ -24,8 +24,8 @@
                 Published: jue 06 agosto 2020
         </abbr>
 		<br />
-        <abbr class="modified" title="2020-08-06T00:00:00-05:00">
-                Updated: jue 06 agosto 2020
+        <abbr class="modified" title="2020-08-11T00:00:00-05:00">
+                Updated: mar 11 agosto 2020
         </abbr>
 
         <address class="vcard author">
@@ -39,11 +39,23 @@ arrancaremos con la máquina <em>Archetype</em>. Si no sabes bien de que hablo t
 recomiendo que primero leas la
 <a href="/hack-the-box-starting-point-es-MX.html">entrada anterior</a>.</p>
 <ul>
-<li><strong>Maquina:</strong> Archetype</li>
+<li><strong>máquina:</strong> Archetype</li>
 <li><strong>SO:</strong> Windows</li>
 <li><strong>IP:</strong> 10.10.10.27</li>
 </ul>
 <h2>Enumeration</h2>
+<p>Como siempre digo: "<em>primero lo primero</em>", pues vamos a comenzar a <strong>enumerar</strong>
+lo que tiene el equipo objetivo, en este caso vamos a tratar de identificar
+los puertos abiertos y el software asociado a estos.</p>
+<p>Para esto utilizaremos la siempre poderosa herramienta de
+<a href="https://es.wikipedia.org/wiki/Nmap">Nmap</a>.</p>
+<p>Lo primero que nos recomiendan utilizar son los siguientes dos comandos:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">ports</span><span class="o">=</span><span class="k">$(</span>nmap -p- --min-rate<span class="o">=</span><span class="m">1000</span>  -T4 <span class="m">10</span>.10.10.27 <span class="p">|</span> grep ^<span class="o">[</span><span class="m">0</span>-9<span class="o">]</span> <span class="p">|</span> cut -d <span class="s1">&#39;/&#39;</span> -f <span class="m">1</span> <span class="p">|</span> tr <span class="s1">&#39;\n&#39;</span> <span class="s1">&#39;,&#39;</span> <span class="p">|</span> sed s/,$//<span class="k">)</span>
+nmap -sC -sV -p<span class="nv">$ports</span> <span class="m">10</span>.10.10.27
+</code></pre></div>
+
+
+<p>Vamos a revisar la primera linea.</p>
 <div class="highlight"><pre><span></span><code><span class="nv">ports</span><span class="o">=</span><span class="k">$(</span>nmap -p- --min-rate<span class="o">=</span><span class="m">1000</span>  -T4 <span class="m">10</span>.10.10.27 <span class="p">|</span> grep ^<span class="o">[</span><span class="m">0</span>-9<span class="o">]</span> <span class="p">|</span> cut -d <span class="s1">&#39;/&#39;</span> -f <span class="m">1</span> <span class="p">|</span> tr <span class="s1">&#39;\n&#39;</span> <span class="s1">&#39;,&#39;</span> <span class="p">|</span> sed s/,$//<span class="k">)</span>
 </code></pre></div>
 
@@ -64,16 +76,16 @@ que la salida del <code>comando1</code> será la entrada del <code>comando2</cod
 </ul>
 <p>Analicemos cada una de las partes.</p>
 <p><code>nmap -p- --min-rate=1000 -T4 10.10.10.27</code> lo vamos a utilizar para detectar
-los puertos abiertos en la maquina a trabajar. Esto se lo indicamos a <code>nmap</code>
+los puertos abiertos en la máquina a trabajar. Esto se lo indicamos a <code>nmap</code>
 con los siguientes parámetros:</p>
 <ul>
-<li><code>-p-</code>: Indicamos que vamos a escanear todos los puertos de la maquina.</li>
+<li><code>-p-</code>: Indicamos que vamos a escanear todos los puertos de la máquina.</li>
 <li><code>--min-rate=1000</code>: Indicamos que enviaremos al menos 1000 paquetes por segundos para realizar el escaneo.</li>
 <li><code>-T4</code>: Indicamos una <em>plantilla de tiempo</em>. Básicamente le decimos a <code>nmap</code>
 que los tiempos haga un <em>análisis agresivo</em>. El modo agresivo hace que los
 análisis sean más rápidos al asumir que estas en una red razonablemente más
 rápida y fiable.</li>
-<li><code>10.10.10.27</code>: Indicamos la IP del objetivo, en este caso es la maquina con la que vamos a trabajar.</li>
+<li><code>10.10.10.27</code>: Indicamos la IP del objetivo, en este caso es la máquina con la que vamos a trabajar.</li>
 </ul>
 <p>La salida del comando anterior nos muestra la lista de puertos abiertos como
 se ve a continuación.</p>
@@ -168,7 +180,7 @@ la sintaxis <code>s/regexp/replacement/flags</code>. La expresión utilizada bus
 walk-through que básicamente nos arma una lista de puertos abiertos separados
 por comas.</p>
 <p>Esta lista de puertos quedo almacenada en la variable <code>ports</code> que vamos a
-utilizar en el comando siguiente:</p>
+utilizar en el segundo comando recomendado:</p>
 <div class="highlight"><pre><span></span><code>nmap -sC -sV -p<span class="nv">$ports</span> <span class="m">10</span>.10.10.27
 </code></pre></div>
 
@@ -246,9 +258,150 @@ Nmap <span class="k">done</span>: <span class="m">1</span> IP address <span clas
 
 <p>Hasta este momento ya hemos logrado detectar los puertos abiertos así como el
 software y las versiones que están asociados a estos.</p>
-<hr>
 <p>Por ahora el post quedara hasta aquí ... tengo hambre y necesito descansar un
 rato.</p>
+<hr>
+<p><strong>Continuación: 2020-08-11</strong></p>
+<p>Listo, ya he comido algo (y ya pasaron algunos días), así que podemos continuar.</p>
+<p>Retomando, podemos observar que el puerto 445 y el 1433 se encuentran abiertos
+y están asociados a dos servicios:
+<a href="https://es.wikipedia.org/wiki/Server_Message_Block">SMB</a> y
+<a href="https://es.wikipedia.org/wiki/Microsoft_SQL_Server">SQL Server</a>.</p>
+<p>Dado que el protocolo <code>SMB</code> se utiliza para compartir archivos podemos tratar de
+conectarnos de manera anonima en busqueda de archivos interesantes. Para esto
+recomiendan utilizar <code>smbclient</code> la cual es un cliente de conexiones
+perteneciente al proyecto
+<a href="https://es.wikipedia.org/wiki/Samba_(software)">Samba</a> en sistemas tipo Unix.</p>
+<p>El comando recomendado es:</p>
+<div class="highlight"><pre><span></span><code>smbclient -N -L <span class="se">\\\\</span><span class="m">10</span>.10.10.27<span class="se">\\</span>
+</code></pre></div>
+
+
+<p>Los parámetros del comando anterior son:</p>
+<ul>
+<li><code>-N</code>: Conectar sin contraseña (de manera anónima).</li>
+<li><code>-L</code>: Despliega los resultados en formato de lista.</li>
+<li><code>\\\\10.10.10.27\\</code>: Estamos indicando la máquina a la cual nos vamos a
+conectar. En este caso nos estamos conectando desde un sistema tipo <code>Unix</code> a un
+sistema basado en <code>DOS</code> por lo cual utilizaremos la sintaxis de
+<code>DOS</code> la cual requiere barras invertidas (<code>\</code>). Al estar en un sistema
+tipo <code>Unix</code> tenemos que escapar la barra invertida con una barra invertida
+(<code>\\\\</code>), por eso al ver al inicio cuatro barras invertidas y dos al inicio, en
+realidad la sintaxis de <code>DOS</code> lo tomaría como dos barras al inicio y una al
+final.</li>
+</ul>
+<p>El resultado del comando anterior es:</p>
+<div class="highlight"><pre><span></span><code>└──╼ <span class="nv">$smbclient</span> -N -L <span class="se">\\\\</span><span class="m">10</span>.10.10.27<span class="se">\\</span>
+
+    Sharename       Type      Comment
+    ---------       ----      -------
+    ADMIN$          Disk      Remote Admin
+    backups         Disk      
+    C$              Disk      Default share
+    IPC$            IPC       Remote IPC
+SMB1 disabled -- no workgroup available
+</code></pre></div>
+
+
+<p>Revisando la salida del comando podemos observar que hay una carpeta interesante
+llamada <code>backup</code> la cual podria contener información interesante. Procederemos
+a conectarnos a esa carpeta con el comando recomendado:</p>
+<div class="highlight"><pre><span></span><code>smbclient -N <span class="se">\\\\</span><span class="m">10</span>.10.10.27<span class="se">\\</span>backups
+</code></pre></div>
+
+
+<p>De igual manera que en el comando anterior, nos vamos a conectar sin contraseña
+gracias al parámetro <code>-N</code> y hemos eliminado el parámetro <code>-L</code> ya que no queremos
+ver una lista de resultados si no realizar una conexión directa.</p>
+<p>Al conectarnos tendremos una terminal como la siguiente:</p>
+<div class="highlight"><pre><span></span><code>Try <span class="s2">&quot;help&quot;</span> to get a list of possible commands.
+smb: \&gt;
+</code></pre></div>
+
+
+<p>En esta terminal podemos ejecutar comandos básicos, para ver un listado de
+estos podemos utilizar <code>help</code> el cual nos desplegará una salida como la
+siguiente:</p>
+<div class="highlight"><pre><span></span><code>smb: \<span class="p">&gt;</span> help
+?              allinfo        altname        archive        backup         
+blocksize      cancel         case_sensitive cd             chmod          
+chown          close          del            deltree        dir            
+du             echo           exit           get            getfacl        
+geteas         hardlink       help           history        iosize         
+lcd            link           lock           lowercase      ls             
+l              mask           md             mget           mkdir          
+more           mput           newer          notify         open           
+posix          posix_encrypt  posix_open     posix_mkdir    posix_rmdir    
+posix_unlink   posix_whoami   print          prompt         put            
+pwd            q              queue          quit           readlink       
+<span class="k">rd</span>             recurse        reget          rename         reput          
+rm             rmdir          showacls       setea          setmode        
+scopy          stat           symlink        tar            tarmode        
+timeout        translate      unlock         volume         vuid           
+wdel           logon          listconnect    showconnect    tcon           
+tdis           tid            utimes         logoff         ..             
+!  
+</code></pre></div>
+
+
+<p>Como el objetivo en este momento es encontrar información de utilidad se nos
+recomienda utilizar el comando <code>dir</code> el cual permite listar el contenido de un
+directorio en sistemas basados en <code>DOS</code>, este caso, el directorio actual.</p>
+<div class="highlight"><pre><span></span><code>smb: \<span class="p">&gt;</span> dir
+  .                                   D        0  Mon Jan 20 06:20:57 2020
+  ..                                  D        0  Mon Jan 20 06:20:57 2020
+  prod.dtsConfig                     AR      609  Mon Jan 20 06:23:02 2020
+
+        10328063 blocks of size 4096. 8243763 blocks available
+</code></pre></div>
+
+
+<p>Del contenido del directorio podemos observar que solamente existe el archivo
+<code>prod.dtsConfig</code>.</p>
+<p>Los archivos con extensión
+<a href="https://abrirarchivos.info/extension/dtsconfig">.dtsConfig</a>
+son archivos de configuración con sintaxis <code>XML</code> utilizados en para aplicar
+<em>valores de propiedad</em> a los paquetes de
+<em>Servicios de Integración de SQL Server</em> (<code>SSIS</code>). Por lo cual podemos obtener
+algo de información de este archivo.</p>
+<p>Para ver el contenido del archivo nos recomiendan utilizar el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code>smb: \<span class="p">&gt;</span> get prod.dtsConfig
+</code></pre></div>
+
+
+<p>El comando anterior invoca a la herramienta <code>get</code> la cual se utiliza para
+transferir archivos, por lo cual al ejecutarlo vamos a transferir una copia
+del archivo <code>prod.dtsConfig</code> a nuestro equipo. Con el archivo en nuestro equipo
+podemos ver su contenido.</p>
+<p>De vuelta a nuestro equipo, podemos utilizar el comando <code>cat prod.dtsConfig</code> el
+cual nos arrojara el contenido del archivo.</p>
+<div class="highlight"><pre><span></span><code>└──╼ <span class="nv">$cat</span> prod.dtsConfig
+</code></pre></div>
+
+
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;DTSConfiguration&gt;</span>
+    <span class="nt">&lt;DTSConfigurationHeading&gt;</span>
+        <span class="nt">&lt;DTSConfigurationFileInfo</span> <span class="na">GeneratedBy=</span><span class="s">&quot;...&quot;</span> <span class="na">GeneratedFromPackageName=</span><span class="s">&quot;...&quot;</span> <span class="na">GeneratedFromPackageID=</span><span class="s">&quot;...&quot;</span> <span class="na">GeneratedDate=</span><span class="s">&quot;20.1.2019 10:01:34&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/DTSConfigurationHeading&gt;</span>
+    <span class="nt">&lt;Configuration</span> <span class="na">ConfiguredType=</span><span class="s">&quot;Property&quot;</span> <span class="na">Path=</span><span class="s">&quot;\Package.Connections[Destination].Properties[ConnectionString]&quot;</span> <span class="na">ValueType=</span><span class="s">&quot;String&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;ConfiguredValue&gt;</span>Data Source=.;Password=M3g4c0rp123;User ID=ARCHETYPE\sql_svc;Initial Catalog=Catalog;Provider=SQLNCLI10.1;Persist Security Info=True;Auto Translate=False;<span class="nt">&lt;/ConfiguredValue&gt;</span>
+    <span class="nt">&lt;/Configuration&gt;</span>
+<span class="nt">&lt;/DTSConfiguration&gt;</span>
+</code></pre></div>
+
+
+<p>Del contenido del archivo anterior nos llaman la atención la siguiente línea:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;ConfiguredValue&gt;</span>Data Source=.;Password=M3g4c0rp123;User ID=ARCHETYPE\sql_svc;Initial Catalog=Catalog;Provider=SQLNCLI10.1;Persist Security Info=True;Auto Translate=False;<span class="nt">&lt;/ConfiguredValue&gt;</span>
+</code></pre></div>
+
+
+<p>La cadena anterior corresponde a la cadena para una conexión SQL asociada al
+usuario <code>ARCHETYPE\sql_svc</code> y su contraseña que es <code>M3g4c0rp123</code>.</p>
+<h2>Foothold</h2>
+<p>Ya tenemos un usuario y contraseña, por lo que podemos intentar dar un primer
+paso firme hacia nuestra máquina objetivo ... peeeeero, eso será después porqué
+en este momento necesito dejar el post pausado una vez más y conectarme a hacer
+algunos pendientes del trabajo :)</p>
 <p><code>#HappyHacking</code></p>                </article>
             </aside><!-- /#featured -->
         <section id="extras" class="body">
