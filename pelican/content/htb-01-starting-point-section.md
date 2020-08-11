@@ -40,7 +40,8 @@ Ahora sí, arranquemos.
 Este texto son anotaciones sobre la sección **Starting point** de
 **Hack-The-Box**.
 
-No es un walk-through, no es una guía, no es un tutorial.
+Nos apoyaremos en los walk-throughs que ya vienen incorporados en la sección
+*Starting point* e iremos explicando los comandos utilizados.
 
 ## Hack-The-Box (HTB)
 

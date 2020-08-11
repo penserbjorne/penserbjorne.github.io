@@ -1,12 +1,12 @@
 ---
 Title: Hack-The-Box > Starting point > Archetype
 Date: 2020-08-06
-Modified: 2020-08-06
+Modified: 2020-08-11
 Tags: blog, penserbjorne, htb, pentest, hacking, archetype
 Keywords: blog, penserbjorne, htb, pentest, hacking, archetype
 Category: htb
 Author: penserbjorne
-Summary: Anotaciones sobre la maquina "Archetype" de la sección "Starting point" de Hack-The-Box
+Summary: Anotaciones sobre la máquina "Archetype" de la sección "Starting point" de Hack-The-Box
 Lang: es-MX
 Translation: false
 Status: published
@@ -19,11 +19,27 @@ arrancaremos con la máquina *Archetype*. Si no sabes bien de que hablo te
 recomiendo que primero leas la
 [entrada anterior]({filename}./htb-01-starting-point-section.md).
 
-- **Maquina:** Archetype
+- **máquina:** Archetype
 - **SO:** Windows
 - **IP:** 10.10.10.27
 
 ## Enumeration
+
+Como siempre digo: "*primero lo primero*", pues vamos a comenzar a **enumerar**
+lo que tiene el equipo objetivo, en este caso vamos a tratar de identificar
+los puertos abiertos y el software asociado a estos.
+
+Para esto utilizaremos la siempre poderosa herramienta de
+[Nmap](https://es.wikipedia.org/wiki/Nmap).
+
+Lo primero que nos recomiendan utilizar son los siguientes dos comandos:
+
+```bash
+ports=$(nmap -p- --min-rate=1000  -T4 10.10.10.27 | grep ^[0-9] | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//)
+nmap -sC -sV -p$ports 10.10.10.27
+```
+
+Vamos a revisar la primera linea.
 
 ```bash
 ports=$(nmap -p- --min-rate=1000  -T4 10.10.10.27 | grep ^[0-9] | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//)
@@ -48,16 +64,16 @@ Separando el comando nos encontramos con:
 Analicemos cada una de las partes.
 
 `nmap -p- --min-rate=1000 -T4 10.10.10.27` lo vamos a utilizar para detectar
-los puertos abiertos en la maquina a trabajar. Esto se lo indicamos a `nmap`
+los puertos abiertos en la máquina a trabajar. Esto se lo indicamos a `nmap`
 con los siguientes parámetros:
 
-- `-p-`: Indicamos que vamos a escanear todos los puertos de la maquina.
+- `-p-`: Indicamos que vamos a escanear todos los puertos de la máquina.
 - `--min-rate=1000`: Indicamos que enviaremos al menos 1000 paquetes por segundos para realizar el escaneo.
 - `-T4`: Indicamos una *plantilla de tiempo*. Básicamente le decimos a `nmap`
 que los tiempos haga un *análisis agresivo*. El modo agresivo hace que los
 análisis sean más rápidos al asumir que estas en una red razonablemente más
 rápida y fiable.
-- `10.10.10.27`: Indicamos la IP del objetivo, en este caso es la maquina con la que vamos a trabajar.
+- `10.10.10.27`: Indicamos la IP del objetivo, en este caso es la máquina con la que vamos a trabajar.
 
 La salida del comando anterior nos muestra la lista de puertos abiertos como
 se ve a continuación.
@@ -159,7 +175,7 @@ walk-through que básicamente nos arma una lista de puertos abiertos separados
 por comas.
 
 Esta lista de puertos quedo almacenada en la variable `ports` que vamos a
-utilizar en el comando siguiente:
+utilizar en el segundo comando recomendado:
 
 ```bash
 nmap -sC -sV -p$ports 10.10.10.27
@@ -240,9 +256,169 @@ Nmap done: 1 IP address (1 host up) scanned in 84.18 seconds
 Hasta este momento ya hemos logrado detectar los puertos abiertos así como el
 software y las versiones que están asociados a estos.
 
----
-
 Por ahora el post quedara hasta aquí ... tengo hambre y necesito descansar un
 rato.
+
+---
+
+**Continuación: 2020-08-11**
+
+Listo, ya he comido algo (y ya pasaron algunos días), así que podemos continuar.
+
+Retomando, podemos observar que el puerto 445 y el 1433 se encuentran abiertos
+y están asociados a dos servicios:
+[SMB](https://es.wikipedia.org/wiki/Server_Message_Block) y
+[SQL Server](https://es.wikipedia.org/wiki/Microsoft_SQL_Server).
+
+Dado que el protocolo `SMB` se utiliza para compartir archivos podemos tratar de
+conectarnos de manera anonima en busqueda de archivos interesantes. Para esto
+recomiendan utilizar `smbclient` la cual es un cliente de conexiones
+perteneciente al proyecto
+[Samba](https://es.wikipedia.org/wiki/Samba_(software)) en sistemas tipo Unix.
+
+El comando recomendado es:
+
+```bash
+smbclient -N -L \\\\10.10.10.27\\
+```
+
+Los parámetros del comando anterior son:
+
+- `-N`: Conectar sin contraseña (de manera anónima).
+- `-L`: Despliega los resultados en formato de lista.
+- `\\\\10.10.10.27\\`: Estamos indicando la máquina a la cual nos vamos a
+conectar. En este caso nos estamos conectando desde un sistema tipo `Unix` a un
+sistema basado en `DOS` por lo cual utilizaremos la sintaxis de
+`DOS` la cual requiere barras invertidas (`\`). Al estar en un sistema
+tipo `Unix` tenemos que escapar la barra invertida con una barra invertida
+(`\\\\`), por eso al ver al inicio cuatro barras invertidas y dos al inicio, en
+realidad la sintaxis de `DOS` lo tomaría como dos barras al inicio y una al
+final.
+
+El resultado del comando anterior es:
+
+```bash
+└──╼ $smbclient -N -L \\\\10.10.10.27\\
+
+	Sharename       Type      Comment
+	---------       ----      -------
+	ADMIN$          Disk      Remote Admin
+	backups         Disk      
+	C$              Disk      Default share
+	IPC$            IPC       Remote IPC
+SMB1 disabled -- no workgroup available
+```
+
+Revisando la salida del comando podemos observar que hay una carpeta interesante
+llamada `backup` la cual podria contener información interesante. Procederemos
+a conectarnos a esa carpeta con el comando recomendado:
+
+```bash
+smbclient -N \\\\10.10.10.27\\backups
+```
+
+De igual manera que en el comando anterior, nos vamos a conectar sin contraseña
+gracias al parámetro `-N` y hemos eliminado el parámetro `-L` ya que no queremos
+ver una lista de resultados si no realizar una conexión directa.
+
+Al conectarnos tendremos una terminal como la siguiente:
+
+```bat
+Try "help" to get a list of possible commands.
+smb: \>
+```
+
+En esta terminal podemos ejecutar comandos básicos, para ver un listado de
+estos podemos utilizar `help` el cual nos desplegará una salida como la
+siguiente:
+
+```bat
+smb: \> help
+?              allinfo        altname        archive        backup         
+blocksize      cancel         case_sensitive cd             chmod          
+chown          close          del            deltree        dir            
+du             echo           exit           get            getfacl        
+geteas         hardlink       help           history        iosize         
+lcd            link           lock           lowercase      ls             
+l              mask           md             mget           mkdir          
+more           mput           newer          notify         open           
+posix          posix_encrypt  posix_open     posix_mkdir    posix_rmdir    
+posix_unlink   posix_whoami   print          prompt         put            
+pwd            q              queue          quit           readlink       
+rd             recurse        reget          rename         reput          
+rm             rmdir          showacls       setea          setmode        
+scopy          stat           symlink        tar            tarmode        
+timeout        translate      unlock         volume         vuid           
+wdel           logon          listconnect    showconnect    tcon           
+tdis           tid            utimes         logoff         ..             
+!  
+```
+
+Como el objetivo en este momento es encontrar información de utilidad se nos
+recomienda utilizar el comando `dir` el cual permite listar el contenido de un
+directorio en sistemas basados en `DOS`, este caso, el directorio actual.
+
+```bat
+smb: \> dir
+  .                                   D        0  Mon Jan 20 06:20:57 2020
+  ..                                  D        0  Mon Jan 20 06:20:57 2020
+  prod.dtsConfig                     AR      609  Mon Jan 20 06:23:02 2020
+
+		10328063 blocks of size 4096. 8243763 blocks available
+```
+
+Del contenido del directorio podemos observar que solamente existe el archivo
+`prod.dtsConfig`.
+
+Los archivos con extensión
+[.dtsConfig](https://abrirarchivos.info/extension/dtsconfig)
+son archivos de configuración con sintaxis `XML` utilizados en para aplicar
+*valores de propiedad* a los paquetes de
+*Servicios de Integración de SQL Server* (`SSIS`). Por lo cual podemos obtener
+algo de información de este archivo.
+
+Para ver el contenido del archivo nos recomiendan utilizar el siguiente comando:
+
+```bat
+smb: \> get prod.dtsConfig
+```
+
+El comando anterior invoca a la herramienta `get` la cual se utiliza para
+transferir archivos, por lo cual al ejecutarlo vamos a transferir una copia
+del archivo `prod.dtsConfig` a nuestro equipo. Con el archivo en nuestro equipo
+podemos ver su contenido.
+
+De vuelta a nuestro equipo, podemos utilizar el comando `cat prod.dtsConfig` el
+cual nos arrojara el contenido del archivo.
+
+```bash
+└──╼ $cat prod.dtsConfig
+```
+```xml
+<DTSConfiguration>
+    <DTSConfigurationHeading>
+        <DTSConfigurationFileInfo GeneratedBy="..." GeneratedFromPackageName="..." GeneratedFromPackageID="..." GeneratedDate="20.1.2019 10:01:34"/>
+    </DTSConfigurationHeading>
+    <Configuration ConfiguredType="Property" Path="\Package.Connections[Destination].Properties[ConnectionString]" ValueType="String">
+        <ConfiguredValue>Data Source=.;Password=M3g4c0rp123;User ID=ARCHETYPE\sql_svc;Initial Catalog=Catalog;Provider=SQLNCLI10.1;Persist Security Info=True;Auto Translate=False;</ConfiguredValue>
+    </Configuration>
+</DTSConfiguration>
+```
+
+Del contenido del archivo anterior nos llaman la atención la siguiente línea:
+
+```xml
+<ConfiguredValue>Data Source=.;Password=M3g4c0rp123;User ID=ARCHETYPE\sql_svc;Initial Catalog=Catalog;Provider=SQLNCLI10.1;Persist Security Info=True;Auto Translate=False;</ConfiguredValue>
+```
+
+La cadena anterior corresponde a la cadena para una conexión SQL asociada al
+usuario `ARCHETYPE\sql_svc` y su contraseña que es `M3g4c0rp123`.
+
+## Foothold
+
+Ya tenemos un usuario y contraseña, por lo que podemos intentar dar un primer
+paso firme hacia nuestra máquina objetivo ... peeeeero, eso será después porqué
+en este momento necesito dejar el post pausado una vez más y conectarme a hacer
+algunos pendientes del trabajo :)
 
 `#HappyHacking`
