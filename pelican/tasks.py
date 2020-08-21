@@ -31,9 +31,15 @@ CONFIG = {
 @task
 def clean(c):
     """Remove generated files"""
+    # Old code
+    #if os.path.isdir(CONFIG['deploy_path']):
+    #    shutil.rmtree(CONFIG['deploy_path'])
+    #    os.makedirs(CONFIG['deploy_path'])
+
+    #My own code
     if os.path.isdir(CONFIG['deploy_path']):
-        shutil.rmtree(CONFIG['deploy_path'])
-        os.makedirs(CONFIG['deploy_path'])
+        c.run('rm -rf ../author ../category ../drafts ../feeds ../tag ../theme '
+                '../*.html')
 
 @task
 def build(c):
@@ -80,6 +86,7 @@ def preview(c):
 def livereload(c):
     """Automatically reload browser tab upon file modification."""
     from livereload import Server
+    clean(c)    # New line, added by me :)
     build(c)
     server = Server()
     # Watch the base settings file
@@ -99,7 +106,6 @@ def livereload(c):
     # Serve output path on configured port
     server.serve(port=CONFIG['port'], root=CONFIG['deploy_path'])
 
-
 @task
 def publish(c):
     """Publish to production via rsync"""
@@ -114,7 +120,15 @@ def publish(c):
 @task
 def gh_pages(c):
     """Publish to GitHub Pages"""
+    clean(c)
     preview(c)
-    c.run('ghp-import -b {github_pages_branch} '
-          '-m {commit_message} '
-          '{deploy_path} -p'.format(**CONFIG))
+
+    # Old code
+    #c.run('ghp-import -b {github_pages_branch} '
+    #      '-m {commit_message} '
+    #      '{deploy_path} -p'.format(**CONFIG))
+
+    # My code
+    c.run('git add --all'.format(**CONFIG))
+    c.run('git commit -m {commit_message}'.format(**CONFIG))
+    c.run('git push'.format(**CONFIG))

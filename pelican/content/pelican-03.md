@@ -33,7 +33,29 @@ que si se necesita mayor información o detalle de algo, visitar el sitio oficia
 
 Cuando comenzamos a crear el sitio utilizamos el comando `pelican-quickstart`
 el cual nos creo la estructura inicial del sitio con algunos archivos de
-configuración. Estos archivos de configuración son:
+configuración.
+
+Recordemos cual es la estructura de trabajo que tenemos hasta este momento:
+
+```bash
+/path/to/project
+├── bin/          # carpeta de virtualenv
+├── include/      # carpeta de virtualenv
+├── lib/          # carpeta de virtualenv
+├── local/        # carpeta de virtualenv
+├── share/        # carpeta de virtualenv
+└── user.github.io/   # carpeta del repositorio del sitio
+    └── pelican/      # carpeta con los archivos fuente del sitio
+        ├── content             
+        │   └── hola-mundo.md # Entrada nueva
+        ├── output
+        ├── tasks.py
+        ├── Makefile
+        ├── pelicanconf.py
+        └── publishconf.py
+```
+
+Si observamos detenidamente, podemos ver que los archivos de los que hablamos se encuentran en nuestra subcarpeta `pelican` y son:
 
 - `Makefile`
 - `pelicanconf.py`
@@ -89,7 +111,7 @@ adaptarlo a nuestras necesidades.
 Los comandos que vienen precargados en el archivo `tasks.py` son:
 
 ```bash
-# Relimina los archivos generados previamente
+# Elimina los archivos generados previamente
 invoke clean
 
 # Genera el sitio para ver en local
@@ -98,25 +120,36 @@ invoke build
 # Genera el sitio para ver en local eliminando previamente los archivos generados
 invoke rebuild
 
-# Regenera el sitio cada vez que se hace un cambio
+# Regenera el sitio para ver en local cada vez que se hace un cambio
 invoke regenerate
 
 # Permite visualizar el sitio de manera local en http://localhost:8000/
 invoke serve
 
+# Genera el sitio para ver en local
+# y luego lo permite visualizar de manera local en http://localhost:8000/
+invoke reserve
+
+# Genera el sitio para producción
+invoke preview
+
 # Permite visualizar el sitio de manera local en http://localhost:8000/
-# y regenrar el sitio cada vez que haya un cambio
+# y regenrar el sitio cada vez que haya un cambio, todo para local
 invoke livereload
 
-# Permite subir el sitio al servidor correspondiente mediante SSH
+# Permite subir el sitio al servidor correspondiente mediante rsync y SSH
 invoke publish
+
+# Publica el sitio de producción en Github Pages
+invoke gh-pages
 ```
 
 Considerar que para el comando `invoke livereload` se requiere instalar la
-herramienta `livereload`, esto lo podemos hacer mediante el siguiente comando:
+herramienta `livereload` y para el comando `invoke gp_pages` se requiere la
+herramienta `ghp-import`, esto lo podemos hacer mediante el siguiente comando:
 
 ```bash
-python -m pip install livereload
+python -m pip install livereload ghp-import
 ```
 
 A partir de ahora estaremos trabajando con los comandos previos. Ahora, estos
@@ -202,7 +235,7 @@ Si quieres ver como van quedando los archivos de configuración de este sitio
 puedes revisar el [aquí (pelicanconf.py)](https://github.com/penserbjorne/penserbjorne.github.io/blob/master/pelican/pelicanconf.py) y
 [aquí (publishconf.py)](https://github.com/penserbjorne/penserbjorne.github.io/blob/master/pelican/publishconf.py).
 
-# Modificando el comportamiento de construcción del sitio
+# Modificando el pipeline de construcción del sitio
 
 Ok, ya tenemos instaladas las herramientas para construir el sitio y hemos
 configurado algunas variables que que tenga un poco más de personalidad el
@@ -212,9 +245,152 @@ Los pasos a ir siguiendo son sencillos y deben estar pensados en dos momentos:
 desarrollo y producción.
 
 Durante el desarrollo queremos ir viendo los cambios que vamos realizando en
-local, así que podemos utilizar
+local, así que podemos utilizar:
 
+```bash
+# Limpiamos archivos previos
+invoke clean
+# Comenzamos a generar sobre el vuelo
+invoke livereload
+```
 
+Cuando hemos terminado de probar queremos construir el sitio para producción y
+enviarlo a nuestro repositorio de `GitHub`, por lo que podemos utilizar:
+
+```bash
+# Limpiamos archivo previos
+invoke clean
+# Generamos versión de producción y publicamos actualizaciones
+invoke gh-pages
+```
+
+Pero tenemos un problema, la tarea `clean` va a borrar todo en el contenido de
+salida, esto incluiría la carpeta `pelican` por lo cual perderíamos los archivos
+fuente del blog. Hay que modificar esta tarea :)
+
+Y como queremos que todo quede en un solo comando tanto para producción como
+para publicar el sitio vamos a hacer algunos cambios más que veremos a
+continuación.
+
+Para modificar las tareas nos vamos a dirigir al archivo `tasks.py`
+
+##  Modificando la tarea `clean`
+
+Vamos a comentar las lineas que se encuentran dentro de la tarea y las vamos a
+reemplazar por el siguiente segmento de código:
+
+```python
+if os.path.isdir(CONFIG['deploy_path']):
+      c.run('rm -rf ../author ../category ../drafts ../feeds ../tag ../theme '
+              '../*.html')
+```
+
+De tal modo que la tarea se vería más o menos así:
+
+```python
+@task
+def clean(c):
+    """Remove generated files"""
+    # Old code
+    #if os.path.isdir(CONFIG['deploy_path']):
+    #    shutil.rmtree(CONFIG['deploy_path'])
+    #    os.makedirs(CONFIG['deploy_path'])
+
+    #My own code
+    if os.path.isdir(CONFIG['deploy_path']):
+        c.run('rm -rf ../author ../category ../drafts ../feeds ../tag ../theme '
+                '../*.html')
+```
+
+##  Modificando la tarea `livereload`
+
+Queremos que cada vez que se haga un `livereload` también se limpien los
+archivos generados previamente, por lo cual vamos a añadir la tarea `clean`
+dentro de `livereload`, para esto solamente añadiremos la linea `clean(c)` antes
+`build(c)`, de tal modo que la tarea quedaría así:
+
+```python
+@task
+def livereload(c):
+    """Automatically reload browser tab upon file modification."""
+    from livereload import Server
+    clean(c)    # New line, added by me :)
+    build(c)
+    server = Server()
+    # Watch the base settings file
+    server.watch(CONFIG['settings_base'], lambda: build(c))
+    # Watch content source files
+    content_file_extensions = ['.md', '.rst']
+    for extension in content_file_extensions:
+        content_blob = '{0}/**/*{1}'.format(SETTINGS['PATH'], extension)
+        server.watch(content_blob, lambda: build(c))
+    # Watch the theme's templates and static assets
+    theme_path = SETTINGS['THEME']
+    server.watch('{}/templates/*.html'.format(theme_path), lambda: build(c))
+    static_file_extensions = ['.css', '.js']
+    for extension in static_file_extensions:
+        static_file = '{0}/static/**/*{1}'.format(theme_path, extension)
+        server.watch(static_file, lambda: build(c))
+    # Serve output path on configured port
+    server.serve(port=CONFIG['port'], root=CONFIG['deploy_path'])
+```
+
+##  Modificando la tarea `gh-pages`
+
+De igual manera  que en la tarea anterior, simplemente vamos a añadir la linea
+de `clean(c)` para verificar que no haya basura. La linea a añadir la ubicaremos
+antes de la linea `preview(c)`.
+
+Y por alguna razón en este momento estamos teniendo problemas con `ghp-import`
+por lo que vamos a añadir lo siguiente:
+
+```python
+```
+
+La tarea quedaría de la siguiente manera:
+
+```python
+@task
+def gh_pages(c):
+    """Publish to GitHub Pages"""
+    clean(c)
+    preview(c)
+
+    # Old code
+    #c.run('ghp-import -b {github_pages_branch} '
+    #      '-m {commit_message} '
+    #      '{deploy_path} -p'.format(**CONFIG))
+
+    # My code
+    c.run('git add --all'.format(**CONFIG))
+    c.run('git commit -m {commit_message}'.format(**CONFIG))
+    c.run('git push'.format(**CONFIG))
+```
+
+Podemos ver que el nombre de la función dentro de `tasks.py` lleva guion bajo
+mientras que al utilizarlo con `invoke` lleva guion medio, esto no sé porque
+sea pero hay que dejarlo así.
+
+Y consideremos que dentro del archivo `tasks.py` existen las variables `github_pages_branch` y `commit_message` que son a las que se hace referencia
+en la tarea.
+
+##  Pasos resultantes para construir el sitio
+
+Con los cambios anteriores nuestro pequeño ciclo de desarrollo quedaría:
+
+```bash
+# Desarrollo
+invoke livereload
+
+# Producción
+invoke gh-pages
+```
+
+Con esto hemos automatizado un poco nuestro pequeño ciclo de desarrollo del
+sitio.
+
+Para ver el archivo `tasks.py` de este blog puedes dar click
+[aquí](https://github.com/penserbjorne/penserbjorne.github.io/blob/master/pelican/tasks.py)
 
 # Siguientes pasos
 

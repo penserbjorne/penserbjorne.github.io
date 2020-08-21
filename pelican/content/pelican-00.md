@@ -37,38 +37,68 @@ cd ~/path/to/project
 source bin/activate
 
 # Instalación de herramientas
-pip install pelican Markdown typogrify invoke livereload
+pip install pelican Markdown typogrify invoke livereload ghp-import
 
 # Actualización de herramientas
-pip install --upgrade pelican Markdown typogrify invoke livereload
+pip install --upgrade pelican Markdown typogrify invoke livereload ghp-import
 
 # Clonamos repositorio
 git clone https://github.com/penserbjorne/penserbjorne.github.io.git
-```
 
-## Generar y ejecutar sitio
-
-```bash
 # Nos movemos a la carpeta con la fuente del sitio
 # Recuerda que ya estabamos dentro dentro de la carpeta del entorno virtual
 cd penserbjorne.github.io/pelican
+```
 
-# Relimina los archivos generados previamente
+## Comando para generar y ejecutar sitio (corta)
+
+Recuerda algunas de estas tareas fueron modificadas para ajustarse al flujo de
+de desarrollo del sitio.
+
+```bash
+# Desarrollo
+invoke livereload
+
+# Rroducción
+invoke gh-pages
+```
+
+## Comando para generar y ejecutar sitio (extendida)
+
+Recuerda algunas de estas tareas fueron modificadas para ajustarse al flujo de
+de desarrollo del sitio.
+
+```bash
+
+# Elimina los archivos generados previamente
 invoke clean
 
-# Genera el sitio, convierte de Markdown a HTML
+# Genera el sitio para ver en local
 invoke build
 
-# Regenera el sitio cada vez que se hace un cambio
+# Genera el sitio para ver en local eliminando previamente los archivos generados
+invoke rebuild
+
+# Regenera el sitio para ver en local cada vez que se hace un cambio
 invoke regenerate
 
 # Permite visualizar el sitio de manera local en http://localhost:8000/
 invoke serve
 
+# Genera el sitio para ver en local
+# y luego lo permite visualizar de manera local en http://localhost:8000/
+invoke reserve
+
+# Genera el sitio para producción
+invoke preview
+
 # Permite visualizar el sitio de manera local en http://localhost:8000/
-# y regenrar el sitio cada vez que haya un cambio
+# y regenrar el sitio cada vez que haya un cambio, todo para local
 invoke livereload
 
-# Permite subir el sitio al servidor correspondiente mediante SSH
+# Permite subir el sitio al servidor correspondiente mediante rsync y SSH
 invoke publish
+
+# Publica el sitio de producción en Github Pages
+invoke gh-pages
 ```
