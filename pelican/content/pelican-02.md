@@ -1,7 +1,7 @@
 ---
 Title: Pelican (II), creación de entradas para un blog estático con Pelican
 Date: 2020-05-09
-Modified: 2020-05-09
+Modified: 2020-08-20
 Tags: blog, pelican
 Keywords: blog, pelican
 Category: pelican
@@ -158,10 +158,17 @@ procederá a convertirlo.
 Una vez que tenemos el archivo con su extensión `.md` y que le añadimos las
 etiquetas necesarias podemos comenzar a escribir su contenido en `Markdown`.
 
+Para ver conocer otros detalles de como insertar imágenes o contenido estático
+en una entrada te recomendamos que revises la sección para
+[escribir contenido](https://docs.getpelican.com/en/stable/content.html) de
+`Pelican`, tal vez algún día escribamos una guía de redacción para `Pelican`
+pero por ahora no.
+
 Una vez que la entrada ha sido redactada podemos proceder a procesar el sitio
 para que se genere el archivo de salida. Esto lo hacemos con los comandos que
-vimos en la [entrada anterior]({filename}./pelican-01.md) (que te recomiendo leer para que
-no te pierdas en la estructura de archivos y de trabajo que utilizamos aquí).
+vimos en la [entrada anterior]({filename}./pelican-01.md) (que te recomiendo
+leer para que no te pierdas en la estructura de archivos y de trabajo que
+utilizamos aquí).
 
 ```bash
 # Generamos la salida HTML una carpeta arriba de donde estamos
