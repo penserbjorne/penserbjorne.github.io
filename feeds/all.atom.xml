@@ -1,5 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog de Penserbjorne</title><link href="https://penserbjorne.github.io/" rel="alternate"></link><link href="https://penserbjorne.github.io/feeds/all.atom.xml" rel="self"></link><id>https://penserbjorne.github.io/</id><updated>2020-08-21T00:00:00-05:00</updated><subtitle>Bienvenido al pequeño espacio virtual en donde plasmo una parte de mi ...</subtitle><entry><title>Pelican (00), cheat sheet</title><link href="https://penserbjorne.github.io/pelican-00-cheat-sheet-es-MX.html" rel="alternate"></link><published>2020-08-20T00:00:00-05:00</published><updated>2020-08-21T00:00:00-05:00</updated><author><name>Penserbjorne</name></author><id>tag:penserbjorne.github.io,2020-08-20:/pelican-00-cheat-sheet-es-MX.html</id><summary type="html">&lt;p&gt;Recopilación de comandos para no olvidar como gestionar el blog con&amp;nbsp;Pelican&lt;/p&gt;</summary><content type="html">&lt;h1&gt;What is&amp;nbsp;this?&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog de Penserbjorne</title><link href="https://penserbjorne.github.io/" rel="alternate"></link><link href="https://penserbjorne.github.io/feeds/all.atom.xml" rel="self"></link><id>https://penserbjorne.github.io/</id><updated>2020-08-21T00:00:00-05:00</updated><entry><title>Pelican (04), configuración del sitio (tema)</title><link href="https://penserbjorne.github.io/pelican-04-configuracion-del-sitio-tema-es-MX.html" rel="alternate"></link><published>2020-08-21T00:00:00-05:00</published><updated>2020-08-21T00:00:00-05:00</updated><author><name>Penserbjorne</name></author><id>tag:penserbjorne.github.io,2020-08-21:/pelican-04-configuracion-del-sitio-tema-es-MX.html</id><summary type="html">&lt;p&gt;Configuración para añadir un tema a un sitio con&amp;nbsp;Pelican&lt;/p&gt;</summary><content type="html">&lt;h1&gt;What is&amp;nbsp;this?&lt;/h1&gt;
+&lt;p&gt;Andamos con todo, anoche terminamos la
+&lt;a href="https://penserbjorne.github.io/pelican-03-configuracion-del-sitio-construccion-y-elementos-basicos-es-MX.html"&gt;tercera entrada de Pelican, para modificar la construcción del sitio y configurar algunas cositas del sitio&lt;/a&gt;,
+sé que no es mucho, pero es trabajo honesto&amp;nbsp;haha&lt;/p&gt;
+&lt;p&gt;Bueno, esta cuarta entrada será para configurar un tema a nuestro&amp;nbsp;sitio.&lt;/p&gt;
+&lt;p&gt;Y el &lt;em&gt;disclaimer&lt;/em&gt; de siempre, como ya hemos dicho, toda la documentación necesaria
+(y extendida) se encuentra en &lt;a href="https://docs.getpelican.com"&gt;el blog oficial de Pelican&lt;/a&gt;,
+por lo que si se necesita mayor información o detalle de algo, visitar el sitio
+oficial (recuerda siempre, &lt;strong&gt;#&lt;span class="caps"&gt;RTFM&lt;/span&gt;&lt;/strong&gt;).&lt;/p&gt;
+&lt;h1&gt;pelican-themes&lt;/h1&gt;
+&lt;p&gt;Dentro de las herramientas que necesitamos utilizar con &lt;code&gt;Pelican&lt;/code&gt; se encuentra
+&lt;code&gt;pelican-themes&lt;/code&gt; la cual como su nombre lo indica es para trabajar con temas&amp;nbsp;:&amp;#39;v&lt;/p&gt;
+&lt;p&gt;Esta herramientas nos va a permitir gestionar temas pudiendo instalarlos en
+nuestro equipo para utilizarlos al desarrollar el sitio, así como&amp;nbsp;eliminarlos.&lt;/p&gt;
+&lt;p&gt;Esta herramienta ya viene instalada junto con &lt;code&gt;Pelican&lt;/code&gt; asi que no necesitamos
+realizar pasos&amp;nbsp;extras.&lt;/p&gt;
+&lt;p&gt;Los parámetros que toma la herramienta son los&amp;nbsp;siguientes:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;-l, --list
+  Show the themes already installed
+
+-i theme_path, --install theme_path
+  One or more themes to install
+
+-r theme_name, --remove theme_name
+  One or more themes to remove
+
+-s theme_path, --symlink theme_path
+  Same as “–install”, but create a symbolic link instead of copying the theme.
+  Useful &lt;span class="k"&gt;for&lt;/span&gt; theme development
+
+-v, --verbose
+  Verbose output
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Si quieres ver algunos ejemplos de uso más detallados puedes revisar la sección
+correspondiente de la documentación de &lt;code&gt;Pelican&lt;/code&gt; dando click
+&lt;a href="https://docs.getpelican.com/en/stable/pelican-themes.html"&gt;aquí&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;Seleccionando e instalando un&amp;nbsp;tema&lt;/h1&gt;
+&lt;p&gt;Vale, ya vimos que podemos &lt;em&gt;instalar&lt;/em&gt; temas y utilizarlos, pero, ¿donde están
+los temas? Tranqui, para eso, &lt;code&gt;Pelican&lt;/code&gt; tiene un listado de temas en &lt;code&gt;GitHub&lt;/code&gt;
+que puedes revisar entrando
+&lt;a href="https://github.com/getpelican/pelican-themes"&gt;aquí&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Ahí mismo en el &lt;code&gt;GitHub&lt;/code&gt; podrás encontrar otra forma de trabajar con temas por
+si la que vemos aquí no te&amp;nbsp;agrada.&lt;/p&gt;
+&lt;p&gt;Para utilizar un tema primero necesitamos clonar el repositorio de temas de
+&lt;code&gt;Pelican&lt;/code&gt;. Este repositorio no tiene que estar dentro de tu repositorio actual
+del blog, así que guardalo en otra&amp;nbsp;ubicación..&lt;/p&gt;
+&lt;p&gt;Para descargarlo utilizaremos el parámetro  &lt;code&gt;--recursive&lt;/code&gt; para clonar el repo
+junto a sus submodulos, y a los submodulos de los submodulos, y así
+recursivamente xD. Esto es básicamente para que los temas no se rompan al
+clonarlos por falta de algún&amp;nbsp;submodulo.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git clone --recursive https://github.com/getpelican/pelican-themes ~/path-to-projects/pelican-themes
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Ya tenemos clonados los temas en nuestro equipo, por lo cual podemos &lt;em&gt;instalar&lt;/em&gt;
+uno el sitio que estamos desarrollando. Para esto le indicaremos a
+&lt;code&gt;pelican-themes&lt;/code&gt; la ruta donde se encuentran los archivos del&amp;nbsp;tema.&lt;/p&gt;
+&lt;p&gt;Del listado de temas vamos a probar con
+&lt;a href="https://github.com/getpelican/pelican-themes/tree/master/bootstrap2-dark"&gt;bootstrap2-dark&lt;/a&gt;, hemos elegido este tema simplemente porque somos demasiado cliche. La
+carpeta donde se encuentran los archivos fuente del tema en este caso es
+&lt;code&gt;~/path-to-projects/pelican-themes/bootstrap2-dark&lt;/code&gt;, y es la que indicaremos a
+&lt;code&gt;pelican-themes&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pelican-themes --install ~/path-to-projects/pelican-themes/bootstrap2-dark
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Si queremos ver cuales temas se encuentran instalados podemos&amp;nbsp;ejecutar:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pelican-themes --list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;El cual nos dará una salida como la&amp;nbsp;siguiente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;notmyidea
+bootstrap2-dark
+simple
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;En la salida anterior podemos observar que tenemos tres instalados, los dos que
+vienen predeterminados en &lt;code&gt;Pelican&lt;/code&gt; que son &lt;code&gt;notmyidea&lt;/code&gt; y &lt;code&gt;simple&lt;/code&gt;, y el que
+hemos instalado previamente, &lt;code&gt;bootstrap2-dark&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;En caso de querer eliminar algún tema instalado podemos&amp;nbsp;ejecutar:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Para eliminar un solo tema&lt;/span&gt;
+pelican-themes --remove nombre-del-tema
+
+&lt;span class="c1"&gt;# Para eliminar varios temas&lt;/span&gt;
+pelican-themes --remove nombre-del-tema-1 nombre-del-tema-2 nombre-del-tema-3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Aplicando el tema&amp;nbsp;instalado&lt;/h1&gt;
+&lt;p&gt;Para poder utilizar nuestro tema instalado tenemos que ir al archivo
+&lt;code&gt;pelicanconf.py&lt;/code&gt; y asignarle un valor a la variable &lt;code&gt;THEME&lt;/code&gt;, en este caso la
+variable quedaría como &lt;code&gt;THEME = u'bootstrap2-dark'&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Con este pequeño basta con construir de nuevo el sitio con los comandos
+de la &lt;a href="https://penserbjorne.github.io/pelican-03-configuracion-del-sitio-construccion-y-elementos-basicos-es-MX.html"&gt;entrada anterior&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Desarrollo&lt;/span&gt;
+invoke livereload
+
+&lt;span class="c1"&gt;# Producción&lt;/span&gt;
+invoke gh-pages
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;!--Pendiente insertar imágenes comparativas --&gt;
+
+&lt;p&gt;Para probar otros temas basta con seguir los pasos anteriores hasta encontrar
+uno que sea de tu agrado&amp;nbsp;:)&lt;/p&gt;
+&lt;h1&gt;Siguientes&amp;nbsp;pasos&lt;/h1&gt;
+&lt;p&gt;Nuestro sitio ya tiene un poco más de personalidad aunque sigue siendo bastante
+cliché, al menos ya es responsivo y se podrá leer en dispositivos&amp;nbsp;móviles.&lt;/p&gt;
+&lt;p&gt;Para siguientes entradas nos haria falta revisar como agregar algunas secciones
+como un &lt;code&gt;about&lt;/code&gt; o un &lt;code&gt;contact&lt;/code&gt; y revisar el tema de plugins, y probablemente
+con eso habremos terminado de configurar el sitio&amp;nbsp;:)&lt;/p&gt;
+&lt;p&gt;Nos vemos en otra ocasión pimpollo que utiliza &lt;code&gt;Pelican&lt;/code&gt;.&lt;/p&gt;</content><category term="pelican"></category><category term="blog"></category><category term="pelican"></category></entry><entry><title>Pelican (00), cheat sheet</title><link href="https://penserbjorne.github.io/pelican-00-cheat-sheet-es-MX.html" rel="alternate"></link><published>2020-08-20T00:00:00-05:00</published><updated>2020-08-21T00:00:00-05:00</updated><author><name>Penserbjorne</name></author><id>tag:penserbjorne.github.io,2020-08-20:/pelican-00-cheat-sheet-es-MX.html</id><summary type="html">&lt;p&gt;Recopilación de comandos para no olvidar como gestionar el blog con&amp;nbsp;Pelican&lt;/p&gt;</summary><content type="html">&lt;h1&gt;What is&amp;nbsp;this?&lt;/h1&gt;
 &lt;p&gt;Weno weno, ¿de que va esta entrada? Pues simplemente es mi &lt;code&gt;cheat sheet&lt;/code&gt; para
 gestionar este blog con &lt;code&gt;Pelican&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Como ya hemos dicho, toda la documentación necesaria (y extendida) se

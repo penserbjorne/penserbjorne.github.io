@@ -1,313 +1,370 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-        <meta charset="utf-8" />
-        <meta name="generator" content="Pelican" />
-        <title>Blog de Penserbjorne</title>
-        <link rel="stylesheet" href="https://penserbjorne.github.io/theme/css/main.css" />
-        <link href="https://penserbjorne.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Blog de Penserbjorne Atom Feed" />
-</head>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Blog de Penserbjorne</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Penserbjorne">
 
-<body id="index" class="home">
-<a href="https://github.com/penserbjorne/">
-<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+    <!-- Le styles -->
+    <link rel="stylesheet" href="https://penserbjorne.github.io/theme/css/bootstrap.dark.css" type="text/css" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      .tag-1 {
+        font-size: 13pt;
+      }
+      .tag-2 {
+        font-size: 10pt;
+      }
+      .tag-2 {
+        font-size: 8pt;
+      }
+      .tag-4 {
+        font-size: 6pt;
+     }
+    </style>
+    <link href="https://penserbjorne.github.io/theme/css/bootstrap-responsive.dark.css" rel="stylesheet">
+        <link href="https://penserbjorne.github.io/theme/css/font-awesome.css" rel="stylesheet">
+
+    <link href="https://penserbjorne.github.io/theme/css/pygments.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="https://penserbjorne.github.io/theme/images/favicon.ico">
+    <link rel="apple-touch-icon" href="https://penserbjorne.github.io/theme/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://penserbjorne.github.io/theme/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://penserbjorne.github.io/theme/images/apple-touch-icon-114x114.png">
+
+    <link href="https://penserbjorne.github.io/" type="application/atom+xml" rel="alternate" title="Blog de Penserbjorne ATOM Feed" />
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="https://penserbjorne.github.io/index.html">Blog de Penserbjorne </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+                          <li class="divider-vertical"></li>
+                  <li >
+                    <a href="https://penserbjorne.github.io/category/htb.html">
+						<i class="icon-folder-open icon-large"></i>htb
+					</a>
+                  </li>
+                  <li >
+                    <a href="https://penserbjorne.github.io/category/init.html">
+						<i class="icon-folder-open icon-large"></i>init
+					</a>
+                  </li>
+                  <li >
+                    <a href="https://penserbjorne.github.io/category/pelican.html">
+						<i class="icon-folder-open icon-large"></i>pelican
+					</a>
+                  </li>
+
+                          <ul class="nav pull-right">
+                                <li><a href="https://penserbjorne.github.io/archives.html"><i class="icon-th-list"></i>Archives</a></li>
+                          </ul>
+
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="span9" id="content">
+        <div class="article">
+                <h1><a href="https://penserbjorne.github.io/pelican-04-configuracion-del-sitio-tema-es-MX.html">Pelican (04), configuración del sitio&nbsp;(tema)</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2020-08-21T00:00:00-05:00">
+        <i class="icon-calendar"></i>vie 21 agosto 2020
+</abbr>
+<span class="label">By</span>
+<a href="https://penserbjorne.github.io/author/penserbjorne.html"><i class="icon-user"></i>Penserbjorne</a>
+<span class="label">Category</span>
+<a href="https://penserbjorne.github.io/category/pelican.html"><i class="icon-folder-open"></i>pelican</a>.
+
+
+<span class="label">Tags</span>
+	<a href="https://penserbjorne.github.io/tag/blog.html"><i class="icon-tag"></i>blog</a>
+	<a href="https://penserbjorne.github.io/tag/pelican.html"><i class="icon-tag"></i>pelican</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>Configuración para añadir un tema a un sitio con&nbsp;Pelican</p>
+                        <a class="btn primary xsmall" href="https://penserbjorne.github.io/pelican-04-configuracion-del-sitio-tema-es-MX.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+        <div class="article">
+                <h1><a href="https://penserbjorne.github.io/pelican-00-cheat-sheet-es-MX.html">Pelican (00), cheat&nbsp;sheet</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2020-08-20T00:00:00-05:00">
+        <i class="icon-calendar"></i>jue 20 agosto 2020
+</abbr>
+<span class="label">By</span>
+<a href="https://penserbjorne.github.io/author/penserbjorne.html"><i class="icon-user"></i>Penserbjorne</a>
+<span class="label">Category</span>
+<a href="https://penserbjorne.github.io/category/pelican.html"><i class="icon-folder-open"></i>pelican</a>.
+
+
+<span class="label">Tags</span>
+	<a href="https://penserbjorne.github.io/tag/blog.html"><i class="icon-tag"></i>blog</a>
+	<a href="https://penserbjorne.github.io/tag/pelican.html"><i class="icon-tag"></i>pelican</a>
+	<a href="https://penserbjorne.github.io/tag/cheat-sheet.html"><i class="icon-tag"></i>cheat sheet</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>Recopilación de comandos para no olvidar como gestionar el blog con&nbsp;Pelican</p>
+                        <a class="btn primary xsmall" href="https://penserbjorne.github.io/pelican-00-cheat-sheet-es-MX.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+        <div class="article">
+                <h1><a href="https://penserbjorne.github.io/pelican-03-configuracion-del-sitio-construccion-y-elementos-basicos-es-MX.html">Pelican (03), configuración del sitio (construcción y elementos&nbsp;básicos)</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2020-08-20T00:00:00-05:00">
+        <i class="icon-calendar"></i>jue 20 agosto 2020
+</abbr>
+<span class="label">By</span>
+<a href="https://penserbjorne.github.io/author/penserbjorne.html"><i class="icon-user"></i>Penserbjorne</a>
+<span class="label">Category</span>
+<a href="https://penserbjorne.github.io/category/pelican.html"><i class="icon-folder-open"></i>pelican</a>.
+
+
+<span class="label">Tags</span>
+	<a href="https://penserbjorne.github.io/tag/blog.html"><i class="icon-tag"></i>blog</a>
+	<a href="https://penserbjorne.github.io/tag/pelican.html"><i class="icon-tag"></i>pelican</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>Configuración para construir y asignar elementos básicos de un sitio con&nbsp;Pelican</p>
+                        <a class="btn primary xsmall" href="https://penserbjorne.github.io/pelican-03-configuracion-del-sitio-construccion-y-elementos-basicos-es-MX.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+        <div class="article">
+                <h1><a href="https://penserbjorne.github.io/hack-the-box-0001-starting-point-es-MX.html">Hack-The-Box (0001) > Starting&nbsp;point</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2020-08-06T00:00:00-05:00">
+        <i class="icon-calendar"></i>jue 06 agosto 2020
+</abbr>
+<span class="label">By</span>
+<a href="https://penserbjorne.github.io/author/penserbjorne.html"><i class="icon-user"></i>penserbjorne</a>
+<span class="label">Category</span>
+<a href="https://penserbjorne.github.io/category/htb.html"><i class="icon-folder-open"></i>htb</a>.
+
+
+<span class="label">Tags</span>
+	<a href="https://penserbjorne.github.io/tag/blog.html"><i class="icon-tag"></i>blog</a>
+	<a href="https://penserbjorne.github.io/tag/penserbjorne.html"><i class="icon-tag"></i>penserbjorne</a>
+	<a href="https://penserbjorne.github.io/tag/htb.html"><i class="icon-tag"></i>htb</a>
+	<a href="https://penserbjorne.github.io/tag/pentest.html"><i class="icon-tag"></i>pentest</a>
+	<a href="https://penserbjorne.github.io/tag/hacking.html"><i class="icon-tag"></i>hacking</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>Anotaciones sobre la sección &#8220;Starting point&#8221; de&nbsp;Hack-The-Box</p>
+                        <a class="btn primary xsmall" href="https://penserbjorne.github.io/hack-the-box-0001-starting-point-es-MX.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+        <div class="article">
+                <h1><a href="https://penserbjorne.github.io/hack-the-box-0002-starting-point-archetype-es-MX.html">Hack-The-Box (0002) > Starting point > Archetype</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2020-08-06T00:00:00-05:00">
+        <i class="icon-calendar"></i>jue 06 agosto 2020
+</abbr>
+<span class="label">By</span>
+<a href="https://penserbjorne.github.io/author/penserbjorne.html"><i class="icon-user"></i>penserbjorne</a>
+<span class="label">Category</span>
+<a href="https://penserbjorne.github.io/category/htb.html"><i class="icon-folder-open"></i>htb</a>.
+
+
+<span class="label">Tags</span>
+	<a href="https://penserbjorne.github.io/tag/blog.html"><i class="icon-tag"></i>blog</a>
+	<a href="https://penserbjorne.github.io/tag/penserbjorne.html"><i class="icon-tag"></i>penserbjorne</a>
+	<a href="https://penserbjorne.github.io/tag/htb.html"><i class="icon-tag"></i>htb</a>
+	<a href="https://penserbjorne.github.io/tag/pentest.html"><i class="icon-tag"></i>pentest</a>
+	<a href="https://penserbjorne.github.io/tag/hacking.html"><i class="icon-tag"></i>hacking</a>
+	<a href="https://penserbjorne.github.io/tag/archetype.html"><i class="icon-tag"></i>archetype</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>Anotaciones sobre la máquina &#8220;Archetype&#8221; de la sección &#8220;Starting point&#8221; de&nbsp;Hack-The-Box</p>
+                        <a class="btn primary xsmall" href="https://penserbjorne.github.io/hack-the-box-0002-starting-point-archetype-es-MX.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+        <div class="article">
+                <h1><a href="https://penserbjorne.github.io/pelican-02-creacion-de-entradas-para-un-blog-estatico-con-pelican-es-MX.html">Pelican (02), creación de entradas para un blog estático con&nbsp;Pelican</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2020-05-09T00:00:00-05:00">
+        <i class="icon-calendar"></i>sáb 09 mayo 2020
+</abbr>
+<span class="label">By</span>
+<a href="https://penserbjorne.github.io/author/penserbjorne.html"><i class="icon-user"></i>Penserbjorne</a>
+<span class="label">Category</span>
+<a href="https://penserbjorne.github.io/category/pelican.html"><i class="icon-folder-open"></i>pelican</a>.
+
+
+<span class="label">Tags</span>
+	<a href="https://penserbjorne.github.io/tag/blog.html"><i class="icon-tag"></i>blog</a>
+	<a href="https://penserbjorne.github.io/tag/pelican.html"><i class="icon-tag"></i>pelican</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>Creación de entradas para un blog estático con&nbsp;Pelican</p>
+                        <a class="btn primary xsmall" href="https://penserbjorne.github.io/pelican-02-creacion-de-entradas-para-un-blog-estatico-con-pelican-es-MX.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+        <div class="article">
+                <h1><a href="https://penserbjorne.github.io/pelican-01-creacion-de-un-blog-estatico-con-pelican-es-MX.html">Pelican (01), creación de un blog estático con&nbsp;Pelican</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2020-04-24T00:00:00-05:00">
+        <i class="icon-calendar"></i>vie 24 abril 2020
+</abbr>
+<span class="label">By</span>
+<a href="https://penserbjorne.github.io/author/penserbjorne.html"><i class="icon-user"></i>Penserbjorne</a>
+<span class="label">Category</span>
+<a href="https://penserbjorne.github.io/category/pelican.html"><i class="icon-folder-open"></i>pelican</a>.
+
+
+<span class="label">Tags</span>
+	<a href="https://penserbjorne.github.io/tag/blog.html"><i class="icon-tag"></i>blog</a>
+	<a href="https://penserbjorne.github.io/tag/pelican.html"><i class="icon-tag"></i>pelican</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>Creación de un blog estático con&nbsp;Pelican</p>
+                        <a class="btn primary xsmall" href="https://penserbjorne.github.io/pelican-01-creacion-de-un-blog-estatico-con-pelican-es-MX.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+        <div class="article">
+                <h1><a href="https://penserbjorne.github.io/hola-mundo-es-MX.html">Hola&nbsp;Mundo</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2020-04-11T00:00:00-05:00">
+        <i class="icon-calendar"></i>sáb 11 abril 2020
+</abbr>
+<span class="label">By</span>
+<a href="https://penserbjorne.github.io/author/penserbjorne.html"><i class="icon-user"></i>penserbjorne</a>
+<span class="label">Category</span>
+<a href="https://penserbjorne.github.io/category/init.html"><i class="icon-folder-open"></i>init</a>.
+
+
+<span class="label">Tags</span>
+	<a href="https://penserbjorne.github.io/tag/blog.html"><i class="icon-tag"></i>blog</a>
+	<a href="https://penserbjorne.github.io/tag/penserbjorne.html"><i class="icon-tag"></i>penserbjorne</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>Inauguración del blog de&nbsp;Penserbjorne</p>
+                        <a class="btn primary xsmall" href="https://penserbjorne.github.io/hola-mundo-es-MX.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+
+        </div><!--/span-->
+
+                <div class="span3 well sidebar-nav" id="sidebar">
+<ul class="nav nav-list">
+<li class="nav-header"><h4><i class="icon-external-link"></i>blogroll</h4></li>
+    <li><a href="https://lidsol.org/"><i class="icon-external-link"></i>LIDSoL</a></li>
+    <li><a href="https://elotl.mx/"><i class="icon-external-link"></i>Comunidad Elotl</a></li>
+    <li><a href="https://protege.la/"><i class="icon-external-link"></i>protege.la</a></li>
+    <li><a href="https://socialtic.org/"><i class="icon-external-link"></i>SocialTIC</a></li>
+<li class="nav-header"><h4><i class="icon-home icon-large"></i> social</h4></li>
+<li><a href="https://penserbjorne.github.io/" rel="alternate"><i class="icon-bookmark icon-large"></i>atom feed</a></li>
+    <li><a href="https://twitter.com/_penserbjorne"><i class="icon-twitter-sign icon-large"></i>twitter</a></li>
+    <li><a href="https://github.com/penserbjorne/"><i class="icon-github-sign icon-large"></i>github</a></li>
+
+<li class="nav-header"><h4><i class="icon-folder-close icon-large"></i>Categories</h4></li>
+<li>
+<a href="https://penserbjorne.github.io/category/htb.html">
+    <i class="icon-folder-open icon-large"></i>htb
 </a>
-        <header id="banner" class="body">
-                <h1><a href="https://penserbjorne.github.io/">Blog de Penserbjorne <strong>Bienvenido al pequeño espacio virtual en donde plasmo una parte de mi ...</strong></a></h1>
-                <nav><ul>
-                    <li><a href="https://penserbjorne.github.io/category/htb.html">htb</a></li>
-                    <li><a href="https://penserbjorne.github.io/category/init.html">init</a></li>
-                    <li><a href="https://penserbjorne.github.io/category/pelican.html">pelican</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+</li>
+<li>
+<a href="https://penserbjorne.github.io/category/init.html">
+    <i class="icon-folder-open icon-large"></i>init
+</a>
+</li>
+<li>
+<a href="https://penserbjorne.github.io/category/pelican.html">
+    <i class="icon-folder-open icon-large"></i>pelican
+</a>
+</li>
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="https://penserbjorne.github.io/pelican-00-cheat-sheet-es-MX.html">Pelican (00), cheat&nbsp;sheet</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2020-08-20T00:00:00-05:00">
-                Published: jue 20 agosto 2020
-        </abbr>
-		<br />
-        <abbr class="modified" title="2020-08-21T00:00:00-05:00">
-                Updated: vie 21 agosto 2020
-        </abbr>
+<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://penserbjorne.github.io/author/penserbjorne.html">Penserbjorne</a>
-        </address>
-<p>In <a href="https://penserbjorne.github.io/category/pelican.html">pelican</a>.</p>
-<p>tags: <a href="https://penserbjorne.github.io/tag/blog.html">blog</a> <a href="https://penserbjorne.github.io/tag/pelican.html">pelican</a> <a href="https://penserbjorne.github.io/tag/cheat-sheet.html">cheat sheet</a> </p>
-</footer><!-- /.post-info --><h1>What is&nbsp;this?</h1>
-<p>Weno weno, ¿de que va esta entrada? Pues simplemente es mi <code>cheat sheet</code> para
-gestionar este blog con <code>Pelican</code>.</p>
-<p>Como ya hemos dicho, toda la documentación necesaria (y extendida) se
-encuentra en <a href="https://docs.getpelican.com">el blog oficial de Pelican</a>, por lo
-que si se necesita mayor información o detalle de algo, visitar el sitio oficial
-(recuerda siempre, <strong>#<span class="caps">RTFM</span></strong>).</p>
-<h1>Comandos</h1>
-<h2>Preparación del&nbsp;entorno</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># Creación del entorno</span>
-virtualenv ~/path/to/project
+<li class="nav-header"><h4><i class="icon-twitter-sign"></i>Twitter</h4></li>
+<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'profile',
+  rpp: 4,
+  interval: 30000,
+  width: 'auto',
+  height: 300,
+  theme: {
+	shell: {
+	  background: '#f5f5f5',
+	  color: '#000000'
+	},
+	tweets: {
+	  background: '#ffffff',
+	  color: '#000000',
+	  links: '#1a50a1'
+	}
+  },
+  features: {
+	scrollbar: false,
+	loop: false,
+	live: false,
+	behavior: 'all'
+  }
+}).render().setUser('@_penserbjorne').start();
+</script>
 
-<span class="c1"># Nos movemos a la carpeta creada</span>
-<span class="nb">cd</span> ~/path/to/project
+</ul>        </div><!--/.well -->
 
-<span class="c1"># Activamos el entorno</span>
-<span class="nb">source</span> bin/activate
+      </div><!--/row-->
 
-<span class="c1"># Instalación de herramientas</span>
-pip install pelican Markdown typogrify invoke livereload ghp-import
+      <hr>
 
-<span class="c1"># Actualización de herramientas</span>
-pip install --upgrade pelican Markdown typogrify invoke livereload ghp-import
+      <footer>
+        <address id="about">
+                Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican <i class="icon-external-link"></i></a>,
+                                which takes great advantage of <a href="http://python.org">Python <i class="icon-external-link"></i></a>.
+        </address><!-- /#about -->
 
-<span class="c1"># Clonamos repositorio</span>
-git clone https://github.com/penserbjorne/penserbjorne.github.io.git
+        <p>The theme is based on <a href="http://twitter.github.com/bootstrap/">Bootstrap from Twitter <i class="icon-external-link"></i></a>,
+                   and <a href="http://fortawesome.github.com/Font-Awesome/">Font-Awesome <i class="icon-external-link"></i></a>, thanks!</p>
+      </footer>
 
-<span class="c1"># Nos movemos a la carpeta con la fuente del sitio</span>
-<span class="c1"># Recuerda que ya estabamos dentro dentro de la carpeta del entorno virtual</span>
-<span class="nb">cd</span> penserbjorne.github.io/pelican
-</code></pre></div>
-
-
-<h2>Comando para generar y ejecutar sitio&nbsp;(corta)</h2>
-<p>Recuerda algunas de estas tareas fueron modificadas para ajustarse al flujo de
-de desarrollo del&nbsp;sitio.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Desarrollo</span>
-invoke livereload
-
-<span class="c1"># Rroducción</span>
-invoke gh-pages
-</code></pre></div>
+    </div><!--/.fluid-container-->
 
 
-<h2>Comando para generar y ejecutar sitio&nbsp;(extendida)</h2>
-<p>Recuerda algunas de estas tareas fueron modificadas para ajustarse al flujo de
-de desarrollo del&nbsp;sitio.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Elimina los archivos generados previamente</span>
-invoke clean
 
-<span class="c1"># Genera el sitio para ver en local</span>
-invoke build
-
-<span class="c1"># Genera el sitio para ver en local eliminando previamente los archivos generados</span>
-invoke rebuild
-
-<span class="c1"># Regenera el sitio para ver en local cada vez que se hace un cambio</span>
-invoke regenerate
-
-<span class="c1"># Permite visualizar el sitio de manera local en http://localhost:8000/</span>
-invoke serve
-
-<span class="c1"># Genera el sitio para ver en local</span>
-<span class="c1"># y luego lo permite visualizar de manera local en http://localhost:8000/</span>
-invoke reserve
-
-<span class="c1"># Genera el sitio para producción</span>
-invoke preview
-
-<span class="c1"># Permite visualizar el sitio de manera local en http://localhost:8000/</span>
-<span class="c1"># y regenrar el sitio cada vez que haya un cambio, todo para local</span>
-invoke livereload
-
-<span class="c1"># Permite subir el sitio al servidor correspondiente mediante rsync y SSH</span>
-invoke publish
-
-<span class="c1"># Publica el sitio de producción en Github Pages</span>
-invoke gh-pages
-</code></pre></div>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://penserbjorne.github.io/pelican-03-configuracion-del-sitio-construccion-y-elementos-basicos-es-MX.html" rel="bookmark"
-                           title="Permalink to Pelican (03), configuración del sitio (construcción y elementos básicos)">Pelican (03), configuración del sitio (construcción y elementos&nbsp;básicos)</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2020-08-20T00:00:00-05:00">
-                Published: jue 20 agosto 2020
-        </abbr>
-		<br />
-        <abbr class="modified" title="2020-08-21T00:00:00-05:00">
-                Updated: vie 21 agosto 2020
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://penserbjorne.github.io/author/penserbjorne.html">Penserbjorne</a>
-        </address>
-<p>In <a href="https://penserbjorne.github.io/category/pelican.html">pelican</a>.</p>
-<p>tags: <a href="https://penserbjorne.github.io/tag/blog.html">blog</a> <a href="https://penserbjorne.github.io/tag/pelican.html">pelican</a> </p>
-</footer><!-- /.post-info -->                <p>Configuración para construir y asignar elementos básicos de un sitio con&nbsp;Pelican</p>
-                <a class="readmore" href="https://penserbjorne.github.io/pelican-03-configuracion-del-sitio-construccion-y-elementos-basicos-es-MX.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://penserbjorne.github.io/hack-the-box-0001-starting-point-es-MX.html" rel="bookmark"
-                           title="Permalink to Hack-The-Box (0001) > Starting point">Hack-The-Box (0001) > Starting&nbsp;point</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2020-08-06T00:00:00-05:00">
-                Published: jue 06 agosto 2020
-        </abbr>
-		<br />
-        <abbr class="modified" title="2020-08-06T00:00:00-05:00">
-                Updated: jue 06 agosto 2020
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://penserbjorne.github.io/author/penserbjorne.html">penserbjorne</a>
-        </address>
-<p>In <a href="https://penserbjorne.github.io/category/htb.html">htb</a>.</p>
-<p>tags: <a href="https://penserbjorne.github.io/tag/blog.html">blog</a> <a href="https://penserbjorne.github.io/tag/penserbjorne.html">penserbjorne</a> <a href="https://penserbjorne.github.io/tag/htb.html">htb</a> <a href="https://penserbjorne.github.io/tag/pentest.html">pentest</a> <a href="https://penserbjorne.github.io/tag/hacking.html">hacking</a> </p>
-</footer><!-- /.post-info -->                <p>Anotaciones sobre la sección &#8220;Starting point&#8221; de&nbsp;Hack-The-Box</p>
-                <a class="readmore" href="https://penserbjorne.github.io/hack-the-box-0001-starting-point-es-MX.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://penserbjorne.github.io/hack-the-box-0002-starting-point-archetype-es-MX.html" rel="bookmark"
-                           title="Permalink to Hack-The-Box (0002) > Starting point > Archetype">Hack-The-Box (0002) > Starting point > Archetype</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2020-08-06T00:00:00-05:00">
-                Published: jue 06 agosto 2020
-        </abbr>
-		<br />
-        <abbr class="modified" title="2020-08-11T00:00:00-05:00">
-                Updated: mar 11 agosto 2020
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://penserbjorne.github.io/author/penserbjorne.html">penserbjorne</a>
-        </address>
-<p>In <a href="https://penserbjorne.github.io/category/htb.html">htb</a>.</p>
-<p>tags: <a href="https://penserbjorne.github.io/tag/blog.html">blog</a> <a href="https://penserbjorne.github.io/tag/penserbjorne.html">penserbjorne</a> <a href="https://penserbjorne.github.io/tag/htb.html">htb</a> <a href="https://penserbjorne.github.io/tag/pentest.html">pentest</a> <a href="https://penserbjorne.github.io/tag/hacking.html">hacking</a> <a href="https://penserbjorne.github.io/tag/archetype.html">archetype</a> </p>
-</footer><!-- /.post-info -->                <p>Anotaciones sobre la máquina &#8220;Archetype&#8221; de la sección &#8220;Starting point&#8221; de&nbsp;Hack-The-Box</p>
-                <a class="readmore" href="https://penserbjorne.github.io/hack-the-box-0002-starting-point-archetype-es-MX.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://penserbjorne.github.io/pelican-02-creacion-de-entradas-para-un-blog-estatico-con-pelican-es-MX.html" rel="bookmark"
-                           title="Permalink to Pelican (02), creación de entradas para un blog estático con Pelican">Pelican (02), creación de entradas para un blog estático con&nbsp;Pelican</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2020-05-09T00:00:00-05:00">
-                Published: sáb 09 mayo 2020
-        </abbr>
-		<br />
-        <abbr class="modified" title="2020-08-20T00:00:00-05:00">
-                Updated: jue 20 agosto 2020
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://penserbjorne.github.io/author/penserbjorne.html">Penserbjorne</a>
-        </address>
-<p>In <a href="https://penserbjorne.github.io/category/pelican.html">pelican</a>.</p>
-<p>tags: <a href="https://penserbjorne.github.io/tag/blog.html">blog</a> <a href="https://penserbjorne.github.io/tag/pelican.html">pelican</a> </p>
-</footer><!-- /.post-info -->                <p>Creación de entradas para un blog estático con&nbsp;Pelican</p>
-                <a class="readmore" href="https://penserbjorne.github.io/pelican-02-creacion-de-entradas-para-un-blog-estatico-con-pelican-es-MX.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://penserbjorne.github.io/pelican-01-creacion-de-un-blog-estatico-con-pelican-es-MX.html" rel="bookmark"
-                           title="Permalink to Pelican (01), creación de un blog estático con Pelican">Pelican (01), creación de un blog estático con&nbsp;Pelican</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2020-04-24T00:00:00-05:00">
-                Published: vie 24 abril 2020
-        </abbr>
-		<br />
-        <abbr class="modified" title="2020-08-20T00:00:00-05:00">
-                Updated: jue 20 agosto 2020
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://penserbjorne.github.io/author/penserbjorne.html">Penserbjorne</a>
-        </address>
-<p>In <a href="https://penserbjorne.github.io/category/pelican.html">pelican</a>.</p>
-<p>tags: <a href="https://penserbjorne.github.io/tag/blog.html">blog</a> <a href="https://penserbjorne.github.io/tag/pelican.html">pelican</a> </p>
-</footer><!-- /.post-info -->                <p>Creación de un blog estático con&nbsp;Pelican</p>
-                <a class="readmore" href="https://penserbjorne.github.io/pelican-01-creacion-de-un-blog-estatico-con-pelican-es-MX.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://penserbjorne.github.io/hola-mundo-es-MX.html" rel="bookmark"
-                           title="Permalink to Hola Mundo">Hola&nbsp;Mundo</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2020-04-11T00:00:00-05:00">
-                Published: sáb 11 abril 2020
-        </abbr>
-		<br />
-        <abbr class="modified" title="2020-04-24T00:00:00-05:00">
-                Updated: vie 24 abril 2020
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://penserbjorne.github.io/author/penserbjorne.html">penserbjorne</a>
-        </address>
-<p>In <a href="https://penserbjorne.github.io/category/init.html">init</a>.</p>
-<p>tags: <a href="https://penserbjorne.github.io/tag/blog.html">blog</a> <a href="https://penserbjorne.github.io/tag/penserbjorne.html">penserbjorne</a> </p>
-</footer><!-- /.post-info -->                <p>Inauguración del blog de&nbsp;Penserbjorne</p>
-                <a class="readmore" href="https://penserbjorne.github.io/hola-mundo-es-MX.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://lidsol.org/">LIDSoL</a></li>
-                            <li><a href="https://elotl.mx/">Comunidad Elotl</a></li>
-                            <li><a href="https://protege.la/">protege.la</a></li>
-                            <li><a href="https://socialtic.org/">SocialTIC</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="https://penserbjorne.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-
-                            <li><a href="https://twitter.com/_penserbjorne">twitter</a></li>
-                            <li><a href="https://github.com/penserbjorne/">github</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-</body>
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://penserbjorne.github.io/theme/js/jquery-1.7.2.min.js"></script>
+    <script src="https://penserbjorne.github.io/theme/js/bootstrap.min.js"></script>
+  </body>
 </html>
