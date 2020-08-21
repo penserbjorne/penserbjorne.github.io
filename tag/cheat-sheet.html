@@ -57,39 +57,65 @@ virtualenv ~/path/to/project
 <span class="nb">source</span> bin/activate
 
 <span class="c1"># Instalación de herramientas</span>
-pip install pelican Markdown typogrify invoke livereload
+pip install pelican Markdown typogrify invoke livereload ghp-import
 
 <span class="c1"># Actualización de herramientas</span>
-pip install --upgrade pelican Markdown typogrify invoke livereload
+pip install --upgrade pelican Markdown typogrify invoke livereload ghp-import
 
 <span class="c1"># Clonamos repositorio</span>
 git clone https://github.com/penserbjorne/penserbjorne.github.io.git
+
+<span class="c1"># Nos movemos a la carpeta con la fuente del sitio</span>
+<span class="c1"># Recuerda que ya estabamos dentro dentro de la carpeta del entorno virtual</span>
+<span class="nb">cd</span> penserbjorne.github.io/pelican
 </code></pre></div>
 
 
-<h2>Generar y ejecutar&nbsp;sitio</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># Nos movemos a la carpeta con la fuente del sitio</span>
-<span class="c1"># Recuerda que ya estabamos dentro dentro de la carpeta del entorno virtual</span>
-<span class="nb">cd</span> penserbjorne.github.io/pelican
+<h2>Comando para generar y ejecutar sitio&nbsp;(corta)</h2>
+<p>Recuerda algunas de estas tareas fueron modificadas para ajustarse al flujo de
+de desarrollo del&nbsp;sitio.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Desarrollo</span>
+invoke livereload
 
-<span class="c1"># Relimina los archivos generados previamente</span>
+<span class="c1"># Rroducción</span>
+invoke gh-pages
+</code></pre></div>
+
+
+<h2>Comando para generar y ejecutar sitio&nbsp;(extendida)</h2>
+<p>Recuerda algunas de estas tareas fueron modificadas para ajustarse al flujo de
+de desarrollo del&nbsp;sitio.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Elimina los archivos generados previamente</span>
 invoke clean
 
-<span class="c1"># Genera el sitio, convierte de Markdown a HTML</span>
+<span class="c1"># Genera el sitio para ver en local</span>
 invoke build
 
-<span class="c1"># Regenera el sitio cada vez que se hace un cambio</span>
+<span class="c1"># Genera el sitio para ver en local eliminando previamente los archivos generados</span>
+invoke rebuild
+
+<span class="c1"># Regenera el sitio para ver en local cada vez que se hace un cambio</span>
 invoke regenerate
 
 <span class="c1"># Permite visualizar el sitio de manera local en http://localhost:8000/</span>
 invoke serve
 
+<span class="c1"># Genera el sitio para ver en local</span>
+<span class="c1"># y luego lo permite visualizar de manera local en http://localhost:8000/</span>
+invoke reserve
+
+<span class="c1"># Genera el sitio para producción</span>
+invoke preview
+
 <span class="c1"># Permite visualizar el sitio de manera local en http://localhost:8000/</span>
-<span class="c1"># y regenrar el sitio cada vez que haya un cambio</span>
+<span class="c1"># y regenrar el sitio cada vez que haya un cambio, todo para local</span>
 invoke livereload
 
-<span class="c1"># Permite subir el sitio al servidor correspondiente mediante SSH</span>
+<span class="c1"># Permite subir el sitio al servidor correspondiente mediante rsync y SSH</span>
 invoke publish
+
+<span class="c1"># Publica el sitio de producción en Github Pages</span>
+invoke gh-pages
 </code></pre></div>                </article>
             </aside><!-- /#featured -->
         <section id="extras" class="body">

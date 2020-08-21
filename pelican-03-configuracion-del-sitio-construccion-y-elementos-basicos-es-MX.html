@@ -60,8 +60,27 @@ que si se necesita mayor información o detalle de algo, visitar el sitio oficia
 (recuerda siempre, <strong>#<span class="caps">RTFM</span></strong>).</p>
 <h1>Archivos de&nbsp;configuración</h1>
 <p>Cuando comenzamos a crear el sitio utilizamos el comando <code>pelican-quickstart</code>
-el cual nos creo la estructura inicial del sitio con algunos archivos de
-configuración. Estos archivos de configuración&nbsp;son:</p>
+el cual nos creo la estructura inicial del sitio con algunos archivos de&nbsp;configuración.</p>
+<p>Recordemos cual es la estructura de trabajo que tenemos hasta este&nbsp;momento:</p>
+<div class="highlight"><pre><span></span><code>/path/to/project
+├── bin/          <span class="c1"># carpeta de virtualenv</span>
+├── include/      <span class="c1"># carpeta de virtualenv</span>
+├── lib/          <span class="c1"># carpeta de virtualenv</span>
+├── local/        <span class="c1"># carpeta de virtualenv</span>
+├── share/        <span class="c1"># carpeta de virtualenv</span>
+└── user.github.io/   <span class="c1"># carpeta del repositorio del sitio</span>
+    └── pelican/      <span class="c1"># carpeta con los archivos fuente del sitio</span>
+        ├── content             
+        │   └── hola-mundo.md <span class="c1"># Entrada nueva</span>
+        ├── output
+        ├── tasks.py
+        ├── Makefile
+        ├── pelicanconf.py
+        └── publishconf.py
+</code></pre></div>
+
+
+<p>Si observamos detenidamente, podemos ver que los archivos de los que hablamos se encuentran en nuestra subcarpeta <code>pelican</code> y&nbsp;son:</p>
 <ul>
 <li><code>Makefile</code></li>
 <li><code>pelicanconf.py</code></li>
@@ -105,30 +124,44 @@ el que podemos automatizar tareas mediante <code>python</code>.</p>
 por lo cual podemos trabajar en automático con este archivo o modificarlo para
 adaptarlo a nuestras&nbsp;necesidades.</p>
 <p>Los comandos que vienen precargados en el archivo <code>tasks.py</code> son:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Relimina los archivos generados previamente</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Elimina los archivos generados previamente</span>
 invoke clean
 
-<span class="c1"># Genera el sitio, convierte de Markdown a HTML</span>
+<span class="c1"># Genera el sitio para ver en local</span>
 invoke build
 
-<span class="c1"># Regenera el sitio cada vez que se hace un cambio</span>
+<span class="c1"># Genera el sitio para ver en local eliminando previamente los archivos generados</span>
+invoke rebuild
+
+<span class="c1"># Regenera el sitio para ver en local cada vez que se hace un cambio</span>
 invoke regenerate
 
 <span class="c1"># Permite visualizar el sitio de manera local en http://localhost:8000/</span>
 invoke serve
 
+<span class="c1"># Genera el sitio para ver en local</span>
+<span class="c1"># y luego lo permite visualizar de manera local en http://localhost:8000/</span>
+invoke reserve
+
+<span class="c1"># Genera el sitio para producción</span>
+invoke preview
+
 <span class="c1"># Permite visualizar el sitio de manera local en http://localhost:8000/</span>
-<span class="c1"># y regenrar el sitio cada vez que haya un cambio</span>
+<span class="c1"># y regenrar el sitio cada vez que haya un cambio, todo para local</span>
 invoke livereload
 
-<span class="c1"># Permite subir el sitio al servidor correspondiente mediante SSH</span>
+<span class="c1"># Permite subir el sitio al servidor correspondiente mediante rsync y SSH</span>
 invoke publish
+
+<span class="c1"># Publica el sitio de producción en Github Pages</span>
+invoke gh-pages
 </code></pre></div>
 
 
 <p>Considerar que para el comando <code>invoke livereload</code> se requiere instalar la
-herramienta <code>livereload</code>, esto lo podemos hacer mediante el siguiente&nbsp;comando:</p>
-<div class="highlight"><pre><span></span><code>python -m pip install livereload
+herramienta <code>livereload</code> y para el comando <code>invoke gp_pages</code> se requiere la
+herramienta <code>ghp-import</code>, esto lo podemos hacer mediante el siguiente&nbsp;comando:</p>
+<div class="highlight"><pre><span></span><code>python -m pip install livereload ghp-import
 </code></pre></div>
 
 
@@ -199,11 +232,139 @@ espacio y el valor de la&nbsp;variable.</p>
 <p>Si quieres ver como van quedando los archivos de configuración de este sitio
 puedes revisar el <a href="https://github.com/penserbjorne/penserbjorne.github.io/blob/master/pelican/pelicanconf.py">aquí (pelicanconf.py)</a> y
 <a href="https://github.com/penserbjorne/penserbjorne.github.io/blob/master/pelican/publishconf.py">aquí (publishconf.py)</a>.</p>
-<h1>Modificando el comportamiento de construcción del&nbsp;sitio</h1>
+<h1>Modificando el pipeline de construcción del&nbsp;sitio</h1>
 <p>Ok, ya tenemos instaladas las herramientas para construir el sitio y hemos
 configurado algunas variables que que tenga un poco más de personalidad el
 sitio, eso significa que podemos&nbsp;generarlo.</p>
-<p>Los pasos para ir construyendo y probando el sitio podrian ser los&nbsp;siguientes:</p>
+<p>Los pasos a ir siguiendo son sencillos y deben estar pensados en dos momentos:
+desarrollo y&nbsp;producción.</p>
+<p>Durante el desarrollo queremos ir viendo los cambios que vamos realizando en
+local, así que podemos&nbsp;utilizar:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Limpiamos archivos previos</span>
+invoke clean
+<span class="c1"># Comenzamos a generar sobre el vuelo</span>
+invoke livereload
+</code></pre></div>
+
+
+<p>Cuando hemos terminado de probar queremos construir el sitio para producción y
+enviarlo a nuestro repositorio de <code>GitHub</code>, por lo que podemos&nbsp;utilizar:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Limpiamos archivo previos</span>
+invoke clean
+<span class="c1"># Generamos versión de producción y publicamos actualizaciones</span>
+invoke gh-pages
+</code></pre></div>
+
+
+<p>Pero tenemos un problema, la tarea <code>clean</code> va a borrar todo en el contenido de
+salida, esto incluiría la carpeta <code>pelican</code> por lo cual perderíamos los archivos
+fuente del blog. Hay que modificar esta tarea&nbsp;:)</p>
+<p>Y como queremos que todo quede en un solo comando tanto para producción como
+para publicar el sitio vamos a hacer algunos cambios más que veremos a&nbsp;continuación.</p>
+<p>Para modificar las tareas nos vamos a dirigir al archivo <code>tasks.py</code></p>
+<h2>Modificando la tarea <code>clean</code></h2>
+<p>Vamos a comentar las lineas que se encuentran dentro de la tarea y las vamos a
+reemplazar por el siguiente segmento de&nbsp;código:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">CONFIG</span><span class="p">[</span><span class="s1">&#39;deploy_path&#39;</span><span class="p">]):</span>
+      <span class="n">c</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;rm -rf ../author ../category ../drafts ../feeds ../tag ../theme &#39;</span>
+              <span class="s1">&#39;../*.html&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>De tal modo que la tarea se vería más o menos&nbsp;así:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@task</span>
+<span class="k">def</span> <span class="nf">clean</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Remove generated files&quot;&quot;&quot;</span>
+    <span class="c1"># Old code</span>
+    <span class="c1">#if os.path.isdir(CONFIG[&#39;deploy_path&#39;]):</span>
+    <span class="c1">#    shutil.rmtree(CONFIG[&#39;deploy_path&#39;])</span>
+    <span class="c1">#    os.makedirs(CONFIG[&#39;deploy_path&#39;])</span>
+
+    <span class="c1">#My own code</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">CONFIG</span><span class="p">[</span><span class="s1">&#39;deploy_path&#39;</span><span class="p">]):</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;rm -rf ../author ../category ../drafts ../feeds ../tag ../theme &#39;</span>
+                <span class="s1">&#39;../*.html&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+
+<h2>Modificando la tarea <code>livereload</code></h2>
+<p>Queremos que cada vez que se haga un <code>livereload</code> también se limpien los
+archivos generados previamente, por lo cual vamos a añadir la tarea <code>clean</code>
+dentro de <code>livereload</code>, para esto solamente añadiremos la linea <code>clean(c)</code> antes
+<code>build(c)</code>, de tal modo que la tarea quedaría&nbsp;así:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@task</span>
+<span class="k">def</span> <span class="nf">livereload</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Automatically reload browser tab upon file modification.&quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">livereload</span> <span class="kn">import</span> <span class="n">Server</span>
+    <span class="n">clean</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>    <span class="c1"># New line, added by me :)</span>
+    <span class="n">build</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="n">server</span> <span class="o">=</span> <span class="n">Server</span><span class="p">()</span>
+    <span class="c1"># Watch the base settings file</span>
+    <span class="n">server</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span><span class="n">CONFIG</span><span class="p">[</span><span class="s1">&#39;settings_base&#39;</span><span class="p">],</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">build</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+    <span class="c1"># Watch content source files</span>
+    <span class="n">content_file_extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;.md&#39;</span><span class="p">,</span> <span class="s1">&#39;.rst&#39;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">extension</span> <span class="ow">in</span> <span class="n">content_file_extensions</span><span class="p">:</span>
+        <span class="n">content_blob</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{0}</span><span class="s1">/**/*</span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">SETTINGS</span><span class="p">[</span><span class="s1">&#39;PATH&#39;</span><span class="p">],</span> <span class="n">extension</span><span class="p">)</span>
+        <span class="n">server</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span><span class="n">content_blob</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">build</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+    <span class="c1"># Watch the theme&#39;s templates and static assets</span>
+    <span class="n">theme_path</span> <span class="o">=</span> <span class="n">SETTINGS</span><span class="p">[</span><span class="s1">&#39;THEME&#39;</span><span class="p">]</span>
+    <span class="n">server</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">/templates/*.html&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">theme_path</span><span class="p">),</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">build</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+    <span class="n">static_file_extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;.css&#39;</span><span class="p">,</span> <span class="s1">&#39;.js&#39;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">extension</span> <span class="ow">in</span> <span class="n">static_file_extensions</span><span class="p">:</span>
+        <span class="n">static_file</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{0}</span><span class="s1">/static/**/*</span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">theme_path</span><span class="p">,</span> <span class="n">extension</span><span class="p">)</span>
+        <span class="n">server</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span><span class="n">static_file</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">build</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+    <span class="c1"># Serve output path on configured port</span>
+    <span class="n">server</span><span class="o">.</span><span class="n">serve</span><span class="p">(</span><span class="n">port</span><span class="o">=</span><span class="n">CONFIG</span><span class="p">[</span><span class="s1">&#39;port&#39;</span><span class="p">],</span> <span class="n">root</span><span class="o">=</span><span class="n">CONFIG</span><span class="p">[</span><span class="s1">&#39;deploy_path&#39;</span><span class="p">])</span>
+</code></pre></div>
+
+
+<h2>Modificando la tarea <code>gh-pages</code></h2>
+<p>De igual manera  que en la tarea anterior, simplemente vamos a añadir la linea
+de <code>clean(c)</code> para verificar que no haya basura. La linea a añadir la ubicaremos
+antes de la linea <code>preview(c)</code>.</p>
+<p>Y por alguna razón en este momento estamos teniendo problemas con <code>ghp-import</code>
+por lo que vamos a añadir lo&nbsp;siguiente:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+
+<p>La tarea quedaría de la siguiente&nbsp;manera:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@task</span>
+<span class="k">def</span> <span class="nf">gh_pages</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Publish to GitHub Pages&quot;&quot;&quot;</span>
+    <span class="n">clean</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="n">preview</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+    <span class="c1"># Old code</span>
+    <span class="c1">#c.run(&#39;ghp-import -b {github_pages_branch} &#39;</span>
+    <span class="c1">#      &#39;-m {commit_message} &#39;</span>
+    <span class="c1">#      &#39;{deploy_path} -p&#39;.format(**CONFIG))</span>
+
+    <span class="c1"># My code</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;git add --all&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">CONFIG</span><span class="p">))</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;git commit -m </span><span class="si">{commit_message}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">CONFIG</span><span class="p">))</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;git push&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">CONFIG</span><span class="p">))</span>
+</code></pre></div>
+
+
+<p>Podemos ver que el nombre de la función dentro de <code>tasks.py</code> lleva guion bajo
+mientras que al utilizarlo con <code>invoke</code> lleva guion medio, esto no sé porque
+sea pero hay que dejarlo&nbsp;así.</p>
+<p>Y consideremos que dentro del archivo <code>tasks.py</code> existen las variables <code>github_pages_branch</code> y <code>commit_message</code> que son a las que se hace referencia
+en la&nbsp;tarea.</p>
+<h2>Pasos resultantes para construir el&nbsp;sitio</h2>
+<p>Con los cambios anteriores nuestro pequeño ciclo de desarrollo&nbsp;quedaría:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Desarrollo</span>
+invoke livereload
+
+<span class="c1"># Producción</span>
+invoke gh-pages
+</code></pre></div>
+
+
+<p>Con esto hemos automatizado un poco nuestro pequeño ciclo de desarrollo del&nbsp;sitio.</p>
+<p>Para ver el archivo <code>tasks.py</code> de este blog puedes dar click
+<a href="https://github.com/penserbjorne/penserbjorne.github.io/blob/master/pelican/tasks.py">aquí</a></p>
 <h1>Siguientes&nbsp;pasos</h1>
 <p>Ya tenemos nuestro sitio con un poco mas de estilo, sin embargo sigue sin ser
 responsivo por lo cual no es fácil de leer en dispositivos con pantallas

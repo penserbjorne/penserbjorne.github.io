@@ -18,39 +18,65 @@ virtualenv ~/path/to/project
 &lt;span class="nb"&gt;source&lt;/span&gt; bin/activate
 
 &lt;span class="c1"&gt;# Instalación de herramientas&lt;/span&gt;
-pip install pelican Markdown typogrify invoke livereload
+pip install pelican Markdown typogrify invoke livereload ghp-import
 
 &lt;span class="c1"&gt;# Actualización de herramientas&lt;/span&gt;
-pip install --upgrade pelican Markdown typogrify invoke livereload
+pip install --upgrade pelican Markdown typogrify invoke livereload ghp-import
 
 &lt;span class="c1"&gt;# Clonamos repositorio&lt;/span&gt;
 git clone https://github.com/penserbjorne/penserbjorne.github.io.git
+
+&lt;span class="c1"&gt;# Nos movemos a la carpeta con la fuente del sitio&lt;/span&gt;
+&lt;span class="c1"&gt;# Recuerda que ya estabamos dentro dentro de la carpeta del entorno virtual&lt;/span&gt;
+&lt;span class="nb"&gt;cd&lt;/span&gt; penserbjorne.github.io/pelican
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h2&gt;Generar y ejecutar&amp;nbsp;sitio&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Nos movemos a la carpeta con la fuente del sitio&lt;/span&gt;
-&lt;span class="c1"&gt;# Recuerda que ya estabamos dentro dentro de la carpeta del entorno virtual&lt;/span&gt;
-&lt;span class="nb"&gt;cd&lt;/span&gt; penserbjorne.github.io/pelican
+&lt;h2&gt;Comando para generar y ejecutar sitio&amp;nbsp;(corta)&lt;/h2&gt;
+&lt;p&gt;Recuerda algunas de estas tareas fueron modificadas para ajustarse al flujo de
+de desarrollo del&amp;nbsp;sitio.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Desarrollo&lt;/span&gt;
+invoke livereload
 
-&lt;span class="c1"&gt;# Relimina los archivos generados previamente&lt;/span&gt;
+&lt;span class="c1"&gt;# Rroducción&lt;/span&gt;
+invoke gh-pages
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Comando para generar y ejecutar sitio&amp;nbsp;(extendida)&lt;/h2&gt;
+&lt;p&gt;Recuerda algunas de estas tareas fueron modificadas para ajustarse al flujo de
+de desarrollo del&amp;nbsp;sitio.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Elimina los archivos generados previamente&lt;/span&gt;
 invoke clean
 
-&lt;span class="c1"&gt;# Genera el sitio, convierte de Markdown a HTML&lt;/span&gt;
+&lt;span class="c1"&gt;# Genera el sitio para ver en local&lt;/span&gt;
 invoke build
 
-&lt;span class="c1"&gt;# Regenera el sitio cada vez que se hace un cambio&lt;/span&gt;
+&lt;span class="c1"&gt;# Genera el sitio para ver en local eliminando previamente los archivos generados&lt;/span&gt;
+invoke rebuild
+
+&lt;span class="c1"&gt;# Regenera el sitio para ver en local cada vez que se hace un cambio&lt;/span&gt;
 invoke regenerate
 
 &lt;span class="c1"&gt;# Permite visualizar el sitio de manera local en http://localhost:8000/&lt;/span&gt;
 invoke serve
 
+&lt;span class="c1"&gt;# Genera el sitio para ver en local&lt;/span&gt;
+&lt;span class="c1"&gt;# y luego lo permite visualizar de manera local en http://localhost:8000/&lt;/span&gt;
+invoke reserve
+
+&lt;span class="c1"&gt;# Genera el sitio para producción&lt;/span&gt;
+invoke preview
+
 &lt;span class="c1"&gt;# Permite visualizar el sitio de manera local en http://localhost:8000/&lt;/span&gt;
-&lt;span class="c1"&gt;# y regenrar el sitio cada vez que haya un cambio&lt;/span&gt;
+&lt;span class="c1"&gt;# y regenrar el sitio cada vez que haya un cambio, todo para local&lt;/span&gt;
 invoke livereload
 
-&lt;span class="c1"&gt;# Permite subir el sitio al servidor correspondiente mediante SSH&lt;/span&gt;
+&lt;span class="c1"&gt;# Permite subir el sitio al servidor correspondiente mediante rsync y SSH&lt;/span&gt;
 invoke publish
+
+&lt;span class="c1"&gt;# Publica el sitio de producción en Github Pages&lt;/span&gt;
+invoke gh-pages
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="pelican"></category><category term="blog"></category><category term="pelican"></category><category term="cheat sheet"></category></entry><entry><title>Pelican (03), configuración del sitio (construcción y elementos básicos)</title><link href="https://penserbjorne.github.io/pelican-03-configuracion-del-sitio-construccion-y-elementos-basicos-es-MX.html" rel="alternate"></link><published>2020-08-20T00:00:00-05:00</published><updated>2020-08-21T00:00:00-05:00</updated><author><name>Penserbjorne</name></author><id>tag:penserbjorne.github.io,2020-08-20:/pelican-03-configuracion-del-sitio-construccion-y-elementos-basicos-es-MX.html</id><summary type="html">&lt;p&gt;Configuración para construir y asignar elementos básicos de un sitio con&amp;nbsp;Pelican&lt;/p&gt;</summary><content type="html">&lt;h1&gt;What is&amp;nbsp;this?&lt;/h1&gt;
 &lt;p&gt;Ok, esta es la tercera entrada para trabajar generando un sitio con &lt;code&gt;Pelican&lt;/code&gt; en
 &lt;code&gt;gh-pages&lt;/code&gt;. En esta ocasión vamos modificar algunas configuraciones para probar
@@ -66,8 +92,27 @@ que si se necesita mayor información o detalle de algo, visitar el sitio oficia
 (recuerda siempre, &lt;strong&gt;#&lt;span class="caps"&gt;RTFM&lt;/span&gt;&lt;/strong&gt;).&lt;/p&gt;
 &lt;h1&gt;Archivos de&amp;nbsp;configuración&lt;/h1&gt;
 &lt;p&gt;Cuando comenzamos a crear el sitio utilizamos el comando &lt;code&gt;pelican-quickstart&lt;/code&gt;
-el cual nos creo la estructura inicial del sitio con algunos archivos de
-configuración. Estos archivos de configuración&amp;nbsp;son:&lt;/p&gt;
+el cual nos creo la estructura inicial del sitio con algunos archivos de&amp;nbsp;configuración.&lt;/p&gt;
+&lt;p&gt;Recordemos cual es la estructura de trabajo que tenemos hasta este&amp;nbsp;momento:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;/path/to/project
+├── bin/          &lt;span class="c1"&gt;# carpeta de virtualenv&lt;/span&gt;
+├── include/      &lt;span class="c1"&gt;# carpeta de virtualenv&lt;/span&gt;
+├── lib/          &lt;span class="c1"&gt;# carpeta de virtualenv&lt;/span&gt;
+├── local/        &lt;span class="c1"&gt;# carpeta de virtualenv&lt;/span&gt;
+├── share/        &lt;span class="c1"&gt;# carpeta de virtualenv&lt;/span&gt;
+└── user.github.io/   &lt;span class="c1"&gt;# carpeta del repositorio del sitio&lt;/span&gt;
+    └── pelican/      &lt;span class="c1"&gt;# carpeta con los archivos fuente del sitio&lt;/span&gt;
+        ├── content             
+        │   └── hola-mundo.md &lt;span class="c1"&gt;# Entrada nueva&lt;/span&gt;
+        ├── output
+        ├── tasks.py
+        ├── Makefile
+        ├── pelicanconf.py
+        └── publishconf.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Si observamos detenidamente, podemos ver que los archivos de los que hablamos se encuentran en nuestra subcarpeta &lt;code&gt;pelican&lt;/code&gt; y&amp;nbsp;son:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;Makefile&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;pelicanconf.py&lt;/code&gt;&lt;/li&gt;
@@ -111,30 +156,44 @@ el que podemos automatizar tareas mediante &lt;code&gt;python&lt;/code&gt;.&lt;/
 por lo cual podemos trabajar en automático con este archivo o modificarlo para
 adaptarlo a nuestras&amp;nbsp;necesidades.&lt;/p&gt;
 &lt;p&gt;Los comandos que vienen precargados en el archivo &lt;code&gt;tasks.py&lt;/code&gt; son:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Relimina los archivos generados previamente&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Elimina los archivos generados previamente&lt;/span&gt;
 invoke clean
 
-&lt;span class="c1"&gt;# Genera el sitio, convierte de Markdown a HTML&lt;/span&gt;
+&lt;span class="c1"&gt;# Genera el sitio para ver en local&lt;/span&gt;
 invoke build
 
-&lt;span class="c1"&gt;# Regenera el sitio cada vez que se hace un cambio&lt;/span&gt;
+&lt;span class="c1"&gt;# Genera el sitio para ver en local eliminando previamente los archivos generados&lt;/span&gt;
+invoke rebuild
+
+&lt;span class="c1"&gt;# Regenera el sitio para ver en local cada vez que se hace un cambio&lt;/span&gt;
 invoke regenerate
 
 &lt;span class="c1"&gt;# Permite visualizar el sitio de manera local en http://localhost:8000/&lt;/span&gt;
 invoke serve
 
+&lt;span class="c1"&gt;# Genera el sitio para ver en local&lt;/span&gt;
+&lt;span class="c1"&gt;# y luego lo permite visualizar de manera local en http://localhost:8000/&lt;/span&gt;
+invoke reserve
+
+&lt;span class="c1"&gt;# Genera el sitio para producción&lt;/span&gt;
+invoke preview
+
 &lt;span class="c1"&gt;# Permite visualizar el sitio de manera local en http://localhost:8000/&lt;/span&gt;
-&lt;span class="c1"&gt;# y regenrar el sitio cada vez que haya un cambio&lt;/span&gt;
+&lt;span class="c1"&gt;# y regenrar el sitio cada vez que haya un cambio, todo para local&lt;/span&gt;
 invoke livereload
 
-&lt;span class="c1"&gt;# Permite subir el sitio al servidor correspondiente mediante SSH&lt;/span&gt;
+&lt;span class="c1"&gt;# Permite subir el sitio al servidor correspondiente mediante rsync y SSH&lt;/span&gt;
 invoke publish
+
+&lt;span class="c1"&gt;# Publica el sitio de producción en Github Pages&lt;/span&gt;
+invoke gh-pages
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Considerar que para el comando &lt;code&gt;invoke livereload&lt;/code&gt; se requiere instalar la
-herramienta &lt;code&gt;livereload&lt;/code&gt;, esto lo podemos hacer mediante el siguiente&amp;nbsp;comando:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python -m pip install livereload
+herramienta &lt;code&gt;livereload&lt;/code&gt; y para el comando &lt;code&gt;invoke gp_pages&lt;/code&gt; se requiere la
+herramienta &lt;code&gt;ghp-import&lt;/code&gt;, esto lo podemos hacer mediante el siguiente&amp;nbsp;comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python -m pip install livereload ghp-import
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -205,11 +264,139 @@ espacio y el valor de la&amp;nbsp;variable.&lt;/p&gt;
 &lt;p&gt;Si quieres ver como van quedando los archivos de configuración de este sitio
 puedes revisar el &lt;a href="https://github.com/penserbjorne/penserbjorne.github.io/blob/master/pelican/pelicanconf.py"&gt;aquí (pelicanconf.py)&lt;/a&gt; y
 &lt;a href="https://github.com/penserbjorne/penserbjorne.github.io/blob/master/pelican/publishconf.py"&gt;aquí (publishconf.py)&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;Modificando el comportamiento de construcción del&amp;nbsp;sitio&lt;/h1&gt;
+&lt;h1&gt;Modificando el pipeline de construcción del&amp;nbsp;sitio&lt;/h1&gt;
 &lt;p&gt;Ok, ya tenemos instaladas las herramientas para construir el sitio y hemos
 configurado algunas variables que que tenga un poco más de personalidad el
 sitio, eso significa que podemos&amp;nbsp;generarlo.&lt;/p&gt;
-&lt;p&gt;Los pasos para ir construyendo y probando el sitio podrian ser los&amp;nbsp;siguientes:&lt;/p&gt;
+&lt;p&gt;Los pasos a ir siguiendo son sencillos y deben estar pensados en dos momentos:
+desarrollo y&amp;nbsp;producción.&lt;/p&gt;
+&lt;p&gt;Durante el desarrollo queremos ir viendo los cambios que vamos realizando en
+local, así que podemos&amp;nbsp;utilizar:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Limpiamos archivos previos&lt;/span&gt;
+invoke clean
+&lt;span class="c1"&gt;# Comenzamos a generar sobre el vuelo&lt;/span&gt;
+invoke livereload
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Cuando hemos terminado de probar queremos construir el sitio para producción y
+enviarlo a nuestro repositorio de &lt;code&gt;GitHub&lt;/code&gt;, por lo que podemos&amp;nbsp;utilizar:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Limpiamos archivo previos&lt;/span&gt;
+invoke clean
+&lt;span class="c1"&gt;# Generamos versión de producción y publicamos actualizaciones&lt;/span&gt;
+invoke gh-pages
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Pero tenemos un problema, la tarea &lt;code&gt;clean&lt;/code&gt; va a borrar todo en el contenido de
+salida, esto incluiría la carpeta &lt;code&gt;pelican&lt;/code&gt; por lo cual perderíamos los archivos
+fuente del blog. Hay que modificar esta tarea&amp;nbsp;:)&lt;/p&gt;
+&lt;p&gt;Y como queremos que todo quede en un solo comando tanto para producción como
+para publicar el sitio vamos a hacer algunos cambios más que veremos a&amp;nbsp;continuación.&lt;/p&gt;
+&lt;p&gt;Para modificar las tareas nos vamos a dirigir al archivo &lt;code&gt;tasks.py&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;Modificando la tarea &lt;code&gt;clean&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Vamos a comentar las lineas que se encuentran dentro de la tarea y las vamos a
+reemplazar por el siguiente segmento de&amp;nbsp;código:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;isdir&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;CONFIG&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;deploy_path&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]):&lt;/span&gt;
+      &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;rm -rf ../author ../category ../drafts ../feeds ../tag ../theme &amp;#39;&lt;/span&gt;
+              &lt;span class="s1"&gt;&amp;#39;../*.html&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;De tal modo que la tarea se vería más o menos&amp;nbsp;así:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nd"&gt;@task&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;clean&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Remove generated files&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="c1"&gt;# Old code&lt;/span&gt;
+    &lt;span class="c1"&gt;#if os.path.isdir(CONFIG[&amp;#39;deploy_path&amp;#39;]):&lt;/span&gt;
+    &lt;span class="c1"&gt;#    shutil.rmtree(CONFIG[&amp;#39;deploy_path&amp;#39;])&lt;/span&gt;
+    &lt;span class="c1"&gt;#    os.makedirs(CONFIG[&amp;#39;deploy_path&amp;#39;])&lt;/span&gt;
+
+    &lt;span class="c1"&gt;#My own code&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;isdir&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;CONFIG&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;deploy_path&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]):&lt;/span&gt;
+        &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;rm -rf ../author ../category ../drafts ../feeds ../tag ../theme &amp;#39;&lt;/span&gt;
+                &lt;span class="s1"&gt;&amp;#39;../*.html&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Modificando la tarea &lt;code&gt;livereload&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Queremos que cada vez que se haga un &lt;code&gt;livereload&lt;/code&gt; también se limpien los
+archivos generados previamente, por lo cual vamos a añadir la tarea &lt;code&gt;clean&lt;/code&gt;
+dentro de &lt;code&gt;livereload&lt;/code&gt;, para esto solamente añadiremos la linea &lt;code&gt;clean(c)&lt;/code&gt; antes
+&lt;code&gt;build(c)&lt;/code&gt;, de tal modo que la tarea quedaría&amp;nbsp;así:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nd"&gt;@task&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;livereload&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Automatically reload browser tab upon file modification.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;livereload&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Server&lt;/span&gt;
+    &lt;span class="n"&gt;clean&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;    &lt;span class="c1"&gt;# New line, added by me :)&lt;/span&gt;
+    &lt;span class="n"&gt;build&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Server&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="c1"&gt;# Watch the base settings file&lt;/span&gt;
+    &lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;watch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;CONFIG&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;settings_base&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;build&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="c1"&gt;# Watch content source files&lt;/span&gt;
+    &lt;span class="n"&gt;content_file_extensions&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;.md&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;.rst&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;extension&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;content_file_extensions&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;content_blob&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="si"&gt;{0}&lt;/span&gt;&lt;span class="s1"&gt;/**/*&lt;/span&gt;&lt;span class="si"&gt;{1}&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;SETTINGS&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;PATH&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;extension&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;watch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;content_blob&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;build&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="c1"&gt;# Watch the theme&amp;#39;s templates and static assets&lt;/span&gt;
+    &lt;span class="n"&gt;theme_path&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;SETTINGS&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;THEME&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;watch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s1"&gt;/templates/*.html&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;theme_path&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;build&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="n"&gt;static_file_extensions&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;.js&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;extension&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;static_file_extensions&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;static_file&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="si"&gt;{0}&lt;/span&gt;&lt;span class="s1"&gt;/static/**/*&lt;/span&gt;&lt;span class="si"&gt;{1}&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;theme_path&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;extension&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;watch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;static_file&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;build&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="c1"&gt;# Serve output path on configured port&lt;/span&gt;
+    &lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;serve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;CONFIG&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;port&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;root&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;CONFIG&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;deploy_path&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Modificando la tarea &lt;code&gt;gh-pages&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;De igual manera  que en la tarea anterior, simplemente vamos a añadir la linea
+de &lt;code&gt;clean(c)&lt;/code&gt; para verificar que no haya basura. La linea a añadir la ubicaremos
+antes de la linea &lt;code&gt;preview(c)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Y por alguna razón en este momento estamos teniendo problemas con &lt;code&gt;ghp-import&lt;/code&gt;
+por lo que vamos a añadir lo&amp;nbsp;siguiente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;La tarea quedaría de la siguiente&amp;nbsp;manera:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nd"&gt;@task&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;gh_pages&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Publish to GitHub Pages&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="n"&gt;clean&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;preview&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="c1"&gt;# Old code&lt;/span&gt;
+    &lt;span class="c1"&gt;#c.run(&amp;#39;ghp-import -b {github_pages_branch} &amp;#39;&lt;/span&gt;
+    &lt;span class="c1"&gt;#      &amp;#39;-m {commit_message} &amp;#39;&lt;/span&gt;
+    &lt;span class="c1"&gt;#      &amp;#39;{deploy_path} -p&amp;#39;.format(**CONFIG))&lt;/span&gt;
+
+    &lt;span class="c1"&gt;# My code&lt;/span&gt;
+    &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;git add --all&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;CONFIG&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;git commit -m &lt;/span&gt;&lt;span class="si"&gt;{commit_message}&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;CONFIG&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;git push&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;CONFIG&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Podemos ver que el nombre de la función dentro de &lt;code&gt;tasks.py&lt;/code&gt; lleva guion bajo
+mientras que al utilizarlo con &lt;code&gt;invoke&lt;/code&gt; lleva guion medio, esto no sé porque
+sea pero hay que dejarlo&amp;nbsp;así.&lt;/p&gt;
+&lt;p&gt;Y consideremos que dentro del archivo &lt;code&gt;tasks.py&lt;/code&gt; existen las variables &lt;code&gt;github_pages_branch&lt;/code&gt; y &lt;code&gt;commit_message&lt;/code&gt; que son a las que se hace referencia
+en la&amp;nbsp;tarea.&lt;/p&gt;
+&lt;h2&gt;Pasos resultantes para construir el&amp;nbsp;sitio&lt;/h2&gt;
+&lt;p&gt;Con los cambios anteriores nuestro pequeño ciclo de desarrollo&amp;nbsp;quedaría:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Desarrollo&lt;/span&gt;
+invoke livereload
+
+&lt;span class="c1"&gt;# Producción&lt;/span&gt;
+invoke gh-pages
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Con esto hemos automatizado un poco nuestro pequeño ciclo de desarrollo del&amp;nbsp;sitio.&lt;/p&gt;
+&lt;p&gt;Para ver el archivo &lt;code&gt;tasks.py&lt;/code&gt; de este blog puedes dar click
+&lt;a href="https://github.com/penserbjorne/penserbjorne.github.io/blob/master/pelican/tasks.py"&gt;aquí&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;Siguientes&amp;nbsp;pasos&lt;/h1&gt;
 &lt;p&gt;Ya tenemos nuestro sitio con un poco mas de estilo, sin embargo sigue sin ser
 responsivo por lo cual no es fácil de leer en dispositivos con pantallas
