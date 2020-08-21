@@ -129,6 +129,6 @@ def gh_pages(c):
     #      '{deploy_path} -p'.format(**CONFIG))
 
     # My code
-    c.run('git add --all'.format(**CONFIG))
+    c.run('git add --all')
     c.run('git commit -m {commit_message}'.format(**CONFIG))
-    c.run('git push'.format(**CONFIG))
+    c.run('git push')

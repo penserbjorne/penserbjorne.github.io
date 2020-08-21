@@ -345,6 +345,9 @@ Y por alguna razón en este momento estamos teniendo problemas con `ghp-import`
 por lo que vamos a añadir lo siguiente:
 
 ```python
+c.run('git add --all')
+c.run('git commit -m {commit_message}'.format(**CONFIG))
+c.run('git push')
 ```
 
 La tarea quedaría de la siguiente manera:
@@ -362,9 +365,9 @@ def gh_pages(c):
     #      '{deploy_path} -p'.format(**CONFIG))
 
     # My code
-    c.run('git add --all'.format(**CONFIG))
+    c.run('git add --all')
     c.run('git commit -m {commit_message}'.format(**CONFIG))
-    c.run('git push'.format(**CONFIG))
+    c.run('git push')
 ```
 
 Podemos ver que el nombre de la función dentro de `tasks.py` lleva guion bajo

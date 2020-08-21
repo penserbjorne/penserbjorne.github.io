@@ -324,7 +324,9 @@ de <code>clean(c)</code> para verificar que no haya basura. La linea a añadir l
 antes de la linea <code>preview(c)</code>.</p>
 <p>Y por alguna razón en este momento estamos teniendo problemas con <code>ghp-import</code>
 por lo que vamos a añadir lo&nbsp;siguiente:</p>
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code><span class="n">c</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;git add --all&#39;</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;git commit -m </span><span class="si">{commit_message}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">CONFIG</span><span class="p">))</span>
+<span class="n">c</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;git push&#39;</span><span class="p">)</span>
 </code></pre></div>
 
 
@@ -341,9 +343,9 @@ por lo que vamos a añadir lo&nbsp;siguiente:</p>
     <span class="c1">#      &#39;{deploy_path} -p&#39;.format(**CONFIG))</span>
 
     <span class="c1"># My code</span>
-    <span class="n">c</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;git add --all&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">CONFIG</span><span class="p">))</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;git add --all&#39;</span><span class="p">)</span>
     <span class="n">c</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;git commit -m </span><span class="si">{commit_message}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">CONFIG</span><span class="p">))</span>
-    <span class="n">c</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;git push&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">CONFIG</span><span class="p">))</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;git push&#39;</span><span class="p">)</span>
 </code></pre></div>
 
 
