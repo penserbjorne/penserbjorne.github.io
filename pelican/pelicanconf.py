@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Penserbjorne'
 SITENAME = u'Blog de Penserbjorne'
-SITESUBTITLE = u'Bienvenido al pequeño espacio virtual en donde plasmo una parte de mi ...'
+#SITESUBTITLE = u'Bienvenido al pequeño espacio virtual en donde plasmo una parte de mi ...'
 SITEURL = ''
 
 PATH = 'content'
@@ -13,6 +13,8 @@ OUTPUT_PATH = './../'
 TIMEZONE = 'America/Mexico_City'
 
 DEFAULT_LANG = u'es'
+
+THEME = u'bootstrap2-dark'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
