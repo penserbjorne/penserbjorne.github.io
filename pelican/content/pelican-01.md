@@ -1,7 +1,7 @@
 ---
 Title: Pelican (I), creación de un blog estático con Pelican
 Date: 2020-04-24
-Modified: 2020-05-09
+Modified: 2020-08-20
 Tags: blog, pelican
 Keywords: blog, pelican
 Category: pelican
@@ -100,7 +100,7 @@ En caso de necesitar actualizar alguna de estas herramientas, se puede hacer
 también a través de `pip`.
 
 ```bash
-pip install --upgrade pelican
+pip install --upgrade pelican Markdown typogrify
 ```
 
 # Creación del esqueleto del sitio
