@@ -1,5 +1,5 @@
 ---
-Title: Pelican (I), creación de un blog estático con Pelican
+Title: Pelican (01), creación de un blog estático con Pelican
 Date: 2020-04-24
 Modified: 2020-08-20
 Tags: blog, pelican

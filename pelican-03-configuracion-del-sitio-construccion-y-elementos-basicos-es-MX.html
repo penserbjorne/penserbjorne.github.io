@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+        <meta charset="utf-8" />
+        <meta name="generator" content="Pelican" />
+        <title>Pelican (03), configuración del sitio (construcción y elementos básicos)</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content="Configuración para construir y asignar elementos básicos de un sitio con Pelican" />
+</head>
+
+<body id="index" class="home">
+<a href="https://github.com/penserbjorne/">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+</a>
+        <header id="banner" class="body">
+                <h1><a href="/">Blog de Penserbjorne <strong>Bienvenido al pequeño espacio virtual en donde plasmo una parte de mi ...</strong></a></h1>
+                <nav><ul>
+                    <li><a href="/category/htb.html">htb</a></li>
+                    <li><a href="/category/init.html">init</a></li>
+                    <li class="active"><a href="/category/pelican.html">pelican</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/pelican-03-configuracion-del-sitio-construccion-y-elementos-basicos-es-MX.html" rel="bookmark"
+           title="Permalink to Pelican (03), configuración del sitio (construcción y elementos básicos)">Pelican (03), configuración del sitio (construcción y elementos&nbsp;básicos)</a></h1>
+<a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="@_penserbjorne">Tweet</a><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2020-08-20T00:00:00-05:00">
+                Published: jue 20 agosto 2020
+        </abbr>
+		<br />
+        <abbr class="modified" title="2020-08-21T00:00:00-05:00">
+                Updated: vie 21 agosto 2020
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/penserbjorne.html">Penserbjorne</a>
+        </address>
+<p>In <a href="/category/pelican.html">pelican</a>.</p>
+<p>tags: <a href="/tag/blog.html">blog</a> <a href="/tag/pelican.html">pelican</a> </p>
+</footer><!-- /.post-info -->      <h1>What is&nbsp;this?</h1>
+<p>Ok, esta es la tercera entrada para trabajar generando un sitio con <code>Pelican</code> en
+<code>gh-pages</code>. En esta ocasión vamos modificar algunas configuraciones para probar
+y construir el sitio, así como asignarle un&nbsp;tema.</p>
+<p>Te recomendamos revisar las entradas anteriores en donde fuimos construyendo
+el sitio sobre el que vamos a trabajar ahora.
+<a href="/pelican-01-creacion-de-un-blog-estatico-con-pelican-es-MX.html">Creación de un blog estático con Pelican</a>
+y
+<a href="/pelican-02-creacion-de-entradas-para-un-blog-estatico-con-pelican-es-MX.html">Creación de entradas para un blog estático con&nbsp;Pelican</a></p>
+<p>Como ya hemos dicho, toda la documentación necesaria (y extendida) se
+encuentra en <a href="https://docs.getpelican.com">el blog oficial de Pelican</a>, por lo
+que si se necesita mayor información o detalle de algo, visitar el sitio oficial
+(recuerda siempre, <strong>#<span class="caps">RTFM</span></strong>).</p>
+<h1>Archivos de&nbsp;configuración</h1>
+<p>Cuando comenzamos a crear el sitio utilizamos el comando <code>pelican-quickstart</code>
+el cual nos creo la estructura inicial del sitio con algunos archivos de
+configuración. Estos archivos de configuración&nbsp;son:</p>
+<ul>
+<li><code>Makefile</code></li>
+<li><code>pelicanconf.py</code></li>
+<li><code>publishconf.py</code></li>
+<li><code>tasks.py</code></li>
+</ul>
+<p>En los archivos <code>pelicanconf.py</code> y <code>publishconf.py</code> vamos a indicar las
+variables de configuración para el&nbsp;sitio.</p>
+<p>Con los archivos <code>Makefile</code> y <code>tasks.py</code> vamos a indicar las acciones necesarias
+para construir el&nbsp;sitio.</p>
+<h1>Construcción del&nbsp;sitio</h1>
+<p>Como recordaras para construir el sitio y previsualizarlo hemos estado
+utilizando los siguientes&nbsp;comandos:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Generamos la salida HTML una carpeta arriba de donde estamos</span>
+pelican content -o ..
+
+<span class="c1"># Levantamos el sitio indicando la salida de los archivos HTML</span>
+pelican --listen -o ..
+</code></pre></div>
+
+
+<p>Estos comando los podemos sustituir utilizando la herramienta
+<a href="https://www.pyinvoke.org/">invoke</a> o la herramienta
+<a href="https://www.gnu.org/software/make/">make</a>.</p>
+<p>En este caso vamos a trabajar con <code>invoke</code> solo para variarle un poco, si te
+interesa leer la versión completa o con <code>make</code> puedes
+<a href="https://docs.getpelican.com/en/stable/publish.html">dar click aquí</a>.</p>
+<p>Para trabajar con <code>invoke</code> necesitamos instalarlo a través de <code>pip</code>. Recuerda
+hacerlo después de haber activado el entorno virtual que creamos en
+<a href="/pelican-01-creacion-de-un-blog-estatico-con-pelican-es-MX.html">la primera entrada</a> y de haber entrado a la carpeta
+<code>pelican</code> que se encuentra dentro del&nbsp;repositorio.</p>
+<p>Para instalar <code>invoke</code> podemos ejecutar lo&nbsp;siguiente:</p>
+<div class="highlight"><pre><span></span><code>python -m pip install invoke
+</code></pre></div>
+
+
+<p>Lo divertido de <code>invoke</code> es que funciona utilizando el archivo <code>tasks.py</code>
+el cual contiene <em>tareas</em> definidas a ejecutar, básicamente es un archivo en
+el que podemos automatizar tareas mediante <code>python</code>.</p>
+<p>Afortunadamente el archivo <code>tasks.py</code> que tenemos ya tiene las tareas definidas
+por lo cual podemos trabajar en automático con este archivo o modificarlo para
+adaptarlo a nuestras&nbsp;necesidades.</p>
+<p>Los comandos que vienen precargados en el archivo <code>tasks.py</code> son:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Genera el sitio, convierte de Markdown a HTML</span>
+invoke build
+
+<span class="c1"># Regenera el sitio cada vez que se hace un cambio</span>
+invoke regenerate
+
+<span class="c1"># Permite visualizar el sitio de manera local en http://localhost:8000/</span>
+invoke serve
+
+<span class="c1"># Permite visualizar el sitio de manera local en http://localhost:8000/</span>
+<span class="c1"># y regenrar el sitio cada vez que haya un cambio</span>
+invoke livereload
+
+<span class="c1"># Permite subir el sitio al servidor correspondiente mediante SSH</span>
+invoke publish
+</code></pre></div>
+
+
+<p>Considerar que para el comando <code>invoke livereload</code> se requiere instalar la
+herramienta <code>livereload</code>, esto lo podemos hacer mediante el siguiente&nbsp;comando:</p>
+<div class="highlight"><pre><span></span><code>python -m pip install livereload
+</code></pre></div>
+
+
+<p>A partir de ahora estaremos trabajando con los comandos previos. Ahora, estos
+comandos requieren algunas configuraciones, por ejemplo, los comandos asociados
+a generar el sitio están configurados para generar los archivos dentro de una
+carpeta llamada <code>output</code> la cual se encuentra al mismo nivel que la carpeta
+<code>pelican</code>. En nuestro caso como estamos trabajando con un blog para un usuario
+de <code>GitHub</code> por lo que necesitamos que los archivos sean generados en el
+directorio raíz del repositorio, esto es una carpeta mas arriba de donde estamos
+actualmente (recuerda que estamos en la capreta <code>pelican</code>).</p>
+<h1>Configuración de variables del&nbsp;sitio</h1>
+<p>Bien, ya vimos que comandos vamos a estar utilizando y ya mencionamos que
+necesitamos configurarlos, esto lo vamos a hacer en los archivos
+<code>pelicanconf.py</code> y <code>publishconf.py</code>.</p>
+<p>El archivo <code>pelicanconf.py</code> es utilizado para trabajar en el desarrollo local
+del sitio mientras que <code>publishconf.py</code> es utilizado para producción. El archivo
+<code>pelicanconf.py</code> es llamado en <code>publishconf.py</code> por lo cual las variables que se
+encuentren en el segundo reescriben a las variables del primero. Por ejemplo,
+si la variable <code>SITEURL</code> se encuentra asignada en ambos archivos, la de
+<code>publishconf.py</code> sobreescribe a la de <code>pelicanconf.py</code>.</p>
+<p>La lista de variables y su descripción la puedes encontrar
+<a href="https://docs.getpelican.com/en/stable/settings.html">aquí</a>. Te recomiendo leer
+este listado ya que aquí abordaremos solo algunas variables para configurar los
+comando anteriores y el tema del&nbsp;sitio.</p>
+<h2>Directorio de&nbsp;salida</h2>
+<p>Para modificar el directorio de salida necesitamos modificar la variable
+<code>OUTPUT_PATH</code> la cual tiene el valor predeterminado de <code>'output/'</code>, en este caso
+vamos a modificar la variable para que el directorio de salida sea en un nivel
+superior a la ruta actual por lo cual variable quedará como
+<code>OUTPUT_PATH = './../'</code>.</p>
+<p>Esta variable hay que asignarla en <code>pelicanconf.py</code>.</p>
+<h2>Algunas otras configuraciones sencillas del sitio&nbsp;:D</h2>
+<p>Bien, ya hemos modificado la ruta de salida, por lo que podemos configurar
+otras variables que le dan más vida al&nbsp;sitio.</p>
+<p>Las siguientes variables las configuraremos en <code>pelicanconf.py</code>:</p>
+<ul>
+<li><code>AUTHOR</code>: Nombre del autor del&nbsp;sitio</li>
+<li><code>SITENAME</code>: Nombre del&nbsp;sitio</li>
+<li><code>SITESUBTITLE</code>: Subtitulo del&nbsp;sitio</li>
+<li><code>TYPOGRIFY</code>: La asignaremos como <code>True</code> para procesar las tipografías y el
+texto del sitio y que tengan mejor&nbsp;presentación.</li>
+<li><code>GITHUB_URL</code>: <span class="caps">URL</span> para el perfil de <code>GitHub</code>, aparecerá un botón para hacer
+fork al&nbsp;sitio.</li>
+<li><code>LINKS</code>: Literalmente es una lista de enlaces que quieres que aparezcan en el&nbsp;sitio.</li>
+<li><code>SOCIAL</code>: La lista de enlaces a tus redes&nbsp;sociales.</li>
+</ul>
+<p>Tanto la sintaxxis de <code>LINKS</code> como la de <code>SOCIAL</code> es la&nbsp;siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">VARIABLE</span> <span class="o">=</span> <span class="o">((</span><span class="s1">&#39;enalce 1&#39;</span>, <span class="s1">&#39;http://url-1.com/&#39;</span><span class="o">)</span>,
+            <span class="o">(</span><span class="s1">&#39;enalce 2&#39;</span>, <span class="s1">&#39;http://url-2.com/&#39;</span><span class="o">)</span>,
+            <span class="o">(</span><span class="s1">&#39;enalce 3&#39;</span>, <span class="s1">&#39;http://url-3.com/&#39;</span><span class="o">)</span>,<span class="o">)</span>
+</code></pre></div>
+
+
+<p>Las siguientes variables las configuraremos en <code>publishconf.py</code>:</p>
+<ul>
+<li><code>SITEURL</code>: <span class="caps">URL</span> del sitio, tiene que incluir http o https al inicio, por
+ejemplo&nbsp;https://sitio.com</li>
+<li><code>DELETE_OUTPUT_DIRECTORY</code>: Dado que no queremos eliminar el directorio de
+salida ya que ahí se encuentra nuestra carpeta de <code>pelican</code> vamos a cambiar su
+valor a <code>False</code>.</li>
+</ul>
+<p>Recuerda que las variables tienen un formato de <code>VARIABLE = valor</code>. El nombre
+de la variable va en mayúsculas seguida de un espacio, el símbolo de <code>=</code>, otro
+espacio y el valor de la&nbsp;variable.</p>
+<p>Si quieres ver como van quedando los archivos de configuración de este sitio
+puedes revisar el <a href="https://github.com/penserbjorne/penserbjorne.github.io/blob/master/pelican/pelicanconf.py">aquí (pelicanconf.py)</a> y
+<a href="https://github.com/penserbjorne/penserbjorne.github.io/blob/master/pelican/publishconf.py">aquí (publishconf.py)</a>.</p>
+<h1>Siguientes&nbsp;pasos</h1>
+<p>Ya tenemos nuestro sitio con un poco mas de estilo, sin embargo sigue sin ser
+responsivo por lo cual no es fácil de leer en dispositivos con pantallas
+medianas o pequeñas, el siguiente paso es configurar un tema responsivo, pero
+esto lo haremos en la siguiente entrada&nbsp;:)</p>
+<p>Que la fuerza te&nbsp;acompañe.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://lidsol.org/">LIDSoL</a></li>
+                            <li><a href="https://elotl.mx/">Comunidad Elotl</a></li>
+                            <li><a href="https://protege.la/">protege.la</a></li>
+                            <li><a href="https://socialtic.org/">SocialTIC</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://twitter.com/_penserbjorne">twitter</a></li>
+                            <li><a href="https://github.com/penserbjorne/">github</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

@@ -1,5 +1,5 @@
 ---
-Title: Pelican (II), creación de entradas para un blog estático con Pelican
+Title: Pelican (02), creación de entradas para un blog estático con Pelican
 Date: 2020-05-09
 Modified: 2020-08-20
 Tags: blog, pelican

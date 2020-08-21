@@ -1,5 +1,5 @@
 ---
-Title: Hack-The-Box > Starting point > Archetype
+Title: Hack-The-Box (0002) > Starting point > Archetype
 Date: 2020-08-06
 Modified: 2020-08-11
 Tags: blog, penserbjorne, htb, pentest, hacking, archetype

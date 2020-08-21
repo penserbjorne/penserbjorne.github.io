@@ -2,11 +2,13 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = u'[Penserbjorne|Paul_Aguilar]'
-SITENAME = u'Penserbjorne'
+AUTHOR = u'Penserbjorne'
+SITENAME = u'Blog de Penserbjorne'
+SITESUBTITLE = u'Bienvenido al pequeño espacio virtual en donde plasmo una parte de mi ...'
 SITEURL = ''
 
 PATH = 'content'
+OUTPUT_PATH = './../'
 
 TIMEZONE = 'America/Mexico_City'
 
@@ -19,18 +21,27 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+# Some liks
+GITHUB_URL = 'https://github.com/penserbjorne/'
+TWITTER_USERNAME = '@_penserbjorne'
+
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),
-         ('Este es un enlace modificado', '#'),)
+LINKS = (
+            ('LIDSoL', 'https://lidsol.org/'),
+            ('Comunidad Elotl', 'https://elotl.mx/'),
+            ('protege.la', 'https://protege.la/'),
+            ('SocialTIC', 'https://socialtic.org/'),
+        )
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (
+            ('twitter', 'https://twitter.com/_penserbjorne'),
+            ('github', 'https://github.com/penserbjorne/'),
+         )
 
 DEFAULT_PAGINATION = 10
+
+TYPOGRIFY = True
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True

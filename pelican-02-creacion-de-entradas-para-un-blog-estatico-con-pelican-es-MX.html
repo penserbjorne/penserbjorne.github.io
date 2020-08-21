@@ -2,13 +2,18 @@
 <html lang="es-MX">
 <head>
         <meta charset="utf-8" />
-        <title>Pelican (II), creación de entradas para un blog estático con Pelican</title>
+        <meta name="generator" content="Pelican" />
+        <title>Pelican (02), creación de entradas para un blog estático con Pelican</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content="Creación de entradas para un blog estático con Pelican" />
 </head>
 
 <body id="index" class="home">
+<a href="https://github.com/penserbjorne/">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+</a>
         <header id="banner" class="body">
-                <h1><a href="/">Penserbjorne </a></h1>
+                <h1><a href="/">Blog de Penserbjorne <strong>Bienvenido al pequeño espacio virtual en donde plasmo una parte de mi ...</strong></a></h1>
                 <nav><ul>
                     <li><a href="/category/htb.html">htb</a></li>
                     <li><a href="/category/init.html">init</a></li>
@@ -19,8 +24,9 @@
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="/pelican-ii-creacion-de-entradas-para-un-blog-estatico-con-pelican-es-MX.html" rel="bookmark"
-           title="Permalink to Pelican (II), creación de entradas para un blog estático con Pelican">Pelican (II), creación de entradas para un blog estático con Pelican</a></h1>
+        <a href="/pelican-02-creacion-de-entradas-para-un-blog-estatico-con-pelican-es-MX.html" rel="bookmark"
+           title="Permalink to Pelican (02), creación de entradas para un blog estático con Pelican">Pelican (02), creación de entradas para un blog estático con&nbsp;Pelican</a></h1>
+<a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="@_penserbjorne">Tweet</a><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
     </header>
 
     <div class="entry-content">
@@ -29,8 +35,8 @@
                 Published: sáb 09 mayo 2020
         </abbr>
 		<br />
-        <abbr class="modified" title="2020-05-09T00:00:00-05:00">
-                Updated: sáb 09 mayo 2020
+        <abbr class="modified" title="2020-08-20T00:00:00-05:00">
+                Updated: jue 20 agosto 2020
         </abbr>
 
         <address class="vcard author">
@@ -38,34 +44,33 @@
         </address>
 <p>In <a href="/category/pelican.html">pelican</a>.</p>
 <p>tags: <a href="/tag/blog.html">blog</a> <a href="/tag/pelican.html">pelican</a> </p>
-</footer><!-- /.post-info -->      <h1>What is this?</h1>
+</footer><!-- /.post-info -->      <h1>What is&nbsp;this?</h1>
 <p>Weno weno, ¿de que va esta entrada? Pues de cómo escribir contenido (entradas)
 en el blog con <code>Pelican</code>. Esto es continuación de la
-<a href="/pelican-i-creacion-de-un-blog-estatico-con-pelican-es-MX.html">entrada anterior</a> en la cual vimos una ligera
-introducción a <code>Pelican</code>, cómo instalarlo y como ejecutarlo para ver andando el
-sitio.</p>
+<a href="/pelican-01-creacion-de-un-blog-estatico-con-pelican-es-MX.html">entrada anterior</a> en la cual vimos una ligera
+introducción a <code>Pelican</code>, cómo instalarlo y como ejecutarlo para ver andando el&nbsp;sitio.</p>
 <p>Como ya hemos dicho, toda la documentación necesaria (y extendida) se
 encuentra en <a href="https://docs.getpelican.com">el blog oficial de Pelican</a>, por lo
 que si se necesita mayor información o detalle de algo, visitar el sitio oficial
-(recuerda siempre, <strong>#RTFM</strong>).</p>
+(recuerda siempre, <strong>#<span class="caps">RTFM</span></strong>).</p>
 <h1>Markdown</h1>
 <p>Una de las razones por las cuales elegimos <code>Pelican</code> como herramienta para
 escribir el blog es que tiene soporte para <code>Markdown</code>.</p>
 <p><code>Markdown</code> a grandes rasgos es un lenguaje de marcado ligero, esto significa que
 se escribe texto plano utilizando etiquetas que posteriormente serán convertidas
-a un formato más bonito, en este caso HTML.</p>
+a un formato más bonito, en este caso <span class="caps">HTML</span>.</p>
 <p>La ventaja de utilizar <code>Markdown</code> es que podemos enfocarnos simplemente en
 escribir utilizando cualquier editor de texto (simple o tan complejo como tu
 quieras) sabiendo que las etiquetas que estamos utilizando tendrán un
-formato agradable de leer.</p>
+formato agradable de&nbsp;leer.</p>
 <p>Si quieres aprender un poco más sobre <code>Markdown</code> te dejo su <a href="https://es.wikipedia.org/wiki/Markdown">entrada de
 <code>Wikipedia</code></a>,
 <a href="https://daringfireball.net/projects/markdown/">el sitio original de su publicación</a>
 y una <a href="https://markdown.es/sintaxis-markdown/">sheetcheat de sus etiquetas</a>
-para que veas lo sencillo que es.</p>
+para que veas lo sencillo que&nbsp;es.</p>
 <p>En este caso, la extensión del archivo <code>Markdown</code> que estaremos utilizando es
 <code>.md</code>.</p>
-<h1>¿Donde vamos a escribir?</h1>
+<h1>¿Donde vamos a&nbsp;escribir?</h1>
 <p>Recordando la estructura del sitio, sabemos que las entradas del mismo
 van en la carpeta <code>content</code> de nuestra subcarpeta <code>pelican</code>. Ahí es donde
 podremos comenzar a crear nuestros archivos en <code>Markdown</code>.</p>
@@ -109,15 +114,15 @@ la carpeta <code>content</code> con la extensión <code>.md</code></p>
 
 <p>En este caso hemos agregado el archivo <code>hola-mundo.md</code>. Al ejecutar el comando
 para generar el sitio <code>Pelican</code> tomara este archivo y lo procesara para darle
-la salida necesaria y general el sitio.</p>
+la salida necesaria y general el&nbsp;sitio.</p>
 <p>Por lo tanto, para añadir más contenido a tu sitio basta con que lo agreguemos a
-esta carpeta.</p>
-<h1>¿Qué debe llevar una entrada?</h1>
+esta&nbsp;carpeta.</p>
+<h1>¿Qué debe llevar una&nbsp;entrada?</h1>
 <p>Para una gestión adecuada del contenido en el sitio <code>Pelican</code> necesita conocer
 algunas cosas sobre el contenido que estamos generando. Para esto es necesario
 incluir algunas etiquetas al inicio del archivo que serán consideradas como
 <code>metadatos</code> por <code>Pelican</code>.</p>
-<p>A continuación una tabla con las etiquetas y para que sirven:</p>
+<p>A continuación una tabla con las etiquetas y para que&nbsp;sirven:</p>
 <table>
 <thead>
 <tr>
@@ -132,11 +137,11 @@ incluir algunas etiquetas al inicio del archivo que serán consideradas como
 </tr>
 <tr>
 <td><code>date</code></td>
-<td>Fecha de publicación (e.g., YYYY-MM-DD HH:SS)</td>
+<td>Fecha de publicación (e.g., <span class="caps">YYYY</span>-<span class="caps">MM</span>-<span class="caps">DD</span> <span class="caps">HH</span>:<span class="caps">SS</span>)</td>
 </tr>
 <tr>
 <td><code>modified</code></td>
-<td>Fecha de modificación (e.g., YYYY-MM-DD HH:SS)</td>
+<td>Fecha de modificación (e.g., <span class="caps">YYYY</span>-<span class="caps">MM</span>-<span class="caps">DD</span> <span class="caps">HH</span>:<span class="caps">SS</span>)</td>
 </tr>
 <tr>
 <td><code>tags</code></td>
@@ -188,11 +193,11 @@ incluir algunas etiquetas al inicio del archivo que serán consideradas como
 </tr>
 <tr>
 <td><code>url</code></td>
-<td>URL a utilizar para el artículo o página</td>
+<td><span class="caps">URL</span> a utilizar para el artículo o página</td>
 </tr>
 </tbody>
 </table>
-<p>Para el caso de este blog, estamos utilizando las siguientes etiquetas:</p>
+<p>Para el caso de este blog, estamos utilizando las siguientes&nbsp;etiquetas:</p>
 <div class="highlight"><pre><span></span><code><span class="err">---</span>
 <span class="c">Title: Este es el titulo</span>
 <span class="c">Date: 2020-05-09</span>
@@ -211,16 +216,22 @@ incluir algunas etiquetas al inicio del archivo que serán consideradas como
 
 <p>Estas etiquetas se encuentran al inicio de cada archivo y están contenidas entre
 dos lineas de tres guiones medios <code>---</code> al inicio y al final, estas lineas no
-son obligatorias.</p>
+son&nbsp;obligatorias.</p>
 <p>En caso de no incluir estas etiquetas <code>Pelican</code> no podrá procesar el archivo ni
-procederá a convertirlo.</p>
-<h1>Ahora sí a escribir</h1>
+procederá a&nbsp;convertirlo.</p>
+<h1>Ahora sí a&nbsp;escribir</h1>
 <p>Una vez que tenemos el archivo con su extensión <code>.md</code> y que le añadimos las
 etiquetas necesarias podemos comenzar a escribir su contenido en <code>Markdown</code>.</p>
+<p>Para ver conocer otros detalles de como insertar imágenes o contenido estático
+en una entrada te recomendamos que revises la sección para
+<a href="https://docs.getpelican.com/en/stable/content.html">escribir contenido</a> de
+<code>Pelican</code>, tal vez algún día escribamos una guía de redacción para <code>Pelican</code>
+pero por ahora&nbsp;no.</p>
 <p>Una vez que la entrada ha sido redactada podemos proceder a procesar el sitio
 para que se genere el archivo de salida. Esto lo hacemos con los comandos que
-vimos en la <a href="/pelican-i-creacion-de-un-blog-estatico-con-pelican-es-MX.html">entrada anterior</a> (que te recomiendo leer para que
-no te pierdas en la estructura de archivos y de trabajo que utilizamos aquí).</p>
+vimos en la <a href="/pelican-01-creacion-de-un-blog-estatico-con-pelican-es-MX.html">entrada anterior</a> (que te recomiendo
+leer para que no te pierdas en la estructura de archivos y de trabajo que
+utilizamos&nbsp;aquí).</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Generamos la salida HTML una carpeta arriba de donde estamos</span>
 pelican content -o ..
 
@@ -231,22 +242,22 @@ pelican --listen -o ..
 
 <p>Para acceder al sitio en local visitamos
 <a href="http://localhost:8000/">http://localhost:8000/</a>, y listo, tendríamos que
-observar el sitio andando con nuestra entrada nueva.</p>
+observar el sitio andando con nuestra entrada&nbsp;nueva.</p>
 <p>Para poder estar trabajando con el sitio, es necesario cada vez que hagamos un
-cambio y modificación volver a generar los archivos.</p>
-<h1>Consideraciones de trabajo</h1>
+cambio y modificación volver a generar los&nbsp;archivos.</p>
+<h1>Consideraciones de&nbsp;trabajo</h1>
 <p>Cada vez que regeneremos el sitio porque hemos realizado un cambio o hemos
 añadido contenido nuevo se van a generar los archivos <code>HTML</code> correspondientes,
-si observamos cuidadosamente veremos que los archivos viejos no se eliminan.</p>
+si observamos cuidadosamente veremos que los archivos viejos no se&nbsp;eliminan.</p>
 <p>Vamos a suponer que le cambiamos el nombre a una categoría o a un texto, sus
 archivos correspondientes en la versión anterior seguirán ahí, por lo que hay
-que limpiar el entorno de trabajo.</p>
+que limpiar el entorno de&nbsp;trabajo.</p>
 <p>Por el momento una opción burda es eliminar todos los archivos y carpetas del
 directorio raíz del repositorio y dejar exclusivamente la carpeta <code>pelican</code>.</p>
 <p>Lo sé, lo sé, esto no es lo más viable o factible a largo plazo, ¡pero oye!
 apenas vamos comenzando, por lo cual lo solucionaremos más adelante, por ahora
-solo no te asustes si ves contenido duplicado, eliminalo y ya.</p>
-<h1>Siguientes pasos</h1>
+solo no te asustes si ves contenido duplicado, eliminalo y&nbsp;ya.</p>
+<h1>Siguientes&nbsp;pasos</h1>
 <p>Ya tenemos nuestro primer <code>hola mundo</code> en el blog, basta con hacer push al repo
 para poder verlo andando en nuestra <code>GitHub Pages</code>.</p>
 <p>Esto es solo el comienzo, aún necesitamos seguir puliendo algunas cosas del
@@ -254,11 +265,11 @@ sitio, ¿qué cosas?, para empezar, reemplazar el contenido que viene por defaul
 (esos enlaces en el <code>header</code> o en el <code>footer</code>), agregar algunas páginas y
 secciones como un <code>about</code>, configurar algunas cositas para que el contenido se
 organice por año, que los archivos que se tengan que eliminar se eliminen para
-que no haya contenido extraño, etc, etc.</p>
+que no haya contenido extraño, etc,&nbsp;etc.</p>
 <p>Cómo podemos ver aún hay otros detallitos que iremos revisando pero por ahora ya
 podemos tener el sitio andando y con algo de contenido, así que vamos a seguir
-con otras cosas y nos leemos pronto.</p>
-<p><a href="https://www.youtube.com/watch?v=NRI_8PUXx2A">See you in space cowboy ...</a></p>
+con otras cosas y nos leemos&nbsp;pronto.</p>
+<p><a href="https://www.youtube.com/watch?v=NRI_8PUXx2A">See you in space cowboy&nbsp;&#8230;</a></p>
     </div><!-- /.entry-content -->
 
   </article>
@@ -267,29 +278,28 @@ con otras cosas y nos leemos pronto.</p>
                 <div class="blogroll">
                         <h2>links</h2>
                         <ul>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                            <li><a href="#">Este es un enlace modificado</a></li>
+                            <li><a href="https://lidsol.org/">LIDSoL</a></li>
+                            <li><a href="https://elotl.mx/">Comunidad Elotl</a></li>
+                            <li><a href="https://protege.la/">protege.la</a></li>
+                            <li><a href="https://socialtic.org/">SocialTIC</a></li>
                         </ul>
                 </div><!-- /.blogroll -->
                 <div class="social">
                         <h2>social</h2>
                         <ul>
 
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
+                            <li><a href="https://twitter.com/_penserbjorne">twitter</a></li>
+                            <li><a href="https://github.com/penserbjorne/">github</a></li>
                         </ul>
                 </div><!-- /.social -->
         </section><!-- /#extras -->
 
         <footer id="contentinfo" class="body">
                 <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
                 </address><!-- /#about -->
 
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
         </footer><!-- /#contentinfo -->
 
 </body>

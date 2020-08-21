@@ -1,5 +1,5 @@
 ---
-Title: Hack-The-Box > Starting point
+Title: Hack-The-Box (0001) > Starting point
 Date: 2020-08-06
 Modified: 2020-08-06
 Tags: blog, penserbjorne, htb, pentest, hacking
