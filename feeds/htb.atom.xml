@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog de Penserbjorne - htb</title><link href="https://penserbjorne.github.io/" rel="alternate"></link><link href="https://penserbjorne.github.io/feeds/htb.atom.xml" rel="self"></link><id>https://penserbjorne.github.io/</id><updated>2020-08-11T00:00:00-05:00</updated><subtitle>Bienvenido al pequeño espacio virtual en donde plasmo una parte de mi ...</subtitle><entry><title>Hack-The-Box (0001) &gt; Starting point</title><link href="https://penserbjorne.github.io/hack-the-box-0001-starting-point-es-MX.html" rel="alternate"></link><published>2020-08-06T00:00:00-05:00</published><updated>2020-08-06T00:00:00-05:00</updated><author><name>penserbjorne</name></author><id>tag:penserbjorne.github.io,2020-08-06:/hack-the-box-0001-starting-point-es-MX.html</id><summary type="html">&lt;p&gt;Anotaciones sobre la sección &amp;#8220;Starting point&amp;#8221; de&amp;nbsp;Hack-The-Box&lt;/p&gt;</summary><content type="html">&lt;h1&gt;This is not the intro&amp;nbsp;:)&lt;/h1&gt;
+&lt;p&gt;Ola k&amp;nbsp;ase.&lt;/p&gt;
+&lt;p&gt;Para este exacto momento en el que escribo esta linea de texto han pasado 146
+días desde que comenzó la pandemia del &lt;span class="caps"&gt;COVID&lt;/span&gt;-19 y pareciera que el tiempo se
+detuvo y que no ha pasado nada pero que a la vez que han pasado tantas&amp;nbsp;cosas.&lt;/p&gt;
+&lt;p&gt;Como sea, este blog esta en la misma situación, un tiempo&amp;nbsp;suspendido.&lt;/p&gt;
+&lt;p&gt;Dependiendo de cual futuro o universo paralelo leas esto puede que el blog
+ni siquiera este terminado de configurar, aún tenga el template de &lt;code&gt;Pelican&lt;/code&gt; y
+que no tenga nada de contenido o que ya sea un pequeño blog que se ve hermoso
+y tiene un par de entradas útiles para la humanidad haha en todo caso, si en
+estos dos párrafos no te haz aburrido o retirado, mandame un tuit a
+&lt;a href="https://twitter.com/_penserbjorne"&gt;@_penserbjorne&lt;/a&gt;
+con una captura de pantalla de como se ve el blog y a cambio te invito unos
+taquitos&amp;nbsp;:)&lt;/p&gt;
+&lt;p&gt;Ahora sí,&amp;nbsp;arranquemos.&lt;/p&gt;
+&lt;h1&gt;Hack-The-Box: Starting&amp;nbsp;point&lt;/h1&gt;
+&lt;h2&gt;¿Qué es&amp;nbsp;esto?&lt;/h2&gt;
+&lt;p&gt;Este texto son anotaciones sobre la sección &lt;strong&gt;Starting point&lt;/strong&gt; de
+&lt;strong&gt;Hack-The-Box&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Nos apoyaremos en los walk-throughs que ya vienen incorporados en la sección
+&lt;em&gt;Starting point&lt;/em&gt; e iremos explicando los comandos&amp;nbsp;utilizados.&lt;/p&gt;
+&lt;h2&gt;Hack-The-Box (&lt;span class="caps"&gt;HTB&lt;/span&gt;)&lt;/h2&gt;
+&lt;p&gt;Bueno, para hablar de &lt;a href="https://www.hackthebox.eu"&gt;&lt;strong&gt;Hack-The-Box&lt;/strong&gt; (&lt;span class="caps"&gt;HTB&lt;/span&gt;)&lt;/a&gt; y
+presentar lo qué realmente es este proyecto seria bueno dedicar una entrada
+específicamente a eso, por lo cual solo diré que es una plataforma para
+practicar o probar tus habilidades de pentesting trabajando sobre maquinas
+virtuales que están diseñadas y preparadas para&amp;nbsp;esto.&lt;/p&gt;
+&lt;p&gt;En resumen, hay maquinas virtuales con cierto software instalado y ciertas
+configuraciones que permiten que esta maquina pueda ser vulnerada de alguna
+manera. ¿Quieres practicar temas de pentesting? Esta es una de las plataformas&amp;nbsp;recomendadas.&lt;/p&gt;
+&lt;h2&gt;Starting&amp;nbsp;Point&lt;/h2&gt;
+&lt;p&gt;Para las personas que van comenzando en este ámbito puede que &lt;span class="caps"&gt;HTB&lt;/span&gt; sea una
+plataforma con un nivel de complejidad bastante alto y no necesariamente la
+primera opción para&amp;nbsp;arrancar.&lt;/p&gt;
+&lt;p&gt;Para solucionar esto &lt;span class="caps"&gt;HTB&lt;/span&gt; ha habilitado una sección llamada
+&lt;a href="https://www.hackthebox.eu/home/start"&gt;&lt;strong&gt;Starting point&lt;/strong&gt;&lt;/a&gt;
+en la cual se encuentran una serie de maquinas con un nivel &lt;em&gt;básico&lt;/em&gt;
+acompañadas de sus &lt;a href="https://www.wordnik.com/words/walk-through"&gt;walk-throughs&lt;/a&gt;
+para que puedas resolverlas y familiarizarte con los pasos usuales del proceso
+de&amp;nbsp;pentesting.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Nota&lt;/strong&gt;: El pentesting no es una receta, estos recursos son solo para
+comenzar, pero conforme se avanza es necesario refinar tus habilidades y hacer
+uso el conocimiento que vas desarrollando o acumulando&amp;nbsp;:)&lt;/p&gt;
+&lt;h2&gt;Elementos del&amp;nbsp;pentesting&lt;/h2&gt;
+&lt;p&gt;Si bien el pentesting no es una receta, existen diferentes metodologías o
+frameworks que nos ayudan a guiarnos para realizar esta actividad de manera
+ordenada y&amp;nbsp;limpia.&lt;/p&gt;
+&lt;p&gt;Si quieres saber más puedes buscar los siguientes términos&amp;nbsp;Internet:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cyber security&amp;nbsp;framework&lt;/li&gt;
+&lt;li&gt;Cyber security kill&amp;nbsp;chain&lt;/li&gt;
+&lt;li&gt;&lt;span class="caps"&gt;MITRE&lt;/span&gt;&amp;nbsp;Framework&lt;/li&gt;
+&lt;li&gt;&lt;span class="caps"&gt;OWASP&lt;/span&gt;&amp;nbsp;Framework&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Listo, ahora que haz ignorado lo anterior o haz regresado de buscar, en el caso
+de la sección de &lt;strong&gt;Starting Point&lt;/strong&gt; de &lt;span class="caps"&gt;HTB&lt;/span&gt; podemos encontrar de manera general
+los siguiente&amp;nbsp;elementos:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Reconocimiento&amp;nbsp;(Reconnaissance)&lt;/li&gt;
+&lt;li&gt;Enumeración&amp;nbsp;(Enumeration)&lt;/li&gt;
+&lt;li&gt;Movimiento lateral (Lateral&amp;nbsp;Movement)&lt;/li&gt;
+&lt;li&gt;Explotación&amp;nbsp;(Explotation)&lt;/li&gt;
+&lt;li&gt;Escalada de privilegios (Privilege&amp;nbsp;Escalation)&lt;/li&gt;
+&lt;li&gt;Explotación posterior (Post&amp;nbsp;Explotation)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Si bien no todas las máquinas necesitan todos los pasos mencionados, es bueno
+tenerlos presentes para tratar de trabajar de manera&amp;nbsp;ordenada.&lt;/p&gt;
+&lt;p&gt;Te recomendamos resolver cada maquina con su walk-through y a la par ir leyendo
+la siguiente&amp;nbsp;sección.&lt;/p&gt;
+&lt;h2&gt;Anotaciones de Starting&amp;nbsp;point&lt;/h2&gt;
+&lt;p&gt;Para ir tomando nota iremos creando una sección por cada maquina e iremos
+desarrollando los comando que solicita su walk-through correspondiente y le
+daremos contexto al comando o a la&amp;nbsp;acción.&lt;/p&gt;
+&lt;p&gt;Debido a que no sé cual va a ser la longitud de cada maquina lo mejor será
+dedicar una entrada a cada una por lo que te invito pases a la siguiente entrada
+en la cual comenzaremos con la maquina
+&lt;a href="https://penserbjorne.github.io/hack-the-box-0002-starting-point-archetype-es-MX.html"&gt;&lt;strong&gt;Archetype&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;#HappyHacking&lt;/code&gt;&lt;/p&gt;</content><category term="htb"></category><category term="blog"></category><category term="penserbjorne"></category><category term="htb"></category><category term="pentest"></category><category term="hacking"></category></entry><entry><title>Hack-The-Box (0002) &gt; Starting point &gt; Archetype</title><link href="https://penserbjorne.github.io/hack-the-box-0002-starting-point-archetype-es-MX.html" rel="alternate"></link><published>2020-08-06T00:00:00-05:00</published><updated>2020-08-11T00:00:00-05:00</updated><author><name>penserbjorne</name></author><id>tag:penserbjorne.github.io,2020-08-06:/hack-the-box-0002-starting-point-archetype-es-MX.html</id><summary type="html">&lt;p&gt;Anotaciones sobre la máquina &amp;#8220;Archetype&amp;#8221; de la sección &amp;#8220;Starting point&amp;#8221; de&amp;nbsp;Hack-The-Box&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Archetype&lt;/h1&gt;
+&lt;p&gt;Para comenzar con esta serie de anotaciones sobre la sección &lt;em&gt;Starting point&lt;/em&gt;
+arrancaremos con la máquina &lt;em&gt;Archetype&lt;/em&gt;. Si no sabes bien de que hablo te
+recomiendo que primero leas la
+&lt;a href="https://penserbjorne.github.io/hack-the-box-0001-starting-point-es-MX.html"&gt;entrada anterior&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;máquina:&lt;/strong&gt;&amp;nbsp;Archetype&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;span class="caps"&gt;SO&lt;/span&gt;:&lt;/strong&gt;&amp;nbsp;Windows&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;span class="caps"&gt;IP&lt;/span&gt;:&lt;/strong&gt;&amp;nbsp;10.10.10.27&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Enumeration&lt;/h2&gt;
+&lt;p&gt;Como siempre digo: &amp;#8220;&lt;em&gt;primero lo primero&lt;/em&gt;&amp;#8220;, pues vamos a comenzar a &lt;strong&gt;enumerar&lt;/strong&gt;
+lo que tiene el equipo objetivo, en este caso vamos a tratar de identificar
+los puertos abiertos y el software asociado a&amp;nbsp;estos.&lt;/p&gt;
+&lt;p&gt;Para esto utilizaremos la siempre poderosa herramienta de
+&lt;a href="https://es.wikipedia.org/wiki/Nmap"&gt;Nmap&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Lo primero que nos recomiendan utilizar son los siguientes dos&amp;nbsp;comandos:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;ports&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;nmap -p- --min-rate&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;  -T4 &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27 &lt;span class="p"&gt;|&lt;/span&gt; grep ^&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;-9&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; cut -d &lt;span class="s1"&gt;&amp;#39;/&amp;#39;&lt;/span&gt; -f &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; tr &lt;span class="s1"&gt;&amp;#39;\n&amp;#39;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;,&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sed s/,$//&lt;span class="k"&gt;)&lt;/span&gt;
+nmap -sC -sV -p&lt;span class="nv"&gt;$ports&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Vamos a revisar la primera&amp;nbsp;linea.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;ports&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;nmap -p- --min-rate&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;  -T4 &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27 &lt;span class="p"&gt;|&lt;/span&gt; grep ^&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;-9&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; cut -d &lt;span class="s1"&gt;&amp;#39;/&amp;#39;&lt;/span&gt; -f &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; tr &lt;span class="s1"&gt;&amp;#39;\n&amp;#39;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;,&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sed s/,$//&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;La linea anterior crea una variable en &lt;code&gt;bash&lt;/code&gt; llamada &lt;code&gt;ports&lt;/code&gt; en la cual se
+almacena el resultado de
+&lt;code&gt;nmap -p- --min-rate=1000  -T4 10.10.10.27 | grep ^[0-9] | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;El comando anterior se componen de la salida anidada entre varios comandos,
+esto podemos observarlo con el uso de &lt;code&gt;comando1 | comando2&lt;/code&gt;, el cual indica
+que la salida del &lt;code&gt;comando1&lt;/code&gt; será la entrada del &lt;code&gt;comando2&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Separando el comando nos encontramos&amp;nbsp;con:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;nmap -p- --min-rate=1000 -T4 10.10.10.27&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;grep ^[0-9]&lt;/code&gt;:&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cut -d '/' -f 1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tr '\n' ','&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sed s/,$//&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Analicemos cada una de las&amp;nbsp;partes.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;nmap -p- --min-rate=1000 -T4 10.10.10.27&lt;/code&gt; lo vamos a utilizar para detectar
+los puertos abiertos en la máquina a trabajar. Esto se lo indicamos a &lt;code&gt;nmap&lt;/code&gt;
+con los siguientes&amp;nbsp;parámetros:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-p-&lt;/code&gt;: Indicamos que vamos a escanear todos los puertos de la&amp;nbsp;máquina.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--min-rate=1000&lt;/code&gt;: Indicamos que enviaremos al menos 1000 paquetes por segundos para realizar el&amp;nbsp;escaneo.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-T4&lt;/code&gt;: Indicamos una &lt;em&gt;plantilla de tiempo&lt;/em&gt;. Básicamente le decimos a &lt;code&gt;nmap&lt;/code&gt;
+que los tiempos haga un &lt;em&gt;análisis agresivo&lt;/em&gt;. El modo agresivo hace que los
+análisis sean más rápidos al asumir que estas en una red razonablemente más
+rápida y&amp;nbsp;fiable.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;10.10.10.27&lt;/code&gt;: Indicamos la &lt;span class="caps"&gt;IP&lt;/span&gt; del objetivo, en este caso es la máquina con la que vamos a&amp;nbsp;trabajar.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;La salida del comando anterior nos muestra la lista de puertos abiertos como
+se ve a&amp;nbsp;continuación.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;└──╼ &lt;span class="nv"&gt;$nmap&lt;/span&gt; -p- --min-rate&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt; -T4 &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27
+Starting Nmap &lt;span class="m"&gt;7&lt;/span&gt;.80 &lt;span class="o"&gt;(&lt;/span&gt; https://nmap.org &lt;span class="o"&gt;)&lt;/span&gt; at &lt;span class="m"&gt;2020&lt;/span&gt;-08-06 &lt;span class="m"&gt;21&lt;/span&gt;:35 CDT
+Warning: &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27 giving up on port because retransmission cap hit &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;6&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;.
+Nmap scan report &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27
+Host is up &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.088s latency&lt;span class="o"&gt;)&lt;/span&gt;.
+Not shown: &lt;span class="m"&gt;63625&lt;/span&gt; closed ports, &lt;span class="m"&gt;1899&lt;/span&gt; filtered ports
+PORT      STATE SERVICE
+&lt;span class="m"&gt;135&lt;/span&gt;/tcp   open  msrpc
+&lt;span class="m"&gt;139&lt;/span&gt;/tcp   open  netbios-ssn
+&lt;span class="m"&gt;445&lt;/span&gt;/tcp   open  microsoft-ds
+&lt;span class="m"&gt;1433&lt;/span&gt;/tcp  open  ms-sql-s
+&lt;span class="m"&gt;5985&lt;/span&gt;/tcp  open  wsman
+&lt;span class="m"&gt;47001&lt;/span&gt;/tcp open  winrm
+&lt;span class="m"&gt;49664&lt;/span&gt;/tcp open  unknown
+&lt;span class="m"&gt;49665&lt;/span&gt;/tcp open  unknown
+&lt;span class="m"&gt;49666&lt;/span&gt;/tcp open  unknown
+&lt;span class="m"&gt;49667&lt;/span&gt;/tcp open  unknown
+&lt;span class="m"&gt;49668&lt;/span&gt;/tcp open  unknown
+
+Nmap &lt;span class="k"&gt;done&lt;/span&gt;: &lt;span class="m"&gt;1&lt;/span&gt; IP address &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; host up&lt;span class="o"&gt;)&lt;/span&gt; scanned in &lt;span class="m"&gt;121&lt;/span&gt;.13 seconds
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;La salida anterior la pasamos a &lt;code&gt;grep ^[0-9]&lt;/code&gt; para que nos muestre solamente
+solamente el listado de puertos sin la información de &lt;code&gt;nmap&lt;/code&gt;. Esto se lo
+indicamos a &lt;code&gt;grep&lt;/code&gt; utilizando la expresión regular &lt;code&gt;^[0-9]&lt;/code&gt; la cual
+especifica que busque las lineas que comienzan con valores numéricos que van
+del 0 al 9. La salida es como se muestra a&amp;nbsp;continuación.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="m"&gt;135&lt;/span&gt;/tcp   open  msrpc
+&lt;span class="m"&gt;139&lt;/span&gt;/tcp   open  netbios-ssn
+&lt;span class="m"&gt;445&lt;/span&gt;/tcp   open  microsoft-ds
+&lt;span class="m"&gt;1433&lt;/span&gt;/tcp  open  ms-sql-s
+&lt;span class="m"&gt;5985&lt;/span&gt;/tcp  open  wsman
+&lt;span class="m"&gt;47001&lt;/span&gt;/tcp open  winrm
+&lt;span class="m"&gt;49664&lt;/span&gt;/tcp open  unknown
+&lt;span class="m"&gt;49665&lt;/span&gt;/tcp open  unknown
+&lt;span class="m"&gt;49666&lt;/span&gt;/tcp open  unknown
+&lt;span class="m"&gt;49667&lt;/span&gt;/tcp open  unknown
+&lt;span class="m"&gt;49668&lt;/span&gt;/tcp open  unknown
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;La salida anterior la pasamos a &lt;code&gt;cut -d '/' -f 1&lt;/code&gt; para que extraiga
+exclusivamente el número de los puertos abiertos. Esto se lo indicamos a &lt;code&gt;cut&lt;/code&gt;
+con los siguientes&amp;nbsp;parámetros:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-d '/'&lt;/code&gt;: Indicamos el carácter delimitador. Esto vendría a ser nuestro
+carácter para &lt;em&gt;separar&lt;/em&gt; la cadena en &lt;em&gt;columna&lt;/em&gt;, Algo así como la coma &lt;em&gt;,&lt;/em&gt; de
+un &lt;span class="caps"&gt;CSV&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-f 1&lt;/code&gt;: Indicamos que retorne o imprima el primer campo de los resultados.
+En este caso si observamos la salida del comando anterior podemos asumir que
+las lineas de texto se van a separar en dos columnas debido a que cada linea
+tiene el carácter &lt;code&gt;/&lt;/code&gt;. El primer campo tendrá el número de puerto y el segundo
+campo tendrá la descripción del&amp;nbsp;puerto.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;La salida sel comando anterior es la&amp;nbsp;siguiente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="m"&gt;135&lt;/span&gt;
+&lt;span class="m"&gt;139&lt;/span&gt;
+&lt;span class="m"&gt;445&lt;/span&gt;
+&lt;span class="m"&gt;1433&lt;/span&gt;
+&lt;span class="m"&gt;5985&lt;/span&gt;
+&lt;span class="m"&gt;47001&lt;/span&gt;
+&lt;span class="m"&gt;49664&lt;/span&gt;
+&lt;span class="m"&gt;49665&lt;/span&gt;
+&lt;span class="m"&gt;49666&lt;/span&gt;
+&lt;span class="m"&gt;49667&lt;/span&gt;
+&lt;span class="m"&gt;49668&lt;/span&gt;
+&lt;span class="m"&gt;49669&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;La salida anterior la pasamos a &lt;code&gt;tr '\n' ','&lt;/code&gt; para eliminar los caracteres
+&lt;code&gt;\n&lt;/code&gt; y sustituirlos por una coma &lt;code&gt;,&lt;/code&gt;. El resultado es el&amp;nbsp;siguiente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="m"&gt;135&lt;/span&gt;,139,445,1433,5985,47001,49664,49665,49666,49667,49668,49669,
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;La salida anterior la pasamos a &lt;code&gt;sed s/,$//&lt;/code&gt; para simplemente extraer la
+ultima coma y dejar una lista limpia de puertos abiertos separados por comas.
+Esto lo hacemos con la expresión &lt;code&gt;s/,$//&lt;/code&gt; la cual se pasa a &lt;code&gt;sed&lt;/code&gt; y respeta
+la sintaxis &lt;code&gt;s/regexp/replacement/flags&lt;/code&gt;. La expresión utilizada busca la
+última coma de la linea y la&amp;nbsp;borra.&lt;/p&gt;
+&lt;p&gt;La salida del comando anterior es la&amp;nbsp;siguiente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="m"&gt;135&lt;/span&gt;,139,445,1433,5985,47001,49664,49665,49666,49667,49668,49669
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Todo lo anterior es simplemente para entender el primer comando del
+walk-through que básicamente nos arma una lista de puertos abiertos separados
+por&amp;nbsp;comas.&lt;/p&gt;
+&lt;p&gt;Esta lista de puertos quedo almacenada en la variable &lt;code&gt;ports&lt;/code&gt; que vamos a
+utilizar en el segundo comando&amp;nbsp;recomendado:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;nmap -sC -sV -p&lt;span class="nv"&gt;$ports&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;El comando anterior realizará un escaneo en los puertos obtenidos del primer
+comando. La bandera &lt;code&gt;-sV&lt;/code&gt; indica a &lt;code&gt;nmap&lt;/code&gt; que determine la versión del software
+detectado en el puerto. La salida del comando&amp;nbsp;es:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Starting Nmap &lt;span class="m"&gt;7&lt;/span&gt;.80 &lt;span class="o"&gt;(&lt;/span&gt; https://nmap.org &lt;span class="o"&gt;)&lt;/span&gt; at &lt;span class="m"&gt;2020&lt;/span&gt;-08-06 &lt;span class="m"&gt;22&lt;/span&gt;:36 CDT
+Nmap scan report &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27
+Host is up &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.50s latency&lt;span class="o"&gt;)&lt;/span&gt;.
+
+PORT      STATE SERVICE      VERSION
+&lt;span class="m"&gt;135&lt;/span&gt;/tcp   open  msrpc        Microsoft Windows RPC
+&lt;span class="m"&gt;139&lt;/span&gt;/tcp   open  netbios-ssn  Microsoft Windows netbios-ssn
+&lt;span class="m"&gt;445&lt;/span&gt;/tcp   open  microsoft-ds Windows Server &lt;span class="m"&gt;2019&lt;/span&gt; Standard &lt;span class="m"&gt;17763&lt;/span&gt; microsoft-ds
+&lt;span class="m"&gt;1433&lt;/span&gt;/tcp  open  ms-sql-s     Microsoft SQL Server &lt;span class="m"&gt;2017&lt;/span&gt; &lt;span class="m"&gt;14&lt;/span&gt;.00.1000.00&lt;span class="p"&gt;;&lt;/span&gt; RTM
+&lt;span class="p"&gt;|&lt;/span&gt; ms-sql-ntlm-info:
+&lt;span class="p"&gt;|&lt;/span&gt;   Target_Name: ARCHETYPE
+&lt;span class="p"&gt;|&lt;/span&gt;   NetBIOS_Domain_Name: ARCHETYPE
+&lt;span class="p"&gt;|&lt;/span&gt;   NetBIOS_Computer_Name: ARCHETYPE
+&lt;span class="p"&gt;|&lt;/span&gt;   DNS_Domain_Name: Archetype
+&lt;span class="p"&gt;|&lt;/span&gt;   DNS_Computer_Name: Archetype
+&lt;span class="p"&gt;|&lt;/span&gt;_  Product_Version: &lt;span class="m"&gt;10&lt;/span&gt;.0.17763
+&lt;span class="p"&gt;|&lt;/span&gt; ssl-cert: Subject: &lt;span class="nv"&gt;commonName&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;SSL_Self_Signed_Fallback
+&lt;span class="p"&gt;|&lt;/span&gt; Not valid before: &lt;span class="m"&gt;2020&lt;/span&gt;-08-06T09:11:31
+&lt;span class="p"&gt;|&lt;/span&gt;_Not valid after:  &lt;span class="m"&gt;2050&lt;/span&gt;-08-06T09:11:31
+&lt;span class="p"&gt;|&lt;/span&gt;_ssl-date: &lt;span class="m"&gt;2020&lt;/span&gt;-08-07T03:54:35+00:00&lt;span class="p"&gt;;&lt;/span&gt; +16m19s from scanner time.
+&lt;span class="m"&gt;5985&lt;/span&gt;/tcp  open  http         Microsoft HTTPAPI httpd &lt;span class="m"&gt;2&lt;/span&gt;.0 &lt;span class="o"&gt;(&lt;/span&gt;SSDP/UPnP&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;_http-server-header: Microsoft-HTTPAPI/2.0
+&lt;span class="p"&gt;|&lt;/span&gt;_http-title: Not Found
+&lt;span class="m"&gt;47001&lt;/span&gt;/tcp open  http         Microsoft HTTPAPI httpd &lt;span class="m"&gt;2&lt;/span&gt;.0 &lt;span class="o"&gt;(&lt;/span&gt;SSDP/UPnP&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;_http-server-header: Microsoft-HTTPAPI/2.0
+&lt;span class="p"&gt;|&lt;/span&gt;_http-title: Not Found
+&lt;span class="m"&gt;49664&lt;/span&gt;/tcp open  msrpc        Microsoft Windows RPC
+&lt;span class="m"&gt;49665&lt;/span&gt;/tcp open  msrpc        Microsoft Windows RPC
+&lt;span class="m"&gt;49666&lt;/span&gt;/tcp open  msrpc        Microsoft Windows RPC
+&lt;span class="m"&gt;49667&lt;/span&gt;/tcp open  msrpc        Microsoft Windows RPC
+&lt;span class="m"&gt;49668&lt;/span&gt;/tcp open  msrpc        Microsoft Windows RPC
+&lt;span class="m"&gt;49669&lt;/span&gt;/tcp open  msrpc        Microsoft Windows RPC
+Service Info: OSs: Windows, Windows Server &lt;span class="m"&gt;2008&lt;/span&gt; R2 - &lt;span class="m"&gt;2012&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+&lt;span class="p"&gt;|&lt;/span&gt;_clock-skew: mean: 1h40m18s, deviation: 3h07m51s, median: 16m17s
+&lt;span class="p"&gt;|&lt;/span&gt; ms-sql-info:
+&lt;span class="p"&gt;|&lt;/span&gt;   &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27:1433:
+&lt;span class="p"&gt;|&lt;/span&gt;     Version:
+&lt;span class="p"&gt;|&lt;/span&gt;       name: Microsoft SQL Server &lt;span class="m"&gt;2017&lt;/span&gt; RTM
+&lt;span class="p"&gt;|&lt;/span&gt;       number: &lt;span class="m"&gt;14&lt;/span&gt;.00.1000.00
+&lt;span class="p"&gt;|&lt;/span&gt;       Product: Microsoft SQL Server &lt;span class="m"&gt;2017&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;       Service pack level: RTM
+&lt;span class="p"&gt;|&lt;/span&gt;       Post-SP patches applied: &lt;span class="nb"&gt;false&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;_    TCP port: &lt;span class="m"&gt;1433&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt; smb-os-discovery:
+&lt;span class="p"&gt;|&lt;/span&gt;   OS: Windows Server &lt;span class="m"&gt;2019&lt;/span&gt; Standard &lt;span class="m"&gt;17763&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;Windows Server &lt;span class="m"&gt;2019&lt;/span&gt; Standard &lt;span class="m"&gt;6&lt;/span&gt;.3&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;   Computer name: Archetype
+&lt;span class="p"&gt;|&lt;/span&gt;   NetBIOS computer name: ARCHETYPE&lt;span class="se"&gt;\x&lt;/span&gt;&lt;span class="m"&gt;00&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;   Workgroup: WORKGROUP&lt;span class="se"&gt;\x&lt;/span&gt;&lt;span class="m"&gt;00&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;_  System time: &lt;span class="m"&gt;2020&lt;/span&gt;-08-06T20:54:29-07:00
+&lt;span class="p"&gt;|&lt;/span&gt; smb-security-mode:
+&lt;span class="p"&gt;|&lt;/span&gt;   account_used: guest
+&lt;span class="p"&gt;|&lt;/span&gt;   authentication_level: user
+&lt;span class="p"&gt;|&lt;/span&gt;   challenge_response: supported
+&lt;span class="p"&gt;|&lt;/span&gt;_  message_signing: disabled &lt;span class="o"&gt;(&lt;/span&gt;dangerous, but default&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt; smb2-security-mode:
+&lt;span class="p"&gt;|&lt;/span&gt;   &lt;span class="m"&gt;2&lt;/span&gt;.02:
+&lt;span class="p"&gt;|&lt;/span&gt;_    Message signing enabled but not required
+&lt;span class="p"&gt;|&lt;/span&gt; smb2-time:
+&lt;span class="p"&gt;|&lt;/span&gt;   date: &lt;span class="m"&gt;2020&lt;/span&gt;-08-07T03:54:26
+&lt;span class="p"&gt;|&lt;/span&gt;_  start_date: N/A
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap &lt;span class="k"&gt;done&lt;/span&gt;: &lt;span class="m"&gt;1&lt;/span&gt; IP address &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; host up&lt;span class="o"&gt;)&lt;/span&gt; scanned in &lt;span class="m"&gt;84&lt;/span&gt;.18 seconds
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Hasta este momento ya hemos logrado detectar los puertos abiertos así como el
+software y las versiones que están asociados a&amp;nbsp;estos.&lt;/p&gt;
+&lt;p&gt;Por ahora el post quedara hasta aquí &amp;#8230; tengo hambre y necesito descansar un&amp;nbsp;rato.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Continuación:&amp;nbsp;2020-08-11&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Listo, ya he comido algo (y ya pasaron algunos días), así que podemos&amp;nbsp;continuar.&lt;/p&gt;
+&lt;p&gt;Retomando, podemos observar que el puerto 445 y el 1433 se encuentran abiertos
+y están asociados a dos servicios:
+&lt;a href="https://es.wikipedia.org/wiki/Server_Message_Block"&gt;&lt;span class="caps"&gt;SMB&lt;/span&gt;&lt;/a&gt; y
+&lt;a href="https://es.wikipedia.org/wiki/Microsoft_SQL_Server"&gt;&lt;span class="caps"&gt;SQL&lt;/span&gt; Server&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Dado que el protocolo &lt;code&gt;SMB&lt;/code&gt; se utiliza para compartir archivos podemos tratar de
+conectarnos de manera anonima en busqueda de archivos interesantes. Para esto
+recomiendan utilizar &lt;code&gt;smbclient&lt;/code&gt; la cual es un cliente de conexiones
+perteneciente al proyecto
+&lt;a href="https://es.wikipedia.org/wiki/Samba_(software)"&gt;Samba&lt;/a&gt; en sistemas tipo&amp;nbsp;Unix.&lt;/p&gt;
+&lt;p&gt;El comando recomendado&amp;nbsp;es:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;smbclient -N -L &lt;span class="se"&gt;\\\\&lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;.10.10.27&lt;span class="se"&gt;\\&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Los parámetros del comando anterior&amp;nbsp;son:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-N&lt;/code&gt;: Conectar sin contraseña (de manera&amp;nbsp;anónima).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-L&lt;/code&gt;: Despliega los resultados en formato de&amp;nbsp;lista.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\\\\10.10.10.27\\&lt;/code&gt;: Estamos indicando la máquina a la cual nos vamos a
+conectar. En este caso nos estamos conectando desde un sistema tipo &lt;code&gt;Unix&lt;/code&gt; a un
+sistema basado en &lt;code&gt;DOS&lt;/code&gt; por lo cual utilizaremos la sintaxis de
+&lt;code&gt;DOS&lt;/code&gt; la cual requiere barras invertidas (&lt;code&gt;\&lt;/code&gt;). Al estar en un sistema
+tipo &lt;code&gt;Unix&lt;/code&gt; tenemos que escapar la barra invertida con una barra invertida
+(&lt;code&gt;\\\\&lt;/code&gt;), por eso al ver al inicio cuatro barras invertidas y dos al inicio, en
+realidad la sintaxis de &lt;code&gt;DOS&lt;/code&gt; lo tomaría como dos barras al inicio y una al&amp;nbsp;final.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;El resultado del comando anterior&amp;nbsp;es:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;└──╼ &lt;span class="nv"&gt;$smbclient&lt;/span&gt; -N -L &lt;span class="se"&gt;\\\\&lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;.10.10.27&lt;span class="se"&gt;\\&lt;/span&gt;
+
+    Sharename       Type      Comment
+    ---------       ----      -------
+    ADMIN$          Disk      Remote Admin
+    backups         Disk      
+    C$              Disk      Default share
+    IPC$            IPC       Remote IPC
+SMB1 disabled -- no workgroup available
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Revisando la salida del comando podemos observar que hay una carpeta interesante
+llamada &lt;code&gt;backup&lt;/code&gt; la cual podria contener información interesante. Procederemos
+a conectarnos a esa carpeta con el comando&amp;nbsp;recomendado:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;smbclient -N &lt;span class="se"&gt;\\\\&lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;.10.10.27&lt;span class="se"&gt;\\&lt;/span&gt;backups
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;De igual manera que en el comando anterior, nos vamos a conectar sin contraseña
+gracias al parámetro &lt;code&gt;-N&lt;/code&gt; y hemos eliminado el parámetro &lt;code&gt;-L&lt;/code&gt; ya que no queremos
+ver una lista de resultados si no realizar una conexión&amp;nbsp;directa.&lt;/p&gt;
+&lt;p&gt;Al conectarnos tendremos una terminal como la&amp;nbsp;siguiente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Try &lt;span class="s2"&gt;&amp;quot;help&amp;quot;&lt;/span&gt; to get a list of possible commands.
+smb: \&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;En esta terminal podemos ejecutar comandos básicos, para ver un listado de
+estos podemos utilizar &lt;code&gt;help&lt;/code&gt; el cual nos desplegará una salida como la&amp;nbsp;siguiente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;smb: \&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; help
+?              allinfo        altname        archive        backup         
+blocksize      cancel         case_sensitive cd             chmod          
+chown          close          del            deltree        dir            
+du             echo           exit           get            getfacl        
+geteas         hardlink       help           history        iosize         
+lcd            link           lock           lowercase      ls             
+l              mask           md             mget           mkdir          
+more           mput           newer          notify         open           
+posix          posix_encrypt  posix_open     posix_mkdir    posix_rmdir    
+posix_unlink   posix_whoami   print          prompt         put            
+pwd            q              queue          quit           readlink       
+&lt;span class="k"&gt;rd&lt;/span&gt;             recurse        reget          rename         reput          
+rm             rmdir          showacls       setea          setmode        
+scopy          stat           symlink        tar            tarmode        
+timeout        translate      unlock         volume         vuid           
+wdel           logon          listconnect    showconnect    tcon           
+tdis           tid            utimes         logoff         ..             
+!  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Como el objetivo en este momento es encontrar información de utilidad se nos
+recomienda utilizar el comando &lt;code&gt;dir&lt;/code&gt; el cual permite listar el contenido de un
+directorio en sistemas basados en &lt;code&gt;DOS&lt;/code&gt;, este caso, el directorio&amp;nbsp;actual.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;smb: \&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; dir
+  .                                   D        0  Mon Jan 20 06:20:57 2020
+  ..                                  D        0  Mon Jan 20 06:20:57 2020
+  prod.dtsConfig                     AR      609  Mon Jan 20 06:23:02 2020
+
+        10328063 blocks of size 4096. 8243763 blocks available
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Del contenido del directorio podemos observar que solamente existe el archivo
+&lt;code&gt;prod.dtsConfig&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Los archivos con extensión
+&lt;a href="https://abrirarchivos.info/extension/dtsconfig"&gt;.dtsConfig&lt;/a&gt;
+son archivos de configuración con sintaxis &lt;code&gt;XML&lt;/code&gt; utilizados en para aplicar
+&lt;em&gt;valores de propiedad&lt;/em&gt; a los paquetes de
+&lt;em&gt;Servicios de Integración de &lt;span class="caps"&gt;SQL&lt;/span&gt; Server&lt;/em&gt; (&lt;code&gt;SSIS&lt;/code&gt;). Por lo cual podemos obtener
+algo de información de este&amp;nbsp;archivo.&lt;/p&gt;
+&lt;p&gt;Para ver el contenido del archivo nos recomiendan utilizar el siguiente&amp;nbsp;comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;smb: \&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; get prod.dtsConfig
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;El comando anterior invoca a la herramienta &lt;code&gt;get&lt;/code&gt; la cual se utiliza para
+transferir archivos, por lo cual al ejecutarlo vamos a transferir una copia
+del archivo &lt;code&gt;prod.dtsConfig&lt;/code&gt; a nuestro equipo. Con el archivo en nuestro equipo
+podemos ver su&amp;nbsp;contenido.&lt;/p&gt;
+&lt;p&gt;De vuelta a nuestro equipo, podemos utilizar el comando &lt;code&gt;cat prod.dtsConfig&lt;/code&gt; el
+cual nos arrojara el contenido del&amp;nbsp;archivo.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;└──╼ &lt;span class="nv"&gt;$cat&lt;/span&gt; prod.dtsConfig
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;&amp;lt;DTSConfiguration&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;DTSConfigurationHeading&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;DTSConfigurationFileInfo&lt;/span&gt; &lt;span class="na"&gt;GeneratedBy=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;...&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;GeneratedFromPackageName=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;...&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;GeneratedFromPackageID=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;...&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;GeneratedDate=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;20.1.2019 10:01:34&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/DTSConfigurationHeading&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;Configuration&lt;/span&gt; &lt;span class="na"&gt;ConfiguredType=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Property&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;Path=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;\Package.Connections[Destination].Properties[ConnectionString]&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;ValueType=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;String&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;ConfiguredValue&amp;gt;&lt;/span&gt;Data Source=.;Password=M3g4c0rp123;User ID=ARCHETYPE\sql_svc;Initial Catalog=Catalog;Provider=SQLNCLI10.1;Persist Security Info=True;Auto Translate=False;&lt;span class="nt"&gt;&amp;lt;/ConfiguredValue&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/Configuration&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/DTSConfiguration&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Del contenido del archivo anterior nos llaman la atención la siguiente&amp;nbsp;línea:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;&amp;lt;ConfiguredValue&amp;gt;&lt;/span&gt;Data Source=.;Password=M3g4c0rp123;User ID=ARCHETYPE\sql_svc;Initial Catalog=Catalog;Provider=SQLNCLI10.1;Persist Security Info=True;Auto Translate=False;&lt;span class="nt"&gt;&amp;lt;/ConfiguredValue&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;La cadena anterior corresponde a la cadena para una conexión &lt;span class="caps"&gt;SQL&lt;/span&gt; asociada al
+usuario &lt;code&gt;ARCHETYPE\sql_svc&lt;/code&gt; y su contraseña que es &lt;code&gt;M3g4c0rp123&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Foothold&lt;/h2&gt;
+&lt;p&gt;Ya tenemos un usuario y contraseña, por lo que podemos intentar dar un primer
+paso firme hacia nuestra máquina objetivo &amp;#8230; peeeeero, eso será después porqué
+en este momento necesito dejar el post pausado una vez más y conectarme a hacer
+algunos pendientes del trabajo&amp;nbsp;:)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;#HappyHacking&lt;/code&gt;&lt;/p&gt;</content><category term="htb"></category><category term="blog"></category><category term="penserbjorne"></category><category term="htb"></category><category term="pentest"></category><category term="hacking"></category><category term="archetype"></category></entry></feed>

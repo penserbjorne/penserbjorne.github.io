@@ -53,6 +53,9 @@ git clone https://github.com/penserbjorne/penserbjorne.github.io.git
 # Recuerda que ya estabamos dentro dentro de la carpeta del entorno virtual
 cd penserbjorne.github.io/pelican
 
+# Relimina los archivos generados previamente
+invoke clean
+
 # Genera el sitio, convierte de Markdown a HTML
 invoke build
 

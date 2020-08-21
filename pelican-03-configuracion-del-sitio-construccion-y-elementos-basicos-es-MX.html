@@ -4,7 +4,8 @@
         <meta charset="utf-8" />
         <meta name="generator" content="Pelican" />
         <title>Pelican (03), configuración del sitio (construcción y elementos básicos)</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link rel="stylesheet" href="https://penserbjorne.github.io/theme/css/main.css" />
+        <link href="https://penserbjorne.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Blog de Penserbjorne Atom Feed" />
         <meta name="description" content="Configuración para construir y asignar elementos básicos de un sitio con Pelican" />
 </head>
 
@@ -13,18 +14,18 @@
 <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
 </a>
         <header id="banner" class="body">
-                <h1><a href="/">Blog de Penserbjorne <strong>Bienvenido al pequeño espacio virtual en donde plasmo una parte de mi ...</strong></a></h1>
+                <h1><a href="https://penserbjorne.github.io/">Blog de Penserbjorne <strong>Bienvenido al pequeño espacio virtual en donde plasmo una parte de mi ...</strong></a></h1>
                 <nav><ul>
-                    <li><a href="/category/htb.html">htb</a></li>
-                    <li><a href="/category/init.html">init</a></li>
-                    <li class="active"><a href="/category/pelican.html">pelican</a></li>
+                    <li><a href="https://penserbjorne.github.io/category/htb.html">htb</a></li>
+                    <li><a href="https://penserbjorne.github.io/category/init.html">init</a></li>
+                    <li class="active"><a href="https://penserbjorne.github.io/category/pelican.html">pelican</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="/pelican-03-configuracion-del-sitio-construccion-y-elementos-basicos-es-MX.html" rel="bookmark"
+        <a href="https://penserbjorne.github.io/pelican-03-configuracion-del-sitio-construccion-y-elementos-basicos-es-MX.html" rel="bookmark"
            title="Permalink to Pelican (03), configuración del sitio (construcción y elementos básicos)">Pelican (03), configuración del sitio (construcción y elementos&nbsp;básicos)</a></h1>
 <a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="@_penserbjorne">Tweet</a><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
     </header>
@@ -40,19 +41,19 @@
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="/author/penserbjorne.html">Penserbjorne</a>
+                By                         <a class="url fn" href="https://penserbjorne.github.io/author/penserbjorne.html">Penserbjorne</a>
         </address>
-<p>In <a href="/category/pelican.html">pelican</a>.</p>
-<p>tags: <a href="/tag/blog.html">blog</a> <a href="/tag/pelican.html">pelican</a> </p>
+<p>In <a href="https://penserbjorne.github.io/category/pelican.html">pelican</a>.</p>
+<p>tags: <a href="https://penserbjorne.github.io/tag/blog.html">blog</a> <a href="https://penserbjorne.github.io/tag/pelican.html">pelican</a> </p>
 </footer><!-- /.post-info -->      <h1>What is&nbsp;this?</h1>
 <p>Ok, esta es la tercera entrada para trabajar generando un sitio con <code>Pelican</code> en
 <code>gh-pages</code>. En esta ocasión vamos modificar algunas configuraciones para probar
 y construir el sitio, así como asignarle un&nbsp;tema.</p>
 <p>Te recomendamos revisar las entradas anteriores en donde fuimos construyendo
 el sitio sobre el que vamos a trabajar ahora.
-<a href="/pelican-01-creacion-de-un-blog-estatico-con-pelican-es-MX.html">Creación de un blog estático con Pelican</a>
+<a href="https://penserbjorne.github.io/pelican-01-creacion-de-un-blog-estatico-con-pelican-es-MX.html">Creación de un blog estático con Pelican</a>
 y
-<a href="/pelican-02-creacion-de-entradas-para-un-blog-estatico-con-pelican-es-MX.html">Creación de entradas para un blog estático con&nbsp;Pelican</a></p>
+<a href="https://penserbjorne.github.io/pelican-02-creacion-de-entradas-para-un-blog-estatico-con-pelican-es-MX.html">Creación de entradas para un blog estático con&nbsp;Pelican</a></p>
 <p>Como ya hemos dicho, toda la documentación necesaria (y extendida) se
 encuentra en <a href="https://docs.getpelican.com">el blog oficial de Pelican</a>, por lo
 que si se necesita mayor información o detalle de algo, visitar el sitio oficial
@@ -90,7 +91,7 @@ interesa leer la versión completa o con <code>make</code> puedes
 <a href="https://docs.getpelican.com/en/stable/publish.html">dar click aquí</a>.</p>
 <p>Para trabajar con <code>invoke</code> necesitamos instalarlo a través de <code>pip</code>. Recuerda
 hacerlo después de haber activado el entorno virtual que creamos en
-<a href="/pelican-01-creacion-de-un-blog-estatico-con-pelican-es-MX.html">la primera entrada</a> y de haber entrado a la carpeta
+<a href="https://penserbjorne.github.io/pelican-01-creacion-de-un-blog-estatico-con-pelican-es-MX.html">la primera entrada</a> y de haber entrado a la carpeta
 <code>pelican</code> que se encuentra dentro del&nbsp;repositorio.</p>
 <p>Para instalar <code>invoke</code> podemos ejecutar lo&nbsp;siguiente:</p>
 <div class="highlight"><pre><span></span><code>python -m pip install invoke
@@ -104,7 +105,10 @@ el que podemos automatizar tareas mediante <code>python</code>.</p>
 por lo cual podemos trabajar en automático con este archivo o modificarlo para
 adaptarlo a nuestras&nbsp;necesidades.</p>
 <p>Los comandos que vienen precargados en el archivo <code>tasks.py</code> son:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Genera el sitio, convierte de Markdown a HTML</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Relimina los archivos generados previamente</span>
+invoke clean
+
+<span class="c1"># Genera el sitio, convierte de Markdown a HTML</span>
 invoke build
 
 <span class="c1"># Regenera el sitio cada vez que se hace un cambio</span>
@@ -135,7 +139,9 @@ carpeta llamada <code>output</code> la cual se encuentra al mismo nivel que la c
 <code>pelican</code>. En nuestro caso como estamos trabajando con un blog para un usuario
 de <code>GitHub</code> por lo que necesitamos que los archivos sean generados en el
 directorio raíz del repositorio, esto es una carpeta mas arriba de donde estamos
-actualmente (recuerda que estamos en la capreta <code>pelican</code>).</p>
+actualmente (recuerda que estamos en la carpeta <code>pelican</code>).</p>
+<p>También vamos a modificar algunas de las tareas que vienen en el archivo
+<code>tasks.py</code>.</p>
 <h1>Configuración de variables del&nbsp;sitio</h1>
 <p>Bien, ya vimos que comandos vamos a estar utilizando y ya mencionamos que
 necesitamos configurarlos, esto lo vamos a hacer en los archivos
@@ -193,6 +199,11 @@ espacio y el valor de la&nbsp;variable.</p>
 <p>Si quieres ver como van quedando los archivos de configuración de este sitio
 puedes revisar el <a href="https://github.com/penserbjorne/penserbjorne.github.io/blob/master/pelican/pelicanconf.py">aquí (pelicanconf.py)</a> y
 <a href="https://github.com/penserbjorne/penserbjorne.github.io/blob/master/pelican/publishconf.py">aquí (publishconf.py)</a>.</p>
+<h1>Modificando el comportamiento de construcción del&nbsp;sitio</h1>
+<p>Ok, ya tenemos instaladas las herramientas para construir el sitio y hemos
+configurado algunas variables que que tenga un poco más de personalidad el
+sitio, eso significa que podemos&nbsp;generarlo.</p>
+<p>Los pasos para ir construyendo y probando el sitio podrian ser los&nbsp;siguientes:</p>
 <h1>Siguientes&nbsp;pasos</h1>
 <p>Ya tenemos nuestro sitio con un poco mas de estilo, sin embargo sigue sin ser
 responsivo por lo cual no es fácil de leer en dispositivos con pantallas
@@ -216,6 +227,7 @@ esto lo haremos en la siguiente entrada&nbsp;:)</p>
                 <div class="social">
                         <h2>social</h2>
                         <ul>
+                            <li><a href="https://penserbjorne.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
 
                             <li><a href="https://twitter.com/_penserbjorne">twitter</a></li>
                             <li><a href="https://github.com/penserbjorne/">github</a></li>

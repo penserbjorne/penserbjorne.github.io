@@ -89,8 +89,14 @@ adaptarlo a nuestras necesidades.
 Los comandos que vienen precargados en el archivo `tasks.py` son:
 
 ```bash
-# Genera el sitio, convierte de Markdown a HTML
+# Relimina los archivos generados previamente
+invoke clean
+
+# Genera el sitio para ver en local
 invoke build
+
+# Genera el sitio para ver en local eliminando previamente los archivos generados
+invoke rebuild
 
 # Regenera el sitio cada vez que se hace un cambio
 invoke regenerate
@@ -120,7 +126,10 @@ carpeta llamada `output` la cual se encuentra al mismo nivel que la carpeta
 `pelican`. En nuestro caso como estamos trabajando con un blog para un usuario
 de `GitHub` por lo que necesitamos que los archivos sean generados en el
 directorio raíz del repositorio, esto es una carpeta mas arriba de donde estamos
-actualmente (recuerda que estamos en la capreta `pelican`).
+actualmente (recuerda que estamos en la carpeta `pelican`).
+
+También vamos a modificar algunas de las tareas que vienen en el archivo
+`tasks.py`.
 
 # Configuración de variables del sitio
 
@@ -192,6 +201,20 @@ espacio y el valor de la variable.
 Si quieres ver como van quedando los archivos de configuración de este sitio
 puedes revisar el [aquí (pelicanconf.py)](https://github.com/penserbjorne/penserbjorne.github.io/blob/master/pelican/pelicanconf.py) y
 [aquí (publishconf.py)](https://github.com/penserbjorne/penserbjorne.github.io/blob/master/pelican/publishconf.py).
+
+# Modificando el comportamiento de construcción del sitio
+
+Ok, ya tenemos instaladas las herramientas para construir el sitio y hemos
+configurado algunas variables que que tenga un poco más de personalidad el
+sitio, eso significa que podemos generarlo.
+
+Los pasos a ir siguiendo son sencillos y deben estar pensados en dos momentos:
+desarrollo y producción.
+
+Durante el desarrollo queremos ir viendo los cambios que vamos realizando en
+local, así que podemos utilizar
+
+
 
 # Siguientes pasos
 
