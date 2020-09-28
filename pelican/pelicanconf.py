@@ -4,8 +4,8 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Penserbjorne'
 SITENAME = u'Blog de Penserbjorne'
-#SITESUBTITLE = u'Bienvenido al pequeño espacio virtual en donde plasmo una parte de mi ...'
-SITEURL = ''
+SITESUBTITLE = u'Otro sitio cliche de tecnología >;v'
+#SITEURL = ''
 
 PATH = 'content'
 OUTPUT_PATH = './../'
