@@ -1,7 +1,7 @@
 ---
 Title: Pelican (00), cheat sheet
 Date: 2020-08-20
-Modified: 2020-08-21
+Modified: 2020-09-27
 Tags: blog, pelican, cheat sheet
 Keywords: blog, pelican, cheat sheet
 Category: pelican
