@@ -125,7 +125,7 @@ que si se necesita mayor información o detalle de algo, visitar el sitio oficia
 &lt;h1&gt;Comandos&lt;/h1&gt;
 &lt;h2&gt;Preparación del&amp;nbsp;entorno&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Creación del entorno&lt;/span&gt;
-virtualenv ~/path/to/project
+virtualenv --python&lt;span class="o"&gt;=&lt;/span&gt;/usr/bin/python3 ~/path/to/project
 
 &lt;span class="c1"&gt;# Nos movemos a la carpeta creada&lt;/span&gt;
 &lt;span class="nb"&gt;cd&lt;/span&gt; ~/path/to/project
@@ -148,13 +148,28 @@ git clone https://github.com/penserbjorne/penserbjorne.github.io.git
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;h2&gt;Instalación de un&amp;nbsp;tema&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Clonar temas&lt;/span&gt;
+git clone --recursive https://github.com/getpelican/pelican-themes ~/path-to-projects/pelican-themes
+
+&lt;span class="c1"&gt;# Instalar tema&lt;/span&gt;
+pelican-themes --install ~/path-to-projects/pelican-themes/bootstrap2-dark
+
+&lt;span class="c1"&gt;# Listar temas instalados&lt;/span&gt;
+pelican-themes --list
+
+&lt;span class="c1"&gt;# Para eliminar un solo tema&lt;/span&gt;
+pelican-themes --remove nombre-del-tema
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h2&gt;Comando para generar y ejecutar sitio&amp;nbsp;(corta)&lt;/h2&gt;
 &lt;p&gt;Recuerda algunas de estas tareas fueron modificadas para ajustarse al flujo de
 de desarrollo del&amp;nbsp;sitio.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Desarrollo&lt;/span&gt;
 invoke livereload
 
-&lt;span class="c1"&gt;# Rroducción&lt;/span&gt;
+&lt;span class="c1"&gt;# Producción&lt;/span&gt;
 invoke gh-pages
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 

@@ -137,7 +137,7 @@ que si se necesita mayor información o detalle de algo, visitar el sitio oficia
 <h1>Comandos</h1>
 <h2>Preparación del&nbsp;entorno</h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># Creación del entorno</span>
-virtualenv ~/path/to/project
+virtualenv --python<span class="o">=</span>/usr/bin/python3 ~/path/to/project
 
 <span class="c1"># Nos movemos a la carpeta creada</span>
 <span class="nb">cd</span> ~/path/to/project
@@ -160,13 +160,28 @@ git clone https://github.com/penserbjorne/penserbjorne.github.io.git
 </code></pre></div>
 
 
+<h2>Instalación de un&nbsp;tema</h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Clonar temas</span>
+git clone --recursive https://github.com/getpelican/pelican-themes ~/path-to-projects/pelican-themes
+
+<span class="c1"># Instalar tema</span>
+pelican-themes --install ~/path-to-projects/pelican-themes/bootstrap2-dark
+
+<span class="c1"># Listar temas instalados</span>
+pelican-themes --list
+
+<span class="c1"># Para eliminar un solo tema</span>
+pelican-themes --remove nombre-del-tema
+</code></pre></div>
+
+
 <h2>Comando para generar y ejecutar sitio&nbsp;(corta)</h2>
 <p>Recuerda algunas de estas tareas fueron modificadas para ajustarse al flujo de
 de desarrollo del&nbsp;sitio.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Desarrollo</span>
 invoke livereload
 
-<span class="c1"># Rroducción</span>
+<span class="c1"># Producción</span>
 invoke gh-pages
 </code></pre></div>
 

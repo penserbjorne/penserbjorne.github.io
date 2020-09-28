@@ -24,11 +24,11 @@ que si se necesita mayor información o detalle de algo, visitar el sitio oficia
 
 # Comandos
 
-## Preparación del entorno
+##  Preparación del entorno
 
 ```bash
 # Creación del entorno
-virtualenv ~/path/to/project
+virtualenv --python=/usr/bin/python3 ~/path/to/project
 
 # Nos movemos a la carpeta creada
 cd ~/path/to/project
@@ -50,7 +50,23 @@ git clone https://github.com/penserbjorne/penserbjorne.github.io.git
 cd penserbjorne.github.io/pelican
 ```
 
-## Comando para generar y ejecutar sitio (corta)
+##  Instalación de un tema
+
+```bash
+# Clonar temas
+git clone --recursive https://github.com/getpelican/pelican-themes ~/path-to-projects/pelican-themes
+
+# Instalar tema
+pelican-themes --install ~/path-to-projects/pelican-themes/bootstrap2-dark
+
+# Listar temas instalados
+pelican-themes --list
+
+# Para eliminar un solo tema
+pelican-themes --remove nombre-del-tema
+```
+
+##  Comando para generar y ejecutar sitio (corta)
 
 Recuerda algunas de estas tareas fueron modificadas para ajustarse al flujo de
 de desarrollo del sitio.
@@ -59,7 +75,7 @@ de desarrollo del sitio.
 # Desarrollo
 invoke livereload
 
-# Rroducción
+# Producción
 invoke gh-pages
 ```
 
