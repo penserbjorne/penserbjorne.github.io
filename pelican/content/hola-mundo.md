@@ -12,7 +12,7 @@ Translation: false
 Status: published
 ---
 
-Bienvenido al [Blog de Penserbjorne](https://penserbjorne.github.io).
+Bienvenido al [Blog de Penserbjorne](https://penserbjorne.com).
 
 Desde hace tiempo (ya bastantes años, que horror) tenia ganas de **escribir** en
 algún lugar que fuera **personal**, ¿sobre qué?, no lo sé, de lo que se me de la
@@ -42,7 +42,7 @@ Por ahora el sitio esta alojado en GitHub Pages con un dominio de GitHub, pero
 espero en algún momento no tener flojera y comprar un dominio.
 
 So, **demos por inaugurado el
-[blog de Penserbjorne](https://penserbjorne.github.io), que la fuerza les
+[blog de Penserbjorne](https://penserbjorne.com), que la fuerza les
 acompañe**.
 
 **\#HappyHacking \#FeedTheFox**

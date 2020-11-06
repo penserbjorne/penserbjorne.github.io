@@ -1376,7 +1376,7 @@ cambio o modificación volver a generar los&amp;nbsp;archivos.&lt;/p&gt;
 van en la carpeta &lt;code&gt;content&lt;/code&gt; de nuestra subcarpeta &lt;code&gt;pelican&lt;/code&gt;. Ahí es donde
 podremos comenzar a crear nuestros archivos en &lt;code&gt;Markdown&lt;/code&gt;. Esto lo dejaremos
 para la siguiente entrada, es momento de pararse por un poco de agua, algo de
-comer y a estirar la espalda y las&amp;nbsp;piernas.&lt;/p&gt;</content><category term="pelican"></category><category term="blog"></category><category term="pelican"></category></entry><entry><title>Hola Mundo</title><link href="https://penserbjorne.com/hola-mundo-es-MX.html" rel="alternate"></link><published>2020-04-11T00:00:00-05:00</published><updated>2020-04-24T00:00:00-05:00</updated><author><name>penserbjorne</name></author><id>tag:penserbjorne.com,2020-04-11:/hola-mundo-es-MX.html</id><summary type="html">&lt;p&gt;Inauguración del blog de&amp;nbsp;Penserbjorne&lt;/p&gt;</summary><content type="html">&lt;p&gt;Bienvenido al &lt;a href="https://penserbjorne.github.io"&gt;Blog de Penserbjorne&lt;/a&gt;.&lt;/p&gt;
+comer y a estirar la espalda y las&amp;nbsp;piernas.&lt;/p&gt;</content><category term="pelican"></category><category term="blog"></category><category term="pelican"></category></entry><entry><title>Hola Mundo</title><link href="https://penserbjorne.com/hola-mundo-es-MX.html" rel="alternate"></link><published>2020-04-11T00:00:00-05:00</published><updated>2020-04-24T00:00:00-05:00</updated><author><name>penserbjorne</name></author><id>tag:penserbjorne.com,2020-04-11:/hola-mundo-es-MX.html</id><summary type="html">&lt;p&gt;Inauguración del blog de&amp;nbsp;Penserbjorne&lt;/p&gt;</summary><content type="html">&lt;p&gt;Bienvenido al &lt;a href="https://penserbjorne.com"&gt;Blog de Penserbjorne&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Desde hace tiempo (ya bastantes años, que horror) tenia ganas de &lt;strong&gt;escribir&lt;/strong&gt; en
 algún lugar que fuera &lt;strong&gt;personal&lt;/strong&gt;, ¿sobre qué?, no lo sé, de lo que se me de la
 gana, sin restricciones ni filtros que no sean&amp;nbsp;míos.&lt;/p&gt;
@@ -1401,6 +1401,6 @@ encontrar&lt;/strong&gt;&amp;nbsp;:P&lt;/p&gt;
 &lt;p&gt;Por ahora el sitio esta alojado en GitHub Pages con un dominio de GitHub, pero
 espero en algún momento no tener flojera y comprar un&amp;nbsp;dominio.&lt;/p&gt;
 &lt;p&gt;So, &lt;strong&gt;demos por inaugurado el
-&lt;a href="https://penserbjorne.github.io"&gt;blog de Penserbjorne&lt;/a&gt;, que la fuerza les
+&lt;a href="https://penserbjorne.com"&gt;blog de Penserbjorne&lt;/a&gt;, que la fuerza les
 acompañe&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;#HappyHacking&amp;nbsp;#FeedTheFox&lt;/strong&gt;&lt;/p&gt;</content><category term="init"></category><category term="blog"></category><category term="penserbjorne"></category></entry></feed>
