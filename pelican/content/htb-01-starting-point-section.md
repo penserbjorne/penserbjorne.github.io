@@ -1,7 +1,7 @@
 ---
 Title: Hack-The-Box (0001) > Starting point
 Date: 2020-08-06
-Modified: 2020-08-06
+Modified: 2020-11-06
 Tags: blog, penserbjorne, htb, pentest, hacking
 Keywords: blog, penserbjorne, htb, pentest, hacking
 Category: htb
@@ -93,6 +93,7 @@ los siguiente elementos:
 - Reconocimiento (Reconnaissance)
 - Enumeración (Enumeration)
 - Movimiento lateral (Lateral Movement)
+- Punto de partida (Foothold)
 - Explotación (Explotation)
 - Escalada de privilegios (Privilege Escalation)
 - Explotación posterior (Post Explotation)
