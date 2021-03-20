@@ -29,39 +29,53 @@
 -	WPS Office
 	-	https://linux.wps.com/
 	-	https://jixianzhao.github.io/2019-07-04-install-WPS-Office-Fonts
-	
+
 -	Steam
 	-	`sudo apt install steam`
 	-	Configurar
 		-	`proton`
 		-	Biblioteca externa
 		-	Descargas
-	
+
+-	gamemode
+	-	`sudo apt install gamemode gnome-shell-extension-gamemode`
+	-	Activar extensión en gnome-shell
+	-	https://extensions.gnome.org/extension/1852/gamemode/
+
+-	OBS
+	-	`sudo apt install obs-studio obs-plugins`
 -	Signal
 	-	`sudo apt install signal-desktop`
 	-	https://signal.org/download/
-	
+
 -	Telegram
 	-	`sudo apt install telegram-desktop`
 	-	Configurar carpeta de descargas
-		
+
 -	Calibre
 	-	https://calibre-ebook.com/download_linux
-	
+
 -	Spotify
 	-	`sudo apt install spotify-client`
 
 -	EDA
 	-	Referencia a la entrada correspondiente
-	
+
 -	VPN
 	-	Por ahora TunnelBear
 	-	https://www.tunnelbear.com/blog/linux_support/
-	
+
 -	git
 	-	`git config --global user.name "John Doe"`
 	-	`git config --global user.email johndoe@example.com`
-	
+
+-	VirtualBox
+	-	`sudo apt install virtualbox virtualbox-ext-pack`
+	-	https://www.kali.org/docs/virtualization/
+
+-	OpenShot
+	-	PPA
+	-	https://www.openshot.org/ppa/
 ---
 
 https://extensions.gnome.org/extension/1852/gamemode/
@@ -90,4 +104,3 @@ Audio despues de hibernar
 
 Firefox despues de hibernar
 -	https://bugzilla.mozilla.org/show_bug.cgi?id=1506017#c17
-
