@@ -9,7 +9,7 @@ Author: penserbjorne
 Summary: Anotaciones sobre la máquina "Oopsie" de la sección "Starting point" de Hack-The-Box
 Lang: es-MX
 Translation: false
-Status: published
+Status: draft
 ---
 
 # Oopsie
