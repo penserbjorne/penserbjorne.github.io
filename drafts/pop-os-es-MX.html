@@ -10,19 +10,19 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="blog, penserbjorne, htb, pentest, hacking, htb, blog, penserbjorne, htb, pentest, hacking" />
+<meta name="keywords" content="blog, penserbjorne, pop, linux, blog, penserbjorne" />
 
-<meta property="og:title" content="Hack-The-Box (0001) &gt; Starting point "/>
-<meta property="og:url" content="https://penserbjorne.com/hack-the-box-0001-starting-point-es-MX.html" />
-<meta property="og:description" content="Anotaciones sobre la sección “Starting point” de Hack-The-Box" />
+<meta property="og:title" content="Pop OS "/>
+<meta property="og:url" content="https://penserbjorne.com/drafts/pop-os-es-MX.html" />
+<meta property="og:description" content="Pop OS" />
 <meta property="og:site_name" content="Blog de Penserbjorne" />
 <meta property="og:article:author" content="penserbjorne" />
-<meta property="og:article:published_time" content="2020-08-06T00:00:00-05:00" />
-<meta property="og:article:modified_time" content="2020-11-06T00:00:00-06:00" />
-<meta name="twitter:title" content="Hack-The-Box (0001) &gt; Starting point ">
-<meta name="twitter:description" content="Anotaciones sobre la sección “Starting point” de Hack-The-Box">
+<meta property="og:article:published_time" content="2020-04-11T00:00:00-05:00" />
+<meta property="og:article:modified_time" content="2021-03-28T00:00:00-06:00" />
+<meta name="twitter:title" content="Pop OS ">
+<meta name="twitter:description" content="Pop OS">
 
-        <title>Hack-The-Box (0001) &gt; Starting point  · Blog de Penserbjorne
+        <title>Pop OS  · Blog de Penserbjorne
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="https://penserbjorne.com/theme/css/elegant.prod.css" media="screen">
@@ -67,8 +67,8 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://penserbjorne.com/hack-the-box-0001-starting-point-es-MX.html">
-                Hack-The-Box (0001) > Starting&nbsp;point
+            <a href="https://penserbjorne.com/drafts/pop-os-es-MX.html">
+                Pop <span class="caps">OS</span>
             </a>
         </h1>
     </header>
@@ -77,85 +77,171 @@
 <div class="row-fluid">
         <div class="span8 offset2 article-content">
             
-            <h1>This is not the intro&nbsp;:)</h1>
-<p>Ola k&nbsp;ase.</p>
-<p>Para este exacto momento en el que escribo esta linea de texto han pasado 146
-días desde que comenzó la pandemia del <span class="caps">COVID</span>-19 y pareciera que el tiempo se
-detuvo y que no ha pasado nada pero que a la vez que han pasado tantas&nbsp;cosas.</p>
-<p>Como sea, este blog esta en la misma situación, un tiempo&nbsp;suspendido.</p>
-<p>Dependiendo de cual futuro o universo paralelo leas esto puede que el blog
-ni siquiera este terminado de configurar, aún tenga el template de <code>Pelican</code> y
-que no tenga nada de contenido o que ya sea un pequeño blog que se ve hermoso
-y tiene un par de entradas útiles para la humanidad haha en todo caso, si en
-estos dos párrafos no te haz aburrido o retirado, mandame un tuit a
-<a href="https://twitter.com/_penserbjorne">@_penserbjorne</a>
-con una captura de pantalla de como se ve el blog y a cambio te invito unos
-taquitos&nbsp;:)</p>
-<p>Ahora sí,&nbsp;arranquemos.</p>
-<h1>Hack-The-Box: Starting&nbsp;point</h1>
-<h2>¿Qué es&nbsp;esto?</h2>
-<p>Este texto son anotaciones sobre la sección <strong>Starting point</strong> de
-<strong>Hack-The-Box</strong>.</p>
-<p>Nos apoyaremos en los walk-throughs que ya vienen incorporados en la sección
-<em>Starting point</em> e iremos explicando los comandos&nbsp;utilizados.</p>
-<h2>Hack-The-Box (<span class="caps">HTB</span>)</h2>
-<p>Bueno, para hablar de <a href="https://www.hackthebox.eu"><strong>Hack-The-Box</strong> (<span class="caps">HTB</span>)</a> y
-presentar lo qué realmente es este proyecto seria bueno dedicar una entrada
-específicamente a eso, por lo cual solo diré que es una plataforma para
-practicar o probar tus habilidades de pentesting trabajando sobre maquinas
-virtuales que están diseñadas y preparadas para&nbsp;esto.</p>
-<p>En resumen, hay maquinas virtuales con cierto software instalado y ciertas
-configuraciones que permiten que esta maquina pueda ser vulnerada de alguna
-manera. ¿Quieres practicar temas de pentesting? Esta es una de las plataformas&nbsp;recomendadas.</p>
-<h2>Starting&nbsp;Point</h2>
-<p>Para las personas que van comenzando en este ámbito puede que <span class="caps">HTB</span> sea una
-plataforma con un nivel de complejidad bastante alto y no necesariamente la
-primera opción para&nbsp;arrancar.</p>
-<p>Para solucionar esto <span class="caps">HTB</span> ha habilitado una sección llamada
-<a href="https://www.hackthebox.eu/home/start"><strong>Starting point</strong></a>
-en la cual se encuentran una serie de maquinas con un nivel <em>básico</em>
-acompañadas de sus <a href="https://www.wordnik.com/words/walk-through">walk-throughs</a>
-para que puedas resolverlas y familiarizarte con los pasos usuales del proceso
-de&nbsp;pentesting.</p>
-<p><strong>Nota</strong>: El pentesting no es una receta, estos recursos son solo para
-comenzar, pero conforme se avanza es necesario refinar tus habilidades y hacer
-uso el conocimiento que vas desarrollando o acumulando&nbsp;:)</p>
-<h2>Elementos del&nbsp;pentesting</h2>
-<p>Si bien el pentesting no es una receta, existen diferentes metodologías o
-frameworks que nos ayudan a guiarnos para realizar esta actividad de manera
-ordenada y&nbsp;limpia.</p>
-<p>Si quieres saber más puedes buscar los siguientes términos&nbsp;Internet:</p>
+            <ul>
+<li>
+<p>Configurar <code>gedit</code></p>
+</li>
+<li>
+<p>Configurar disco&nbsp;extra</p>
 <ul>
-<li>Cyber security&nbsp;framework</li>
-<li>Cyber security kill&nbsp;chain</li>
-<li><span class="caps">MITRE</span>&nbsp;Framework</li>
-<li><span class="caps">OWASP</span>&nbsp;Framework</li>
+<li>Con disco bloqueado<ul>
+<li><span class="dquo">&#8220;</span>Editar las opciones de&nbsp;cifrado&#8221;</li>
 </ul>
-<p>Listo, ahora que haz ignorado lo anterior o haz regresado de buscar, en el caso
-de la sección de <strong>Starting Point</strong> de <span class="caps">HTB</span> podemos encontrar de manera general
-los siguiente&nbsp;elementos:</p>
+</li>
+<li>Con disco desbloqueado<ul>
+<li><span class="dquo">&#8220;</span>Editar opciones de&nbsp;montaje&#8221;</li>
+</ul>
+</li>
+<li>Creando enlace simbolico<ul>
+<li><code>ln -sf /mnt/extra/ ./extra</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Firefox</p>
 <ul>
-<li>Reconocimiento&nbsp;(Reconnaissance)</li>
-<li>Enumeración&nbsp;(Enumeration)</li>
-<li>Movimiento lateral (Lateral&nbsp;Movement)</li>
-<li>Punto de partida&nbsp;(Foothold)</li>
-<li>Explotación&nbsp;(Explotation)</li>
-<li>Escalada de privilegios (Privilege&nbsp;Escalation)</li>
-<li>Explotación posterior (Post&nbsp;Explotation)</li>
+<li>Sync</li>
+<li>Configurar ruta de descarga a <code>extra</code></li>
 </ul>
-<p>Si bien no todas las máquinas necesitan todos los pasos mencionados, es bueno
-tenerlos presentes para tratar de trabajar de manera&nbsp;ordenada.</p>
-<p>Te recomendamos resolver cada maquina con su walk-through y a la par ir leyendo
-la siguiente&nbsp;sección.</p>
-<h2>Anotaciones de Starting&nbsp;point</h2>
-<p>Para ir tomando nota iremos creando una sección por cada maquina e iremos
-desarrollando los comando que solicita su walk-through correspondiente y le
-daremos contexto al comando o a la&nbsp;acción.</p>
-<p>Debido a que no sé cual va a ser la longitud de cada maquina lo mejor será
-dedicar una entrada a cada una por lo que te invito pases a la siguiente entrada
-en la cual comenzaremos con la maquina
-<a href="{filename}./htb-02-starting-point-archetype.md"><strong>Archetype</strong></a>.</p>
-<p><code>#HappyHacking</code></p>
+</li>
+<li>
+<p>Dropbox</p>
+<ul>
+<li>https://www.dropbox.com/install</li>
+</ul>
+</li>
+<li>
+<p>Drive</p>
+<ul>
+<li>Añadir cuenta mediante <span class="caps">GNOME</span></li>
+</ul>
+</li>
+<li>
+<p>KeePassXC</p>
+<ul>
+<li><code>sudo apt install keepassxc</code></li>
+</ul>
+</li>
+<li>
+<p>Cryptomator</p>
+<ul>
+<li>https://cryptomator.org/downloads/</li>
+<li>Utilizar <span class="caps">PPA</span></li>
+<li>Activar actualizaciones&nbsp;automaticas</li>
+</ul>
+</li>
+<li>
+<p><span class="caps">WPS</span>&nbsp;Office</p>
+<ul>
+<li>https://linux.wps.com/</li>
+<li>https://jixianzhao.github.io/2019-07-04-install-<span class="caps">WPS</span>-Office-Fonts</li>
+</ul>
+</li>
+<li>
+<p>Steam</p>
+<ul>
+<li><code>sudo apt install steam</code></li>
+<li>Configurar<ul>
+<li><code>proton</code></li>
+<li>Biblioteca&nbsp;externa</li>
+<li>Descargas</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>gamemode</p>
+<ul>
+<li><code>sudo apt install gamemode gnome-shell-extension-gamemode</code></li>
+<li>Activar extensión en&nbsp;gnome-shell</li>
+<li>https://extensions.gnome.org/extension/1852/gamemode/</li>
+</ul>
+</li>
+<li>
+<p><span class="caps">OBS</span></p>
+<ul>
+<li><code>sudo apt install obs-studio obs-plugins</code></li>
+</ul>
+</li>
+<li>
+<p>Signal</p>
+<ul>
+<li><code>sudo apt install signal-desktop</code></li>
+<li>https://signal.org/download/</li>
+</ul>
+</li>
+<li>
+<p>Telegram</p>
+<ul>
+<li><code>sudo apt install telegram-desktop</code></li>
+<li>Configurar carpeta de&nbsp;descargas</li>
+</ul>
+</li>
+<li>
+<p>Calibre</p>
+<ul>
+<li>https://calibre-ebook.com/download_linux</li>
+</ul>
+</li>
+<li>
+<p>Spotify</p>
+<ul>
+<li><code>sudo apt install spotify-client</code></li>
+</ul>
+</li>
+<li>
+<p><span class="caps">EDA</span></p>
+<ul>
+<li>Referencia a la entrada&nbsp;correspondiente</li>
+</ul>
+</li>
+<li>
+<p><span class="caps">VPN</span></p>
+<ul>
+<li>Por ahora&nbsp;TunnelBear</li>
+<li>https://www.tunnelbear.com/blog/linux_support/</li>
+</ul>
+</li>
+<li>
+<p>git</p>
+<ul>
+<li><code>git config --global user.name "John Doe"</code></li>
+<li><code>git config --global user.email johndoe@example.com</code></li>
+</ul>
+</li>
+<li>
+<p>VirtualBox</p>
+<ul>
+<li><code>sudo apt install virtualbox virtualbox-ext-pack</code></li>
+<li>https://www.kali.org/docs/virtualization/</li>
+</ul>
+</li>
+<li>
+<p>OpenShot</p>
+<ul>
+<li><span class="caps">PPA</span></li>
+<li>https://www.openshot.org/ppa/</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>https://extensions.gnome.org/extension/1852/gamemode/&nbsp;https://extensions.gnome.org/extension/7/removable-drive-menu/</p>
+<p>SwapFaq Ubuntu&nbsp;https://help.ubuntu.com/community/SwapFaq</p>
+<p>Enable Hibernation on Pop <span class="caps">OS</span>&nbsp;https://abskmj.github.io/notes/posts/pop-os/enable-hibernate/</p>
+<p>Crear archivo swap en linux&nbsp;https://itsfoss.com/create-swap-file-linux/#comments</p>
+<p>Extension de hibernar en gnome&nbsp;https://extensions.gnome.org/extension/755/hibernate-status-button/</p>
+<p>Audio despues de hibernar
+-   https://rtfm.co.ua/en/linux-no-sound-after-suspend-sleep-solution/
+    -   https://gitlab.freedesktop.org/pulseaudio/pulseaudio/-/issues/766#note_490045
+-   https://askubuntu.com/questions/1187835/only-getting-dummy-output-audio-after-resuming-kubuntu
+-&nbsp;https://bbs.archlinux.org/viewtopic.php?id=252030</p>
+<ul>
+<li>https://wiki.archlinux.org/index.php/PulseAudio/Troubleshooting#No_sound_after_resume_from_suspend</li>
+<li>https://www.reddit.com/r/ProtonVPN/comments/i2f7j5/solution_to_reconnecting_protonvpn_after/</li>
+</ul>
+<p>Firefox despues de hibernar
+-&nbsp;https://bugzilla.mozilla.org/show_bug.cgi?id=1506017#c17</p>
 
 
              
@@ -173,28 +259,19 @@ en la cual comenzaremos con la maquina
         </div>
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2020-08-06T00:00:00-05:00">ago 6, 2020</time>
+            <time itemprop="dateCreated" datetime="2020-04-11T00:00:00-05:00">abr 11, 2020</time>
 <h4>Last Updated</h4>
-<time datetime="2020-11-06T00:00:00-06:00">nov 6, 2020</time>
+<time datetime="2021-03-28T00:00:00-06:00">mar 28, 2021</time>
 
             <h4>Category</h4>
-            <a class="category-link" href="https://penserbjorne.com/categories.html#htb-ref">htb</a>
+            <a class="category-link" href="https://penserbjorne.com/categories.html#pop-linux-ref">pop, linux</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
                 <li><a href="https://penserbjorne.com/tags.html#blog-ref">blog
                     <span>8</span>
 </a></li>
-                <li><a href="https://penserbjorne.com/tags.html#hacking-ref">hacking
-                    <span>2</span>
-</a></li>
-                <li><a href="https://penserbjorne.com/tags.html#htb-ref">htb
-                    <span>2</span>
-</a></li>
                 <li><a href="https://penserbjorne.com/tags.html#penserbjorne-ref">penserbjorne
                     <span>3</span>
-</a></li>
-                <li><a href="https://penserbjorne.com/tags.html#pentest-ref">pentest
-                    <span>2</span>
 </a></li>
             </ul>
 <h4>Contact</h4>

@@ -1,140 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Hack-The-Box (0002) > Starting point > Archetype</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Penserbjorne">
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="penserbjorne" />
 
-    <!-- Le styles -->
-    <link rel="stylesheet" href="https://penserbjorne.com/theme/css/bootstrap.dark.css" type="text/css" />
-    <style type="text/css">
-      body {
-        padding-top: 60px;
-        padding-bottom: 40px;
-      }
-      .sidebar-nav {
-        padding: 9px 0;
-      }
-      .tag-1 {
-        font-size: 13pt;
-      }
-      .tag-2 {
-        font-size: 10pt;
-      }
-      .tag-2 {
-        font-size: 8pt;
-      }
-      .tag-4 {
-        font-size: 6pt;
-     }
-    </style>
-    <link href="https://penserbjorne.com/theme/css/bootstrap-responsive.dark.css" rel="stylesheet">
-        <link href="https://penserbjorne.com/theme/css/font-awesome.css" rel="stylesheet">
+        <meta name="twitter:creator" content="@@_penserbjorne">
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
 
-    <link href="https://penserbjorne.com/theme/css/pygments.css" rel="stylesheet">
+<meta name="keywords" content="blog, penserbjorne, htb, pentest, hacking, archetype, htb, blog, penserbjorne, htb, pentest, hacking, archetype" />
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+<meta property="og:title" content="Hack-The-Box (0002) &gt; Starting point &gt; Archetype "/>
+<meta property="og:url" content="https://penserbjorne.com/hack-the-box-0002-starting-point-archetype-es-MX.html" />
+<meta property="og:description" content="Anotaciones sobre la máquina “Archetype” de la sección “Starting point” de Hack-The-Box" />
+<meta property="og:site_name" content="Blog de Penserbjorne" />
+<meta property="og:article:author" content="penserbjorne" />
+<meta property="og:article:published_time" content="2020-08-06T00:00:00-05:00" />
+<meta property="og:article:modified_time" content="2020-11-06T00:00:00-06:00" />
+<meta name="twitter:title" content="Hack-The-Box (0002) &gt; Starting point &gt; Archetype ">
+<meta name="twitter:description" content="Anotaciones sobre la máquina “Archetype” de la sección “Starting point” de Hack-The-Box">
 
-    <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="https://penserbjorne.com/theme/images/favicon.ico">
-    <link rel="apple-touch-icon" href="https://penserbjorne.com/theme/images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="https://penserbjorne.com/theme/images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="https://penserbjorne.com/theme/images/apple-touch-icon-114x114.png">
+        <title>Hack-The-Box (0002) &gt; Starting point &gt; Archetype  · Blog de Penserbjorne
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://penserbjorne.com/theme/css/elegant.prod.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://penserbjorne.com/theme/css/custom.css" media="screen">
 
-    <link href="https://penserbjorne.com/" type="application/atom+xml" rel="alternate" title="Blog de Penserbjorne ATOM Feed" />
-
-  </head>
-
-  <body>
-
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="https://penserbjorne.com/index.html">Blog de Penserbjorne  <strong>Otro sitio clíche de tecnología (que no sabe utilizar acentos) >;v</strong></a>
-          <div class="nav-collapse">
-            <ul class="nav">
-                          <li class="divider-vertical"></li>
-                  <li class="active">
-                    <a href="https://penserbjorne.com/category/htb.html">
-						<i class="icon-folder-open icon-large"></i>htb
-					</a>
-                  </li>
-                  <li >
-                    <a href="https://penserbjorne.com/category/init.html">
-						<i class="icon-folder-open icon-large"></i>init
-					</a>
-                  </li>
-                  <li >
-                    <a href="https://penserbjorne.com/category/pelican.html">
-						<i class="icon-folder-open icon-large"></i>pelican
-					</a>
-                  </li>
-
-                          <ul class="nav pull-right">
-                                <li><a href="https://penserbjorne.com/archives.html"><i class="icon-th-list"></i>Archives</a></li>
-                          </ul>
-
-            </ul>
-            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
-
-    <div class="container-fluid">
-      <div class="row">
-        <div class="span9" id="content">
-<section id="content">
-        <article>
-                <header>
-                        <h1>
-                                <a href=""
-                                        rel="bookmark"
-                                        title="Permalink to Hack-The-Box (0002) > Starting point > Archetype">
-                                        Hack-The-Box (0002) > Starting point > Archetype
-                                </a>
-<a href="http://twitter.com/share" class="twitter-share-button"
-   data-count="horizontal" data-via="@_penserbjorne">Tweet</a>
-<script type="text/javascript" src="http://platform.twitter.com/widgets.js">
-</script>
-                        </h1>
-                </header>
-                <div class="entry-content">
-                <div class="well">
-<footer class="post-info">
-<span class="label">Date</span>
-<abbr class="published" title="2020-08-06T00:00:00-05:00">
-        <i class="icon-calendar"></i>jue 06 agosto 2020
-</abbr>
-<span class="label">By</span>
-<a href="https://penserbjorne.com/author/penserbjorne.html"><i class="icon-user"></i>penserbjorne</a>
-<span class="label">Category</span>
-<a href="https://penserbjorne.com/category/htb.html"><i class="icon-folder-open"></i>htb</a>.
+        <link href="https://penserbjorne.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Blog de Penserbjorne - Full Atom Feed" />
 
 
-<span class="label">Tags</span>
-	<a href="https://penserbjorne.com/tag/blog.html"><i class="icon-tag"></i>blog</a>
-	<a href="https://penserbjorne.com/tag/penserbjorne.html"><i class="icon-tag"></i>penserbjorne</a>
-	<a href="https://penserbjorne.com/tag/htb.html"><i class="icon-tag"></i>htb</a>
-	<a href="https://penserbjorne.com/tag/pentest.html"><i class="icon-tag"></i>pentest</a>
-	<a href="https://penserbjorne.com/tag/hacking.html"><i class="icon-tag"></i>hacking</a>
-	<a href="https://penserbjorne.com/tag/archetype.html"><i class="icon-tag"></i>archetype</a>
-</footer><!-- /.post-info -->                </div>
-                <h1>Archetype</h1>
+    </head>
+    <body>
+        <div id="content">
+            <div class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="https://penserbjorne.com/"><span class=site-name>Blog de Penserbjorne</span></a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right top-menu">
+                                <li >
+                                    <a href=
+                                       https://penserbjorne.com
+                                    >Home</a>
+                                </li>
+                                <li ><a href="https://penserbjorne.com/categories.html">Categories</a></li>
+                                <li ><a href="https://penserbjorne.com/tags.html">Tags</a></li>
+                                <li ><a href="https://penserbjorne.com/archives.html">Archives</a></li>
+                                <li><form class="navbar-search" action="https://penserbjorne.com/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span1"></div>
+                    <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+        <h1>
+            <a href="https://penserbjorne.com/hack-the-box-0002-starting-point-archetype-es-MX.html">
+                Hack-The-Box (0002) > Starting point > Archetype
+            </a>
+        </h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+            
+            <h1>Archetype</h1>
 <p>Para comenzar con esta serie de anotaciones sobre la sección <em>Starting point</em>
 arrancaremos con la máquina <em>Archetype</em>. Si no sabes bien de que hablo te
 recomiendo que primero leas la
-<a href="https://penserbjorne.com/hack-the-box-0001-starting-point-es-MX.html">entrada anterior</a>.</p>
+<a href="{filename}./htb-01-starting-point-section.md">entrada anterior</a>.</p>
 <ul>
 <li><strong>Máquina:</strong>&nbsp;Archetype</li>
 <li><strong><span class="caps">SO</span>:</strong>&nbsp;Windows</li>
@@ -835,95 +782,125 @@ estos temas de seguridad, <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
 y seguir aprendiendo poco a&nbsp;poco.</p>
 <p>Nos vemos en el siguiente texto.&nbsp;Ciao!</p>
 <p><code>#HappyHacking</code></p>
-                </div><!-- /.entry-content -->
-        </article>
-</section>
-        </div><!--/span-->
 
-                <div class="span3 well sidebar-nav" id="sidebar">
-<ul class="nav nav-list">
-<li class="nav-header"><h4><i class="icon-external-link"></i>blogroll</h4></li>
-    <li><a href="https://lidsol.org/"><i class="icon-external-link"></i>LIDSoL</a></li>
-    <li><a href="https://elotl.mx/"><i class="icon-external-link"></i>Comunidad Elotl</a></li>
-    <li><a href="https://protege.la/"><i class="icon-external-link"></i>protege.la</a></li>
-    <li><a href="https://socialtic.org/"><i class="icon-external-link"></i>SocialTIC</a></li>
-<li class="nav-header"><h4><i class="icon-home icon-large"></i> social</h4></li>
-<li><a href="https://penserbjorne.com/" rel="alternate"><i class="icon-bookmark icon-large"></i>atom feed</a></li>
-    <li><a href="https://twitter.com/_penserbjorne"><i class="icon-twitter-sign icon-large"></i>twitter</a></li>
-    <li><a href="https://github.com/penserbjorne/"><i class="icon-github-sign icon-large"></i>github</a></li>
 
-<li class="nav-header"><h4><i class="icon-folder-close icon-large"></i>Categories</h4></li>
-<li>
-<a href="https://penserbjorne.com/category/htb.html">
-    <i class="icon-folder-open icon-large"></i>htb
-</a>
-</li>
-<li>
-<a href="https://penserbjorne.com/category/init.html">
-    <i class="icon-folder-open icon-large"></i>init
-</a>
-</li>
-<li>
-<a href="https://penserbjorne.com/category/pelican.html">
-    <i class="icon-folder-open icon-large"></i>pelican
-</a>
-</li>
+             
+ 
+            
+            
+            
 
-<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
 
-<li class="nav-header"><h4><i class="icon-twitter-sign"></i>Twitter</h4></li>
-<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
-<script>
-new TWTR.Widget({
-  version: 2,
-  type: 'profile',
-  rpp: 4,
-  interval: 30000,
-  width: 'auto',
-  height: 300,
-  theme: {
-	shell: {
-	  background: '#f5f5f5',
-	  color: '#000000'
-	},
-	tweets: {
-	  background: '#ffffff',
-	  color: '#000000',
-	  links: '#1a50a1'
-	}
-  },
-  features: {
-	scrollbar: false,
-	loop: false,
-	live: false,
-	behavior: 'all'
-  }
-}).render().setUser('@_penserbjorne').start();
+
+
+
+
+            <hr/>
+        </div>
+        <section id="article-sidebar" class="span2">
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2020-08-06T00:00:00-05:00">ago 6, 2020</time>
+<h4>Last Updated</h4>
+<time datetime="2020-11-06T00:00:00-06:00">nov 6, 2020</time>
+
+            <h4>Category</h4>
+            <a class="category-link" href="https://penserbjorne.com/categories.html#htb-ref">htb</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="https://penserbjorne.com/tags.html#archetype-ref">archetype
+                    <span>1</span>
+</a></li>
+                <li><a href="https://penserbjorne.com/tags.html#blog-ref">blog
+                    <span>8</span>
+</a></li>
+                <li><a href="https://penserbjorne.com/tags.html#hacking-ref">hacking
+                    <span>2</span>
+</a></li>
+                <li><a href="https://penserbjorne.com/tags.html#htb-ref">htb
+                    <span>2</span>
+</a></li>
+                <li><a href="https://penserbjorne.com/tags.html#penserbjorne-ref">penserbjorne
+                    <span>3</span>
+</a></li>
+                <li><a href="https://penserbjorne.com/tags.html#pentest-ref">pentest
+                    <span>2</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+<div id="sidebar-social-link">
+    <a href="https://twitter.com/_penserbjorne" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Twitter" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+    </a>
+    <a href="https://github.com/penserbjorne/" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+    </a>
+</div>
+            
+
+
+
+
+
+            
+
+
+
+
+
+        </section>
+</div>
+</article>
+                    </div>
+                    <div class="span1"></div>
+                </div>
+            </div>
+        </div>
+<footer>
+
+    <div>
+        <span class="site-name">Blog de Penserbjorne</span> - Otro sitio cliché de tecnología (que no sabe utilizar acentos) >;v
+    </div>
+
+
+
+    <div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" title="Pelican Home Page" target="_blank" rel="nofollow noopener noreferrer">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" title="Theme Elegant Home Page" target="_blank" rel="nofollow noopener noreferrer">Elegant</a>
+    </div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    <script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
 </script>
 
-</ul>        </div><!--/.well -->
-
-      </div><!--/row-->
-
-      <hr>
-
-      <footer>
-        <address id="about">
-                Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican <i class="icon-external-link"></i></a>,
-                                which takes great advantage of <a href="http://python.org">Python <i class="icon-external-link"></i></a>.
-        </address><!-- /#about -->
-
-        <p>The theme is based on <a href="http://twitter.github.com/bootstrap/">Bootstrap from Twitter <i class="icon-external-link"></i></a>,
-                   and <a href="http://fortawesome.github.com/Font-Awesome/">Font-Awesome <i class="icon-external-link"></i></a>, thanks!</p>
-      </footer>
-
-    </div><!--/.fluid-container-->
-
-
-
-    <!-- Le javascript -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://penserbjorne.com/theme/js/jquery-1.7.2.min.js"></script>
-    <script src="https://penserbjorne.com/theme/js/bootstrap.min.js"></script>
-  </body>
+    </body>
+    <!-- Theme: Elegant built for Pelican
+        License : MIT -->
 </html>

