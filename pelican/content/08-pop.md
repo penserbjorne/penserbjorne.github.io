@@ -1,3 +1,17 @@
+---
+Title: Pop OS
+Date: 2020-04-11
+Modified: 2021-03-28
+Tags: blog, penserbjorne
+Keywords: blog, penserbjorne
+Category: pop, linux
+Author: penserbjorne
+Summary: Pop OS
+Lang: es-MX
+Translation: false
+Status: draft
+---
+
 -	Configurar `gedit`
 
 -	Configurar disco extra

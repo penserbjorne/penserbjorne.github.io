@@ -1,3 +1,17 @@
+---
+Title: Pop OS SWAP
+Date: 2020-04-11
+Modified: 2020-04-11
+Tags: blog, penserbjorne
+Keywords: blog, penserbjorne
+Category: pop, linux
+Author: penserbjorne
+Summary: Pop OS SWAP
+Lang: es-MX
+Translation: false
+Status: draft
+---
+
 penserbjorne@painkiller-legion:~$ free -m
               total       usado       libre  compartido búfer/caché  disponible
 Memoria:       31959       11234       16217         162        4507       20101
@@ -22,7 +36,7 @@ tmpfs                    16G      0   16G   0% /sys/fs/cgroup
 tmpfs                   3.2G    20K  3.2G   1% /run/user/110
 /dev/dm-3               916G   348G  523G  40% /mnt/extra
 tmpfs                   3.2G    44K  3.2G   1% /run/user/1000
-penserbjorne@painkiller-legion:~$ cat /sys/power/state 
+penserbjorne@painkiller-legion:~$ cat /sys/power/state
 freeze mem disk
 penserbjorne@painkiller-legion:~$ free -h
               total       usado       libre  compartido búfer/caché  disponible
@@ -49,14 +63,14 @@ LOGO=distributor-logo-pop-os
 penserbjorne@painkiller-legion:~$ ls /
 bin   dev  home  lib32  libx32      media  opt   recovery  run   srv  tmp  var
 boot  etc  lib   lib64  lost+found  mnt    proc  root      sbin  sys  usr
-penserbjorne@painkiller-legion:~$ cat /sys/power/state 
+penserbjorne@painkiller-legion:~$ cat /sys/power/state
 freeze mem disk
 penserbjorne@painkiller-legion:~$ free -h
               total       usado       libre  compartido búfer/caché  disponible
 Memoria:        31Gi       8.5Gi        15Gi       472Mi       7.3Gi        21Gi
 Swap:         4.0Gi          0B       4.0Gi
 penserbjorne@painkiller-legion:~$ sudo fallocate -l 32G /swapfile
-[sudo] contraseña para penserbjorne: 
+[sudo] contraseña para penserbjorne:
 penserbjorne@painkiller-legion:~$ ls /
 bin   dev  home  lib32  libx32      media  opt   recovery  run   srv       sys  usr
 boot  etc  lib   lib64  lost+found  mnt    proc  root      sbin  swapfile  tmp  var
@@ -103,16 +117,16 @@ tmpfs                    16G      0   16G   0% /sys/fs/cgroup
 tmpfs                   3.2G    20K  3.2G   1% /run/user/110
 /dev/dm-3               916G   349G  521G  41% /mnt/extra
 tmpfs                   3.2G    56K  3.2G   1% /run/user/1000
-penserbjorne@painkiller-legion:~$ sudo chmod 600 /swapfile 
-penserbjorne@painkiller-legion:~$ sudo mkswap /swapfile 
+penserbjorne@painkiller-legion:~$ sudo chmod 600 /swapfile
+penserbjorne@painkiller-legion:~$ sudo mkswap /swapfile
 Configurando espacio de intercambio versión 1, tamaño = 32 GiB (34359734272 bytes)
 sin etiqueta, UUID=483dc828-81d7-4f85-a688-830c1fb0709c
 penserbjorne@painkiller-legion:~$ sudo swapo
 swapoff  swapon   
 penserbjorne@painkiller-legion:~$ sudo swapon /swapfile
-penserbjorne@painkiller-legion:~$ echo '/swapfile none swap defaults 0 0' | sudo tee -a /etc/fstab 
+penserbjorne@painkiller-legion:~$ echo '/swapfile none swap defaults 0 0' | sudo tee -a /etc/fstab
 /swapfile none swap defaults 0 0
-penserbjorne@painkiller-legion:~$ cat /etc/fstab 
+penserbjorne@painkiller-legion:~$ cat /etc/fstab
 # /etc/fstab: static file system information.
 #
 # Use 'blkid' to print the universally unique identifier for a
@@ -142,7 +156,7 @@ penserbjorne@painkiller-legion:~$ sudo update-initramfs -u
 update-initramfs: Generating /boot/initrd.img-5.4.0-7642-generic
 cryptsetup: WARNING: Resume target cryptswap uses a key file
 kernelstub.Config    : INFO     Looking for configuration...
-kernelstub           : INFO     System information: 
+kernelstub           : INFO     System information:
 
     OS:..................Pop!_OS 20.04
     Root partition:....../dev/dm-1
@@ -163,5 +177,4 @@ kernelstub.Installer : INFO     Setting up loader.conf configuration
 kernelstub.Installer : INFO     Making entry file for Pop!_OS
 kernelstub.Installer : INFO     Backing up old kernel
 kernelstub.Installer : INFO     No old kernel found, skipping
-penserbjorne@painkiller-legion:~$ 
-
+penserbjorne@painkiller-legion:~$
