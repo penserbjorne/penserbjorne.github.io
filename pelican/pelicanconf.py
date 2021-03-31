@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Penserbjorne'
 SITENAME = u'Blog de Penserbjorne'
-SITESUBTITLE = u'Otro sitio cliché de tecnología (que no sabe utilizar acentos) >;v'
+SITESUBTITLE = u'No soy nadie. No soy nada.'
 #SITEURL = 'https://penserbjorne.com'
 
 PATH = 'content'
