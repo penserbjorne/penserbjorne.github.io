@@ -71,6 +71,7 @@ Status: draft
 
 -	Spotify
 	-	`sudo apt install spotify-client`
+	-	https://www.spotify.com/mx/download/linux/
 
 -	EDA
 	-	Referencia a la entrada correspondiente
