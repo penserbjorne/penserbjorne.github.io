@@ -1,8 +1,8 @@
 ---
 Title: Pelican (01), creación de un blog estático con Pelican
 Date: 2020-04-24
-Modified: 2020-08-20
-Tags: blog, pelican
+Modified: 2021-04-03
+Tags: init, blog, pelican
 Keywords: blog, pelican
 Category: pelican
 Author: Penserbjorne
@@ -23,24 +23,25 @@ crear el sitio.
 estáticos que no requieren una base de datos o una lógica en el lado del
 servidor.
 
-Básicamente, elegí `Pelican` por "simplicidad":
+Básicamente, elegí `Pelican` por *simplicidad*:
 
 - Instalamos las herramientas necesarias de `Pelican`.
 - Escribimos en `Markdown`.
 - Generamos los archivos del sitio.
 - Publicamos el sitio en el servidor.
 
-Estos pasos son "sencillos" si estas acostumbradx a manejar herramientas
+Estos pasos son *sencillos* si estas acostumbradx a manejar herramientas
 en un terminal (la famosa ventanita negra), el cual, es mi caso.
 
-So, en esta entrada iré añadiendo las cosas que considero necesito tener a la
-mano para administrar el blog. Toda la documentación necesaria (y extendida) se
-encuentra en [el blog oficial de Pelican](https://docs.getpelican.com), por lo
-que si se necesita mayor información o detalle de algo, visitar el sitio oficial
-(recuerda siempre, **\#RTFM**).
+So, en esta <strike>entrada</strike> serie de entradas iré añadiendo las cosas
+que considero necesito tener a la mano para administrar el blog. Toda la
+documentación necesaria (y extendida) se encuentra en
+[el blog oficial de Pelican](https://docs.getpelican.com), por lo
+que si se necesita mayor información o detalle de algo, visitar el sitio oficial.
 
-En este momento me encuentro trabajando en un equipo con `Lubuntu 18.04` por
-lo cual las instrucciones de instalación serán para esta distribución.
+En este momento me encuentro trabajando en un equipo con
+<strike>`Lubuntu 18.04`</strike> `Pop_OS!` por lo cual las instrucciones de
+instalación serán para esta distribución.
 
 # Preparación del entorno
 
@@ -52,7 +53,7 @@ buscar tener un entorno limpio, estaremos trabajando con `virtualenv`.
 sudo apt install virtualenv
 
 # Creación del entorno
-virtualenv ~/path/to/project
+virtualenv ~/path/to/virtual/env
 ```
 
 Para comenzar a trabajar es necesario movernos a la carpeta donde se configuró
@@ -60,17 +61,17 @@ el entorno y activarlo.
 
 ```bash
 # Nos movemos a la carpeta creada
-cd ~/path/to/project
+cd ~/path/to/virtual/env
 
 # Activamos el entorno
-source bin/activate
+source ./bin/activate
 ```
 
 Sabremos que el entorno se ha activado por que la terminal cambiará su apariencia
 a algo como lo siguiente.
 
 ```bash
-(entorno_virtual) usuario@equipo:~/path/to/project$
+(entorno_virtual) usuario@equipo:~/path/to/virtual/env$
 ```
 
 A partir de aquí podemos comenzar a trabajar con `Pelican` en un entorno aislado
@@ -88,7 +89,7 @@ deactivate
 
 En este caso vamos a redactar el sitio en `Markdown`, por lo cual instalaremos
 lo necesario para que `Pelican` funcione con `Markdown`. Esto lo haremos a
-través de `pip` **\#PorquePython**.
+través de `pip`.
 
 Necesitaremos los paquetes de `pelican`, `Markdown` y `typogrify`.
 
@@ -133,7 +134,7 @@ que verse así (asumiendo que ya clonamos el repositorio dentro de la carpeta de
   virtualenv ¬¬):
 
 ```bash
-(entorno_virtual) usuario@equipo:~/path/to/project$ ls
+(entorno_virtual) usuario@equipo:~/path/to/virtual/env$ ls
 bin  include  lib  local  user.github.io  share
 ```
 
@@ -152,7 +153,7 @@ donde ejecutaremos el comando para la creación del proyecto (ya sé, ya sé,
   en mi).
 
 ```bash
-(entorno_virtual) usuario@equipo:~/path/to/project/user.github.io/pelican$ pelican-quickstart
+(entorno_virtual) usuario@equipo:~/path/to/virtual/env/user.github.io/pelican$ pelican-quickstart
 ```
 
 De tal modo que la estructura de archivos debería de verse de la siguiente
@@ -167,7 +168,7 @@ manera.
 ├── share/        # carpeta de virtualenv
 └── user.github.io/   # carpeta del repositorio del sitio
     └── pelican/      # carpeta con los archivos fuente del sitio
-        ├── content             
+        ├── content   # Archivos en Markdown
         │   └── (pages)
         ├── output
         ├── tasks.py
@@ -221,5 +222,5 @@ cambio o modificación volver a generar los archivos.
 Recordando la estructura del sitio, sabemos que las entradas del mismo
 van en la carpeta `content` de nuestra subcarpeta `pelican`. Ahí es donde
 podremos comenzar a crear nuestros archivos en `Markdown`. Esto lo dejaremos
-para la siguiente entrada, es momento de pararse por un poco de agua, algo de
-comer y a estirar la espalda y las piernas.
+para la [siguiente entrada]({filename}./pelican-02.md), es momento de pararse
+por un poco de agua, algo de comer y a estirar la espalda y las piernas.
