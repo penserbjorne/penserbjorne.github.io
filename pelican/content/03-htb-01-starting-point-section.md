@@ -1,11 +1,11 @@
 ---
 Title: Hack-The-Box (0001) > Starting point
 Date: 2020-08-06
-Modified: 2020-11-06
-Tags: blog, penserbjorne, htb, pentest, hacking
-Keywords: blog, penserbjorne, htb, pentest, hacking
+Modified: 2021-04-04
+Tags: cybersecurity, htb, pentest, writeup
+Keywords: cybersecurity, htb, pentest, hacking, writeup, archetype
 Category: htb
-Author: penserbjorne
+Author: Penserbjorne
 Summary: Anotaciones sobre la sección "Starting point" de Hack-The-Box
 Lang: es-MX
 Translation: false
@@ -23,13 +23,21 @@ detuvo y que no ha pasado nada pero que a la vez que han pasado tantas cosas.
 Como sea, este blog esta en la misma situación, un tiempo suspendido.
 
 Dependiendo de cual futuro o universo paralelo leas esto puede que el blog
-ni siquiera este terminado de configurar, aún tenga el template de `Pelican` y
-que no tenga nada de contenido o que ya sea un pequeño blog que se ve hermoso
+ni siquiera este terminado de configurar, que aún tenga el template de `Pelican`
+y que no tenga nada de contenido o que ya sea un pequeño blog que se ve hermoso
 y tiene un par de entradas útiles para la humanidad haha en todo caso, si en
 estos dos párrafos no te haz aburrido o retirado, mandame un tuit a
 [@_penserbjorne](https://twitter.com/_penserbjorne)
 con una captura de pantalla de como se ve el blog y a cambio te invito unos
 taquitos :)
+
+---
+
+Personas hermosas que han reclamado sus tacos:
+
+- [Brendita](https://twitter.com/brendorts/status/1291595727693651969), aunque elimino esa cuenta.
+
+---
 
 Ahora sí, arranquemos.
 
@@ -37,7 +45,7 @@ Ahora sí, arranquemos.
 
 ## ¿Qué es esto?
 
-Este texto son anotaciones sobre la sección **Starting point** de
+Estos textos serán anotaciones sobre la sección **Starting point** de
 **Hack-The-Box**.
 
 Nos apoyaremos en los walk-throughs que ya vienen incorporados en la sección
@@ -63,7 +71,7 @@ plataforma con un nivel de complejidad bastante alto y no necesariamente la
 primera opción para arrancar.
 
 Para solucionar esto HTB ha habilitado una sección llamada
-[**Starting point**](https://www.hackthebox.eu/home/start)
+[**Starting Point**](https://www.hackthebox.eu/home/start)
 en la cual se encuentran una serie de maquinas con un nivel *básico*
 acompañadas de sus [walk-throughs](https://www.wordnik.com/words/walk-through)
 para que puedas resolverlas y familiarizarte con los pasos usuales del proceso
@@ -79,7 +87,7 @@ Si bien el pentesting no es una receta, existen diferentes metodologías o
 frameworks que nos ayudan a guiarnos para realizar esta actividad de manera
 ordenada y limpia.
 
-Si quieres saber más puedes buscar los siguientes términos Internet:
+Si quieres saber más puedes buscar los siguientes términos en Internet:
 
 - Cyber security framework
 - Cyber security kill chain
@@ -92,8 +100,8 @@ los siguiente elementos:
 
 - Reconocimiento (Reconnaissance)
 - Enumeración (Enumeration)
-- Movimiento lateral (Lateral Movement)
 - Punto de partida (Foothold)
+- Movimiento lateral (Lateral Movement)
 - Explotación (Explotation)
 - Escalada de privilegios (Privilege Escalation)
 - Explotación posterior (Post Explotation)
@@ -102,7 +110,7 @@ Si bien no todas las máquinas necesitan todos los pasos mencionados, es bueno
 tenerlos presentes para tratar de trabajar de manera ordenada.
 
 Te recomendamos resolver cada maquina con su walk-through y a la par ir leyendo
-la siguiente sección.
+esta serie de textos.
 
 ## Anotaciones de Starting point
 
