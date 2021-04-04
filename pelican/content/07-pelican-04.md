@@ -1,7 +1,7 @@
 ---
 Title: Pelican (04), configuración del sitio (tema)
 Date: 2020-08-21
-Modified: 2020-08-21
+Modified: 2020-04-04
 Tags: blog, pelican
 Keywords: blog, pelican
 Category: pelican
@@ -15,15 +15,16 @@ Status: published
 # What is this?
 
 Andamos con todo, anoche terminamos la
-[tercera entrada de Pelican, para modificar la construcción del sitio y configurar algunas cositas del sitio]({filename}./pelican-03.md),
-sé que no es mucho, pero es trabajo honesto haha
+[tercera entrada de Pelican]({filename}./pelican-03.md) para modificar la
+construcción del sitio y configurar algunas cositas del sitio, sé que no es
+mucho, pero es trabajo honesto haha
 
 Bueno, esta cuarta entrada será para configurar un tema a nuestro sitio.
 
 Y el *disclaimer* de siempre, como ya hemos dicho, toda la documentación necesaria
 (y extendida) se encuentra en [el blog oficial de Pelican](https://docs.getpelican.com),
 por lo que si se necesita mayor información o detalle de algo, visitar el sitio
-oficial (recuerda siempre, **\#RTFM**).
+oficial.
 
 # pelican-themes
 
@@ -131,8 +132,8 @@ Para poder utilizar nuestro tema instalado tenemos que ir al archivo
 `pelicanconf.py` y asignarle un valor a la variable `THEME`, en este caso la
 variable quedaría como `THEME = u'bootstrap2-dark'`.
 
-Con este pequeño basta con construir de nuevo el sitio con los comandos
-de la [entrada anterior]({filename}./pelican-03.md).
+Con este pequeño cambio basta para construir el sitio con el tema seleccionado.
+recuerda que utilizaremos los comandos de la [entrada anterior]({filename}./pelican-03.md).
 
 ```bash
 # Desarrollo
@@ -141,12 +142,11 @@ invoke livereload
 # Producción
 invoke gh-pages
 ```
-<!--Pendiente insertar imágenes comparativas -->
 
 Para probar otros temas basta con seguir los pasos anteriores hasta encontrar
 uno que sea de tu agrado :)
 
-# Siguientes pasos
+# Siguientes pasos (this is (not) the end)
 
 Nuestro sitio ya tiene un poco más de personalidad aunque sigue siendo bastante
 cliché, al menos ya es responsivo y se podrá leer en dispositivos móviles.
@@ -155,4 +155,43 @@ Para siguientes entradas nos haria falta revisar como agregar algunas secciones
 como un `about` o un `contact` y revisar el tema de plugins, y probablemente
 con eso habremos terminado de configurar el sitio :)
 
-Nos vemos en otra ocasión pimpollo que utiliza `Pelican`.
+# Ejemplos de temas aplicados
+
+Sé que puedes pensar lo siguiente:
+
+>Penserbjorne, pero ... ya termino la entrada, ¿por qué añades otra sección?
+
+Bueno, te quería mostrar algunas imágenes de cómo se ve el tema aplicado al
+sitio, solo que las imágenes son muy largas  y por eso decidí dejarlas al final.
+
+Durante el desarrollo de esta entrada utilizamos el tema `bootstrap2-dark`
+porqué se vería **chido** pero ya en producción realmente no era muy responsivo
+por lo que cambiamos al tema `elegant`.
+
+A continuación te muestro la página de inicio del blog con cada uno de los
+temas aplicados.
+
+## Not my idea
+
+Es el tema que trae `Pelican` por defecto, y no, no es responsivo.
+
+![Alt Text]({static}/images/07-pelican-04/screenshot-2020-08-21-blog-de-penserbjorne-1.png)
+
+## bootstrap2-black
+
+Fue el tema **juakeril** que habíamos elegido, pero no, tampoco es responsivo
+y después se volvió complicado de leer.
+
+![Alt Text]({static}/images/07-pelican-04/screenshot-2020-08-21-blog-de-penserbjorne-2.png)
+
+## elegant
+
+Es el último tema que hemos probado, sí, es responsivo y es fácil de leer en él,
+por lo cual se ha quedado cómo tema final (es el actual a este momento de
+  publicación).
+
+![Alt Text]({static}/images/07-pelican-04/screenshot-2021-04-04-blog-de-penserbjorne.png)
+
+# The End of the Post
+
+Bueno, ahora sí, nos vemos en otra ocasión [piloto](https://www.youtube.com/watch?v=pVeKyqV1jWU).
