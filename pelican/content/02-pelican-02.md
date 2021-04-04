@@ -1,7 +1,7 @@
 ---
 Title: Pelican (02), creación de entradas para un blog estático con Pelican
 Date: 2020-05-09
-Modified: 2020-08-20
+Modified: 2021-04-04
 Tags: blog, pelican
 Keywords: blog, pelican
 Category: pelican
@@ -18,12 +18,12 @@ Weno weno, ¿de que va esta entrada? Pues de cómo escribir contenido (entradas)
 en el blog con `Pelican`. Esto es continuación de la
 [entrada anterior]({filename}./pelican-01.md) en la cual vimos una ligera
 introducción a `Pelican`, cómo instalarlo y como ejecutarlo para ver andando el
-sitio.
+sitio. Básicamente, un pequeño **hola mundo**.
 
 Como ya hemos dicho, toda la documentación necesaria (y extendida) se
 encuentra en [el blog oficial de Pelican](https://docs.getpelican.com), por lo
-que si se necesita mayor información o detalle de algo, visitar el sitio oficial
-(recuerda siempre, **\#RTFM**).
+que si se necesita mayor información o detalle de algo pues ... a visitar el
+sitio oficial.
 
 # Markdown
 
@@ -35,9 +35,8 @@ se escribe texto plano utilizando etiquetas que posteriormente serán convertida
 a un formato más bonito, en este caso HTML.
 
 La ventaja de utilizar `Markdown` es que podemos enfocarnos simplemente en
-escribir utilizando cualquier editor de texto (simple o tan complejo como tu
-quieras) sabiendo que las etiquetas que estamos utilizando tendrán un
-formato agradable de leer.
+escribir utilizando cualquier editor de texto sabiendo que las etiquetas que
+estamos utilizando tendrán un formato agradable de leer.
 
 Si quieres aprender un poco más sobre `Markdown` te dejo su [entrada de
 `Wikipedia`](https://es.wikipedia.org/wiki/Markdown),
@@ -63,7 +62,7 @@ podremos comenzar a crear nuestros archivos en `Markdown`.
 ├── share/        # carpeta de virtualenv
 └── user.github.io/   # carpeta del repositorio del sitio
     └── pelican/      # carpeta con los archivos fuente del sitio
-        ├── content             
+        ├── content   # Archivos en Markdown
         │   └── (pages)
         ├── output
         ├── tasks.py
@@ -84,7 +83,7 @@ la carpeta `content` con la extensión `.md`
 ├── share/        # carpeta de virtualenv
 └── user.github.io/   # carpeta del repositorio del sitio
     └── pelican/      # carpeta con los archivos fuente del sitio
-        ├── content             
+        ├── content   # Archivos en Markdown
         │   └── hola-mundo.md # Entrada nueva
         ├── output
         ├── tasks.py
@@ -116,7 +115,7 @@ A continuación una tabla con las etiquetas y para que sirven:
 | `modified` | Fecha de modificación (e.g., YYYY-MM-DD HH:SS) |
 | `tags` | Tags del contenido, separados por comas |
 | `keywords` | Palabras claves del contenido, separadas por comas |
-| `category` | Categórica del contenido, solo una |
+| `category` | Categoría del contenido, solo una |
 | `slug` | Identificador utilizado en URLs y en traducciones |
 | `author` | Autor (uno) |
 | `authors` | Autores (más de uno) |
@@ -135,8 +134,8 @@ Para el caso de este blog, estamos utilizando las siguientes etiquetas:
 Title: Este es el titulo
 Date: 2020-05-09
 Modified: 2020-05-09
-Tags: blog,pelican
-Keywords: blog,pelican
+Tags: blog, pelican
+Keywords: blog, pelican
 Category: pelican
 Author: Penserbjorne
 Summary: Descripción del texto
@@ -153,7 +152,7 @@ son obligatorias.
 En caso de no incluir estas etiquetas `Pelican` no podrá procesar el archivo ni
 procederá a convertirlo.
 
-# Ahora sí a escribir
+# Ahora sí, a escribir
 
 Una vez que tenemos el archivo con su extensión `.md` y que le añadimos las
 etiquetas necesarias podemos comenzar a escribir su contenido en `Markdown`.
@@ -165,7 +164,7 @@ en una entrada te recomendamos que revises la sección para
 pero por ahora no.
 
 Una vez que la entrada ha sido redactada podemos proceder a procesar el sitio
-para que se genere el archivo de salida. Esto lo hacemos con los comandos que
+para que se generen los archivo de salida. Esto lo hacemos con los comandos que
 vimos en la [entrada anterior]({filename}./pelican-01.md) (que te recomiendo
 leer para que no te pierdas en la estructura de archivos y de trabajo que
 utilizamos aquí).
@@ -181,6 +180,8 @@ pelican --listen -o ..
 Para acceder al sitio en local visitamos
 [http://localhost:8000/](http://localhost:8000/), y listo, tendríamos que
 observar el sitio andando con nuestra entrada nueva.
+
+![Alt Text]({static}/images/02-pelican-02/screenshot-2021-04-04-hola-mundo.png)
 
 Para poder estar trabajando con el sitio, es necesario cada vez que hagamos un
 cambio y modificación volver a generar los archivos.

@@ -1,7 +1,7 @@
 ---
 Title: Pelican (01), creación de un blog estático con Pelican
 Date: 2020-04-24
-Modified: 2021-04-03
+Modified: 2021-04-04
 Tags: init, blog, pelican
 Keywords: blog, pelican
 Category: pelican
