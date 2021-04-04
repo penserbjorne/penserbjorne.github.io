@@ -1,12 +1,12 @@
 ---
-Title: Hack-The-Box (0002) > Starting point > Archetype
-Date: 2020-08-06
-Modified: 2020-11-06
-Tags: blog, penserbjorne, htb, pentest, hacking, archetype
-Keywords: blog, penserbjorne, htb, pentest, hacking, archetype
+Title: Hack-The-Box (0002) > Starting Point > Archetype
+Date: 2020-08-07
+Modified: 2021-04-04
+Tags: cybersecurity, htb, pentest, writeup
+Keywords: cybersecurity, htb, pentest, hacking, writeup, archetype
 Category: htb
-Author: penserbjorne
-Summary: Anotaciones sobre la máquina "Archetype" de la sección "Starting point" de Hack-The-Box
+Author: Penserbjorne
+Summary: Anotaciones sobre la máquina "Archetype" de la sección "Starting Point" de Hack-The-Box
 Lang: es-MX
 Translation: false
 Status: published
@@ -14,7 +14,7 @@ Status: published
 
 # Archetype
 
-Para comenzar con esta serie de anotaciones sobre la sección *Starting point*
+Para comenzar con esta serie de anotaciones sobre la sección *Starting Point*
 arrancaremos con la máquina *Archetype*. Si no sabes bien de que hablo te
 recomiendo que primero leas la
 [entrada anterior]({filename}./htb-01-starting-point-section.md).
@@ -30,7 +30,7 @@ lo que tiene el equipo objetivo, en este caso vamos a tratar de identificar
 los puertos abiertos y el software asociado a estos.
 
 Para esto utilizaremos la siempre poderosa herramienta de
-[Nmap](https://es.wikipedia.org/wiki/Nmap).
+[nmap](https://es.wikipedia.org/wiki/Nmap).
 
 Lo primero que nos recomiendan utilizar son los siguientes dos comandos:
 
@@ -497,12 +497,12 @@ En la cual tenemos dos argumentos:
 
 -	`role`: indicamos el rol a revisar que puede ser alguno de los siguientes.
 	-	sysadmin
-  -	serveradmin
-  -	dbcreator
-  -	setupadmin
-  -	bulkadmin
-  -	securityadmin
-  -	diskadmin
+	-	serveradmin
+	-	dbcreator
+	-	setupadmin
+	-	bulkadmin
+	-	securityadmin
+	-	diskadmin
 	-	public
 	-	processadmin
 -	`login`: es el nombre del servidor `SQL` a revisar, por defecto su valor es

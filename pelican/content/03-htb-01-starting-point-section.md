@@ -1,8 +1,8 @@
 ---
-Title: Hack-The-Box (0001) > Starting point
+Title: Hack-The-Box (0001) > Starting Point
 Date: 2020-08-06
 Modified: 2021-04-04
-Tags: cybersecurity, htb, pentest, writeup
+Tags: init, cybersecurity, htb, pentest, writeup
 Keywords: cybersecurity, htb, pentest, hacking, writeup, archetype
 Category: htb
 Author: Penserbjorne

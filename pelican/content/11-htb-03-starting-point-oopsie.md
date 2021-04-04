@@ -1,5 +1,5 @@
 ---
-Title: Hack-The-Box (0003) > Starting point > Oopsie
+Title: Hack-The-Box (0003) > Starting Point > Oopsie
 Date: 2021-03-19
 Modified: 2021-03-19
 Tags: blog, penserbjorne, htb, pentest, hacking, oopsie
