@@ -12,7 +12,7 @@ Translation: false
 Status: published
 ---
 
-# What is this?
+##  What is this?
 
 Ok, esta es la tercera entrada para trabajar generando un sitio con `Pelican` en
 `gh-pages`. En esta ocasión vamos modificar algunas configuraciones para probar
@@ -28,7 +28,7 @@ Como ya hemos dicho, toda la documentación necesaria (y extendida) se
 encuentra en [el blog oficial de Pelican](https://docs.getpelican.com), por lo
 que si se necesita mayor información o detalle de algo, visitar el sitio oficial.
 
-# Archivos de configuración
+##  Archivos de configuración
 
 Cuando comenzamos a crear el sitio utilizamos el comando `pelican-quickstart`
 el cual nos creo la estructura inicial del sitio con algunos archivos de
@@ -68,7 +68,7 @@ variables de configuración para el sitio.
 Con los archivos `Makefile` y `tasks.py` vamos a indicar las acciones necesarias
 para construir el sitio.
 
-# Construcción del sitio
+##  Construcción del sitio
 
 Como recordaras para construir el sitio y previsualizarlo hemos estado
 utilizando los siguientes comandos:
@@ -165,7 +165,7 @@ del repositorio, esto es una carpeta mas arriba de donde estamos actualmente
 También vamos a modificar algunas de las tareas que vienen en el archivo
 `tasks.py`.
 
-# Configuración de variables del sitio
+##  Configuración de variables del sitio
 
 Bien, ya vimos que comandos vamos a estar utilizando y ya mencionamos que
 necesitamos configurarlos, esto lo vamos a hacer en los archivos
@@ -183,7 +183,7 @@ La lista de variables y su descripción la puedes encontrar
 este listado ya que aquí abordaremos solo algunas variables para configurar los
 comando anteriores.
 
-## Directorio de salida
+### Directorio de salida
 
 Para modificar el directorio de salida necesitamos modificar la variable
 `OUTPUT_PATH` la cual tiene el valor predeterminado de `'output/'`, en este caso
@@ -193,7 +193,7 @@ superior a la ruta actual por lo cual variable quedará como
 
 Esta variable hay que asignarla en `pelicanconf.py`.
 
-## Algunas otras configuraciones sencillas del sitio :D
+### Algunas otras configuraciones sencillas del sitio :D
 
 Bien, ya hemos modificado la ruta de salida, por lo que podemos configurar
 otras variables que le dan más vida al sitio.
@@ -219,7 +219,6 @@ VARIABLE = (('enalce 1', 'http://url-1.com/'),
             ('enalce 3', 'http://url-3.com/'),)
 ```
 
-
 Las siguientes variables las configuraremos en `publishconf.py`:
 
 - `SITEURL`: URL del sitio, tiene que incluir http o https al inicio, por
@@ -236,7 +235,7 @@ Si quieres ver como van quedando los archivos de configuración de este sitio
 puedes revisar [aquí (pelicanconf.py)](https://github.com/penserbjorne/penserbjorne.github.io/blob/master/pelican/pelicanconf.py) y
 [aquí (publishconf.py)](https://github.com/penserbjorne/penserbjorne.github.io/blob/master/pelican/publishconf.py).
 
-# Modificando el pipeline de construcción del sitio
+##  Modificando el pipeline de construcción del sitio
 
 Ok, ya tenemos instaladas las herramientas para construir el sitio y hemos
 configurado algunas variables para que tenga un poco más de personalidad el
@@ -275,7 +274,7 @@ continuación.
 
 Para modificar las tareas nos vamos a dirigir al archivo `tasks.py`
 
-##  Modificando la tarea `clean`
+### Modificando la tarea `clean`
 
 Vamos a comentar las lineas que se encuentran dentro de la tarea y las vamos a
 reemplazar por el siguiente segmento de código:
@@ -303,7 +302,7 @@ def clean(c):
                 '../*.html')
 ```
 
-##  Modificando la tarea `livereload`
+### Modificando la tarea `livereload`
 
 Queremos que cada vez que se haga un `livereload` también se limpien los
 archivos generados previamente, por lo cual vamos a añadir la tarea `clean`
@@ -336,7 +335,7 @@ def livereload(c):
     server.serve(port=CONFIG['port'], root=CONFIG['deploy_path'])
 ```
 
-##  Modificando la tarea `gh-pages`
+### Modificando la tarea `gh-pages`
 
 De igual manera  que en la tarea anterior, simplemente vamos a añadir la linea
 de `clean(c)` para verificar que no haya basura. La linea a añadir la ubicaremos
@@ -396,7 +395,7 @@ sitio.
 Para ver el archivo `tasks.py` de este blog puedes dar click
 [aquí](https://github.com/penserbjorne/penserbjorne.github.io/blob/master/pelican/tasks.py)
 
-# Siguientes pasos
+##  Siguientes pasos
 
 Ya tenemos nuestro sitio con un poco mas de estilo, sin embargo sigue sin ser
 responsivo por lo cual no es fácil de leer en dispositivos con pantallas

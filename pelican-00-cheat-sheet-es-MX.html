@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Blog de Penserbjorne" />
 <meta property="og:article:author" content="Penserbjorne" />
 <meta property="og:article:published_time" content="2020-08-20T00:00:00-05:00" />
-<meta property="og:article:modified_time" content="2020-09-27T00:00:00-05:00" />
+<meta property="og:article:modified_time" content="2021-04-04T00:00:00-06:00" />
 <meta name="twitter:title" content="Pelican (00), cheat sheet ">
 <meta name="twitter:description" content="Recopilación de comandos para no olvidar como gestionar el blog con Pelican">
 
@@ -77,23 +77,22 @@
 <div class="row-fluid">
         <div class="span8 offset2 article-content">
             
-            <h1>What is&nbsp;this?</h1>
+            <h2>What is&nbsp;this?</h2>
 <p>Weno weno, ¿de que va esta entrada? Pues simplemente es mi <code>cheat sheet</code> para
 gestionar este blog con <code>Pelican</code>.</p>
 <p>Como ya hemos dicho, toda la documentación necesaria (y extendida) se
 encuentra en <a href="https://docs.getpelican.com">el blog oficial de Pelican</a>, por lo
-que si se necesita mayor información o detalle de algo, visitar el sitio oficial
-(recuerda siempre, <strong>#<span class="caps">RTFM</span></strong>).</p>
-<h1>Comandos</h1>
-<h2>Preparación del&nbsp;entorno</h2>
+que si se necesita mayor información o detalle de algo, visitar el sitio&nbsp;oficial.</p>
+<h2>Comandos</h2>
+<h3>Preparación del&nbsp;entorno</h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Creación del entorno</span>
-virtualenv --python<span class="o">=</span>/usr/bin/python3 ~/path/to/project
+virtualenv --python<span class="o">=</span>/usr/bin/python3 ~/path/to/virtual/env
 
 <span class="c1"># Nos movemos a la carpeta creada</span>
-<span class="nb">cd</span> ~/path/to/project
+<span class="nb">cd</span> ~/path/to/virtual/env
 
 <span class="c1"># Activamos el entorno</span>
-<span class="nb">source</span> bin/activate
+<span class="nb">source</span> ./bin/activate
 
 <span class="c1"># Instalación de herramientas</span>
 pip install pelican Markdown typogrify invoke livereload ghp-import
@@ -110,7 +109,7 @@ git clone https://github.com/penserbjorne/penserbjorne.github.io.git
 </code></pre></div>
 
 
-<h2>Instalación de un&nbsp;tema</h2>
+<h3>Instalación de un&nbsp;tema</h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Clonar temas</span>
 git clone --recursive https://github.com/getpelican/pelican-themes ~/path-to-projects/pelican-themes
 
@@ -125,7 +124,7 @@ pelican-themes --remove nombre-del-tema
 </code></pre></div>
 
 
-<h2>Comando para generar y ejecutar sitio&nbsp;(corta)</h2>
+<h3>Comando para generar y ejecutar sitio&nbsp;(corta)</h3>
 <p>Recuerda algunas de estas tareas fueron modificadas para ajustarse al flujo de
 de desarrollo del&nbsp;sitio.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Desarrollo</span>
@@ -136,7 +135,7 @@ invoke gh-pages
 </code></pre></div>
 
 
-<h2>Comando para generar y ejecutar sitio&nbsp;(extendida)</h2>
+<h3>Comando para generar y ejecutar sitio&nbsp;(extendida)</h3>
 <p>Recuerda algunas de estas tareas fueron modificadas para ajustarse al flujo de
 de desarrollo del&nbsp;sitio.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Elimina los archivos generados previamente</span>
@@ -162,7 +161,7 @@ invoke reserve
 invoke preview
 
 <span class="c1"># Permite visualizar el sitio de manera local en http://localhost:8000/</span>
-<span class="c1"># y regenrar el sitio cada vez que haya un cambio, todo para local</span>
+<span class="c1"># y regenerar el sitio cada vez que haya un cambio, todo para local</span>
 invoke livereload
 
 <span class="c1"># Permite subir el sitio al servidor correspondiente mediante rsync y SSH</span>
@@ -190,14 +189,14 @@ invoke gh-pages
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2020-08-20T00:00:00-05:00">ago 20, 2020</time>
 <h4>Last Updated</h4>
-<time datetime="2020-09-27T00:00:00-05:00">sep 27, 2020</time>
+<time datetime="2021-04-04T00:00:00-06:00">abr 4, 2021</time>
 
             <h4>Category</h4>
             <a class="category-link" href="https://penserbjorne.com/categories.html#pelican-ref">pelican</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
                 <li><a href="https://penserbjorne.com/tags.html#blog-ref">blog
-                    <span>8</span>
+                    <span>6</span>
 </a></li>
                 <li><a href="https://penserbjorne.com/tags.html#cheat-sheet-ref">cheat sheet
                     <span>1</span>

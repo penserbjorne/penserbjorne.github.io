@@ -1,84 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog de Penserbjorne - htb</title><link href="https://penserbjorne.com/" rel="alternate"></link><link href="https://penserbjorne.com/feeds/htb.atom.xml" rel="self"></link><id>https://penserbjorne.com/</id><updated>2020-11-06T00:00:00-06:00</updated><subtitle>No soy nadie. No soy nada.</subtitle><entry><title>Hack-The-Box (0001) &gt; Starting point</title><link href="https://penserbjorne.com/hack-the-box-0001-starting-point-es-MX.html" rel="alternate"></link><published>2020-08-06T00:00:00-05:00</published><updated>2020-11-06T00:00:00-06:00</updated><author><name>penserbjorne</name></author><id>tag:penserbjorne.com,2020-08-06:/hack-the-box-0001-starting-point-es-MX.html</id><summary type="html">&lt;p&gt;Anotaciones sobre la sección &amp;#8220;Starting point&amp;#8221; de&amp;nbsp;Hack-The-Box&lt;/p&gt;</summary><content type="html">&lt;h1&gt;This is not the intro&amp;nbsp;:)&lt;/h1&gt;
-&lt;p&gt;Ola k&amp;nbsp;ase.&lt;/p&gt;
-&lt;p&gt;Para este exacto momento en el que escribo esta linea de texto han pasado 146
-días desde que comenzó la pandemia del &lt;span class="caps"&gt;COVID&lt;/span&gt;-19 y pareciera que el tiempo se
-detuvo y que no ha pasado nada pero que a la vez que han pasado tantas&amp;nbsp;cosas.&lt;/p&gt;
-&lt;p&gt;Como sea, este blog esta en la misma situación, un tiempo&amp;nbsp;suspendido.&lt;/p&gt;
-&lt;p&gt;Dependiendo de cual futuro o universo paralelo leas esto puede que el blog
-ni siquiera este terminado de configurar, aún tenga el template de &lt;code&gt;Pelican&lt;/code&gt; y
-que no tenga nada de contenido o que ya sea un pequeño blog que se ve hermoso
-y tiene un par de entradas útiles para la humanidad haha en todo caso, si en
-estos dos párrafos no te haz aburrido o retirado, mandame un tuit a
-&lt;a href="https://twitter.com/_penserbjorne"&gt;@_penserbjorne&lt;/a&gt;
-con una captura de pantalla de como se ve el blog y a cambio te invito unos
-taquitos&amp;nbsp;:)&lt;/p&gt;
-&lt;p&gt;Ahora sí,&amp;nbsp;arranquemos.&lt;/p&gt;
-&lt;h1&gt;Hack-The-Box: Starting&amp;nbsp;point&lt;/h1&gt;
-&lt;h2&gt;¿Qué es&amp;nbsp;esto?&lt;/h2&gt;
-&lt;p&gt;Este texto son anotaciones sobre la sección &lt;strong&gt;Starting point&lt;/strong&gt; de
-&lt;strong&gt;Hack-The-Box&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Nos apoyaremos en los walk-throughs que ya vienen incorporados en la sección
-&lt;em&gt;Starting point&lt;/em&gt; e iremos explicando los comandos&amp;nbsp;utilizados.&lt;/p&gt;
-&lt;h2&gt;Hack-The-Box (&lt;span class="caps"&gt;HTB&lt;/span&gt;)&lt;/h2&gt;
-&lt;p&gt;Bueno, para hablar de &lt;a href="https://www.hackthebox.eu"&gt;&lt;strong&gt;Hack-The-Box&lt;/strong&gt; (&lt;span class="caps"&gt;HTB&lt;/span&gt;)&lt;/a&gt; y
-presentar lo qué realmente es este proyecto seria bueno dedicar una entrada
-específicamente a eso, por lo cual solo diré que es una plataforma para
-practicar o probar tus habilidades de pentesting trabajando sobre maquinas
-virtuales que están diseñadas y preparadas para&amp;nbsp;esto.&lt;/p&gt;
-&lt;p&gt;En resumen, hay maquinas virtuales con cierto software instalado y ciertas
-configuraciones que permiten que esta maquina pueda ser vulnerada de alguna
-manera. ¿Quieres practicar temas de pentesting? Esta es una de las plataformas&amp;nbsp;recomendadas.&lt;/p&gt;
-&lt;h2&gt;Starting&amp;nbsp;Point&lt;/h2&gt;
-&lt;p&gt;Para las personas que van comenzando en este ámbito puede que &lt;span class="caps"&gt;HTB&lt;/span&gt; sea una
-plataforma con un nivel de complejidad bastante alto y no necesariamente la
-primera opción para&amp;nbsp;arrancar.&lt;/p&gt;
-&lt;p&gt;Para solucionar esto &lt;span class="caps"&gt;HTB&lt;/span&gt; ha habilitado una sección llamada
-&lt;a href="https://www.hackthebox.eu/home/start"&gt;&lt;strong&gt;Starting point&lt;/strong&gt;&lt;/a&gt;
-en la cual se encuentran una serie de maquinas con un nivel &lt;em&gt;básico&lt;/em&gt;
-acompañadas de sus &lt;a href="https://www.wordnik.com/words/walk-through"&gt;walk-throughs&lt;/a&gt;
-para que puedas resolverlas y familiarizarte con los pasos usuales del proceso
-de&amp;nbsp;pentesting.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Nota&lt;/strong&gt;: El pentesting no es una receta, estos recursos son solo para
-comenzar, pero conforme se avanza es necesario refinar tus habilidades y hacer
-uso el conocimiento que vas desarrollando o acumulando&amp;nbsp;:)&lt;/p&gt;
-&lt;h2&gt;Elementos del&amp;nbsp;pentesting&lt;/h2&gt;
-&lt;p&gt;Si bien el pentesting no es una receta, existen diferentes metodologías o
-frameworks que nos ayudan a guiarnos para realizar esta actividad de manera
-ordenada y&amp;nbsp;limpia.&lt;/p&gt;
-&lt;p&gt;Si quieres saber más puedes buscar los siguientes términos&amp;nbsp;Internet:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Cyber security&amp;nbsp;framework&lt;/li&gt;
-&lt;li&gt;Cyber security kill&amp;nbsp;chain&lt;/li&gt;
-&lt;li&gt;&lt;span class="caps"&gt;MITRE&lt;/span&gt;&amp;nbsp;Framework&lt;/li&gt;
-&lt;li&gt;&lt;span class="caps"&gt;OWASP&lt;/span&gt;&amp;nbsp;Framework&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Listo, ahora que haz ignorado lo anterior o haz regresado de buscar, en el caso
-de la sección de &lt;strong&gt;Starting Point&lt;/strong&gt; de &lt;span class="caps"&gt;HTB&lt;/span&gt; podemos encontrar de manera general
-los siguiente&amp;nbsp;elementos:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Reconocimiento&amp;nbsp;(Reconnaissance)&lt;/li&gt;
-&lt;li&gt;Enumeración&amp;nbsp;(Enumeration)&lt;/li&gt;
-&lt;li&gt;Movimiento lateral (Lateral&amp;nbsp;Movement)&lt;/li&gt;
-&lt;li&gt;Punto de partida&amp;nbsp;(Foothold)&lt;/li&gt;
-&lt;li&gt;Explotación&amp;nbsp;(Explotation)&lt;/li&gt;
-&lt;li&gt;Escalada de privilegios (Privilege&amp;nbsp;Escalation)&lt;/li&gt;
-&lt;li&gt;Explotación posterior (Post&amp;nbsp;Explotation)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Si bien no todas las máquinas necesitan todos los pasos mencionados, es bueno
-tenerlos presentes para tratar de trabajar de manera&amp;nbsp;ordenada.&lt;/p&gt;
-&lt;p&gt;Te recomendamos resolver cada maquina con su walk-through y a la par ir leyendo
-la siguiente&amp;nbsp;sección.&lt;/p&gt;
-&lt;h2&gt;Anotaciones de Starting&amp;nbsp;point&lt;/h2&gt;
-&lt;p&gt;Para ir tomando nota iremos creando una sección por cada maquina e iremos
-desarrollando los comando que solicita su walk-through correspondiente y le
-daremos contexto al comando o a la&amp;nbsp;acción.&lt;/p&gt;
-&lt;p&gt;Debido a que no sé cual va a ser la longitud de cada maquina lo mejor será
-dedicar una entrada a cada una por lo que te invito pases a la siguiente entrada
-en la cual comenzaremos con la maquina
-&lt;a href="{filename}./htb-02-starting-point-archetype.md"&gt;&lt;strong&gt;Archetype&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;#HappyHacking&lt;/code&gt;&lt;/p&gt;</content><category term="htb"></category><category term="blog"></category><category term="penserbjorne"></category><category term="htb"></category><category term="pentest"></category><category term="hacking"></category></entry><entry><title>Hack-The-Box (0002) &gt; Starting point &gt; Archetype</title><link href="https://penserbjorne.com/hack-the-box-0002-starting-point-archetype-es-MX.html" rel="alternate"></link><published>2020-08-06T00:00:00-05:00</published><updated>2020-11-06T00:00:00-06:00</updated><author><name>penserbjorne</name></author><id>tag:penserbjorne.com,2020-08-06:/hack-the-box-0002-starting-point-archetype-es-MX.html</id><summary type="html">&lt;p&gt;Anotaciones sobre la máquina &amp;#8220;Archetype&amp;#8221; de la sección &amp;#8220;Starting point&amp;#8221; de&amp;nbsp;Hack-The-Box&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Archetype&lt;/h1&gt;
-&lt;p&gt;Para comenzar con esta serie de anotaciones sobre la sección &lt;em&gt;Starting point&lt;/em&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog de Penserbjorne - htb</title><link href="https://penserbjorne.com/" rel="alternate"></link><link href="https://penserbjorne.com/feeds/htb.atom.xml" rel="self"></link><id>https://penserbjorne.com/</id><updated>2021-04-04T00:00:00-06:00</updated><subtitle>No soy nadie. No soy nada.</subtitle><entry><title>Hack-The-Box (0002) &gt; Starting Point &gt; Archetype</title><link href="https://penserbjorne.com/hack-the-box-0002-starting-point-archetype-es-MX.html" rel="alternate"></link><published>2020-08-07T00:00:00-05:00</published><updated>2021-04-04T00:00:00-06:00</updated><author><name>Penserbjorne</name></author><id>tag:penserbjorne.com,2020-08-07:/hack-the-box-0002-starting-point-archetype-es-MX.html</id><summary type="html">&lt;p&gt;Anotaciones sobre la máquina &amp;#8220;Archetype&amp;#8221; de la sección &amp;#8220;Starting Point&amp;#8221; de&amp;nbsp;Hack-The-Box&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Archetype&lt;/h2&gt;
+&lt;p&gt;Para comenzar con esta serie de anotaciones sobre la sección &lt;em&gt;Starting Point&lt;/em&gt;
 arrancaremos con la máquina &lt;em&gt;Archetype&lt;/em&gt;. Si no sabes bien de que hablo te
 recomiendo que primero leas la
 &lt;a href="{filename}./htb-01-starting-point-section.md"&gt;entrada anterior&lt;/a&gt;.&lt;/p&gt;
@@ -92,7 +14,7 @@ recomiendo que primero leas la
 lo que tiene el equipo objetivo, en este caso vamos a tratar de identificar
 los puertos abiertos y el software asociado a&amp;nbsp;estos.&lt;/p&gt;
 &lt;p&gt;Para esto utilizaremos la siempre poderosa herramienta de
-&lt;a href="https://es.wikipedia.org/wiki/Nmap"&gt;Nmap&lt;/a&gt;.&lt;/p&gt;
+&lt;a href="https://es.wikipedia.org/wiki/Nmap"&gt;nmap&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Lo primero que nos recomiendan utilizar son los siguientes dos&amp;nbsp;comandos:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;ports&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;nmap -p- --min-rate&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;  -T4 &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27 &lt;span class="p"&gt;|&lt;/span&gt; grep ^&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;-9&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; cut -d &lt;span class="s1"&gt;&amp;#39;/&amp;#39;&lt;/span&gt; -f &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; tr &lt;span class="s1"&gt;&amp;#39;\n&amp;#39;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;,&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sed s/,$//&lt;span class="k"&gt;)&lt;/span&gt;
 nmap -sC -sV -p&lt;span class="nv"&gt;$ports&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27
@@ -506,14 +428,12 @@ de un rol especifico del&amp;nbsp;servidor.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;role&lt;/code&gt;: indicamos el rol a revisar que puede ser alguno de los siguientes.&lt;ul&gt;
 &lt;li&gt;sysadmin&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
 &lt;li&gt;serveradmin&lt;/li&gt;
 &lt;li&gt;dbcreator&lt;/li&gt;
 &lt;li&gt;setupadmin&lt;/li&gt;
 &lt;li&gt;bulkadmin&lt;/li&gt;
 &lt;li&gt;securityadmin&lt;/li&gt;
-&lt;li&gt;diskadmin&lt;ul&gt;
+&lt;li&gt;diskadmin&lt;/li&gt;
 &lt;li&gt;public&lt;/li&gt;
 &lt;li&gt;processadmin&lt;/li&gt;
 &lt;/ul&gt;
@@ -781,4 +701,88 @@ herramientas y comandos obviaremos los que se hayan explicado&amp;nbsp;previamen
 estos temas de seguridad, &lt;a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"&gt;recuerda no rendirte&lt;/a&gt;
 y seguir aprendiendo poco a&amp;nbsp;poco.&lt;/p&gt;
 &lt;p&gt;Nos vemos en el siguiente texto.&amp;nbsp;Ciao!&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;#HappyHacking&lt;/code&gt;&lt;/p&gt;</content><category term="htb"></category><category term="blog"></category><category term="penserbjorne"></category><category term="htb"></category><category term="pentest"></category><category term="hacking"></category><category term="archetype"></category></entry></feed>
+&lt;p&gt;&lt;code&gt;#HappyHacking&lt;/code&gt;&lt;/p&gt;</content><category term="htb"></category><category term="cybersecurity"></category><category term="htb"></category><category term="pentest"></category><category term="writeup"></category></entry><entry><title>Hack-The-Box (0001) &gt; Starting Point</title><link href="https://penserbjorne.com/hack-the-box-0001-starting-point-es-MX.html" rel="alternate"></link><published>2020-08-06T00:00:00-05:00</published><updated>2021-04-04T00:00:00-06:00</updated><author><name>Penserbjorne</name></author><id>tag:penserbjorne.com,2020-08-06:/hack-the-box-0001-starting-point-es-MX.html</id><summary type="html">&lt;p&gt;Anotaciones sobre la sección &amp;#8220;Starting point&amp;#8221; de&amp;nbsp;Hack-The-Box&lt;/p&gt;</summary><content type="html">&lt;h2&gt;This is not the intro&amp;nbsp;:)&lt;/h2&gt;
+&lt;p&gt;Ola k&amp;nbsp;ase.&lt;/p&gt;
+&lt;p&gt;Para este exacto momento en el que escribo esta linea de texto han pasado 146
+días desde que comenzó la pandemia del &lt;span class="caps"&gt;COVID&lt;/span&gt;-19 y pareciera que el tiempo se
+detuvo y que no ha pasado nada pero que a la vez que han pasado tantas&amp;nbsp;cosas.&lt;/p&gt;
+&lt;p&gt;Como sea, este blog esta en la misma situación, un tiempo&amp;nbsp;suspendido.&lt;/p&gt;
+&lt;p&gt;Dependiendo de cual futuro o universo paralelo leas esto puede que el blog
+ni siquiera este terminado de configurar, que aún tenga el template de &lt;code&gt;Pelican&lt;/code&gt;
+y que no tenga nada de contenido o que ya sea un pequeño blog que se ve hermoso
+y tiene un par de entradas útiles para la humanidad haha en todo caso, si en
+estos dos párrafos no te haz aburrido o retirado, mandame un tuit a
+&lt;a href="https://twitter.com/_penserbjorne"&gt;@_penserbjorne&lt;/a&gt;
+con una captura de pantalla de como se ve el blog y a cambio te invito unos
+taquitos&amp;nbsp;:)&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Personas hermosas que han reclamado sus&amp;nbsp;tacos:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://twitter.com/brendorts/status/1291595727693651969"&gt;Brendita&lt;/a&gt;, aunque elimino esa&amp;nbsp;cuenta.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;Ahora sí,&amp;nbsp;arranquemos.&lt;/p&gt;
+&lt;h2&gt;Hack-The-Box: Starting&amp;nbsp;point&lt;/h2&gt;
+&lt;h3&gt;¿Qué es&amp;nbsp;esto?&lt;/h3&gt;
+&lt;p&gt;Estos textos serán anotaciones sobre la sección &lt;strong&gt;Starting point&lt;/strong&gt; de
+&lt;strong&gt;Hack-The-Box&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Nos apoyaremos en los walk-throughs que ya vienen incorporados en la sección
+&lt;em&gt;Starting point&lt;/em&gt; e iremos explicando los comandos&amp;nbsp;utilizados.&lt;/p&gt;
+&lt;h3&gt;Hack-The-Box (&lt;span class="caps"&gt;HTB&lt;/span&gt;)&lt;/h3&gt;
+&lt;p&gt;Bueno, para hablar de &lt;a href="https://www.hackthebox.eu"&gt;&lt;strong&gt;Hack-The-Box&lt;/strong&gt; (&lt;span class="caps"&gt;HTB&lt;/span&gt;)&lt;/a&gt; y
+presentar lo qué realmente es este proyecto seria bueno dedicar una entrada
+específicamente a eso, por lo cual solo diré que es una plataforma para
+practicar o probar tus habilidades de pentesting trabajando sobre maquinas
+virtuales que están diseñadas y preparadas para&amp;nbsp;esto.&lt;/p&gt;
+&lt;p&gt;En resumen, hay maquinas virtuales con cierto software instalado y ciertas
+configuraciones que permiten que esta maquina pueda ser vulnerada de alguna
+manera. ¿Quieres practicar temas de pentesting? Esta es una de las plataformas&amp;nbsp;recomendadas.&lt;/p&gt;
+&lt;h3&gt;Starting&amp;nbsp;Point&lt;/h3&gt;
+&lt;p&gt;Para las personas que van comenzando en este ámbito puede que &lt;span class="caps"&gt;HTB&lt;/span&gt; sea una
+plataforma con un nivel de complejidad bastante alto y no necesariamente la
+primera opción para&amp;nbsp;arrancar.&lt;/p&gt;
+&lt;p&gt;Para solucionar esto &lt;span class="caps"&gt;HTB&lt;/span&gt; ha habilitado una sección llamada
+&lt;a href="https://www.hackthebox.eu/home/start"&gt;&lt;strong&gt;Starting Point&lt;/strong&gt;&lt;/a&gt;
+en la cual se encuentran una serie de maquinas con un nivel &lt;em&gt;básico&lt;/em&gt;
+acompañadas de sus &lt;a href="https://www.wordnik.com/words/walk-through"&gt;walk-throughs&lt;/a&gt;
+para que puedas resolverlas y familiarizarte con los pasos usuales del proceso
+de&amp;nbsp;pentesting.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Nota&lt;/strong&gt;: El pentesting no es una receta, estos recursos son solo para
+comenzar, pero conforme se avanza es necesario refinar tus habilidades y hacer
+uso el conocimiento que vas desarrollando o acumulando&amp;nbsp;:)&lt;/p&gt;
+&lt;h2&gt;Elementos del&amp;nbsp;pentesting&lt;/h2&gt;
+&lt;p&gt;Si bien el pentesting no es una receta, existen diferentes metodologías o
+frameworks que nos ayudan a guiarnos para realizar esta actividad de manera
+ordenada y&amp;nbsp;limpia.&lt;/p&gt;
+&lt;p&gt;Si quieres saber más puedes buscar los siguientes términos en&amp;nbsp;Internet:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cyber security&amp;nbsp;framework&lt;/li&gt;
+&lt;li&gt;Cyber security kill&amp;nbsp;chain&lt;/li&gt;
+&lt;li&gt;&lt;span class="caps"&gt;MITRE&lt;/span&gt;&amp;nbsp;Framework&lt;/li&gt;
+&lt;li&gt;&lt;span class="caps"&gt;OWASP&lt;/span&gt;&amp;nbsp;Framework&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Listo, ahora que haz ignorado lo anterior o haz regresado de buscar, en el caso
+de la sección de &lt;strong&gt;Starting Point&lt;/strong&gt; de &lt;span class="caps"&gt;HTB&lt;/span&gt; podemos encontrar de manera general
+los siguiente&amp;nbsp;elementos:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Reconocimiento&amp;nbsp;(Reconnaissance)&lt;/li&gt;
+&lt;li&gt;Enumeración&amp;nbsp;(Enumeration)&lt;/li&gt;
+&lt;li&gt;Punto de partida&amp;nbsp;(Foothold)&lt;/li&gt;
+&lt;li&gt;Movimiento lateral (Lateral&amp;nbsp;Movement)&lt;/li&gt;
+&lt;li&gt;Explotación&amp;nbsp;(Explotation)&lt;/li&gt;
+&lt;li&gt;Escalada de privilegios (Privilege&amp;nbsp;Escalation)&lt;/li&gt;
+&lt;li&gt;Explotación posterior (Post&amp;nbsp;Explotation)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Si bien no todas las máquinas necesitan todos los pasos mencionados, es bueno
+tenerlos presentes para tratar de trabajar de manera&amp;nbsp;ordenada.&lt;/p&gt;
+&lt;p&gt;Te recomendamos resolver cada maquina con su walk-through y a la par ir leyendo
+esta serie de&amp;nbsp;textos.&lt;/p&gt;
+&lt;h2&gt;Anotaciones de Starting&amp;nbsp;point&lt;/h2&gt;
+&lt;p&gt;Para ir tomando nota iremos creando una sección por cada maquina e iremos
+desarrollando los comando que solicita su walk-through correspondiente y le
+daremos contexto al comando o a la&amp;nbsp;acción.&lt;/p&gt;
+&lt;p&gt;Debido a que no sé cual va a ser la longitud de cada maquina lo mejor será
+dedicar una entrada a cada una por lo que te invito pases a la siguiente entrada
+en la cual comenzaremos con la maquina
+&lt;a href="{filename}./htb-02-starting-point-archetype.md"&gt;&lt;strong&gt;Archetype&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;#HappyHacking&lt;/code&gt;&lt;/p&gt;</content><category term="htb"></category><category term="init"></category><category term="cybersecurity"></category><category term="htb"></category><category term="pentest"></category><category term="writeup"></category></entry></feed>

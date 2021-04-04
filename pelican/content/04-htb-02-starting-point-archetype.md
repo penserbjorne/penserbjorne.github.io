@@ -12,7 +12,7 @@ Translation: false
 Status: published
 ---
 
-# Archetype
+##	Archetype
 
 Para comenzar con esta serie de anotaciones sobre la sección *Starting Point*
 arrancaremos con la máquina *Archetype*. Si no sabes bien de que hablo te
@@ -804,7 +804,7 @@ C:\Users\Administrator\Desktop>type root.txt
 
 Listo! Tenemos las dos banderas de esta máquina!
 
-## Fin
+##	Fin
 
 Bueno, con eso hemos concluido la revisión del primer walk-through de las
 máquinas de introducción de `HTB`. Este texto fue un poco más extenso ya que se

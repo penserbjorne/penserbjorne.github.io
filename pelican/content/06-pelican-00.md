@@ -12,7 +12,7 @@ Translation: false
 Status: published
 ---
 
-# What is this?
+##  What is this?
 
 Weno weno, ¿de que va esta entrada? Pues simplemente es mi `cheat sheet` para
 gestionar este blog con `Pelican`.
@@ -21,9 +21,9 @@ Como ya hemos dicho, toda la documentación necesaria (y extendida) se
 encuentra en [el blog oficial de Pelican](https://docs.getpelican.com), por lo
 que si se necesita mayor información o detalle de algo, visitar el sitio oficial.
 
-# Comandos
+##  Comandos
 
-##  Preparación del entorno
+### Preparación del entorno
 
 ```bash
 # Creación del entorno
@@ -49,7 +49,7 @@ git clone https://github.com/penserbjorne/penserbjorne.github.io.git
 cd penserbjorne.github.io/pelican
 ```
 
-##  Instalación de un tema
+### Instalación de un tema
 
 ```bash
 # Clonar temas
@@ -65,7 +65,7 @@ pelican-themes --list
 pelican-themes --remove nombre-del-tema
 ```
 
-##  Comando para generar y ejecutar sitio (corta)
+### Comando para generar y ejecutar sitio (corta)
 
 Recuerda algunas de estas tareas fueron modificadas para ajustarse al flujo de
 de desarrollo del sitio.
@@ -78,7 +78,7 @@ invoke livereload
 invoke gh-pages
 ```
 
-## Comando para generar y ejecutar sitio (extendida)
+### Comando para generar y ejecutar sitio (extendida)
 
 Recuerda algunas de estas tareas fueron modificadas para ajustarse al flujo de
 de desarrollo del sitio.

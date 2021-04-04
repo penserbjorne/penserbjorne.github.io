@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Blog de Penserbjorne" />
 <meta property="og:article:author" content="Penserbjorne" />
 <meta property="og:article:published_time" content="2020-05-09T00:00:00-05:00" />
-<meta property="og:article:modified_time" content="2020-08-20T00:00:00-05:00" />
+<meta property="og:article:modified_time" content="2021-04-04T00:00:00-06:00" />
 <meta name="twitter:title" content="Pelican (02), creación de entradas para un blog estático con Pelican ">
 <meta name="twitter:description" content="Creación de entradas para un blog estático con Pelican">
 
@@ -77,25 +77,25 @@
 <div class="row-fluid">
         <div class="span8 offset2 article-content">
             
-            <h1>What is&nbsp;this?</h1>
+            <h2>What is&nbsp;this?</h2>
 <p>Weno weno, ¿de que va esta entrada? Pues de cómo escribir contenido (entradas)
 en el blog con <code>Pelican</code>. Esto es continuación de la
 <a href="{filename}./pelican-01.md">entrada anterior</a> en la cual vimos una ligera
-introducción a <code>Pelican</code>, cómo instalarlo y como ejecutarlo para ver andando el&nbsp;sitio.</p>
+introducción a <code>Pelican</code>, cómo instalarlo y como ejecutarlo para ver andando el
+sitio. Básicamente, un pequeño <strong>hola mundo</strong>.</p>
 <p>Como ya hemos dicho, toda la documentación necesaria (y extendida) se
 encuentra en <a href="https://docs.getpelican.com">el blog oficial de Pelican</a>, por lo
-que si se necesita mayor información o detalle de algo, visitar el sitio oficial
-(recuerda siempre, <strong>#<span class="caps">RTFM</span></strong>).</p>
-<h1>Markdown</h1>
+que si se necesita mayor información o detalle de algo pues &#8230; a visitar el
+sitio&nbsp;oficial.</p>
+<h2>Markdown</h2>
 <p>Una de las razones por las cuales elegimos <code>Pelican</code> como herramienta para
 escribir el blog es que tiene soporte para <code>Markdown</code>.</p>
 <p><code>Markdown</code> a grandes rasgos es un lenguaje de marcado ligero, esto significa que
 se escribe texto plano utilizando etiquetas que posteriormente serán convertidas
 a un formato más bonito, en este caso <span class="caps">HTML</span>.</p>
 <p>La ventaja de utilizar <code>Markdown</code> es que podemos enfocarnos simplemente en
-escribir utilizando cualquier editor de texto (simple o tan complejo como tu
-quieras) sabiendo que las etiquetas que estamos utilizando tendrán un
-formato agradable de&nbsp;leer.</p>
+escribir utilizando cualquier editor de texto sabiendo que las etiquetas que
+estamos utilizando tendrán un formato agradable de&nbsp;leer.</p>
 <p>Si quieres aprender un poco más sobre <code>Markdown</code> te dejo su <a href="https://es.wikipedia.org/wiki/Markdown">entrada de
 <code>Wikipedia</code></a>,
 <a href="https://daringfireball.net/projects/markdown/">el sitio original de su publicación</a>
@@ -103,7 +103,7 @@ y una <a href="https://markdown.es/sintaxis-markdown/">sheetcheat de sus etiquet
 para que veas lo sencillo que&nbsp;es.</p>
 <p>En este caso, la extensión del archivo <code>Markdown</code> que estaremos utilizando es
 <code>.md</code>.</p>
-<h1>¿Donde vamos a&nbsp;escribir?</h1>
+<h2>¿Donde vamos a&nbsp;escribir?</h2>
 <p>Recordando la estructura del sitio, sabemos que las entradas del mismo
 van en la carpeta <code>content</code> de nuestra subcarpeta <code>pelican</code>. Ahí es donde
 podremos comenzar a crear nuestros archivos en <code>Markdown</code>.</p>
@@ -115,7 +115,7 @@ podremos comenzar a crear nuestros archivos en <code>Markdown</code>.</p>
 ├── share/        <span class="c1"># carpeta de virtualenv</span>
 └── user.github.io/   <span class="c1"># carpeta del repositorio del sitio</span>
     └── pelican/      <span class="c1"># carpeta con los archivos fuente del sitio</span>
-        ├── content             
+        ├── content   <span class="c1"># Archivos en Markdown</span>
         │   └── <span class="o">(</span>pages<span class="o">)</span>
         ├── output
         ├── tasks.py
@@ -135,7 +135,7 @@ la carpeta <code>content</code> con la extensión <code>.md</code></p>
 ├── share/        <span class="c1"># carpeta de virtualenv</span>
 └── user.github.io/   <span class="c1"># carpeta del repositorio del sitio</span>
     └── pelican/      <span class="c1"># carpeta con los archivos fuente del sitio</span>
-        ├── content             
+        ├── content   <span class="c1"># Archivos en Markdown</span>
         │   └── hola-mundo.md <span class="c1"># Entrada nueva</span>
         ├── output
         ├── tasks.py
@@ -150,7 +150,7 @@ para generar el sitio <code>Pelican</code> tomara este archivo y lo procesara pa
 la salida necesaria y general el&nbsp;sitio.</p>
 <p>Por lo tanto, para añadir más contenido a tu sitio basta con que lo agreguemos a
 esta&nbsp;carpeta.</p>
-<h1>¿Qué debe llevar una&nbsp;entrada?</h1>
+<h2>¿Qué debe llevar una&nbsp;entrada?</h2>
 <p>Para una gestión adecuada del contenido en el sitio <code>Pelican</code> necesita conocer
 algunas cosas sobre el contenido que estamos generando. Para esto es necesario
 incluir algunas etiquetas al inicio del archivo que serán consideradas como
@@ -186,7 +186,7 @@ incluir algunas etiquetas al inicio del archivo que serán consideradas como
 </tr>
 <tr>
 <td><code>category</code></td>
-<td>Categórica del contenido, solo una</td>
+<td>Categoría del contenido, solo una</td>
 </tr>
 <tr>
 <td><code>slug</code></td>
@@ -235,8 +235,8 @@ incluir algunas etiquetas al inicio del archivo que serán consideradas como
 <span class="c">Title: Este es el titulo</span>
 <span class="c">Date: 2020-05-09</span>
 <span class="c">Modified: 2020-05-09</span>
-<span class="c">Tags: blog,pelican</span>
-<span class="c">Keywords: blog,pelican</span>
+<span class="c">Tags: blog, pelican</span>
+<span class="c">Keywords: blog, pelican</span>
 <span class="c">Category: pelican</span>
 <span class="c">Author: Penserbjorne</span>
 <span class="c">Summary: Descripción del texto</span>
@@ -252,7 +252,7 @@ dos lineas de tres guiones medios <code>---</code> al inicio y al final, estas l
 son&nbsp;obligatorias.</p>
 <p>En caso de no incluir estas etiquetas <code>Pelican</code> no podrá procesar el archivo ni
 procederá a&nbsp;convertirlo.</p>
-<h1>Ahora sí a&nbsp;escribir</h1>
+<h2>Ahora sí, a&nbsp;escribir</h2>
 <p>Una vez que tenemos el archivo con su extensión <code>.md</code> y que le añadimos las
 etiquetas necesarias podemos comenzar a escribir su contenido en <code>Markdown</code>.</p>
 <p>Para ver conocer otros detalles de como insertar imágenes o contenido estático
@@ -261,7 +261,7 @@ en una entrada te recomendamos que revises la sección para
 <code>Pelican</code>, tal vez algún día escribamos una guía de redacción para <code>Pelican</code>
 pero por ahora&nbsp;no.</p>
 <p>Una vez que la entrada ha sido redactada podemos proceder a procesar el sitio
-para que se genere el archivo de salida. Esto lo hacemos con los comandos que
+para que se generen los archivo de salida. Esto lo hacemos con los comandos que
 vimos en la <a href="{filename}./pelican-01.md">entrada anterior</a> (que te recomiendo
 leer para que no te pierdas en la estructura de archivos y de trabajo que
 utilizamos&nbsp;aquí).</p>
@@ -276,9 +276,10 @@ pelican --listen -o ..
 <p>Para acceder al sitio en local visitamos
 <a href="http://localhost:8000/">http://localhost:8000/</a>, y listo, tendríamos que
 observar el sitio andando con nuestra entrada&nbsp;nueva.</p>
+<p><img alt="Alt Text" src="https://penserbjorne.com/images/02-pelican-02/screenshot-2021-04-04-hola-mundo.png"></p>
 <p>Para poder estar trabajando con el sitio, es necesario cada vez que hagamos un
 cambio y modificación volver a generar los&nbsp;archivos.</p>
-<h1>Consideraciones de&nbsp;trabajo</h1>
+<h2>Consideraciones de&nbsp;trabajo</h2>
 <p>Cada vez que regeneremos el sitio porque hemos realizado un cambio o hemos
 añadido contenido nuevo se van a generar los archivos <code>HTML</code> correspondientes,
 si observamos cuidadosamente veremos que los archivos viejos no se&nbsp;eliminan.</p>
@@ -290,7 +291,7 @@ directorio raíz del repositorio y dejar exclusivamente la carpeta <code>pelican
 <p>Lo sé, lo sé, esto no es lo más viable o factible a largo plazo, ¡pero oye!
 apenas vamos comenzando, por lo cual lo solucionaremos más adelante, por ahora
 solo no te asustes si ves contenido duplicado, eliminalo y&nbsp;ya.</p>
-<h1>Siguientes&nbsp;pasos</h1>
+<h2>Siguientes&nbsp;pasos</h2>
 <p>Ya tenemos nuestro primer <code>hola mundo</code> en el blog, basta con hacer push al repo
 para poder verlo andando en nuestra <code>GitHub Pages</code>.</p>
 <p>Esto es solo el comienzo, aún necesitamos seguir puliendo algunas cosas del
@@ -322,14 +323,14 @@ con otras cosas y nos leemos&nbsp;pronto.</p>
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2020-05-09T00:00:00-05:00">may 9, 2020</time>
 <h4>Last Updated</h4>
-<time datetime="2020-08-20T00:00:00-05:00">ago 20, 2020</time>
+<time datetime="2021-04-04T00:00:00-06:00">abr 4, 2021</time>
 
             <h4>Category</h4>
             <a class="category-link" href="https://penserbjorne.com/categories.html#pelican-ref">pelican</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
                 <li><a href="https://penserbjorne.com/tags.html#blog-ref">blog
-                    <span>8</span>
+                    <span>6</span>
 </a></li>
                 <li><a href="https://penserbjorne.com/tags.html#pelican-ref">pelican
                     <span>5</span>

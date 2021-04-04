@@ -12,7 +12,7 @@ Translation: false
 Status: published
 ---
 
-# What is this?
+##  What is this?
 
 Bueno, como primera entrada de notas, lo más lógico (para mi) es comenzar con la
 herramienta que esta haciendo posible esto, `Pelican`. Esto ira siendo una serie
@@ -43,7 +43,7 @@ En este momento me encuentro trabajando en un equipo con
 <strike>`Lubuntu 18.04`</strike> `Pop_OS!` por lo cual las instrucciones de
 instalación serán para esta distribución.
 
-# Preparación del entorno
+##  Preparación del entorno
 
 Dado que `Pelican` es una herramienta desarrollada con `Python` y lo mejor es
 buscar tener un entorno limpio, estaremos trabajando con `virtualenv`.
@@ -85,7 +85,7 @@ entorno.
 deactivate
 ```
 
-# Instalación de las herramientas
+##  Instalación de las herramientas
 
 En este caso vamos a redactar el sitio en `Markdown`, por lo cual instalaremos
 lo necesario para que `Pelican` funcione con `Markdown`. Esto lo haremos a
@@ -104,7 +104,7 @@ también a través de `pip`.
 pip install --upgrade pelican Markdown typogrify
 ```
 
-# Creación del esqueleto del sitio
+##  Creación del esqueleto del sitio
 
 Para crear un proyecto con la estructura básica de `Pelican` basta con ejecutar
 el siguiente comando (aún no lo hagas, necesito aclarar algo antes).
@@ -177,7 +177,7 @@ manera.
         └── publishconf.py
 ```
 
-# Generar y ejecutar el sitio
+##  Generar y ejecutar el sitio
 
 Para generar el contenido del sitio vamos a posicionarnos en la carpeta del
 repositorio (o la que hemos llamado blog).
@@ -217,7 +217,7 @@ Para acceder al sitio visitamos [http://localhost:8000/](http://localhost:8000/)
 Para poder estar trabajando con el sitio, es necesario cada vez que hagamos un
 cambio o modificación volver a generar los archivos.
 
-# Creación de contenido
+##  Creación de contenido
 
 Recordando la estructura del sitio, sabemos que las entradas del mismo
 van en la carpeta `content` de nuestra subcarpeta `pelican`. Ahí es donde

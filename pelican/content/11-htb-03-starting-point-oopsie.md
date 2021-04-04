@@ -12,7 +12,7 @@ Translation: false
 Status: draft
 ---
 
-# Oopsie
+##	Oopsie
 
 Bueno, esta es la segunda entrada de la serie de anotaciones sobre la sección
 *Starting point* de `HTB`. En esta ocasión trabajaremos con la máquina
@@ -27,7 +27,7 @@ en la entrada de [Archetype]({filename}./04-htb-02-starting-point-archetype.md).
 - **SO:** Linux
 - **IP:** 10.10.10.28
 
-## Enumeration
+##	Enumeration
 
 Como siempre digo: "*primero lo primero*", pues vamos a comenzar a **enumerar**
 lo que tiene el equipo objetivo, en este caso vamos a tratar de identificar

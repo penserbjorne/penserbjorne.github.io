@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Blog de Penserbjorne" />
 <meta property="og:article:author" content="Penserbjorne" />
 <meta property="og:article:published_time" content="2020-08-21T00:00:00-05:00" />
-<meta property="og:article:modified_time" content="2020-08-21T00:00:00-05:00" />
+<meta property="og:article:modified_time" content="2020-04-04T00:00:00-06:00" />
 <meta name="twitter:title" content="Pelican (04), configuración del sitio (tema) ">
 <meta name="twitter:description" content="Configuración para añadir un tema a un sitio con Pelican">
 
@@ -77,16 +77,16 @@
 <div class="row-fluid">
         <div class="span8 offset2 article-content">
             
-            <h1>What is&nbsp;this?</h1>
+            <h2>What is&nbsp;this?</h2>
 <p>Andamos con todo, anoche terminamos la
-<a href="{filename}./pelican-03.md">tercera entrada de Pelican, para modificar la construcción del sitio y configurar algunas cositas del sitio</a>,
-sé que no es mucho, pero es trabajo honesto&nbsp;haha</p>
+<a href="{filename}./pelican-03.md">tercera entrada de Pelican</a> para modificar la
+construcción del sitio y configurar algunas cositas del sitio, sé que no es
+mucho, pero es trabajo honesto&nbsp;haha</p>
 <p>Bueno, esta cuarta entrada será para configurar un tema a nuestro&nbsp;sitio.</p>
 <p>Y el <em>disclaimer</em> de siempre, como ya hemos dicho, toda la documentación necesaria
 (y extendida) se encuentra en <a href="https://docs.getpelican.com">el blog oficial de Pelican</a>,
-por lo que si se necesita mayor información o detalle de algo, visitar el sitio
-oficial (recuerda siempre, <strong>#<span class="caps">RTFM</span></strong>).</p>
-<h1>pelican-themes</h1>
+por lo que si se necesita mayor información o detalle de algo, visitar el sitio&nbsp;oficial.</p>
+<h2>pelican-themes</h2>
 <p>Dentro de las herramientas que necesitamos utilizar con <code>Pelican</code> se encuentra
 <code>pelican-themes</code> la cual como su nombre lo indica es para trabajar con temas&nbsp;:&#39;v</p>
 <p>Esta herramientas nos va a permitir gestionar temas pudiendo instalarlos en
@@ -115,7 +115,7 @@ realizar pasos&nbsp;extras.</p>
 <p>Si quieres ver algunos ejemplos de uso más detallados puedes revisar la sección
 correspondiente de la documentación de <code>Pelican</code> dando click
 <a href="https://docs.getpelican.com/en/stable/pelican-themes.html">aquí</a>.</p>
-<h1>Seleccionando e instalando un&nbsp;tema</h1>
+<h2>Seleccionando e instalando un&nbsp;tema</h2>
 <p>Vale, ya vimos que podemos <em>instalar</em> temas y utilizarlos, pero, ¿donde están
 los temas? Tranqui, para eso, <code>Pelican</code> tiene un listado de temas en <code>GitHub</code>
 que puedes revisar entrando
@@ -169,12 +169,12 @@ pelican-themes --remove nombre-del-tema-1 nombre-del-tema-2 nombre-del-tema-3
 </code></pre></div>
 
 
-<h1>Aplicando el tema&nbsp;instalado</h1>
+<h2>Aplicando el tema&nbsp;instalado</h2>
 <p>Para poder utilizar nuestro tema instalado tenemos que ir al archivo
 <code>pelicanconf.py</code> y asignarle un valor a la variable <code>THEME</code>, en este caso la
 variable quedaría como <code>THEME = u'bootstrap2-dark'</code>.</p>
-<p>Con este pequeño basta con construir de nuevo el sitio con los comandos
-de la <a href="{filename}./pelican-03.md">entrada anterior</a>.</p>
+<p>Con este pequeño cambio basta para construir el sitio con el tema seleccionado.
+recuerda que utilizaremos los comandos de la <a href="{filename}./pelican-03.md">entrada anterior</a>.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Desarrollo</span>
 invoke livereload
 
@@ -183,17 +183,39 @@ invoke gh-pages
 </code></pre></div>
 
 
-<!--Pendiente insertar imágenes comparativas -->
-
 <p>Para probar otros temas basta con seguir los pasos anteriores hasta encontrar
 uno que sea de tu agrado&nbsp;:)</p>
-<h1>Siguientes&nbsp;pasos</h1>
+<h2>Siguientes pasos (this is (not) the&nbsp;end)</h2>
 <p>Nuestro sitio ya tiene un poco más de personalidad aunque sigue siendo bastante
 cliché, al menos ya es responsivo y se podrá leer en dispositivos&nbsp;móviles.</p>
 <p>Para siguientes entradas nos haria falta revisar como agregar algunas secciones
 como un <code>about</code> o un <code>contact</code> y revisar el tema de plugins, y probablemente
 con eso habremos terminado de configurar el sitio&nbsp;:)</p>
-<p>Nos vemos en otra ocasión pimpollo que utiliza <code>Pelican</code>.</p>
+<h2>Ejemplos de temas&nbsp;aplicados</h2>
+<p>Sé que puedes pensar lo&nbsp;siguiente:</p>
+<blockquote>
+<p>Penserbjorne, pero &#8230; ya termino la entrada, ¿por qué añades otra&nbsp;sección?</p>
+</blockquote>
+<p>Bueno, te quería mostrar algunas imágenes de cómo se ve el tema aplicado al
+sitio, solo que las imágenes son muy largas  y por eso decidí dejarlas al&nbsp;final.</p>
+<p>Durante el desarrollo de esta entrada utilizamos el tema <code>bootstrap2-dark</code>
+porqué se vería <strong>chido</strong> pero ya en producción realmente no era muy responsivo
+por lo que cambiamos al tema <code>elegant</code>.</p>
+<p>A continuación te muestro la página de inicio del blog con cada uno de los
+temas&nbsp;aplicados.</p>
+<h3>Not my&nbsp;idea</h3>
+<p>Es el tema que trae <code>Pelican</code> por defecto, y no, no es&nbsp;responsivo.</p>
+<p><img alt="Alt Text" src="https://penserbjorne.com/images/07-pelican-04/screenshot-2020-08-21-blog-de-penserbjorne-1.png"></p>
+<h3>bootstrap2-black</h3>
+<p>Fue el tema <strong>juakeril</strong> que habíamos elegido, pero no, tampoco es responsivo
+y después se volvió complicado de&nbsp;leer.</p>
+<p><img alt="Alt Text" src="https://penserbjorne.com/images/07-pelican-04/screenshot-2020-08-21-blog-de-penserbjorne-2.png"></p>
+<h3>elegant</h3>
+<p>Es el último tema que hemos probado, sí, es responsivo y es fácil de leer en él,
+por lo cual se ha quedado cómo tema final (es el actual a este momento de&nbsp;publicación).</p>
+<p><img alt="Alt Text" src="https://penserbjorne.com/images/07-pelican-04/screenshot-2021-04-04-blog-de-penserbjorne.png"></p>
+<h2>The End of the&nbsp;Post</h2>
+<p>Bueno, ahora sí, nos vemos en otra ocasión <a href="https://www.youtube.com/watch?v=pVeKyqV1jWU">piloto</a>.</p>
 
 
              
@@ -218,7 +240,7 @@ con eso habremos terminado de configurar el sitio&nbsp;:)</p>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
                 <li><a href="https://penserbjorne.com/tags.html#blog-ref">blog
-                    <span>8</span>
+                    <span>6</span>
 </a></li>
                 <li><a href="https://penserbjorne.com/tags.html#pelican-ref">pelican
                     <span>5</span>

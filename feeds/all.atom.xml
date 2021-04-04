@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog de Penserbjorne</title><link href="https://penserbjorne.com/" rel="alternate"></link><link href="https://penserbjorne.com/feeds/all.atom.xml" rel="self"></link><id>https://penserbjorne.com/</id><updated>2020-11-06T00:00:00-06:00</updated><subtitle>No soy nadie. No soy nada.</subtitle><entry><title>Pelican (04), configuración del sitio (tema)</title><link href="https://penserbjorne.com/pelican-04-configuracion-del-sitio-tema-es-MX.html" rel="alternate"></link><published>2020-08-21T00:00:00-05:00</published><updated>2020-08-21T00:00:00-05:00</updated><author><name>Penserbjorne</name></author><id>tag:penserbjorne.com,2020-08-21:/pelican-04-configuracion-del-sitio-tema-es-MX.html</id><summary type="html">&lt;p&gt;Configuración para añadir un tema a un sitio con&amp;nbsp;Pelican&lt;/p&gt;</summary><content type="html">&lt;h1&gt;What is&amp;nbsp;this?&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog de Penserbjorne</title><link href="https://penserbjorne.com/" rel="alternate"></link><link href="https://penserbjorne.com/feeds/all.atom.xml" rel="self"></link><id>https://penserbjorne.com/</id><updated>2021-04-04T00:00:00-06:00</updated><subtitle>No soy nadie. No soy nada.</subtitle><entry><title>Pelican (04), configuración del sitio (tema)</title><link href="https://penserbjorne.com/pelican-04-configuracion-del-sitio-tema-es-MX.html" rel="alternate"></link><published>2020-08-21T00:00:00-05:00</published><updated>2020-04-04T00:00:00-06:00</updated><author><name>Penserbjorne</name></author><id>tag:penserbjorne.com,2020-08-21:/pelican-04-configuracion-del-sitio-tema-es-MX.html</id><summary type="html">&lt;p&gt;Configuración para añadir un tema a un sitio con&amp;nbsp;Pelican&lt;/p&gt;</summary><content type="html">&lt;h2&gt;What is&amp;nbsp;this?&lt;/h2&gt;
 &lt;p&gt;Andamos con todo, anoche terminamos la
-&lt;a href="{filename}./pelican-03.md"&gt;tercera entrada de Pelican, para modificar la construcción del sitio y configurar algunas cositas del sitio&lt;/a&gt;,
-sé que no es mucho, pero es trabajo honesto&amp;nbsp;haha&lt;/p&gt;
+&lt;a href="{filename}./pelican-03.md"&gt;tercera entrada de Pelican&lt;/a&gt; para modificar la
+construcción del sitio y configurar algunas cositas del sitio, sé que no es
+mucho, pero es trabajo honesto&amp;nbsp;haha&lt;/p&gt;
 &lt;p&gt;Bueno, esta cuarta entrada será para configurar un tema a nuestro&amp;nbsp;sitio.&lt;/p&gt;
 &lt;p&gt;Y el &lt;em&gt;disclaimer&lt;/em&gt; de siempre, como ya hemos dicho, toda la documentación necesaria
 (y extendida) se encuentra en &lt;a href="https://docs.getpelican.com"&gt;el blog oficial de Pelican&lt;/a&gt;,
-por lo que si se necesita mayor información o detalle de algo, visitar el sitio
-oficial (recuerda siempre, &lt;strong&gt;#&lt;span class="caps"&gt;RTFM&lt;/span&gt;&lt;/strong&gt;).&lt;/p&gt;
-&lt;h1&gt;pelican-themes&lt;/h1&gt;
+por lo que si se necesita mayor información o detalle de algo, visitar el sitio&amp;nbsp;oficial.&lt;/p&gt;
+&lt;h2&gt;pelican-themes&lt;/h2&gt;
 &lt;p&gt;Dentro de las herramientas que necesitamos utilizar con &lt;code&gt;Pelican&lt;/code&gt; se encuentra
 &lt;code&gt;pelican-themes&lt;/code&gt; la cual como su nombre lo indica es para trabajar con temas&amp;nbsp;:&amp;#39;v&lt;/p&gt;
 &lt;p&gt;Esta herramientas nos va a permitir gestionar temas pudiendo instalarlos en
@@ -37,7 +37,7 @@ realizar pasos&amp;nbsp;extras.&lt;/p&gt;
 &lt;p&gt;Si quieres ver algunos ejemplos de uso más detallados puedes revisar la sección
 correspondiente de la documentación de &lt;code&gt;Pelican&lt;/code&gt; dando click
 &lt;a href="https://docs.getpelican.com/en/stable/pelican-themes.html"&gt;aquí&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;Seleccionando e instalando un&amp;nbsp;tema&lt;/h1&gt;
+&lt;h2&gt;Seleccionando e instalando un&amp;nbsp;tema&lt;/h2&gt;
 &lt;p&gt;Vale, ya vimos que podemos &lt;em&gt;instalar&lt;/em&gt; temas y utilizarlos, pero, ¿donde están
 los temas? Tranqui, para eso, &lt;code&gt;Pelican&lt;/code&gt; tiene un listado de temas en &lt;code&gt;GitHub&lt;/code&gt;
 que puedes revisar entrando
@@ -91,12 +91,12 @@ pelican-themes --remove nombre-del-tema-1 nombre-del-tema-2 nombre-del-tema-3
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h1&gt;Aplicando el tema&amp;nbsp;instalado&lt;/h1&gt;
+&lt;h2&gt;Aplicando el tema&amp;nbsp;instalado&lt;/h2&gt;
 &lt;p&gt;Para poder utilizar nuestro tema instalado tenemos que ir al archivo
 &lt;code&gt;pelicanconf.py&lt;/code&gt; y asignarle un valor a la variable &lt;code&gt;THEME&lt;/code&gt;, en este caso la
 variable quedaría como &lt;code&gt;THEME = u'bootstrap2-dark'&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Con este pequeño basta con construir de nuevo el sitio con los comandos
-de la &lt;a href="{filename}./pelican-03.md"&gt;entrada anterior&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Con este pequeño cambio basta para construir el sitio con el tema seleccionado.
+recuerda que utilizaremos los comandos de la &lt;a href="{filename}./pelican-03.md"&gt;entrada anterior&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Desarrollo&lt;/span&gt;
 invoke livereload
 
@@ -105,33 +105,54 @@ invoke gh-pages
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;!--Pendiente insertar imágenes comparativas --&gt;
-
 &lt;p&gt;Para probar otros temas basta con seguir los pasos anteriores hasta encontrar
 uno que sea de tu agrado&amp;nbsp;:)&lt;/p&gt;
-&lt;h1&gt;Siguientes&amp;nbsp;pasos&lt;/h1&gt;
+&lt;h2&gt;Siguientes pasos (this is (not) the&amp;nbsp;end)&lt;/h2&gt;
 &lt;p&gt;Nuestro sitio ya tiene un poco más de personalidad aunque sigue siendo bastante
 cliché, al menos ya es responsivo y se podrá leer en dispositivos&amp;nbsp;móviles.&lt;/p&gt;
 &lt;p&gt;Para siguientes entradas nos haria falta revisar como agregar algunas secciones
 como un &lt;code&gt;about&lt;/code&gt; o un &lt;code&gt;contact&lt;/code&gt; y revisar el tema de plugins, y probablemente
 con eso habremos terminado de configurar el sitio&amp;nbsp;:)&lt;/p&gt;
-&lt;p&gt;Nos vemos en otra ocasión pimpollo que utiliza &lt;code&gt;Pelican&lt;/code&gt;.&lt;/p&gt;</content><category term="pelican"></category><category term="blog"></category><category term="pelican"></category></entry><entry><title>Pelican (00), cheat sheet</title><link href="https://penserbjorne.com/pelican-00-cheat-sheet-es-MX.html" rel="alternate"></link><published>2020-08-20T00:00:00-05:00</published><updated>2020-09-27T00:00:00-05:00</updated><author><name>Penserbjorne</name></author><id>tag:penserbjorne.com,2020-08-20:/pelican-00-cheat-sheet-es-MX.html</id><summary type="html">&lt;p&gt;Recopilación de comandos para no olvidar como gestionar el blog con&amp;nbsp;Pelican&lt;/p&gt;</summary><content type="html">&lt;h1&gt;What is&amp;nbsp;this?&lt;/h1&gt;
+&lt;h2&gt;Ejemplos de temas&amp;nbsp;aplicados&lt;/h2&gt;
+&lt;p&gt;Sé que puedes pensar lo&amp;nbsp;siguiente:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Penserbjorne, pero &amp;#8230; ya termino la entrada, ¿por qué añades otra&amp;nbsp;sección?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Bueno, te quería mostrar algunas imágenes de cómo se ve el tema aplicado al
+sitio, solo que las imágenes son muy largas  y por eso decidí dejarlas al&amp;nbsp;final.&lt;/p&gt;
+&lt;p&gt;Durante el desarrollo de esta entrada utilizamos el tema &lt;code&gt;bootstrap2-dark&lt;/code&gt;
+porqué se vería &lt;strong&gt;chido&lt;/strong&gt; pero ya en producción realmente no era muy responsivo
+por lo que cambiamos al tema &lt;code&gt;elegant&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;A continuación te muestro la página de inicio del blog con cada uno de los
+temas&amp;nbsp;aplicados.&lt;/p&gt;
+&lt;h3&gt;Not my&amp;nbsp;idea&lt;/h3&gt;
+&lt;p&gt;Es el tema que trae &lt;code&gt;Pelican&lt;/code&gt; por defecto, y no, no es&amp;nbsp;responsivo.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="https://penserbjorne.com/images/07-pelican-04/screenshot-2020-08-21-blog-de-penserbjorne-1.png"&gt;&lt;/p&gt;
+&lt;h3&gt;bootstrap2-black&lt;/h3&gt;
+&lt;p&gt;Fue el tema &lt;strong&gt;juakeril&lt;/strong&gt; que habíamos elegido, pero no, tampoco es responsivo
+y después se volvió complicado de&amp;nbsp;leer.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="https://penserbjorne.com/images/07-pelican-04/screenshot-2020-08-21-blog-de-penserbjorne-2.png"&gt;&lt;/p&gt;
+&lt;h3&gt;elegant&lt;/h3&gt;
+&lt;p&gt;Es el último tema que hemos probado, sí, es responsivo y es fácil de leer en él,
+por lo cual se ha quedado cómo tema final (es el actual a este momento de&amp;nbsp;publicación).&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="https://penserbjorne.com/images/07-pelican-04/screenshot-2021-04-04-blog-de-penserbjorne.png"&gt;&lt;/p&gt;
+&lt;h2&gt;The End of the&amp;nbsp;Post&lt;/h2&gt;
+&lt;p&gt;Bueno, ahora sí, nos vemos en otra ocasión &lt;a href="https://www.youtube.com/watch?v=pVeKyqV1jWU"&gt;piloto&lt;/a&gt;.&lt;/p&gt;</content><category term="pelican"></category><category term="blog"></category><category term="pelican"></category></entry><entry><title>Pelican (00), cheat sheet</title><link href="https://penserbjorne.com/pelican-00-cheat-sheet-es-MX.html" rel="alternate"></link><published>2020-08-20T00:00:00-05:00</published><updated>2021-04-04T00:00:00-06:00</updated><author><name>Penserbjorne</name></author><id>tag:penserbjorne.com,2020-08-20:/pelican-00-cheat-sheet-es-MX.html</id><summary type="html">&lt;p&gt;Recopilación de comandos para no olvidar como gestionar el blog con&amp;nbsp;Pelican&lt;/p&gt;</summary><content type="html">&lt;h2&gt;What is&amp;nbsp;this?&lt;/h2&gt;
 &lt;p&gt;Weno weno, ¿de que va esta entrada? Pues simplemente es mi &lt;code&gt;cheat sheet&lt;/code&gt; para
 gestionar este blog con &lt;code&gt;Pelican&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Como ya hemos dicho, toda la documentación necesaria (y extendida) se
 encuentra en &lt;a href="https://docs.getpelican.com"&gt;el blog oficial de Pelican&lt;/a&gt;, por lo
-que si se necesita mayor información o detalle de algo, visitar el sitio oficial
-(recuerda siempre, &lt;strong&gt;#&lt;span class="caps"&gt;RTFM&lt;/span&gt;&lt;/strong&gt;).&lt;/p&gt;
-&lt;h1&gt;Comandos&lt;/h1&gt;
-&lt;h2&gt;Preparación del&amp;nbsp;entorno&lt;/h2&gt;
+que si se necesita mayor información o detalle de algo, visitar el sitio&amp;nbsp;oficial.&lt;/p&gt;
+&lt;h2&gt;Comandos&lt;/h2&gt;
+&lt;h3&gt;Preparación del&amp;nbsp;entorno&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Creación del entorno&lt;/span&gt;
-virtualenv --python&lt;span class="o"&gt;=&lt;/span&gt;/usr/bin/python3 ~/path/to/project
+virtualenv --python&lt;span class="o"&gt;=&lt;/span&gt;/usr/bin/python3 ~/path/to/virtual/env
 
 &lt;span class="c1"&gt;# Nos movemos a la carpeta creada&lt;/span&gt;
-&lt;span class="nb"&gt;cd&lt;/span&gt; ~/path/to/project
+&lt;span class="nb"&gt;cd&lt;/span&gt; ~/path/to/virtual/env
 
 &lt;span class="c1"&gt;# Activamos el entorno&lt;/span&gt;
-&lt;span class="nb"&gt;source&lt;/span&gt; bin/activate
+&lt;span class="nb"&gt;source&lt;/span&gt; ./bin/activate
 
 &lt;span class="c1"&gt;# Instalación de herramientas&lt;/span&gt;
 pip install pelican Markdown typogrify invoke livereload ghp-import
@@ -148,7 +169,7 @@ git clone https://github.com/penserbjorne/penserbjorne.github.io.git
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h2&gt;Instalación de un&amp;nbsp;tema&lt;/h2&gt;
+&lt;h3&gt;Instalación de un&amp;nbsp;tema&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Clonar temas&lt;/span&gt;
 git clone --recursive https://github.com/getpelican/pelican-themes ~/path-to-projects/pelican-themes
 
@@ -163,7 +184,7 @@ pelican-themes --remove nombre-del-tema
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h2&gt;Comando para generar y ejecutar sitio&amp;nbsp;(corta)&lt;/h2&gt;
+&lt;h3&gt;Comando para generar y ejecutar sitio&amp;nbsp;(corta)&lt;/h3&gt;
 &lt;p&gt;Recuerda algunas de estas tareas fueron modificadas para ajustarse al flujo de
 de desarrollo del&amp;nbsp;sitio.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Desarrollo&lt;/span&gt;
@@ -174,7 +195,7 @@ invoke gh-pages
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h2&gt;Comando para generar y ejecutar sitio&amp;nbsp;(extendida)&lt;/h2&gt;
+&lt;h3&gt;Comando para generar y ejecutar sitio&amp;nbsp;(extendida)&lt;/h3&gt;
 &lt;p&gt;Recuerda algunas de estas tareas fueron modificadas para ajustarse al flujo de
 de desarrollo del&amp;nbsp;sitio.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Elimina los archivos generados previamente&lt;/span&gt;
@@ -200,7 +221,7 @@ invoke reserve
 invoke preview
 
 &lt;span class="c1"&gt;# Permite visualizar el sitio de manera local en http://localhost:8000/&lt;/span&gt;
-&lt;span class="c1"&gt;# y regenrar el sitio cada vez que haya un cambio, todo para local&lt;/span&gt;
+&lt;span class="c1"&gt;# y regenerar el sitio cada vez que haya un cambio, todo para local&lt;/span&gt;
 invoke livereload
 
 &lt;span class="c1"&gt;# Permite subir el sitio al servidor correspondiente mediante rsync y SSH&lt;/span&gt;
@@ -208,20 +229,20 @@ invoke publish
 
 &lt;span class="c1"&gt;# Publica el sitio de producción en Github Pages&lt;/span&gt;
 invoke gh-pages
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="pelican"></category><category term="blog"></category><category term="pelican"></category><category term="cheat sheet"></category></entry><entry><title>Pelican (03), configuración del sitio (construcción y elementos básicos)</title><link href="https://penserbjorne.com/pelican-03-configuracion-del-sitio-construccion-y-elementos-basicos-es-MX.html" rel="alternate"></link><published>2020-08-20T00:00:00-05:00</published><updated>2020-08-21T00:00:00-05:00</updated><author><name>Penserbjorne</name></author><id>tag:penserbjorne.com,2020-08-20:/pelican-03-configuracion-del-sitio-construccion-y-elementos-basicos-es-MX.html</id><summary type="html">&lt;p&gt;Configuración para construir y asignar elementos básicos de un sitio con&amp;nbsp;Pelican&lt;/p&gt;</summary><content type="html">&lt;h1&gt;What is&amp;nbsp;this?&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="pelican"></category><category term="blog"></category><category term="pelican"></category><category term="cheat sheet"></category></entry><entry><title>Pelican (03), configuración del sitio (construcción y elementos básicos)</title><link href="https://penserbjorne.com/pelican-03-configuracion-del-sitio-construccion-y-elementos-basicos-es-MX.html" rel="alternate"></link><published>2020-08-20T00:00:00-05:00</published><updated>2021-04-04T00:00:00-06:00</updated><author><name>Penserbjorne</name></author><id>tag:penserbjorne.com,2020-08-20:/pelican-03-configuracion-del-sitio-construccion-y-elementos-basicos-es-MX.html</id><summary type="html">&lt;p&gt;Configuración para construir y asignar elementos básicos de un sitio con&amp;nbsp;Pelican&lt;/p&gt;</summary><content type="html">&lt;h2&gt;What is&amp;nbsp;this?&lt;/h2&gt;
 &lt;p&gt;Ok, esta es la tercera entrada para trabajar generando un sitio con &lt;code&gt;Pelican&lt;/code&gt; en
 &lt;code&gt;gh-pages&lt;/code&gt;. En esta ocasión vamos modificar algunas configuraciones para probar
-y construir el sitio, así como asignarle un&amp;nbsp;tema.&lt;/p&gt;
+y construir el&amp;nbsp;sitio.&lt;/p&gt;
 &lt;p&gt;Te recomendamos revisar las entradas anteriores en donde fuimos construyendo
-el sitio sobre el que vamos a trabajar ahora.
-&lt;a href="{filename}./pelican-01.md"&gt;Creación de un blog estático con Pelican&lt;/a&gt;
-y
-&lt;a href="{filename}./pelican-02.md"&gt;Creación de entradas para un blog estático con&amp;nbsp;Pelican&lt;/a&gt;&lt;/p&gt;
+el sitio sobre el que vamos a trabajar&amp;nbsp;ahora.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="{filename}./pelican-01.md"&gt;Creación de un blog estático con&amp;nbsp;Pelican&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="{filename}./pelican-02.md"&gt;Creación de entradas para un blog estático con&amp;nbsp;Pelican&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;Como ya hemos dicho, toda la documentación necesaria (y extendida) se
 encuentra en &lt;a href="https://docs.getpelican.com"&gt;el blog oficial de Pelican&lt;/a&gt;, por lo
-que si se necesita mayor información o detalle de algo, visitar el sitio oficial
-(recuerda siempre, &lt;strong&gt;#&lt;span class="caps"&gt;RTFM&lt;/span&gt;&lt;/strong&gt;).&lt;/p&gt;
-&lt;h1&gt;Archivos de&amp;nbsp;configuración&lt;/h1&gt;
+que si se necesita mayor información o detalle de algo, visitar el sitio&amp;nbsp;oficial.&lt;/p&gt;
+&lt;h2&gt;Archivos de&amp;nbsp;configuración&lt;/h2&gt;
 &lt;p&gt;Cuando comenzamos a crear el sitio utilizamos el comando &lt;code&gt;pelican-quickstart&lt;/code&gt;
 el cual nos creo la estructura inicial del sitio con algunos archivos de&amp;nbsp;configuración.&lt;/p&gt;
 &lt;p&gt;Recordemos cual es la estructura de trabajo que tenemos hasta este&amp;nbsp;momento:&lt;/p&gt;
@@ -233,7 +254,7 @@ el cual nos creo la estructura inicial del sitio con algunos archivos de&amp;nbs
 ├── share/        &lt;span class="c1"&gt;# carpeta de virtualenv&lt;/span&gt;
 └── user.github.io/   &lt;span class="c1"&gt;# carpeta del repositorio del sitio&lt;/span&gt;
     └── pelican/      &lt;span class="c1"&gt;# carpeta con los archivos fuente del sitio&lt;/span&gt;
-        ├── content             
+        ├── content   &lt;span class="c1"&gt;# Archivos en Markdown&lt;/span&gt;
         │   └── hola-mundo.md &lt;span class="c1"&gt;# Entrada nueva&lt;/span&gt;
         ├── output
         ├── tasks.py
@@ -243,7 +264,8 @@ el cual nos creo la estructura inicial del sitio con algunos archivos de&amp;nbs
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Si observamos detenidamente, podemos ver que los archivos de los que hablamos se encuentran en nuestra subcarpeta &lt;code&gt;pelican&lt;/code&gt; y&amp;nbsp;son:&lt;/p&gt;
+&lt;p&gt;Si observamos detenidamente, podemos ver que los archivos de los que hablamos
+se encuentran en nuestra subcarpeta &lt;code&gt;pelican&lt;/code&gt; y&amp;nbsp;son:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;Makefile&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;pelicanconf.py&lt;/code&gt;&lt;/li&gt;
@@ -254,7 +276,7 @@ el cual nos creo la estructura inicial del sitio con algunos archivos de&amp;nbs
 variables de configuración para el&amp;nbsp;sitio.&lt;/p&gt;
 &lt;p&gt;Con los archivos &lt;code&gt;Makefile&lt;/code&gt; y &lt;code&gt;tasks.py&lt;/code&gt; vamos a indicar las acciones necesarias
 para construir el&amp;nbsp;sitio.&lt;/p&gt;
-&lt;h1&gt;Construcción del&amp;nbsp;sitio&lt;/h1&gt;
+&lt;h2&gt;Construcción del&amp;nbsp;sitio&lt;/h2&gt;
 &lt;p&gt;Como recordaras para construir el sitio y previsualizarlo hemos estado
 utilizando los siguientes&amp;nbsp;comandos:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Generamos la salida HTML una carpeta arriba de donde estamos&lt;/span&gt;
@@ -271,10 +293,10 @@ pelican --listen -o ..
 &lt;p&gt;En este caso vamos a trabajar con &lt;code&gt;invoke&lt;/code&gt; solo para variarle un poco, si te
 interesa leer la versión completa o con &lt;code&gt;make&lt;/code&gt; puedes
 &lt;a href="https://docs.getpelican.com/en/stable/publish.html"&gt;dar click aquí&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Para trabajar con &lt;code&gt;invoke&lt;/code&gt; necesitamos instalarlo a través de &lt;code&gt;pip&lt;/code&gt;. Recuerda
-hacerlo después de haber activado el entorno virtual que creamos en
-&lt;a href="{filename}./pelican-01.md"&gt;la primera entrada&lt;/a&gt; y de haber entrado a la carpeta
-&lt;code&gt;pelican&lt;/code&gt; que se encuentra dentro del&amp;nbsp;repositorio.&lt;/p&gt;
+&lt;p&gt;Para trabajar con &lt;code&gt;invoke&lt;/code&gt; necesitamos instalarlo a través de &lt;code&gt;pip&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; Recuerda hacerlo después de haber activado el entorno virtual que
+creamos en &lt;a href="{filename}./pelican-01.md"&gt;la primera entrada&lt;/a&gt; y de haber entrado
+a la carpeta &lt;code&gt;pelican&lt;/code&gt; que se encuentra dentro del&amp;nbsp;repositorio.&lt;/p&gt;
 &lt;p&gt;Para instalar &lt;code&gt;invoke&lt;/code&gt; podemos ejecutar lo&amp;nbsp;siguiente:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python -m pip install invoke
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -283,9 +305,9 @@ hacerlo después de haber activado el entorno virtual que creamos en
 &lt;p&gt;Lo divertido de &lt;code&gt;invoke&lt;/code&gt; es que funciona utilizando el archivo &lt;code&gt;tasks.py&lt;/code&gt;
 el cual contiene &lt;em&gt;tareas&lt;/em&gt; definidas a ejecutar, básicamente es un archivo en
 el que podemos automatizar tareas mediante &lt;code&gt;python&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Afortunadamente el archivo &lt;code&gt;tasks.py&lt;/code&gt; que tenemos ya tiene las tareas definidas
-por lo cual podemos trabajar en automático con este archivo o modificarlo para
-adaptarlo a nuestras&amp;nbsp;necesidades.&lt;/p&gt;
+&lt;p&gt;Afortunadamente el archivo &lt;code&gt;tasks.py&lt;/code&gt; que genera &lt;code&gt;Pelican&lt;/code&gt; ya tiene tareas
+definidas por lo cual podemos trabajar en automático con este archivo o
+modificarlo para adaptarlo a nuestras&amp;nbsp;necesidades.&lt;/p&gt;
 &lt;p&gt;Los comandos que vienen precargados en el archivo &lt;code&gt;tasks.py&lt;/code&gt; son:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Elimina los archivos generados previamente&lt;/span&gt;
 invoke clean
@@ -310,7 +332,7 @@ invoke reserve
 invoke preview
 
 &lt;span class="c1"&gt;# Permite visualizar el sitio de manera local en http://localhost:8000/&lt;/span&gt;
-&lt;span class="c1"&gt;# y regenrar el sitio cada vez que haya un cambio, todo para local&lt;/span&gt;
+&lt;span class="c1"&gt;# y regenerar el sitio cada vez que haya un cambio, todo para local&lt;/span&gt;
 invoke livereload
 
 &lt;span class="c1"&gt;# Permite subir el sitio al servidor correspondiente mediante rsync y SSH&lt;/span&gt;
@@ -333,12 +355,12 @@ comandos requieren algunas configuraciones, por ejemplo, los comandos asociados
 a generar el sitio están configurados para generar los archivos dentro de una
 carpeta llamada &lt;code&gt;output&lt;/code&gt; la cual se encuentra al mismo nivel que la carpeta
 &lt;code&gt;pelican&lt;/code&gt;. En nuestro caso como estamos trabajando con un blog para un usuario
-de &lt;code&gt;GitHub&lt;/code&gt; por lo que necesitamos que los archivos sean generados en el
-directorio raíz del repositorio, esto es una carpeta mas arriba de donde estamos
-actualmente (recuerda que estamos en la carpeta &lt;code&gt;pelican&lt;/code&gt;).&lt;/p&gt;
+de &lt;code&gt;GitHub&lt;/code&gt; necesitamos que los archivos sean generados en el directorio raíz
+del repositorio, esto es una carpeta mas arriba de donde estamos actualmente
+(recuerda que estamos en la carpeta &lt;code&gt;pelican&lt;/code&gt;).&lt;/p&gt;
 &lt;p&gt;También vamos a modificar algunas de las tareas que vienen en el archivo
 &lt;code&gt;tasks.py&lt;/code&gt;.&lt;/p&gt;
-&lt;h1&gt;Configuración de variables del&amp;nbsp;sitio&lt;/h1&gt;
+&lt;h2&gt;Configuración de variables del&amp;nbsp;sitio&lt;/h2&gt;
 &lt;p&gt;Bien, ya vimos que comandos vamos a estar utilizando y ya mencionamos que
 necesitamos configurarlos, esto lo vamos a hacer en los archivos
 &lt;code&gt;pelicanconf.py&lt;/code&gt; y &lt;code&gt;publishconf.py&lt;/code&gt;.&lt;/p&gt;
@@ -351,15 +373,15 @@ si la variable &lt;code&gt;SITEURL&lt;/code&gt; se encuentra asignada en ambos a
 &lt;p&gt;La lista de variables y su descripción la puedes encontrar
 &lt;a href="https://docs.getpelican.com/en/stable/settings.html"&gt;aquí&lt;/a&gt;. Te recomiendo leer
 este listado ya que aquí abordaremos solo algunas variables para configurar los
-comando anteriores y el tema del&amp;nbsp;sitio.&lt;/p&gt;
-&lt;h2&gt;Directorio de&amp;nbsp;salida&lt;/h2&gt;
+comando&amp;nbsp;anteriores.&lt;/p&gt;
+&lt;h3&gt;Directorio de&amp;nbsp;salida&lt;/h3&gt;
 &lt;p&gt;Para modificar el directorio de salida necesitamos modificar la variable
 &lt;code&gt;OUTPUT_PATH&lt;/code&gt; la cual tiene el valor predeterminado de &lt;code&gt;'output/'&lt;/code&gt;, en este caso
 vamos a modificar la variable para que el directorio de salida sea en un nivel
 superior a la ruta actual por lo cual variable quedará como
 &lt;code&gt;OUTPUT_PATH = './../'&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Esta variable hay que asignarla en &lt;code&gt;pelicanconf.py&lt;/code&gt;.&lt;/p&gt;
-&lt;h2&gt;Algunas otras configuraciones sencillas del sitio&amp;nbsp;:D&lt;/h2&gt;
+&lt;h3&gt;Algunas otras configuraciones sencillas del sitio&amp;nbsp;:D&lt;/h3&gt;
 &lt;p&gt;Bien, ya hemos modificado la ruta de salida, por lo que podemos configurar
 otras variables que le dan más vida al&amp;nbsp;sitio.&lt;/p&gt;
 &lt;p&gt;Las siguientes variables las configuraremos en &lt;code&gt;pelicanconf.py&lt;/code&gt;:&lt;/p&gt;
@@ -374,7 +396,7 @@ fork al&amp;nbsp;sitio.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;LINKS&lt;/code&gt;: Literalmente es una lista de enlaces que quieres que aparezcan en el&amp;nbsp;sitio.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;SOCIAL&lt;/code&gt;: La lista de enlaces a tus redes&amp;nbsp;sociales.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Tanto la sintaxxis de &lt;code&gt;LINKS&lt;/code&gt; como la de &lt;code&gt;SOCIAL&lt;/code&gt; es la&amp;nbsp;siguiente:&lt;/p&gt;
+&lt;p&gt;Tanto la sintaxis de &lt;code&gt;LINKS&lt;/code&gt; como la de &lt;code&gt;SOCIAL&lt;/code&gt; es la&amp;nbsp;siguiente:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;VARIABLE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;((&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;enalce 1&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;http://url-1.com/&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;,
             &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;enalce 2&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;http://url-2.com/&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;,
             &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;enalce 3&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;http://url-3.com/&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;,&lt;span class="o"&gt;)&lt;/span&gt;
@@ -393,11 +415,11 @@ valor a &lt;code&gt;False&lt;/code&gt;.&lt;/li&gt;
 de la variable va en mayúsculas seguida de un espacio, el símbolo de &lt;code&gt;=&lt;/code&gt;, otro
 espacio y el valor de la&amp;nbsp;variable.&lt;/p&gt;
 &lt;p&gt;Si quieres ver como van quedando los archivos de configuración de este sitio
-puedes revisar el &lt;a href="https://github.com/penserbjorne/penserbjorne.github.io/blob/master/pelican/pelicanconf.py"&gt;aquí (pelicanconf.py)&lt;/a&gt; y
+puedes revisar &lt;a href="https://github.com/penserbjorne/penserbjorne.github.io/blob/master/pelican/pelicanconf.py"&gt;aquí (pelicanconf.py)&lt;/a&gt; y
 &lt;a href="https://github.com/penserbjorne/penserbjorne.github.io/blob/master/pelican/publishconf.py"&gt;aquí (publishconf.py)&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;Modificando el pipeline de construcción del&amp;nbsp;sitio&lt;/h1&gt;
+&lt;h2&gt;Modificando el pipeline de construcción del&amp;nbsp;sitio&lt;/h2&gt;
 &lt;p&gt;Ok, ya tenemos instaladas las herramientas para construir el sitio y hemos
-configurado algunas variables que que tenga un poco más de personalidad el
+configurado algunas variables para que tenga un poco más de personalidad el
 sitio, eso significa que podemos&amp;nbsp;generarlo.&lt;/p&gt;
 &lt;p&gt;Los pasos a ir siguiendo son sencillos y deben estar pensados en dos momentos:
 desarrollo y&amp;nbsp;producción.&lt;/p&gt;
@@ -425,7 +447,7 @@ fuente del blog. Hay que modificar esta tarea&amp;nbsp;:)&lt;/p&gt;
 &lt;p&gt;Y como queremos que todo quede en un solo comando tanto para producción como
 para publicar el sitio vamos a hacer algunos cambios más que veremos a&amp;nbsp;continuación.&lt;/p&gt;
 &lt;p&gt;Para modificar las tareas nos vamos a dirigir al archivo &lt;code&gt;tasks.py&lt;/code&gt;&lt;/p&gt;
-&lt;h2&gt;Modificando la tarea &lt;code&gt;clean&lt;/code&gt;&lt;/h2&gt;
+&lt;h3&gt;Modificando la tarea &lt;code&gt;clean&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;Vamos a comentar las lineas que se encuentran dentro de la tarea y las vamos a
 reemplazar por el siguiente segmento de&amp;nbsp;código:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;isdir&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;CONFIG&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;deploy_path&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]):&lt;/span&gt;
@@ -450,7 +472,7 @@ reemplazar por el siguiente segmento de&amp;nbsp;código:&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h2&gt;Modificando la tarea &lt;code&gt;livereload&lt;/code&gt;&lt;/h2&gt;
+&lt;h3&gt;Modificando la tarea &lt;code&gt;livereload&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;Queremos que cada vez que se haga un &lt;code&gt;livereload&lt;/code&gt; también se limpien los
 archivos generados previamente, por lo cual vamos a añadir la tarea &lt;code&gt;clean&lt;/code&gt;
 dentro de &lt;code&gt;livereload&lt;/code&gt;, para esto solamente añadiremos la linea &lt;code&gt;clean(c)&lt;/code&gt; antes
@@ -481,7 +503,7 @@ dentro de &lt;code&gt;livereload&lt;/code&gt;, para esto solamente añadiremos l
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h2&gt;Modificando la tarea &lt;code&gt;gh-pages&lt;/code&gt;&lt;/h2&gt;
+&lt;h3&gt;Modificando la tarea &lt;code&gt;gh-pages&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;De igual manera  que en la tarea anterior, simplemente vamos a añadir la linea
 de &lt;code&gt;clean(c)&lt;/code&gt; para verificar que no haya basura. La linea a añadir la ubicaremos
 antes de la linea &lt;code&gt;preview(c)&lt;/code&gt;.&lt;/p&gt;
@@ -530,91 +552,13 @@ invoke gh-pages
 &lt;p&gt;Con esto hemos automatizado un poco nuestro pequeño ciclo de desarrollo del&amp;nbsp;sitio.&lt;/p&gt;
 &lt;p&gt;Para ver el archivo &lt;code&gt;tasks.py&lt;/code&gt; de este blog puedes dar click
 &lt;a href="https://github.com/penserbjorne/penserbjorne.github.io/blob/master/pelican/tasks.py"&gt;aquí&lt;/a&gt;&lt;/p&gt;
-&lt;h1&gt;Siguientes&amp;nbsp;pasos&lt;/h1&gt;
+&lt;h2&gt;Siguientes&amp;nbsp;pasos&lt;/h2&gt;
 &lt;p&gt;Ya tenemos nuestro sitio con un poco mas de estilo, sin embargo sigue sin ser
 responsivo por lo cual no es fácil de leer en dispositivos con pantallas
 medianas o pequeñas, el siguiente paso es configurar un tema responsivo, pero
 esto lo haremos en la siguiente entrada&amp;nbsp;:)&lt;/p&gt;
-&lt;p&gt;Que la fuerza te&amp;nbsp;acompañe.&lt;/p&gt;</content><category term="pelican"></category><category term="blog"></category><category term="pelican"></category></entry><entry><title>Hack-The-Box (0001) &gt; Starting point</title><link href="https://penserbjorne.com/hack-the-box-0001-starting-point-es-MX.html" rel="alternate"></link><published>2020-08-06T00:00:00-05:00</published><updated>2020-11-06T00:00:00-06:00</updated><author><name>penserbjorne</name></author><id>tag:penserbjorne.com,2020-08-06:/hack-the-box-0001-starting-point-es-MX.html</id><summary type="html">&lt;p&gt;Anotaciones sobre la sección &amp;#8220;Starting point&amp;#8221; de&amp;nbsp;Hack-The-Box&lt;/p&gt;</summary><content type="html">&lt;h1&gt;This is not the intro&amp;nbsp;:)&lt;/h1&gt;
-&lt;p&gt;Ola k&amp;nbsp;ase.&lt;/p&gt;
-&lt;p&gt;Para este exacto momento en el que escribo esta linea de texto han pasado 146
-días desde que comenzó la pandemia del &lt;span class="caps"&gt;COVID&lt;/span&gt;-19 y pareciera que el tiempo se
-detuvo y que no ha pasado nada pero que a la vez que han pasado tantas&amp;nbsp;cosas.&lt;/p&gt;
-&lt;p&gt;Como sea, este blog esta en la misma situación, un tiempo&amp;nbsp;suspendido.&lt;/p&gt;
-&lt;p&gt;Dependiendo de cual futuro o universo paralelo leas esto puede que el blog
-ni siquiera este terminado de configurar, aún tenga el template de &lt;code&gt;Pelican&lt;/code&gt; y
-que no tenga nada de contenido o que ya sea un pequeño blog que se ve hermoso
-y tiene un par de entradas útiles para la humanidad haha en todo caso, si en
-estos dos párrafos no te haz aburrido o retirado, mandame un tuit a
-&lt;a href="https://twitter.com/_penserbjorne"&gt;@_penserbjorne&lt;/a&gt;
-con una captura de pantalla de como se ve el blog y a cambio te invito unos
-taquitos&amp;nbsp;:)&lt;/p&gt;
-&lt;p&gt;Ahora sí,&amp;nbsp;arranquemos.&lt;/p&gt;
-&lt;h1&gt;Hack-The-Box: Starting&amp;nbsp;point&lt;/h1&gt;
-&lt;h2&gt;¿Qué es&amp;nbsp;esto?&lt;/h2&gt;
-&lt;p&gt;Este texto son anotaciones sobre la sección &lt;strong&gt;Starting point&lt;/strong&gt; de
-&lt;strong&gt;Hack-The-Box&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Nos apoyaremos en los walk-throughs que ya vienen incorporados en la sección
-&lt;em&gt;Starting point&lt;/em&gt; e iremos explicando los comandos&amp;nbsp;utilizados.&lt;/p&gt;
-&lt;h2&gt;Hack-The-Box (&lt;span class="caps"&gt;HTB&lt;/span&gt;)&lt;/h2&gt;
-&lt;p&gt;Bueno, para hablar de &lt;a href="https://www.hackthebox.eu"&gt;&lt;strong&gt;Hack-The-Box&lt;/strong&gt; (&lt;span class="caps"&gt;HTB&lt;/span&gt;)&lt;/a&gt; y
-presentar lo qué realmente es este proyecto seria bueno dedicar una entrada
-específicamente a eso, por lo cual solo diré que es una plataforma para
-practicar o probar tus habilidades de pentesting trabajando sobre maquinas
-virtuales que están diseñadas y preparadas para&amp;nbsp;esto.&lt;/p&gt;
-&lt;p&gt;En resumen, hay maquinas virtuales con cierto software instalado y ciertas
-configuraciones que permiten que esta maquina pueda ser vulnerada de alguna
-manera. ¿Quieres practicar temas de pentesting? Esta es una de las plataformas&amp;nbsp;recomendadas.&lt;/p&gt;
-&lt;h2&gt;Starting&amp;nbsp;Point&lt;/h2&gt;
-&lt;p&gt;Para las personas que van comenzando en este ámbito puede que &lt;span class="caps"&gt;HTB&lt;/span&gt; sea una
-plataforma con un nivel de complejidad bastante alto y no necesariamente la
-primera opción para&amp;nbsp;arrancar.&lt;/p&gt;
-&lt;p&gt;Para solucionar esto &lt;span class="caps"&gt;HTB&lt;/span&gt; ha habilitado una sección llamada
-&lt;a href="https://www.hackthebox.eu/home/start"&gt;&lt;strong&gt;Starting point&lt;/strong&gt;&lt;/a&gt;
-en la cual se encuentran una serie de maquinas con un nivel &lt;em&gt;básico&lt;/em&gt;
-acompañadas de sus &lt;a href="https://www.wordnik.com/words/walk-through"&gt;walk-throughs&lt;/a&gt;
-para que puedas resolverlas y familiarizarte con los pasos usuales del proceso
-de&amp;nbsp;pentesting.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Nota&lt;/strong&gt;: El pentesting no es una receta, estos recursos son solo para
-comenzar, pero conforme se avanza es necesario refinar tus habilidades y hacer
-uso el conocimiento que vas desarrollando o acumulando&amp;nbsp;:)&lt;/p&gt;
-&lt;h2&gt;Elementos del&amp;nbsp;pentesting&lt;/h2&gt;
-&lt;p&gt;Si bien el pentesting no es una receta, existen diferentes metodologías o
-frameworks que nos ayudan a guiarnos para realizar esta actividad de manera
-ordenada y&amp;nbsp;limpia.&lt;/p&gt;
-&lt;p&gt;Si quieres saber más puedes buscar los siguientes términos&amp;nbsp;Internet:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Cyber security&amp;nbsp;framework&lt;/li&gt;
-&lt;li&gt;Cyber security kill&amp;nbsp;chain&lt;/li&gt;
-&lt;li&gt;&lt;span class="caps"&gt;MITRE&lt;/span&gt;&amp;nbsp;Framework&lt;/li&gt;
-&lt;li&gt;&lt;span class="caps"&gt;OWASP&lt;/span&gt;&amp;nbsp;Framework&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Listo, ahora que haz ignorado lo anterior o haz regresado de buscar, en el caso
-de la sección de &lt;strong&gt;Starting Point&lt;/strong&gt; de &lt;span class="caps"&gt;HTB&lt;/span&gt; podemos encontrar de manera general
-los siguiente&amp;nbsp;elementos:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Reconocimiento&amp;nbsp;(Reconnaissance)&lt;/li&gt;
-&lt;li&gt;Enumeración&amp;nbsp;(Enumeration)&lt;/li&gt;
-&lt;li&gt;Movimiento lateral (Lateral&amp;nbsp;Movement)&lt;/li&gt;
-&lt;li&gt;Punto de partida&amp;nbsp;(Foothold)&lt;/li&gt;
-&lt;li&gt;Explotación&amp;nbsp;(Explotation)&lt;/li&gt;
-&lt;li&gt;Escalada de privilegios (Privilege&amp;nbsp;Escalation)&lt;/li&gt;
-&lt;li&gt;Explotación posterior (Post&amp;nbsp;Explotation)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Si bien no todas las máquinas necesitan todos los pasos mencionados, es bueno
-tenerlos presentes para tratar de trabajar de manera&amp;nbsp;ordenada.&lt;/p&gt;
-&lt;p&gt;Te recomendamos resolver cada maquina con su walk-through y a la par ir leyendo
-la siguiente&amp;nbsp;sección.&lt;/p&gt;
-&lt;h2&gt;Anotaciones de Starting&amp;nbsp;point&lt;/h2&gt;
-&lt;p&gt;Para ir tomando nota iremos creando una sección por cada maquina e iremos
-desarrollando los comando que solicita su walk-through correspondiente y le
-daremos contexto al comando o a la&amp;nbsp;acción.&lt;/p&gt;
-&lt;p&gt;Debido a que no sé cual va a ser la longitud de cada maquina lo mejor será
-dedicar una entrada a cada una por lo que te invito pases a la siguiente entrada
-en la cual comenzaremos con la maquina
-&lt;a href="{filename}./htb-02-starting-point-archetype.md"&gt;&lt;strong&gt;Archetype&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;#HappyHacking&lt;/code&gt;&lt;/p&gt;</content><category term="htb"></category><category term="blog"></category><category term="penserbjorne"></category><category term="htb"></category><category term="pentest"></category><category term="hacking"></category></entry><entry><title>Hack-The-Box (0002) &gt; Starting point &gt; Archetype</title><link href="https://penserbjorne.com/hack-the-box-0002-starting-point-archetype-es-MX.html" rel="alternate"></link><published>2020-08-06T00:00:00-05:00</published><updated>2020-11-06T00:00:00-06:00</updated><author><name>penserbjorne</name></author><id>tag:penserbjorne.com,2020-08-06:/hack-the-box-0002-starting-point-archetype-es-MX.html</id><summary type="html">&lt;p&gt;Anotaciones sobre la máquina &amp;#8220;Archetype&amp;#8221; de la sección &amp;#8220;Starting point&amp;#8221; de&amp;nbsp;Hack-The-Box&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Archetype&lt;/h1&gt;
-&lt;p&gt;Para comenzar con esta serie de anotaciones sobre la sección &lt;em&gt;Starting point&lt;/em&gt;
+&lt;p&gt;Que la fuerza te&amp;nbsp;acompañe.&lt;/p&gt;</content><category term="pelican"></category><category term="blog"></category><category term="pelican"></category></entry><entry><title>Hack-The-Box (0002) &gt; Starting Point &gt; Archetype</title><link href="https://penserbjorne.com/hack-the-box-0002-starting-point-archetype-es-MX.html" rel="alternate"></link><published>2020-08-07T00:00:00-05:00</published><updated>2021-04-04T00:00:00-06:00</updated><author><name>Penserbjorne</name></author><id>tag:penserbjorne.com,2020-08-07:/hack-the-box-0002-starting-point-archetype-es-MX.html</id><summary type="html">&lt;p&gt;Anotaciones sobre la máquina &amp;#8220;Archetype&amp;#8221; de la sección &amp;#8220;Starting Point&amp;#8221; de&amp;nbsp;Hack-The-Box&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Archetype&lt;/h2&gt;
+&lt;p&gt;Para comenzar con esta serie de anotaciones sobre la sección &lt;em&gt;Starting Point&lt;/em&gt;
 arrancaremos con la máquina &lt;em&gt;Archetype&lt;/em&gt;. Si no sabes bien de que hablo te
 recomiendo que primero leas la
 &lt;a href="{filename}./htb-01-starting-point-section.md"&gt;entrada anterior&lt;/a&gt;.&lt;/p&gt;
@@ -628,7 +572,7 @@ recomiendo que primero leas la
 lo que tiene el equipo objetivo, en este caso vamos a tratar de identificar
 los puertos abiertos y el software asociado a&amp;nbsp;estos.&lt;/p&gt;
 &lt;p&gt;Para esto utilizaremos la siempre poderosa herramienta de
-&lt;a href="https://es.wikipedia.org/wiki/Nmap"&gt;Nmap&lt;/a&gt;.&lt;/p&gt;
+&lt;a href="https://es.wikipedia.org/wiki/Nmap"&gt;nmap&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Lo primero que nos recomiendan utilizar son los siguientes dos&amp;nbsp;comandos:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;ports&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;nmap -p- --min-rate&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;  -T4 &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27 &lt;span class="p"&gt;|&lt;/span&gt; grep ^&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;-9&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; cut -d &lt;span class="s1"&gt;&amp;#39;/&amp;#39;&lt;/span&gt; -f &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; tr &lt;span class="s1"&gt;&amp;#39;\n&amp;#39;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;,&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sed s/,$//&lt;span class="k"&gt;)&lt;/span&gt;
 nmap -sC -sV -p&lt;span class="nv"&gt;$ports&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27
@@ -1042,14 +986,12 @@ de un rol especifico del&amp;nbsp;servidor.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;role&lt;/code&gt;: indicamos el rol a revisar que puede ser alguno de los siguientes.&lt;ul&gt;
 &lt;li&gt;sysadmin&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
 &lt;li&gt;serveradmin&lt;/li&gt;
 &lt;li&gt;dbcreator&lt;/li&gt;
 &lt;li&gt;setupadmin&lt;/li&gt;
 &lt;li&gt;bulkadmin&lt;/li&gt;
 &lt;li&gt;securityadmin&lt;/li&gt;
-&lt;li&gt;diskadmin&lt;ul&gt;
+&lt;li&gt;diskadmin&lt;/li&gt;
 &lt;li&gt;public&lt;/li&gt;
 &lt;li&gt;processadmin&lt;/li&gt;
 &lt;/ul&gt;
@@ -1317,25 +1259,109 @@ herramientas y comandos obviaremos los que se hayan explicado&amp;nbsp;previamen
 estos temas de seguridad, &lt;a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"&gt;recuerda no rendirte&lt;/a&gt;
 y seguir aprendiendo poco a&amp;nbsp;poco.&lt;/p&gt;
 &lt;p&gt;Nos vemos en el siguiente texto.&amp;nbsp;Ciao!&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;#HappyHacking&lt;/code&gt;&lt;/p&gt;</content><category term="htb"></category><category term="blog"></category><category term="penserbjorne"></category><category term="htb"></category><category term="pentest"></category><category term="hacking"></category><category term="archetype"></category></entry><entry><title>Pelican (02), creación de entradas para un blog estático con Pelican</title><link href="https://penserbjorne.com/pelican-02-creacion-de-entradas-para-un-blog-estatico-con-pelican-es-MX.html" rel="alternate"></link><published>2020-05-09T00:00:00-05:00</published><updated>2020-08-20T00:00:00-05:00</updated><author><name>Penserbjorne</name></author><id>tag:penserbjorne.com,2020-05-09:/pelican-02-creacion-de-entradas-para-un-blog-estatico-con-pelican-es-MX.html</id><summary type="html">&lt;p&gt;Creación de entradas para un blog estático con&amp;nbsp;Pelican&lt;/p&gt;</summary><content type="html">&lt;h1&gt;What is&amp;nbsp;this?&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;#HappyHacking&lt;/code&gt;&lt;/p&gt;</content><category term="htb"></category><category term="cybersecurity"></category><category term="htb"></category><category term="pentest"></category><category term="writeup"></category></entry><entry><title>Hack-The-Box (0001) &gt; Starting Point</title><link href="https://penserbjorne.com/hack-the-box-0001-starting-point-es-MX.html" rel="alternate"></link><published>2020-08-06T00:00:00-05:00</published><updated>2021-04-04T00:00:00-06:00</updated><author><name>Penserbjorne</name></author><id>tag:penserbjorne.com,2020-08-06:/hack-the-box-0001-starting-point-es-MX.html</id><summary type="html">&lt;p&gt;Anotaciones sobre la sección &amp;#8220;Starting point&amp;#8221; de&amp;nbsp;Hack-The-Box&lt;/p&gt;</summary><content type="html">&lt;h2&gt;This is not the intro&amp;nbsp;:)&lt;/h2&gt;
+&lt;p&gt;Ola k&amp;nbsp;ase.&lt;/p&gt;
+&lt;p&gt;Para este exacto momento en el que escribo esta linea de texto han pasado 146
+días desde que comenzó la pandemia del &lt;span class="caps"&gt;COVID&lt;/span&gt;-19 y pareciera que el tiempo se
+detuvo y que no ha pasado nada pero que a la vez que han pasado tantas&amp;nbsp;cosas.&lt;/p&gt;
+&lt;p&gt;Como sea, este blog esta en la misma situación, un tiempo&amp;nbsp;suspendido.&lt;/p&gt;
+&lt;p&gt;Dependiendo de cual futuro o universo paralelo leas esto puede que el blog
+ni siquiera este terminado de configurar, que aún tenga el template de &lt;code&gt;Pelican&lt;/code&gt;
+y que no tenga nada de contenido o que ya sea un pequeño blog que se ve hermoso
+y tiene un par de entradas útiles para la humanidad haha en todo caso, si en
+estos dos párrafos no te haz aburrido o retirado, mandame un tuit a
+&lt;a href="https://twitter.com/_penserbjorne"&gt;@_penserbjorne&lt;/a&gt;
+con una captura de pantalla de como se ve el blog y a cambio te invito unos
+taquitos&amp;nbsp;:)&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Personas hermosas que han reclamado sus&amp;nbsp;tacos:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://twitter.com/brendorts/status/1291595727693651969"&gt;Brendita&lt;/a&gt;, aunque elimino esa&amp;nbsp;cuenta.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;Ahora sí,&amp;nbsp;arranquemos.&lt;/p&gt;
+&lt;h2&gt;Hack-The-Box: Starting&amp;nbsp;point&lt;/h2&gt;
+&lt;h3&gt;¿Qué es&amp;nbsp;esto?&lt;/h3&gt;
+&lt;p&gt;Estos textos serán anotaciones sobre la sección &lt;strong&gt;Starting point&lt;/strong&gt; de
+&lt;strong&gt;Hack-The-Box&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Nos apoyaremos en los walk-throughs que ya vienen incorporados en la sección
+&lt;em&gt;Starting point&lt;/em&gt; e iremos explicando los comandos&amp;nbsp;utilizados.&lt;/p&gt;
+&lt;h3&gt;Hack-The-Box (&lt;span class="caps"&gt;HTB&lt;/span&gt;)&lt;/h3&gt;
+&lt;p&gt;Bueno, para hablar de &lt;a href="https://www.hackthebox.eu"&gt;&lt;strong&gt;Hack-The-Box&lt;/strong&gt; (&lt;span class="caps"&gt;HTB&lt;/span&gt;)&lt;/a&gt; y
+presentar lo qué realmente es este proyecto seria bueno dedicar una entrada
+específicamente a eso, por lo cual solo diré que es una plataforma para
+practicar o probar tus habilidades de pentesting trabajando sobre maquinas
+virtuales que están diseñadas y preparadas para&amp;nbsp;esto.&lt;/p&gt;
+&lt;p&gt;En resumen, hay maquinas virtuales con cierto software instalado y ciertas
+configuraciones que permiten que esta maquina pueda ser vulnerada de alguna
+manera. ¿Quieres practicar temas de pentesting? Esta es una de las plataformas&amp;nbsp;recomendadas.&lt;/p&gt;
+&lt;h3&gt;Starting&amp;nbsp;Point&lt;/h3&gt;
+&lt;p&gt;Para las personas que van comenzando en este ámbito puede que &lt;span class="caps"&gt;HTB&lt;/span&gt; sea una
+plataforma con un nivel de complejidad bastante alto y no necesariamente la
+primera opción para&amp;nbsp;arrancar.&lt;/p&gt;
+&lt;p&gt;Para solucionar esto &lt;span class="caps"&gt;HTB&lt;/span&gt; ha habilitado una sección llamada
+&lt;a href="https://www.hackthebox.eu/home/start"&gt;&lt;strong&gt;Starting Point&lt;/strong&gt;&lt;/a&gt;
+en la cual se encuentran una serie de maquinas con un nivel &lt;em&gt;básico&lt;/em&gt;
+acompañadas de sus &lt;a href="https://www.wordnik.com/words/walk-through"&gt;walk-throughs&lt;/a&gt;
+para que puedas resolverlas y familiarizarte con los pasos usuales del proceso
+de&amp;nbsp;pentesting.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Nota&lt;/strong&gt;: El pentesting no es una receta, estos recursos son solo para
+comenzar, pero conforme se avanza es necesario refinar tus habilidades y hacer
+uso el conocimiento que vas desarrollando o acumulando&amp;nbsp;:)&lt;/p&gt;
+&lt;h2&gt;Elementos del&amp;nbsp;pentesting&lt;/h2&gt;
+&lt;p&gt;Si bien el pentesting no es una receta, existen diferentes metodologías o
+frameworks que nos ayudan a guiarnos para realizar esta actividad de manera
+ordenada y&amp;nbsp;limpia.&lt;/p&gt;
+&lt;p&gt;Si quieres saber más puedes buscar los siguientes términos en&amp;nbsp;Internet:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cyber security&amp;nbsp;framework&lt;/li&gt;
+&lt;li&gt;Cyber security kill&amp;nbsp;chain&lt;/li&gt;
+&lt;li&gt;&lt;span class="caps"&gt;MITRE&lt;/span&gt;&amp;nbsp;Framework&lt;/li&gt;
+&lt;li&gt;&lt;span class="caps"&gt;OWASP&lt;/span&gt;&amp;nbsp;Framework&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Listo, ahora que haz ignorado lo anterior o haz regresado de buscar, en el caso
+de la sección de &lt;strong&gt;Starting Point&lt;/strong&gt; de &lt;span class="caps"&gt;HTB&lt;/span&gt; podemos encontrar de manera general
+los siguiente&amp;nbsp;elementos:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Reconocimiento&amp;nbsp;(Reconnaissance)&lt;/li&gt;
+&lt;li&gt;Enumeración&amp;nbsp;(Enumeration)&lt;/li&gt;
+&lt;li&gt;Punto de partida&amp;nbsp;(Foothold)&lt;/li&gt;
+&lt;li&gt;Movimiento lateral (Lateral&amp;nbsp;Movement)&lt;/li&gt;
+&lt;li&gt;Explotación&amp;nbsp;(Explotation)&lt;/li&gt;
+&lt;li&gt;Escalada de privilegios (Privilege&amp;nbsp;Escalation)&lt;/li&gt;
+&lt;li&gt;Explotación posterior (Post&amp;nbsp;Explotation)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Si bien no todas las máquinas necesitan todos los pasos mencionados, es bueno
+tenerlos presentes para tratar de trabajar de manera&amp;nbsp;ordenada.&lt;/p&gt;
+&lt;p&gt;Te recomendamos resolver cada maquina con su walk-through y a la par ir leyendo
+esta serie de&amp;nbsp;textos.&lt;/p&gt;
+&lt;h2&gt;Anotaciones de Starting&amp;nbsp;point&lt;/h2&gt;
+&lt;p&gt;Para ir tomando nota iremos creando una sección por cada maquina e iremos
+desarrollando los comando que solicita su walk-through correspondiente y le
+daremos contexto al comando o a la&amp;nbsp;acción.&lt;/p&gt;
+&lt;p&gt;Debido a que no sé cual va a ser la longitud de cada maquina lo mejor será
+dedicar una entrada a cada una por lo que te invito pases a la siguiente entrada
+en la cual comenzaremos con la maquina
+&lt;a href="{filename}./htb-02-starting-point-archetype.md"&gt;&lt;strong&gt;Archetype&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;#HappyHacking&lt;/code&gt;&lt;/p&gt;</content><category term="htb"></category><category term="init"></category><category term="cybersecurity"></category><category term="htb"></category><category term="pentest"></category><category term="writeup"></category></entry><entry><title>Pelican (02), creación de entradas para un blog estático con Pelican</title><link href="https://penserbjorne.com/pelican-02-creacion-de-entradas-para-un-blog-estatico-con-pelican-es-MX.html" rel="alternate"></link><published>2020-05-09T00:00:00-05:00</published><updated>2021-04-04T00:00:00-06:00</updated><author><name>Penserbjorne</name></author><id>tag:penserbjorne.com,2020-05-09:/pelican-02-creacion-de-entradas-para-un-blog-estatico-con-pelican-es-MX.html</id><summary type="html">&lt;p&gt;Creación de entradas para un blog estático con&amp;nbsp;Pelican&lt;/p&gt;</summary><content type="html">&lt;h2&gt;What is&amp;nbsp;this?&lt;/h2&gt;
 &lt;p&gt;Weno weno, ¿de que va esta entrada? Pues de cómo escribir contenido (entradas)
 en el blog con &lt;code&gt;Pelican&lt;/code&gt;. Esto es continuación de la
 &lt;a href="{filename}./pelican-01.md"&gt;entrada anterior&lt;/a&gt; en la cual vimos una ligera
-introducción a &lt;code&gt;Pelican&lt;/code&gt;, cómo instalarlo y como ejecutarlo para ver andando el&amp;nbsp;sitio.&lt;/p&gt;
+introducción a &lt;code&gt;Pelican&lt;/code&gt;, cómo instalarlo y como ejecutarlo para ver andando el
+sitio. Básicamente, un pequeño &lt;strong&gt;hola mundo&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Como ya hemos dicho, toda la documentación necesaria (y extendida) se
 encuentra en &lt;a href="https://docs.getpelican.com"&gt;el blog oficial de Pelican&lt;/a&gt;, por lo
-que si se necesita mayor información o detalle de algo, visitar el sitio oficial
-(recuerda siempre, &lt;strong&gt;#&lt;span class="caps"&gt;RTFM&lt;/span&gt;&lt;/strong&gt;).&lt;/p&gt;
-&lt;h1&gt;Markdown&lt;/h1&gt;
+que si se necesita mayor información o detalle de algo pues &amp;#8230; a visitar el
+sitio&amp;nbsp;oficial.&lt;/p&gt;
+&lt;h2&gt;Markdown&lt;/h2&gt;
 &lt;p&gt;Una de las razones por las cuales elegimos &lt;code&gt;Pelican&lt;/code&gt; como herramienta para
 escribir el blog es que tiene soporte para &lt;code&gt;Markdown&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;Markdown&lt;/code&gt; a grandes rasgos es un lenguaje de marcado ligero, esto significa que
 se escribe texto plano utilizando etiquetas que posteriormente serán convertidas
 a un formato más bonito, en este caso &lt;span class="caps"&gt;HTML&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;La ventaja de utilizar &lt;code&gt;Markdown&lt;/code&gt; es que podemos enfocarnos simplemente en
-escribir utilizando cualquier editor de texto (simple o tan complejo como tu
-quieras) sabiendo que las etiquetas que estamos utilizando tendrán un
-formato agradable de&amp;nbsp;leer.&lt;/p&gt;
+escribir utilizando cualquier editor de texto sabiendo que las etiquetas que
+estamos utilizando tendrán un formato agradable de&amp;nbsp;leer.&lt;/p&gt;
 &lt;p&gt;Si quieres aprender un poco más sobre &lt;code&gt;Markdown&lt;/code&gt; te dejo su &lt;a href="https://es.wikipedia.org/wiki/Markdown"&gt;entrada de
 &lt;code&gt;Wikipedia&lt;/code&gt;&lt;/a&gt;,
 &lt;a href="https://daringfireball.net/projects/markdown/"&gt;el sitio original de su publicación&lt;/a&gt;
@@ -1343,7 +1369,7 @@ y una &lt;a href="https://markdown.es/sintaxis-markdown/"&gt;sheetcheat de sus e
 para que veas lo sencillo que&amp;nbsp;es.&lt;/p&gt;
 &lt;p&gt;En este caso, la extensión del archivo &lt;code&gt;Markdown&lt;/code&gt; que estaremos utilizando es
 &lt;code&gt;.md&lt;/code&gt;.&lt;/p&gt;
-&lt;h1&gt;¿Donde vamos a&amp;nbsp;escribir?&lt;/h1&gt;
+&lt;h2&gt;¿Donde vamos a&amp;nbsp;escribir?&lt;/h2&gt;
 &lt;p&gt;Recordando la estructura del sitio, sabemos que las entradas del mismo
 van en la carpeta &lt;code&gt;content&lt;/code&gt; de nuestra subcarpeta &lt;code&gt;pelican&lt;/code&gt;. Ahí es donde
 podremos comenzar a crear nuestros archivos en &lt;code&gt;Markdown&lt;/code&gt;.&lt;/p&gt;
@@ -1355,7 +1381,7 @@ podremos comenzar a crear nuestros archivos en &lt;code&gt;Markdown&lt;/code&gt;
 ├── share/        &lt;span class="c1"&gt;# carpeta de virtualenv&lt;/span&gt;
 └── user.github.io/   &lt;span class="c1"&gt;# carpeta del repositorio del sitio&lt;/span&gt;
     └── pelican/      &lt;span class="c1"&gt;# carpeta con los archivos fuente del sitio&lt;/span&gt;
-        ├── content             
+        ├── content   &lt;span class="c1"&gt;# Archivos en Markdown&lt;/span&gt;
         │   └── &lt;span class="o"&gt;(&lt;/span&gt;pages&lt;span class="o"&gt;)&lt;/span&gt;
         ├── output
         ├── tasks.py
@@ -1375,7 +1401,7 @@ la carpeta &lt;code&gt;content&lt;/code&gt; con la extensión &lt;code&gt;.md&lt
 ├── share/        &lt;span class="c1"&gt;# carpeta de virtualenv&lt;/span&gt;
 └── user.github.io/   &lt;span class="c1"&gt;# carpeta del repositorio del sitio&lt;/span&gt;
     └── pelican/      &lt;span class="c1"&gt;# carpeta con los archivos fuente del sitio&lt;/span&gt;
-        ├── content             
+        ├── content   &lt;span class="c1"&gt;# Archivos en Markdown&lt;/span&gt;
         │   └── hola-mundo.md &lt;span class="c1"&gt;# Entrada nueva&lt;/span&gt;
         ├── output
         ├── tasks.py
@@ -1390,7 +1416,7 @@ para generar el sitio &lt;code&gt;Pelican&lt;/code&gt; tomara este archivo y lo 
 la salida necesaria y general el&amp;nbsp;sitio.&lt;/p&gt;
 &lt;p&gt;Por lo tanto, para añadir más contenido a tu sitio basta con que lo agreguemos a
 esta&amp;nbsp;carpeta.&lt;/p&gt;
-&lt;h1&gt;¿Qué debe llevar una&amp;nbsp;entrada?&lt;/h1&gt;
+&lt;h2&gt;¿Qué debe llevar una&amp;nbsp;entrada?&lt;/h2&gt;
 &lt;p&gt;Para una gestión adecuada del contenido en el sitio &lt;code&gt;Pelican&lt;/code&gt; necesita conocer
 algunas cosas sobre el contenido que estamos generando. Para esto es necesario
 incluir algunas etiquetas al inicio del archivo que serán consideradas como
@@ -1426,7 +1452,7 @@ incluir algunas etiquetas al inicio del archivo que serán consideradas como
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;category&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Categórica del contenido, solo una&lt;/td&gt;
+&lt;td&gt;Categoría del contenido, solo una&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;slug&lt;/code&gt;&lt;/td&gt;
@@ -1475,8 +1501,8 @@ incluir algunas etiquetas al inicio del archivo que serán consideradas como
 &lt;span class="c"&gt;Title: Este es el titulo&lt;/span&gt;
 &lt;span class="c"&gt;Date: 2020-05-09&lt;/span&gt;
 &lt;span class="c"&gt;Modified: 2020-05-09&lt;/span&gt;
-&lt;span class="c"&gt;Tags: blog,pelican&lt;/span&gt;
-&lt;span class="c"&gt;Keywords: blog,pelican&lt;/span&gt;
+&lt;span class="c"&gt;Tags: blog, pelican&lt;/span&gt;
+&lt;span class="c"&gt;Keywords: blog, pelican&lt;/span&gt;
 &lt;span class="c"&gt;Category: pelican&lt;/span&gt;
 &lt;span class="c"&gt;Author: Penserbjorne&lt;/span&gt;
 &lt;span class="c"&gt;Summary: Descripción del texto&lt;/span&gt;
@@ -1492,7 +1518,7 @@ dos lineas de tres guiones medios &lt;code&gt;---&lt;/code&gt; al inicio y al fi
 son&amp;nbsp;obligatorias.&lt;/p&gt;
 &lt;p&gt;En caso de no incluir estas etiquetas &lt;code&gt;Pelican&lt;/code&gt; no podrá procesar el archivo ni
 procederá a&amp;nbsp;convertirlo.&lt;/p&gt;
-&lt;h1&gt;Ahora sí a&amp;nbsp;escribir&lt;/h1&gt;
+&lt;h2&gt;Ahora sí, a&amp;nbsp;escribir&lt;/h2&gt;
 &lt;p&gt;Una vez que tenemos el archivo con su extensión &lt;code&gt;.md&lt;/code&gt; y que le añadimos las
 etiquetas necesarias podemos comenzar a escribir su contenido en &lt;code&gt;Markdown&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Para ver conocer otros detalles de como insertar imágenes o contenido estático
@@ -1501,7 +1527,7 @@ en una entrada te recomendamos que revises la sección para
 &lt;code&gt;Pelican&lt;/code&gt;, tal vez algún día escribamos una guía de redacción para &lt;code&gt;Pelican&lt;/code&gt;
 pero por ahora&amp;nbsp;no.&lt;/p&gt;
 &lt;p&gt;Una vez que la entrada ha sido redactada podemos proceder a procesar el sitio
-para que se genere el archivo de salida. Esto lo hacemos con los comandos que
+para que se generen los archivo de salida. Esto lo hacemos con los comandos que
 vimos en la &lt;a href="{filename}./pelican-01.md"&gt;entrada anterior&lt;/a&gt; (que te recomiendo
 leer para que no te pierdas en la estructura de archivos y de trabajo que
 utilizamos&amp;nbsp;aquí).&lt;/p&gt;
@@ -1516,9 +1542,10 @@ pelican --listen -o ..
 &lt;p&gt;Para acceder al sitio en local visitamos
 &lt;a href="http://localhost:8000/"&gt;http://localhost:8000/&lt;/a&gt;, y listo, tendríamos que
 observar el sitio andando con nuestra entrada&amp;nbsp;nueva.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="https://penserbjorne.com/images/02-pelican-02/screenshot-2021-04-04-hola-mundo.png"&gt;&lt;/p&gt;
 &lt;p&gt;Para poder estar trabajando con el sitio, es necesario cada vez que hagamos un
 cambio y modificación volver a generar los&amp;nbsp;archivos.&lt;/p&gt;
-&lt;h1&gt;Consideraciones de&amp;nbsp;trabajo&lt;/h1&gt;
+&lt;h2&gt;Consideraciones de&amp;nbsp;trabajo&lt;/h2&gt;
 &lt;p&gt;Cada vez que regeneremos el sitio porque hemos realizado un cambio o hemos
 añadido contenido nuevo se van a generar los archivos &lt;code&gt;HTML&lt;/code&gt; correspondientes,
 si observamos cuidadosamente veremos que los archivos viejos no se&amp;nbsp;eliminan.&lt;/p&gt;
@@ -1530,7 +1557,7 @@ directorio raíz del repositorio y dejar exclusivamente la carpeta &lt;code&gt;p
 &lt;p&gt;Lo sé, lo sé, esto no es lo más viable o factible a largo plazo, ¡pero oye!
 apenas vamos comenzando, por lo cual lo solucionaremos más adelante, por ahora
 solo no te asustes si ves contenido duplicado, eliminalo y&amp;nbsp;ya.&lt;/p&gt;
-&lt;h1&gt;Siguientes&amp;nbsp;pasos&lt;/h1&gt;
+&lt;h2&gt;Siguientes&amp;nbsp;pasos&lt;/h2&gt;
 &lt;p&gt;Ya tenemos nuestro primer &lt;code&gt;hola mundo&lt;/code&gt; en el blog, basta con hacer push al repo
 para poder verlo andando en nuestra &lt;code&gt;GitHub Pages&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Esto es solo el comienzo, aún necesitamos seguir puliendo algunas cosas del
@@ -1542,53 +1569,54 @@ que no haya contenido extraño, etc,&amp;nbsp;etc.&lt;/p&gt;
 &lt;p&gt;Cómo podemos ver aún hay otros detallitos que iremos revisando pero por ahora ya
 podemos tener el sitio andando y con algo de contenido, así que vamos a seguir
 con otras cosas y nos leemos&amp;nbsp;pronto.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=NRI_8PUXx2A"&gt;See you in space cowboy&amp;nbsp;&amp;#8230;&lt;/a&gt;&lt;/p&gt;</content><category term="pelican"></category><category term="blog"></category><category term="pelican"></category></entry><entry><title>Pelican (01), creación de un blog estático con Pelican</title><link href="https://penserbjorne.com/pelican-01-creacion-de-un-blog-estatico-con-pelican-es-MX.html" rel="alternate"></link><published>2020-04-24T00:00:00-05:00</published><updated>2020-08-20T00:00:00-05:00</updated><author><name>Penserbjorne</name></author><id>tag:penserbjorne.com,2020-04-24:/pelican-01-creacion-de-un-blog-estatico-con-pelican-es-MX.html</id><summary type="html">&lt;p&gt;Creación de un blog estático con&amp;nbsp;Pelican&lt;/p&gt;</summary><content type="html">&lt;h1&gt;What is&amp;nbsp;this?&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=NRI_8PUXx2A"&gt;See you in space cowboy&amp;nbsp;&amp;#8230;&lt;/a&gt;&lt;/p&gt;</content><category term="pelican"></category><category term="blog"></category><category term="pelican"></category></entry><entry><title>Pelican (01), creación de un blog estático con Pelican</title><link href="https://penserbjorne.com/pelican-01-creacion-de-un-blog-estatico-con-pelican-es-MX.html" rel="alternate"></link><published>2020-04-24T00:00:00-05:00</published><updated>2021-04-04T00:00:00-06:00</updated><author><name>Penserbjorne</name></author><id>tag:penserbjorne.com,2020-04-24:/pelican-01-creacion-de-un-blog-estatico-con-pelican-es-MX.html</id><summary type="html">&lt;p&gt;Creación de un blog estático con&amp;nbsp;Pelican&lt;/p&gt;</summary><content type="html">&lt;h2&gt;What is&amp;nbsp;this?&lt;/h2&gt;
 &lt;p&gt;Bueno, como primera entrada de notas, lo más lógico (para mi) es comenzar con la
 herramienta que esta haciendo posible esto, &lt;code&gt;Pelican&lt;/code&gt;. Esto ira siendo una serie
 de entradas sobre como trabajar con &lt;code&gt;Pelican&lt;/code&gt;, por ahora nos enfocaremos en
 crear el&amp;nbsp;sitio.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; es una herramienta para generar sitios
 estáticos que no requieren una base de datos o una lógica en el lado del&amp;nbsp;servidor.&lt;/p&gt;
-&lt;p&gt;Básicamente, elegí &lt;code&gt;Pelican&lt;/code&gt; por&amp;nbsp;&amp;#8220;simplicidad&amp;#8221;:&lt;/p&gt;
+&lt;p&gt;Básicamente, elegí &lt;code&gt;Pelican&lt;/code&gt; por &lt;em&gt;simplicidad&lt;/em&gt;:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Instalamos las herramientas necesarias de &lt;code&gt;Pelican&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Escribimos en &lt;code&gt;Markdown&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Generamos los archivos del&amp;nbsp;sitio.&lt;/li&gt;
 &lt;li&gt;Publicamos el sitio en el&amp;nbsp;servidor.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Estos pasos son &amp;#8220;sencillos&amp;#8221; si estas acostumbradx a manejar herramientas
+&lt;p&gt;Estos pasos son &lt;em&gt;sencillos&lt;/em&gt; si estas acostumbradx a manejar herramientas
 en un terminal (la famosa ventanita negra), el cual, es mi&amp;nbsp;caso.&lt;/p&gt;
-&lt;p&gt;So, en esta entrada iré añadiendo las cosas que considero necesito tener a la
-mano para administrar el blog. Toda la documentación necesaria (y extendida) se
-encuentra en &lt;a href="https://docs.getpelican.com"&gt;el blog oficial de Pelican&lt;/a&gt;, por lo
-que si se necesita mayor información o detalle de algo, visitar el sitio oficial
-(recuerda siempre, &lt;strong&gt;#&lt;span class="caps"&gt;RTFM&lt;/span&gt;&lt;/strong&gt;).&lt;/p&gt;
-&lt;p&gt;En este momento me encuentro trabajando en un equipo con &lt;code&gt;Lubuntu 18.04&lt;/code&gt; por
-lo cual las instrucciones de instalación serán para esta&amp;nbsp;distribución.&lt;/p&gt;
-&lt;h1&gt;Preparación del&amp;nbsp;entorno&lt;/h1&gt;
+&lt;p&gt;So, en esta &lt;strike&gt;entrada&lt;/strike&gt; serie de entradas iré añadiendo las cosas
+que considero necesito tener a la mano para administrar el blog. Toda la
+documentación necesaria (y extendida) se encuentra en
+&lt;a href="https://docs.getpelican.com"&gt;el blog oficial de Pelican&lt;/a&gt;, por lo
+que si se necesita mayor información o detalle de algo, visitar el sitio&amp;nbsp;oficial.&lt;/p&gt;
+&lt;p&gt;En este momento me encuentro trabajando en un equipo con
+&lt;strike&gt;&lt;code&gt;Lubuntu 18.04&lt;/code&gt;&lt;/strike&gt; &lt;code&gt;Pop_OS!&lt;/code&gt; por lo cual las instrucciones de
+instalación serán para esta&amp;nbsp;distribución.&lt;/p&gt;
+&lt;h2&gt;Preparación del&amp;nbsp;entorno&lt;/h2&gt;
 &lt;p&gt;Dado que &lt;code&gt;Pelican&lt;/code&gt; es una herramienta desarrollada con &lt;code&gt;Python&lt;/code&gt; y lo mejor es
 buscar tener un entorno limpio, estaremos trabajando con &lt;code&gt;virtualenv&lt;/code&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Instalación del entorno&lt;/span&gt;
 sudo apt install virtualenv
 
 &lt;span class="c1"&gt;# Creación del entorno&lt;/span&gt;
-virtualenv ~/path/to/project
+virtualenv --python&lt;span class="o"&gt;=&lt;/span&gt;/usr/bin/python3 ~/path/to/virtual/env
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Para comenzar a trabajar es necesario movernos a la carpeta donde se configuró
 el entorno y&amp;nbsp;activarlo.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Nos movemos a la carpeta creada&lt;/span&gt;
-&lt;span class="nb"&gt;cd&lt;/span&gt; ~/path/to/project
+&lt;span class="nb"&gt;cd&lt;/span&gt; ~/path/to/virtual/env
 
 &lt;span class="c1"&gt;# Activamos el entorno&lt;/span&gt;
-&lt;span class="nb"&gt;source&lt;/span&gt; bin/activate
+&lt;span class="nb"&gt;source&lt;/span&gt; ./bin/activate
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Sabremos que el entorno se ha activado por que la terminal cambiará su apariencia
 a algo como lo&amp;nbsp;siguiente.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;(&lt;/span&gt;entorno_virtual&lt;span class="o"&gt;)&lt;/span&gt; usuario@equipo:~/path/to/project$
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;(&lt;/span&gt;entorno_virtual&lt;span class="o"&gt;)&lt;/span&gt; usuario@equipo:~/path/to/virtual/env$
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -1600,10 +1628,10 @@ deactivate
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h1&gt;Instalación de las&amp;nbsp;herramientas&lt;/h1&gt;
+&lt;h2&gt;Instalación de las&amp;nbsp;herramientas&lt;/h2&gt;
 &lt;p&gt;En este caso vamos a redactar el sitio en &lt;code&gt;Markdown&lt;/code&gt;, por lo cual instalaremos
 lo necesario para que &lt;code&gt;Pelican&lt;/code&gt; funcione con &lt;code&gt;Markdown&lt;/code&gt;. Esto lo haremos a
-través de &lt;code&gt;pip&lt;/code&gt; &lt;strong&gt;#PorquePython&lt;/strong&gt;.&lt;/p&gt;
+través de &lt;code&gt;pip&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Necesitaremos los paquetes de &lt;code&gt;pelican&lt;/code&gt;, &lt;code&gt;Markdown&lt;/code&gt; y &lt;code&gt;typogrify&lt;/code&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip install pelican Markdown typogrify
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -1615,7 +1643,7 @@ también a través de &lt;code&gt;pip&lt;/code&gt;.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h1&gt;Creación del esqueleto del&amp;nbsp;sitio&lt;/h1&gt;
+&lt;h2&gt;Creación del esqueleto del&amp;nbsp;sitio&lt;/h2&gt;
 &lt;p&gt;Para crear un proyecto con la estructura básica de &lt;code&gt;Pelican&lt;/code&gt; basta con ejecutar
 el siguiente comando (aún no lo hagas, necesito aclarar algo&amp;nbsp;antes).&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pelican-quickstart
@@ -1640,7 +1668,7 @@ cuenta que actualmente estamos en la carpeta de &lt;code&gt;virtualenv&lt;/code&
 donde vamos a clonar el repositorio, de tal modo que la carpeta actual tendría
 que verse así (asumiendo que ya clonamos el repositorio dentro de la carpeta de
   virtualenv&amp;nbsp;¬¬):&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;(&lt;/span&gt;entorno_virtual&lt;span class="o"&gt;)&lt;/span&gt; usuario@equipo:~/path/to/project$ ls
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;(&lt;/span&gt;entorno_virtual&lt;span class="o"&gt;)&lt;/span&gt; usuario@equipo:~/path/to/virtual/env$ ls
 bin  include  lib  &lt;span class="nb"&gt;local&lt;/span&gt;  user.github.io  share
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -1656,7 +1684,7 @@ del sitio que son con los que trabaja &lt;code&gt;Pelican&lt;/code&gt;, y dentro
 donde ejecutaremos el comando para la creación del proyecto (ya sé, ya sé,
   tanta carpeta marea, pero hay una razón para hacerlo así, por ahora confiá
   en&amp;nbsp;mi).&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;(&lt;/span&gt;entorno_virtual&lt;span class="o"&gt;)&lt;/span&gt; usuario@equipo:~/path/to/project/user.github.io/pelican$ pelican-quickstart
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;(&lt;/span&gt;entorno_virtual&lt;span class="o"&gt;)&lt;/span&gt; usuario@equipo:~/path/to/virtual/env/user.github.io/pelican$ pelican-quickstart
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -1669,7 +1697,7 @@ donde ejecutaremos el comando para la creación del proyecto (ya sé, ya sé,
 ├── share/        &lt;span class="c1"&gt;# carpeta de virtualenv&lt;/span&gt;
 └── user.github.io/   &lt;span class="c1"&gt;# carpeta del repositorio del sitio&lt;/span&gt;
     └── pelican/      &lt;span class="c1"&gt;# carpeta con los archivos fuente del sitio&lt;/span&gt;
-        ├── content             
+        ├── content   &lt;span class="c1"&gt;# Archivos en Markdown&lt;/span&gt;
         │   └── &lt;span class="o"&gt;(&lt;/span&gt;pages&lt;span class="o"&gt;)&lt;/span&gt;
         ├── output
         ├── tasks.py
@@ -1679,7 +1707,7 @@ donde ejecutaremos el comando para la creación del proyecto (ya sé, ya sé,
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h1&gt;Generar y ejecutar el&amp;nbsp;sitio&lt;/h1&gt;
+&lt;h2&gt;Generar y ejecutar el&amp;nbsp;sitio&lt;/h2&gt;
 &lt;p&gt;Para generar el contenido del sitio vamos a posicionarnos en la carpeta del
 repositorio (o la que hemos llamado&amp;nbsp;blog).&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;Pelican&lt;/code&gt; cuenta con el comando &lt;code&gt;pelican content&lt;/code&gt;, el cual revisa los archivos
@@ -1710,24 +1738,26 @@ pelican --listen -o ..
 , y listo, tendríamos que observar el sitio&amp;nbsp;andando.&lt;/p&gt;
 &lt;p&gt;Para poder estar trabajando con el sitio, es necesario cada vez que hagamos un
 cambio o modificación volver a generar los&amp;nbsp;archivos.&lt;/p&gt;
-&lt;h1&gt;Creación de&amp;nbsp;contenido&lt;/h1&gt;
+&lt;h2&gt;Creación de&amp;nbsp;contenido&lt;/h2&gt;
 &lt;p&gt;Recordando la estructura del sitio, sabemos que las entradas del mismo
 van en la carpeta &lt;code&gt;content&lt;/code&gt; de nuestra subcarpeta &lt;code&gt;pelican&lt;/code&gt;. Ahí es donde
 podremos comenzar a crear nuestros archivos en &lt;code&gt;Markdown&lt;/code&gt;. Esto lo dejaremos
-para la siguiente entrada, es momento de pararse por un poco de agua, algo de
-comer y a estirar la espalda y las&amp;nbsp;piernas.&lt;/p&gt;</content><category term="pelican"></category><category term="blog"></category><category term="pelican"></category></entry><entry><title>Hola Mundo</title><link href="https://penserbjorne.com/hola-mundo-es-MX.html" rel="alternate"></link><published>2020-04-11T00:00:00-05:00</published><updated>2020-04-24T00:00:00-05:00</updated><author><name>penserbjorne</name></author><id>tag:penserbjorne.com,2020-04-11:/hola-mundo-es-MX.html</id><summary type="html">&lt;p&gt;Inauguración del blog de&amp;nbsp;Penserbjorne&lt;/p&gt;</summary><content type="html">&lt;p&gt;Bienvenido al &lt;a href="https://penserbjorne.com"&gt;Blog de Penserbjorne&lt;/a&gt;.&lt;/p&gt;
+para la &lt;a href="{filename}./pelican-02.md"&gt;siguiente entrada&lt;/a&gt;, es momento de pararse
+por un poco de agua, algo de comer y a estirar la espalda y las&amp;nbsp;piernas.&lt;/p&gt;</content><category term="pelican"></category><category term="init"></category><category term="blog"></category><category term="pelican"></category></entry><entry><title>Hola Mundo</title><link href="https://penserbjorne.com/hola-mundo-es-MX.html" rel="alternate"></link><published>2020-04-11T00:00:00-05:00</published><updated>2021-04-03T00:00:00-06:00</updated><author><name>Penserbjorne</name></author><id>tag:penserbjorne.com,2020-04-11:/hola-mundo-es-MX.html</id><summary type="html">&lt;p&gt;Inauguración del blog de&amp;nbsp;Penserbjorne&lt;/p&gt;</summary><content type="html">&lt;p&gt;Bienvenido al &lt;a href="https://penserbjorne.com"&gt;Blog de Penserbjorne&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Desde hace tiempo (ya bastantes años, que horror) tenia ganas de &lt;strong&gt;escribir&lt;/strong&gt; en
-algún lugar que fuera &lt;strong&gt;personal&lt;/strong&gt;, ¿sobre qué?, no lo sé, de lo que se me de la
-gana, sin restricciones ni filtros que no sean&amp;nbsp;míos.&lt;/p&gt;
-&lt;p&gt;Dicho lo anterior (y ante lo evidente de que no sé realmente que carajos
-  escribiré aquí), por lo pronto estaré escribiendo acerca de cuatro temas
-  principales (por tratar de ponerle un poco de más&amp;nbsp;orden):&lt;/p&gt;
+algún lugar que fuera &lt;strong&gt;personal&lt;/strong&gt;, ¿sobre qué?, no lo sé, de lo que se me dé la&amp;nbsp;gana.&lt;/p&gt;
+&lt;p&gt;Dicho lo anterior y ante lo evidente de que no sé realmente qué carajos
+escribiré aquí, puedo tratar de poner un poco de orden enumerando algunos temas
+de los que me gustaría escribir&amp;nbsp;aquí:&lt;/p&gt;
 &lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Hacking&lt;/strong&gt;, en su sentido real
+&lt;a href="https://en.wikipedia.org/wiki/Hacker_ethic"&gt;[1]&lt;/a&gt;,
+&lt;a href="https://en.wikipedia.org/wiki/Hacks_at_the_Massachusetts_Institute_of_Technology#Terminology"&gt;[2]&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Matemáticas&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Ingeniería&lt;/strong&gt;, principalmente de temas de &lt;strong&gt;computación&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Software Libre y de Código&amp;nbsp;Abierto&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Hacking y seguridad&lt;/strong&gt; (lo que sea que eso&amp;nbsp;signifique).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Hobbies&lt;/strong&gt;, porque hay que dejar libertad a escribir de lo que sea&amp;nbsp;xD.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ingeniería&lt;/strong&gt;, no limitado a, pero, principalmente de temas de &lt;strong&gt;computación&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tecnologías Libres y de Código&amp;nbsp;Abierto&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ciberseguridad&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hobbies&lt;/strong&gt;, porque hay que dejar libertad a escribir de lo que sea&amp;nbsp;:).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;De estos temas, probablemente la mayoría este escrita a modo de
 &lt;strong&gt;tutoriales/resúmenes&lt;/strong&gt; que en principio me ayuden a mi cómo
@@ -1737,9 +1767,10 @@ gana, sin restricciones ni filtros que no sean&amp;nbsp;míos.&lt;/p&gt;
 temas de redacción y narrativas, solo busco plasmar cosas que considere útiles e
 interesantes, &lt;strong&gt;perdonen los horrores de redacción que puedan llegar a
 encontrar&lt;/strong&gt;&amp;nbsp;:P&lt;/p&gt;
-&lt;p&gt;Por ahora el sitio esta alojado en GitHub Pages con un dominio de GitHub, pero
-espero en algún momento no tener flojera y comprar un&amp;nbsp;dominio.&lt;/p&gt;
+&lt;p&gt;Por ahora el sitio esta alojado en GitHub Pages
+&lt;strike&gt; con un dominio de GitHub, pero espero en algún momento no tener flojera
+y comprar un dominio &lt;/strike&gt; y su propio dominio feliz&amp;nbsp;:D&lt;/p&gt;
 &lt;p&gt;So, &lt;strong&gt;demos por inaugurado el
 &lt;a href="https://penserbjorne.com"&gt;blog de Penserbjorne&lt;/a&gt;, que la fuerza les
 acompañe&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;#HappyHacking&amp;nbsp;#FeedTheFox&lt;/strong&gt;&lt;/p&gt;</content><category term="init"></category><category term="blog"></category><category term="penserbjorne"></category></entry></feed>
+&lt;p&gt;&lt;strong&gt;#HappyHacking&amp;nbsp;#FeedTheFox&lt;/strong&gt;&lt;/p&gt;</content><category term="blog"></category><category term="init"></category><category term="blog"></category><category term="penserbjorne"></category></entry></feed>

@@ -12,7 +12,7 @@ Translation: false
 Status: published
 ---
 
-# What is this?
+##  What is this?
 
 Andamos con todo, anoche terminamos la
 [tercera entrada de Pelican]({filename}./pelican-03.md) para modificar la
@@ -26,7 +26,7 @@ Y el *disclaimer* de siempre, como ya hemos dicho, toda la documentación necesa
 por lo que si se necesita mayor información o detalle de algo, visitar el sitio
 oficial.
 
-# pelican-themes
+##  pelican-themes
 
 Dentro de las herramientas que necesitamos utilizar con `Pelican` se encuentra
 `pelican-themes` la cual como su nombre lo indica es para trabajar con temas :\'v
@@ -61,7 +61,7 @@ Si quieres ver algunos ejemplos de uso más detallados puedes revisar la secció
 correspondiente de la documentación de `Pelican` dando click
 [aquí](https://docs.getpelican.com/en/stable/pelican-themes.html).
 
-# Seleccionando e instalando un tema
+##  Seleccionando e instalando un tema
 
 Vale, ya vimos que podemos *instalar* temas y utilizarlos, pero, ¿donde están
 los temas? Tranqui, para eso, `Pelican` tiene un listado de temas en `GitHub`
@@ -126,7 +126,7 @@ pelican-themes --remove nombre-del-tema
 pelican-themes --remove nombre-del-tema-1 nombre-del-tema-2 nombre-del-tema-3
 ```
 
-# Aplicando el tema instalado
+##  Aplicando el tema instalado
 
 Para poder utilizar nuestro tema instalado tenemos que ir al archivo
 `pelicanconf.py` y asignarle un valor a la variable `THEME`, en este caso la
@@ -146,7 +146,7 @@ invoke gh-pages
 Para probar otros temas basta con seguir los pasos anteriores hasta encontrar
 uno que sea de tu agrado :)
 
-# Siguientes pasos (this is (not) the end)
+##  Siguientes pasos (this is (not) the end)
 
 Nuestro sitio ya tiene un poco más de personalidad aunque sigue siendo bastante
 cliché, al menos ya es responsivo y se podrá leer en dispositivos móviles.
@@ -155,7 +155,7 @@ Para siguientes entradas nos haria falta revisar como agregar algunas secciones
 como un `about` o un `contact` y revisar el tema de plugins, y probablemente
 con eso habremos terminado de configurar el sitio :)
 
-# Ejemplos de temas aplicados
+##  Ejemplos de temas aplicados
 
 Sé que puedes pensar lo siguiente:
 
@@ -171,20 +171,20 @@ por lo que cambiamos al tema `elegant`.
 A continuación te muestro la página de inicio del blog con cada uno de los
 temas aplicados.
 
-## Not my idea
+### Not my idea
 
 Es el tema que trae `Pelican` por defecto, y no, no es responsivo.
 
 ![Alt Text]({static}/images/07-pelican-04/screenshot-2020-08-21-blog-de-penserbjorne-1.png)
 
-## bootstrap2-black
+### bootstrap2-black
 
 Fue el tema **juakeril** que habíamos elegido, pero no, tampoco es responsivo
 y después se volvió complicado de leer.
 
 ![Alt Text]({static}/images/07-pelican-04/screenshot-2020-08-21-blog-de-penserbjorne-2.png)
 
-## elegant
+### elegant
 
 Es el último tema que hemos probado, sí, es responsivo y es fácil de leer en él,
 por lo cual se ha quedado cómo tema final (es el actual a este momento de
@@ -192,6 +192,6 @@ por lo cual se ha quedado cómo tema final (es el actual a este momento de
 
 ![Alt Text]({static}/images/07-pelican-04/screenshot-2021-04-04-blog-de-penserbjorne.png)
 
-# The End of the Post
+##  The End of the Post
 
 Bueno, ahora sí, nos vemos en otra ocasión [piloto](https://www.youtube.com/watch?v=pVeKyqV1jWU).

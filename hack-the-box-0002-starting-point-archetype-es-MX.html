@@ -4,25 +4,25 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="penserbjorne" />
+        <meta name="author" content="Penserbjorne" />
 
         <meta name="twitter:creator" content="@@_penserbjorne">
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="blog, penserbjorne, htb, pentest, hacking, archetype, htb, blog, penserbjorne, htb, pentest, hacking, archetype" />
+<meta name="keywords" content="cybersecurity, htb, pentest, writeup, htb, cybersecurity, htb, pentest, hacking, writeup, archetype" />
 
-<meta property="og:title" content="Hack-The-Box (0002) &gt; Starting point &gt; Archetype "/>
+<meta property="og:title" content="Hack-The-Box (0002) &gt; Starting Point &gt; Archetype "/>
 <meta property="og:url" content="https://penserbjorne.com/hack-the-box-0002-starting-point-archetype-es-MX.html" />
-<meta property="og:description" content="Anotaciones sobre la máquina “Archetype” de la sección “Starting point” de Hack-The-Box" />
+<meta property="og:description" content="Anotaciones sobre la máquina “Archetype” de la sección “Starting Point” de Hack-The-Box" />
 <meta property="og:site_name" content="Blog de Penserbjorne" />
-<meta property="og:article:author" content="penserbjorne" />
-<meta property="og:article:published_time" content="2020-08-06T00:00:00-05:00" />
-<meta property="og:article:modified_time" content="2020-11-06T00:00:00-06:00" />
-<meta name="twitter:title" content="Hack-The-Box (0002) &gt; Starting point &gt; Archetype ">
-<meta name="twitter:description" content="Anotaciones sobre la máquina “Archetype” de la sección “Starting point” de Hack-The-Box">
+<meta property="og:article:author" content="Penserbjorne" />
+<meta property="og:article:published_time" content="2020-08-07T00:00:00-05:00" />
+<meta property="og:article:modified_time" content="2021-04-04T00:00:00-06:00" />
+<meta name="twitter:title" content="Hack-The-Box (0002) &gt; Starting Point &gt; Archetype ">
+<meta name="twitter:description" content="Anotaciones sobre la máquina “Archetype” de la sección “Starting Point” de Hack-The-Box">
 
-        <title>Hack-The-Box (0002) &gt; Starting point &gt; Archetype  · Blog de Penserbjorne
+        <title>Hack-The-Box (0002) &gt; Starting Point &gt; Archetype  · Blog de Penserbjorne
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="https://penserbjorne.com/theme/css/elegant.prod.css" media="screen">
@@ -68,7 +68,7 @@
     <header class="page-header span10 offset2">
         <h1>
             <a href="https://penserbjorne.com/hack-the-box-0002-starting-point-archetype-es-MX.html">
-                Hack-The-Box (0002) > Starting point > Archetype
+                Hack-The-Box (0002) > Starting Point > Archetype
             </a>
         </h1>
     </header>
@@ -77,8 +77,8 @@
 <div class="row-fluid">
         <div class="span8 offset2 article-content">
             
-            <h1>Archetype</h1>
-<p>Para comenzar con esta serie de anotaciones sobre la sección <em>Starting point</em>
+            <h2>Archetype</h2>
+<p>Para comenzar con esta serie de anotaciones sobre la sección <em>Starting Point</em>
 arrancaremos con la máquina <em>Archetype</em>. Si no sabes bien de que hablo te
 recomiendo que primero leas la
 <a href="{filename}./htb-01-starting-point-section.md">entrada anterior</a>.</p>
@@ -92,7 +92,7 @@ recomiendo que primero leas la
 lo que tiene el equipo objetivo, en este caso vamos a tratar de identificar
 los puertos abiertos y el software asociado a&nbsp;estos.</p>
 <p>Para esto utilizaremos la siempre poderosa herramienta de
-<a href="https://es.wikipedia.org/wiki/Nmap">Nmap</a>.</p>
+<a href="https://es.wikipedia.org/wiki/Nmap">nmap</a>.</p>
 <p>Lo primero que nos recomiendan utilizar son los siguientes dos&nbsp;comandos:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">ports</span><span class="o">=</span><span class="k">$(</span>nmap -p- --min-rate<span class="o">=</span><span class="m">1000</span>  -T4 <span class="m">10</span>.10.10.27 <span class="p">|</span> grep ^<span class="o">[</span><span class="m">0</span>-9<span class="o">]</span> <span class="p">|</span> cut -d <span class="s1">&#39;/&#39;</span> -f <span class="m">1</span> <span class="p">|</span> tr <span class="s1">&#39;\n&#39;</span> <span class="s1">&#39;,&#39;</span> <span class="p">|</span> sed s/,$//<span class="k">)</span>
 nmap -sC -sV -p<span class="nv">$ports</span> <span class="m">10</span>.10.10.27
@@ -506,14 +506,12 @@ de un rol especifico del&nbsp;servidor.</p>
 <ul>
 <li><code>role</code>: indicamos el rol a revisar que puede ser alguno de los siguientes.<ul>
 <li>sysadmin</li>
-</ul>
-</li>
 <li>serveradmin</li>
 <li>dbcreator</li>
 <li>setupadmin</li>
 <li>bulkadmin</li>
 <li>securityadmin</li>
-<li>diskadmin<ul>
+<li>diskadmin</li>
 <li>public</li>
 <li>processadmin</li>
 </ul>
@@ -799,30 +797,24 @@ y seguir aprendiendo poco a&nbsp;poco.</p>
         </div>
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2020-08-06T00:00:00-05:00">ago 6, 2020</time>
+            <time itemprop="dateCreated" datetime="2020-08-07T00:00:00-05:00">ago 7, 2020</time>
 <h4>Last Updated</h4>
-<time datetime="2020-11-06T00:00:00-06:00">nov 6, 2020</time>
+<time datetime="2021-04-04T00:00:00-06:00">abr 4, 2021</time>
 
             <h4>Category</h4>
             <a class="category-link" href="https://penserbjorne.com/categories.html#htb-ref">htb</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="https://penserbjorne.com/tags.html#archetype-ref">archetype
-                    <span>1</span>
-</a></li>
-                <li><a href="https://penserbjorne.com/tags.html#blog-ref">blog
-                    <span>8</span>
-</a></li>
-                <li><a href="https://penserbjorne.com/tags.html#hacking-ref">hacking
+                <li><a href="https://penserbjorne.com/tags.html#cybersecurity-ref">cybersecurity
                     <span>2</span>
 </a></li>
                 <li><a href="https://penserbjorne.com/tags.html#htb-ref">htb
                     <span>2</span>
 </a></li>
-                <li><a href="https://penserbjorne.com/tags.html#penserbjorne-ref">penserbjorne
-                    <span>3</span>
-</a></li>
                 <li><a href="https://penserbjorne.com/tags.html#pentest-ref">pentest
+                    <span>2</span>
+</a></li>
+                <li><a href="https://penserbjorne.com/tags.html#writeup-ref">writeup
                     <span>2</span>
 </a></li>
             </ul>

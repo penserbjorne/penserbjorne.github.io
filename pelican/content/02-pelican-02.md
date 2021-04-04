@@ -12,7 +12,7 @@ Translation: false
 Status: published
 ---
 
-# What is this?
+##  What is this?
 
 Weno weno, ¿de que va esta entrada? Pues de cómo escribir contenido (entradas)
 en el blog con `Pelican`. Esto es continuación de la
@@ -25,7 +25,7 @@ encuentra en [el blog oficial de Pelican](https://docs.getpelican.com), por lo
 que si se necesita mayor información o detalle de algo pues ... a visitar el
 sitio oficial.
 
-# Markdown
+##  Markdown
 
 Una de las razones por las cuales elegimos `Pelican` como herramienta para
 escribir el blog es que tiene soporte para `Markdown`.
@@ -47,7 +47,7 @@ para que veas lo sencillo que es.
 En este caso, la extensión del archivo `Markdown` que estaremos utilizando es
 `.md`.
 
-# ¿Donde vamos a escribir?
+##  ¿Donde vamos a escribir?
 
 Recordando la estructura del sitio, sabemos que las entradas del mismo
 van en la carpeta `content` de nuestra subcarpeta `pelican`. Ahí es donde
@@ -99,7 +99,7 @@ la salida necesaria y general el sitio.
 Por lo tanto, para añadir más contenido a tu sitio basta con que lo agreguemos a
 esta carpeta.
 
-# ¿Qué debe llevar una entrada?
+##  ¿Qué debe llevar una entrada?
 
 Para una gestión adecuada del contenido en el sitio `Pelican` necesita conocer
 algunas cosas sobre el contenido que estamos generando. Para esto es necesario
@@ -152,7 +152,7 @@ son obligatorias.
 En caso de no incluir estas etiquetas `Pelican` no podrá procesar el archivo ni
 procederá a convertirlo.
 
-# Ahora sí, a escribir
+##  Ahora sí, a escribir
 
 Una vez que tenemos el archivo con su extensión `.md` y que le añadimos las
 etiquetas necesarias podemos comenzar a escribir su contenido en `Markdown`.
@@ -186,7 +186,7 @@ observar el sitio andando con nuestra entrada nueva.
 Para poder estar trabajando con el sitio, es necesario cada vez que hagamos un
 cambio y modificación volver a generar los archivos.
 
-# Consideraciones de trabajo
+##  Consideraciones de trabajo
 
 Cada vez que regeneremos el sitio porque hemos realizado un cambio o hemos
 añadido contenido nuevo se van a generar los archivos `HTML` correspondientes,
@@ -203,7 +203,7 @@ Lo sé, lo sé, esto no es lo más viable o factible a largo plazo, ¡pero oye!
 apenas vamos comenzando, por lo cual lo solucionaremos más adelante, por ahora
 solo no te asustes si ves contenido duplicado, eliminalo y ya.
 
-# Siguientes pasos
+##  Siguientes pasos
 
 Ya tenemos nuestro primer `hola mundo` en el blog, basta con hacer push al repo
 para poder verlo andando en nuestra `GitHub Pages`.

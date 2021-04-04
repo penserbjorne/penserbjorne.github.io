@@ -4,25 +4,25 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="penserbjorne" />
+        <meta name="author" content="Penserbjorne" />
 
         <meta name="twitter:creator" content="@@_penserbjorne">
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="blog, penserbjorne, htb, pentest, hacking, htb, blog, penserbjorne, htb, pentest, hacking" />
+<meta name="keywords" content="init, cybersecurity, htb, pentest, writeup, htb, cybersecurity, htb, pentest, hacking, writeup, archetype" />
 
-<meta property="og:title" content="Hack-The-Box (0001) &gt; Starting point "/>
+<meta property="og:title" content="Hack-The-Box (0001) &gt; Starting Point "/>
 <meta property="og:url" content="https://penserbjorne.com/hack-the-box-0001-starting-point-es-MX.html" />
 <meta property="og:description" content="Anotaciones sobre la sección “Starting point” de Hack-The-Box" />
 <meta property="og:site_name" content="Blog de Penserbjorne" />
-<meta property="og:article:author" content="penserbjorne" />
+<meta property="og:article:author" content="Penserbjorne" />
 <meta property="og:article:published_time" content="2020-08-06T00:00:00-05:00" />
-<meta property="og:article:modified_time" content="2020-11-06T00:00:00-06:00" />
-<meta name="twitter:title" content="Hack-The-Box (0001) &gt; Starting point ">
+<meta property="og:article:modified_time" content="2021-04-04T00:00:00-06:00" />
+<meta name="twitter:title" content="Hack-The-Box (0001) &gt; Starting Point ">
 <meta name="twitter:description" content="Anotaciones sobre la sección “Starting point” de Hack-The-Box">
 
-        <title>Hack-The-Box (0001) &gt; Starting point  · Blog de Penserbjorne
+        <title>Hack-The-Box (0001) &gt; Starting Point  · Blog de Penserbjorne
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="https://penserbjorne.com/theme/css/elegant.prod.css" media="screen">
@@ -68,7 +68,7 @@
     <header class="page-header span10 offset2">
         <h1>
             <a href="https://penserbjorne.com/hack-the-box-0001-starting-point-es-MX.html">
-                Hack-The-Box (0001) > Starting&nbsp;point
+                Hack-The-Box (0001) > Starting&nbsp;Point
             </a>
         </h1>
     </header>
@@ -77,28 +77,34 @@
 <div class="row-fluid">
         <div class="span8 offset2 article-content">
             
-            <h1>This is not the intro&nbsp;:)</h1>
+            <h2>This is not the intro&nbsp;:)</h2>
 <p>Ola k&nbsp;ase.</p>
 <p>Para este exacto momento en el que escribo esta linea de texto han pasado 146
 días desde que comenzó la pandemia del <span class="caps">COVID</span>-19 y pareciera que el tiempo se
 detuvo y que no ha pasado nada pero que a la vez que han pasado tantas&nbsp;cosas.</p>
 <p>Como sea, este blog esta en la misma situación, un tiempo&nbsp;suspendido.</p>
 <p>Dependiendo de cual futuro o universo paralelo leas esto puede que el blog
-ni siquiera este terminado de configurar, aún tenga el template de <code>Pelican</code> y
-que no tenga nada de contenido o que ya sea un pequeño blog que se ve hermoso
+ni siquiera este terminado de configurar, que aún tenga el template de <code>Pelican</code>
+y que no tenga nada de contenido o que ya sea un pequeño blog que se ve hermoso
 y tiene un par de entradas útiles para la humanidad haha en todo caso, si en
 estos dos párrafos no te haz aburrido o retirado, mandame un tuit a
 <a href="https://twitter.com/_penserbjorne">@_penserbjorne</a>
 con una captura de pantalla de como se ve el blog y a cambio te invito unos
 taquitos&nbsp;:)</p>
+<hr>
+<p>Personas hermosas que han reclamado sus&nbsp;tacos:</p>
+<ul>
+<li><a href="https://twitter.com/brendorts/status/1291595727693651969">Brendita</a>, aunque elimino esa&nbsp;cuenta.</li>
+</ul>
+<hr>
 <p>Ahora sí,&nbsp;arranquemos.</p>
-<h1>Hack-The-Box: Starting&nbsp;point</h1>
-<h2>¿Qué es&nbsp;esto?</h2>
-<p>Este texto son anotaciones sobre la sección <strong>Starting point</strong> de
+<h2>Hack-The-Box: Starting&nbsp;point</h2>
+<h3>¿Qué es&nbsp;esto?</h3>
+<p>Estos textos serán anotaciones sobre la sección <strong>Starting point</strong> de
 <strong>Hack-The-Box</strong>.</p>
 <p>Nos apoyaremos en los walk-throughs que ya vienen incorporados en la sección
 <em>Starting point</em> e iremos explicando los comandos&nbsp;utilizados.</p>
-<h2>Hack-The-Box (<span class="caps">HTB</span>)</h2>
+<h3>Hack-The-Box (<span class="caps">HTB</span>)</h3>
 <p>Bueno, para hablar de <a href="https://www.hackthebox.eu"><strong>Hack-The-Box</strong> (<span class="caps">HTB</span>)</a> y
 presentar lo qué realmente es este proyecto seria bueno dedicar una entrada
 específicamente a eso, por lo cual solo diré que es una plataforma para
@@ -107,12 +113,12 @@ virtuales que están diseñadas y preparadas para&nbsp;esto.</p>
 <p>En resumen, hay maquinas virtuales con cierto software instalado y ciertas
 configuraciones que permiten que esta maquina pueda ser vulnerada de alguna
 manera. ¿Quieres practicar temas de pentesting? Esta es una de las plataformas&nbsp;recomendadas.</p>
-<h2>Starting&nbsp;Point</h2>
+<h3>Starting&nbsp;Point</h3>
 <p>Para las personas que van comenzando en este ámbito puede que <span class="caps">HTB</span> sea una
 plataforma con un nivel de complejidad bastante alto y no necesariamente la
 primera opción para&nbsp;arrancar.</p>
 <p>Para solucionar esto <span class="caps">HTB</span> ha habilitado una sección llamada
-<a href="https://www.hackthebox.eu/home/start"><strong>Starting point</strong></a>
+<a href="https://www.hackthebox.eu/home/start"><strong>Starting Point</strong></a>
 en la cual se encuentran una serie de maquinas con un nivel <em>básico</em>
 acompañadas de sus <a href="https://www.wordnik.com/words/walk-through">walk-throughs</a>
 para que puedas resolverlas y familiarizarte con los pasos usuales del proceso
@@ -124,7 +130,7 @@ uso el conocimiento que vas desarrollando o acumulando&nbsp;:)</p>
 <p>Si bien el pentesting no es una receta, existen diferentes metodologías o
 frameworks que nos ayudan a guiarnos para realizar esta actividad de manera
 ordenada y&nbsp;limpia.</p>
-<p>Si quieres saber más puedes buscar los siguientes términos&nbsp;Internet:</p>
+<p>Si quieres saber más puedes buscar los siguientes términos en&nbsp;Internet:</p>
 <ul>
 <li>Cyber security&nbsp;framework</li>
 <li>Cyber security kill&nbsp;chain</li>
@@ -137,8 +143,8 @@ los siguiente&nbsp;elementos:</p>
 <ul>
 <li>Reconocimiento&nbsp;(Reconnaissance)</li>
 <li>Enumeración&nbsp;(Enumeration)</li>
-<li>Movimiento lateral (Lateral&nbsp;Movement)</li>
 <li>Punto de partida&nbsp;(Foothold)</li>
+<li>Movimiento lateral (Lateral&nbsp;Movement)</li>
 <li>Explotación&nbsp;(Explotation)</li>
 <li>Escalada de privilegios (Privilege&nbsp;Escalation)</li>
 <li>Explotación posterior (Post&nbsp;Explotation)</li>
@@ -146,7 +152,7 @@ los siguiente&nbsp;elementos:</p>
 <p>Si bien no todas las máquinas necesitan todos los pasos mencionados, es bueno
 tenerlos presentes para tratar de trabajar de manera&nbsp;ordenada.</p>
 <p>Te recomendamos resolver cada maquina con su walk-through y a la par ir leyendo
-la siguiente&nbsp;sección.</p>
+esta serie de&nbsp;textos.</p>
 <h2>Anotaciones de Starting&nbsp;point</h2>
 <p>Para ir tomando nota iremos creando una sección por cada maquina e iremos
 desarrollando los comando que solicita su walk-through correspondiente y le
@@ -175,25 +181,25 @@ en la cual comenzaremos con la maquina
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2020-08-06T00:00:00-05:00">ago 6, 2020</time>
 <h4>Last Updated</h4>
-<time datetime="2020-11-06T00:00:00-06:00">nov 6, 2020</time>
+<time datetime="2021-04-04T00:00:00-06:00">abr 4, 2021</time>
 
             <h4>Category</h4>
             <a class="category-link" href="https://penserbjorne.com/categories.html#htb-ref">htb</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="https://penserbjorne.com/tags.html#blog-ref">blog
-                    <span>8</span>
-</a></li>
-                <li><a href="https://penserbjorne.com/tags.html#hacking-ref">hacking
+                <li><a href="https://penserbjorne.com/tags.html#cybersecurity-ref">cybersecurity
                     <span>2</span>
 </a></li>
                 <li><a href="https://penserbjorne.com/tags.html#htb-ref">htb
                     <span>2</span>
 </a></li>
-                <li><a href="https://penserbjorne.com/tags.html#penserbjorne-ref">penserbjorne
+                <li><a href="https://penserbjorne.com/tags.html#init-ref">init
                     <span>3</span>
 </a></li>
                 <li><a href="https://penserbjorne.com/tags.html#pentest-ref">pentest
+                    <span>2</span>
+</a></li>
+                <li><a href="https://penserbjorne.com/tags.html#writeup-ref">writeup
                     <span>2</span>
 </a></li>
             </ul>

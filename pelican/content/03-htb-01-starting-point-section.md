@@ -12,7 +12,7 @@ Translation: false
 Status: published
 ---
 
-# This is not the intro :)
+##  This is not the intro :)
 
 Ola k ase.
 
@@ -41,9 +41,9 @@ Personas hermosas que han reclamado sus tacos:
 
 Ahora sí, arranquemos.
 
-# Hack-The-Box: Starting point
+##  Hack-The-Box: Starting point
 
-## ¿Qué es esto?
+### ¿Qué es esto?
 
 Estos textos serán anotaciones sobre la sección **Starting point** de
 **Hack-The-Box**.
@@ -51,7 +51,7 @@ Estos textos serán anotaciones sobre la sección **Starting point** de
 Nos apoyaremos en los walk-throughs que ya vienen incorporados en la sección
 *Starting point* e iremos explicando los comandos utilizados.
 
-## Hack-The-Box (HTB)
+### Hack-The-Box (HTB)
 
 Bueno, para hablar de [**Hack-The-Box** (HTB)](https://www.hackthebox.eu) y
 presentar lo qué realmente es este proyecto seria bueno dedicar una entrada
@@ -64,7 +64,7 @@ configuraciones que permiten que esta maquina pueda ser vulnerada de alguna
 manera. ¿Quieres practicar temas de pentesting? Esta es una de las plataformas
 recomendadas.
 
-## Starting Point
+### Starting Point
 
 Para las personas que van comenzando en este ámbito puede que HTB sea una
 plataforma con un nivel de complejidad bastante alto y no necesariamente la
@@ -81,7 +81,7 @@ de pentesting.
 comenzar, pero conforme se avanza es necesario refinar tus habilidades y hacer
 uso el conocimiento que vas desarrollando o acumulando :)
 
-## Elementos del pentesting
+##  Elementos del pentesting
 
 Si bien el pentesting no es una receta, existen diferentes metodologías o
 frameworks que nos ayudan a guiarnos para realizar esta actividad de manera
