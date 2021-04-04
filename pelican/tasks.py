@@ -39,7 +39,7 @@ def clean(c):
     #My own code
     if os.path.isdir(CONFIG['deploy_path']):
         c.run('rm -rf ../author ../category ../drafts ../feeds ../tag ../theme '
-                '../*.html')
+                '../images ../*.html')
 
 @task
 def build(c):
