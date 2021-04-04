@@ -19,8 +19,7 @@ gestionar este blog con `Pelican`.
 
 Como ya hemos dicho, toda la documentación necesaria (y extendida) se
 encuentra en [el blog oficial de Pelican](https://docs.getpelican.com), por lo
-que si se necesita mayor información o detalle de algo, visitar el sitio oficial
-(recuerda siempre, **\#RTFM**).
+que si se necesita mayor información o detalle de algo, visitar el sitio oficial.
 
 # Comandos
 
@@ -28,13 +27,13 @@ que si se necesita mayor información o detalle de algo, visitar el sitio oficia
 
 ```bash
 # Creación del entorno
-virtualenv --python=/usr/bin/python3 ~/path/to/project
+virtualenv --python=/usr/bin/python3 ~/path/to/virtual/env
 
 # Nos movemos a la carpeta creada
-cd ~/path/to/project
+cd ~/path/to/virtual/env
 
 # Activamos el entorno
-source bin/activate
+source ./bin/activate
 
 # Instalación de herramientas
 pip install pelican Markdown typogrify invoke livereload ghp-import
@@ -109,7 +108,7 @@ invoke reserve
 invoke preview
 
 # Permite visualizar el sitio de manera local en http://localhost:8000/
-# y regenrar el sitio cada vez que haya un cambio, todo para local
+# y regenerar el sitio cada vez que haya un cambio, todo para local
 invoke livereload
 
 # Permite subir el sitio al servidor correspondiente mediante rsync y SSH

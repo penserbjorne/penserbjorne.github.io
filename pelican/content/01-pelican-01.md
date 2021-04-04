@@ -53,7 +53,7 @@ buscar tener un entorno limpio, estaremos trabajando con `virtualenv`.
 sudo apt install virtualenv
 
 # Creación del entorno
-virtualenv ~/path/to/virtual/env
+virtualenv --python=/usr/bin/python3 ~/path/to/virtual/env
 ```
 
 Para comenzar a trabajar es necesario movernos a la carpeta donde se configuró
