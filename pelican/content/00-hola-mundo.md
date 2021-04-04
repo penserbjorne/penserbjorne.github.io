@@ -41,9 +41,9 @@ temas de redacción y narrativas, solo busco plasmar cosas que considere útiles
 interesantes, **perdonen los horrores de redacción que puedan llegar a
 encontrar** :P
 
-Por ahora el sitio esta alojado en GitHub Pages con un dominio ~~de GitHub, pero
-espero en algún momento no tener flojera y comprar un dominio~~ y su propio
-dominio feliz :D
+Por ahora el sitio esta alojado en GitHub Pages
+<strike> con un dominio de GitHub, pero espero en algún momento no tener flojera
+y comprar un dominio </strike> y su propio dominio feliz :D
 
 So, **demos por inaugurado el
 [blog de Penserbjorne](https://penserbjorne.com), que la fuerza les
