@@ -2,10 +2,10 @@
 Title: Hola Mundo
 Date: 2020-04-11
 Modified: 2020-04-24
-Tags: blog, penserbjorne
+Tags: init, blog, penserbjorne
 Keywords: blog, penserbjorne
-Category: init
-Author: penserbjorne
+Category: blog
+Author: Penserbjorne
 Summary: Inauguración del blog de Penserbjorne
 Lang: es-MX
 Translation: false
@@ -15,18 +15,21 @@ Status: published
 Bienvenido al [Blog de Penserbjorne](https://penserbjorne.com).
 
 Desde hace tiempo (ya bastantes años, que horror) tenia ganas de **escribir** en
-algún lugar que fuera **personal**, ¿sobre qué?, no lo sé, de lo que se me de la
-gana, sin restricciones ni filtros que no sean míos.
+algún lugar que fuera **personal**, ¿sobre qué?, no lo sé, de lo que se me dé la
+gana.
 
-Dicho lo anterior (y ante lo evidente de que no sé realmente que carajos
-  escribiré aquí), por lo pronto estaré escribiendo acerca de cuatro temas
-  principales (por tratar de ponerle un poco de más orden):
+Dicho lo anterior y ante lo evidente de que no sé realmente qué carajos
+escribiré aquí, puedo tratar de poner un poco de orden enumerando algunos temas
+de los que me gustaría escribir aquí:
 
+- **Hacking**, en su sentido real
+[[1]](https://en.wikipedia.org/wiki/Hacker_ethic),
+[[2]](https://en.wikipedia.org/wiki/Hacks_at_the_Massachusetts_Institute_of_Technology#Terminology).
 - **Matemáticas**.
-- **Ingeniería**, principalmente de temas de **computación**.
-- **Software Libre y de Código Abierto**
-- **Hacking y seguridad** (lo que sea que eso signifique).
-- **Hobbies**, porque hay que dejar libertad a escribir de lo que sea xD.
+- **Ingeniería**, no limitado a, pero, principalmente de temas de **computación**.
+- **Tecnologías Libres y de Código Abierto**
+- **Ciberseguridad**.
+- **Hobbies**, porque hay que dejar libertad a escribir de lo que sea :).
 
 De estos temas, probablemente la mayoría este escrita a modo de
 **tutoriales/resúmenes** que en principio me ayuden a mi cómo
@@ -38,8 +41,9 @@ temas de redacción y narrativas, solo busco plasmar cosas que considere útiles
 interesantes, **perdonen los horrores de redacción que puedan llegar a
 encontrar** :P
 
-Por ahora el sitio esta alojado en GitHub Pages con un dominio de GitHub, pero
-espero en algún momento no tener flojera y comprar un dominio.
+Por ahora el sitio esta alojado en GitHub Pages con un dominio ~~de GitHub, pero
+espero en algún momento no tener flojera y comprar un dominio~~ y su propio
+dominio feliz :D
 
 So, **demos por inaugurado el
 [blog de Penserbjorne](https://penserbjorne.com), que la fuerza les
