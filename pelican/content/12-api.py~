@@ -1,0 +1,7 @@
+-	DRP DB and Deploy app on EBS
+	-	https://medium.com/@rodkey/deploying-a-flask-application-on-aws-a72daba6bb80
+	-	https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-flask.html
+-	Custom domain
+	-	https://colintoh.com/blog/map-custom-domain-to-elastic-beanstalk-application
+-	HTTPS domain
+	-	https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-elb.html

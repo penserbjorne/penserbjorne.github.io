@@ -1,0 +1,19 @@
+python3-serial /minterm
+
+Cura
+Prusa Slicer
+
+Calibro en delta con cama fria
+Calentar la cama 
+Nivelar la cama
+	Guardar la malla
+Imprimir
+
+----
+
+https://pinshape.com/items/4786-3d-printed-3dbenchy-the-jolly-3d-printing-torture-test
+https://www.myminifactory.com/
+https://www.thingiverse.com/thing:763622/files
+https://marlinfw.org/docs/features/unified_bed_leveling.html
+https://support.ultimaker.com/hc/en-us/sections/360003548619-Print-settings
+https://github.com/emilio1625/marlin-anycubic-kossel

@@ -66,6 +66,8 @@ Status: draft
 	-	`sudo apt install telegram-desktop`
 	-	Configurar carpeta de descargas
 
+-	Slack
+	-	`sudo apt install slack-desktop`
 -	Calibre
 	-	https://calibre-ebook.com/download_linux
 
