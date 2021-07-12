@@ -16,7 +16,7 @@ Status: published
 
 Weno weno, ¿de que va esta entrada? Pues de cómo escribir contenido (entradas)
 en el blog con `Pelican`. Esto es continuación de la
-[entrada anterior]({filename}./pelican-01.md) en la cual vimos una ligera
+[entrada anterior]({filename}./01-pelican-01.md) en la cual vimos una ligera
 introducción a `Pelican`, cómo instalarlo y como ejecutarlo para ver andando el
 sitio. Básicamente, un pequeño **hola mundo**.
 
@@ -165,7 +165,7 @@ pero por ahora no.
 
 Una vez que la entrada ha sido redactada podemos proceder a procesar el sitio
 para que se generen los archivo de salida. Esto lo hacemos con los comandos que
-vimos en la [entrada anterior]({filename}./pelican-01.md) (que te recomiendo
+vimos en la [entrada anterior]({filename}./01-pelican-01.md) (que te recomiendo
 leer para que no te pierdas en la estructura de archivos y de trabajo que
 utilizamos aquí).
 

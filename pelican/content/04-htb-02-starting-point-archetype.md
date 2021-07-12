@@ -17,7 +17,7 @@ Status: published
 Para comenzar con esta serie de anotaciones sobre la sección *Starting Point*
 arrancaremos con la máquina *Archetype*. Si no sabes bien de que hablo te
 recomiendo que primero leas la
-[entrada anterior]({filename}./htb-01-starting-point-section.md).
+[entrada anterior]({filename}./03-htb-01-starting-point-section.md).
 
 - **Máquina:** Archetype
 - **SO:** Windows

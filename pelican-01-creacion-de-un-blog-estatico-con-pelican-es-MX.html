@@ -13,7 +13,7 @@
 <meta name="keywords" content="init, blog, pelican, pelican, blog, pelican" />
 
 <meta property="og:title" content="Pelican (01), creación de un blog estático con Pelican "/>
-<meta property="og:url" content="https://penserbjorne.com/pelican-01-creacion-de-un-blog-estatico-con-pelican-es-MX.html" />
+<meta property="og:url" content="/pelican-01-creacion-de-un-blog-estatico-con-pelican-es-MX.html" />
 <meta property="og:description" content="Creación de un blog estático con Pelican" />
 <meta property="og:site_name" content="Blog de Penserbjorne" />
 <meta property="og:article:author" content="Penserbjorne" />
@@ -25,10 +25,9 @@
         <title>Pelican (01), creación de un blog estático con Pelican  · Blog de Penserbjorne
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="https://penserbjorne.com/theme/css/elegant.prod.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="https://penserbjorne.com/theme/css/custom.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/elegant.prod.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/custom.css" media="screen">
 
-        <link href="https://penserbjorne.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Blog de Penserbjorne - Full Atom Feed" />
 
 
     </head>
@@ -42,18 +41,18 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </a>
-                        <a class="brand" href="https://penserbjorne.com/"><span class=site-name>Blog de Penserbjorne</span></a>
+                        <a class="brand" href="/"><span class=site-name>Blog de Penserbjorne</span></a>
                         <div class="nav-collapse collapse">
                             <ul class="nav pull-right top-menu">
                                 <li >
                                     <a href=
-                                       https://penserbjorne.com
+                                       "/"
                                     >Home</a>
                                 </li>
-                                <li ><a href="https://penserbjorne.com/categories.html">Categories</a></li>
-                                <li ><a href="https://penserbjorne.com/tags.html">Tags</a></li>
-                                <li ><a href="https://penserbjorne.com/archives.html">Archives</a></li>
-                                <li><form class="navbar-search" action="https://penserbjorne.com/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                                <li ><a href="/categories.html">Categories</a></li>
+                                <li ><a href="/tags.html">Tags</a></li>
+                                <li ><a href="/archives.html">Archives</a></li>
+                                <li><form class="navbar-search" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
                             </ul>
                         </div>
                     </div>
@@ -67,7 +66,7 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://penserbjorne.com/pelican-01-creacion-de-un-blog-estatico-con-pelican-es-MX.html">
+            <a href="/pelican-01-creacion-de-un-blog-estatico-con-pelican-es-MX.html">
                 Pelican (01), creación de un blog estático con&nbsp;Pelican
             </a>
         </h1>
@@ -111,7 +110,6 @@ sudo apt install virtualenv
 virtualenv --python<span class="o">=</span>/usr/bin/python3 ~/path/to/virtual/env
 </code></pre></div>
 
-
 <p>Para comenzar a trabajar es necesario movernos a la carpeta donde se configuró
 el entorno y&nbsp;activarlo.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Nos movemos a la carpeta creada</span>
@@ -121,12 +119,10 @@ el entorno y&nbsp;activarlo.</p>
 <span class="nb">source</span> ./bin/activate
 </code></pre></div>
 
-
 <p>Sabremos que el entorno se ha activado por que la terminal cambiará su apariencia
 a algo como lo&nbsp;siguiente.</p>
 <div class="highlight"><pre><span></span><code><span class="o">(</span>entorno_virtual<span class="o">)</span> usuario@equipo:~/path/to/virtual/env$
 </code></pre></div>
-
 
 <p>A partir de aquí podemos comenzar a trabajar con <code>Pelican</code> en un entorno aislado
 que no vaya a modificar nuestro sistema&nbsp;operativo.</p>
@@ -134,7 +130,6 @@ que no vaya a modificar nuestro sistema&nbsp;operativo.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Para desactivar virtualenv</span>
 deactivate
 </code></pre></div>
-
 
 <h2>Instalación de las&nbsp;herramientas</h2>
 <p>En este caso vamos a redactar el sitio en <code>Markdown</code>, por lo cual instalaremos
@@ -144,19 +139,16 @@ través de <code>pip</code>.</p>
 <div class="highlight"><pre><span></span><code>pip install pelican Markdown typogrify
 </code></pre></div>
 
-
 <p>En caso de necesitar actualizar alguna de estas herramientas, se puede hacer
 también a través de <code>pip</code>.</p>
 <div class="highlight"><pre><span></span><code>pip install --upgrade pelican Markdown typogrify
 </code></pre></div>
-
 
 <h2>Creación del esqueleto del&nbsp;sitio</h2>
 <p>Para crear un proyecto con la estructura básica de <code>Pelican</code> basta con ejecutar
 el siguiente comando (aún no lo hagas, necesito aclarar algo&nbsp;antes).</p>
 <div class="highlight"><pre><span></span><code>pelican-quickstart
 </code></pre></div>
-
 
 <p>El comando creara una carpeta con la siguiente&nbsp;estructura:</p>
 <div class="highlight"><pre><span></span><code>yourproject/
@@ -169,7 +161,6 @@ el siguiente comando (aún no lo hagas, necesito aclarar algo&nbsp;antes).</p>
 └── publishconf.py
 </code></pre></div>
 
-
 <p>Como podemos ver, es una estructura bien definida para el sitio. Esta estructura
 es la que se encontrará alojada en el repositorio del sitio. Hay que tener en
 cuenta que actualmente estamos en la carpeta de <code>virtualenv</code>, así que aquí es
@@ -179,7 +170,6 @@ que verse así (asumiendo que ya clonamos el repositorio dentro de la carpeta de
 <div class="highlight"><pre><span></span><code><span class="o">(</span>entorno_virtual<span class="o">)</span> usuario@equipo:~/path/to/virtual/env$ ls
 bin  include  lib  <span class="nb">local</span>  user.github.io  share
 </code></pre></div>
-
 
 <p>Como podemos observar, están las carpetas de <code>virtualenv</code> y el repositorio del
 sitio, que en todo caso, si no es un repositorio, valdría la pena crear una
@@ -194,7 +184,6 @@ donde ejecutaremos el comando para la creación del proyecto (ya sé, ya sé,
   en&nbsp;mi).</p>
 <div class="highlight"><pre><span></span><code><span class="o">(</span>entorno_virtual<span class="o">)</span> usuario@equipo:~/path/to/virtual/env/user.github.io/pelican$ pelican-quickstart
 </code></pre></div>
-
 
 <p>De tal modo que la estructura de archivos debería de verse de la siguiente&nbsp;manera.</p>
 <div class="highlight"><pre><span></span><code>/path/to/project
@@ -214,7 +203,6 @@ donde ejecutaremos el comando para la creación del proyecto (ya sé, ya sé,
         └── publishconf.py
 </code></pre></div>
 
-
 <h2>Generar y ejecutar el&nbsp;sitio</h2>
 <p>Para generar el contenido del sitio vamos a posicionarnos en la carpeta del
 repositorio (o la que hemos llamado&nbsp;blog).</p>
@@ -231,7 +219,6 @@ del repositorio (ves! así tenemos la salida del sitio en la raíz del
 pelican content -o ..
 </code></pre></div>
 
-
 <p>Esto generara los archivos <code>HTML</code> del sitio en la raíz del&nbsp;repositorio.</p>
 <p>Para visualizar el sitio contamos con el comando <code>pelican --listen</code> el cual
 levanta un servidor en el puerto 8080. En nuestro caso (y sin salir de la
@@ -241,7 +228,6 @@ levanta un servidor en el puerto 8080. En nuestro caso (y sin salir de la
 pelican --listen -o ..
 </code></pre></div>
 
-
 <p>Para acceder al sitio visitamos <a href="http://localhost:8000/">http://localhost:8000/</a>
 , y listo, tendríamos que observar el sitio&nbsp;andando.</p>
 <p>Para poder estar trabajando con el sitio, es necesario cada vez que hagamos un
@@ -250,7 +236,7 @@ cambio o modificación volver a generar los&nbsp;archivos.</p>
 <p>Recordando la estructura del sitio, sabemos que las entradas del mismo
 van en la carpeta <code>content</code> de nuestra subcarpeta <code>pelican</code>. Ahí es donde
 podremos comenzar a crear nuestros archivos en <code>Markdown</code>. Esto lo dejaremos
-para la <a href="{filename}./pelican-02.md">siguiente entrada</a>, es momento de pararse
+para la <a href="/pelican-02-creacion-de-entradas-para-un-blog-estatico-con-pelican-es-MX.html">siguiente entrada</a>, es momento de pararse
 por un poco de agua, algo de comer y a estirar la espalda y las&nbsp;piernas.</p>
 
 
@@ -274,16 +260,16 @@ por un poco de agua, algo de comer y a estirar la espalda y las&nbsp;piernas.</p
 <time datetime="2021-04-04T00:00:00-06:00">abr 4, 2021</time>
 
             <h4>Category</h4>
-            <a class="category-link" href="https://penserbjorne.com/categories.html#pelican-ref">pelican</a>
+            <a class="category-link" href="/categories.html#pelican-ref">pelican</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="https://penserbjorne.com/tags.html#blog-ref">blog
+                <li><a href="/tags.html#blog-ref">blog
                     <span>6</span>
 </a></li>
-                <li><a href="https://penserbjorne.com/tags.html#init-ref">init
+                <li><a href="/tags.html#init-ref">init
                     <span>3</span>
 </a></li>
-                <li><a href="https://penserbjorne.com/tags.html#pelican-ref">pelican
+                <li><a href="/tags.html#pelican-ref">pelican
                     <span>5</span>
 </a></li>
             </ul>

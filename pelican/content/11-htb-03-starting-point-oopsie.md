@@ -17,7 +17,7 @@ Status: draft
 Bueno, esta es la segunda entrada de la serie de anotaciones sobre la sección
 *Starting point* de `HTB`. En esta ocasión trabajaremos con la máquina
 *Oopsie*. Si no sabes bien de que hablo te recomiendo que primero leas la
-[entrada que inaugura esta serie]({filename}./htb-01-starting-point-section.md).
+[entrada que inaugura esta serie]({filename}./03-htb-01-starting-point-section.md).
 
 **Nota:** Para fines didácticos (en realidad no quiero reescribir todo) este
 texto y el resto de la serie estarán basados en la entrada previa, en este caso

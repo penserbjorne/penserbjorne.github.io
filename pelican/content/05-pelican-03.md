@@ -21,8 +21,8 @@ y construir el sitio.
 Te recomendamos revisar las entradas anteriores en donde fuimos construyendo
 el sitio sobre el que vamos a trabajar ahora.
 
-- [Creación de un blog estático con Pelican]({filename}./pelican-01.md)
-- [Creación de entradas para un blog estático con Pelican]({filename}./pelican-02.md)
+- [Creación de un blog estático con Pelican]({filename}./01-pelican-01.md)
+- [Creación de entradas para un blog estático con Pelican]({filename}./02-pelican-02.md)
 
 Como ya hemos dicho, toda la documentación necesaria (y extendida) se
 encuentra en [el blog oficial de Pelican](https://docs.getpelican.com), por lo
@@ -92,7 +92,7 @@ interesa leer la versión completa o con `make` puedes
 Para trabajar con `invoke` necesitamos instalarlo a través de `pip`.
 
 **Nota:** Recuerda hacerlo después de haber activado el entorno virtual que
-creamos en [la primera entrada]({filename}./pelican-01.md) y de haber entrado
+creamos en [la primera entrada]({filename}./01-pelican-01.md) y de haber entrado
 a la carpeta `pelican` que se encuentra dentro del repositorio.
 
 Para instalar `invoke` podemos ejecutar lo siguiente:

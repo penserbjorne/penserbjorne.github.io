@@ -15,7 +15,7 @@ Status: published
 ##  What is this?
 
 Andamos con todo, anoche terminamos la
-[tercera entrada de Pelican]({filename}./pelican-03.md) para modificar la
+[tercera entrada de Pelican]({filename}./05-pelican-03.md) para modificar la
 construcción del sitio y configurar algunas cositas del sitio, sé que no es
 mucho, pero es trabajo honesto haha
 
@@ -133,7 +133,7 @@ Para poder utilizar nuestro tema instalado tenemos que ir al archivo
 variable quedaría como `THEME = u'bootstrap2-dark'`.
 
 Con este pequeño cambio basta para construir el sitio con el tema seleccionado.
-recuerda que utilizaremos los comandos de la [entrada anterior]({filename}./pelican-03.md).
+recuerda que utilizaremos los comandos de la [entrada anterior]({filename}./05-pelican-03.md).
 
 ```bash
 # Desarrollo

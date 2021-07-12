@@ -13,7 +13,7 @@
 <meta name="keywords" content="blog, pelican, pelican, blog, pelican" />
 
 <meta property="og:title" content="Pelican (04), configuración del sitio (tema) "/>
-<meta property="og:url" content="https://penserbjorne.com/pelican-04-configuracion-del-sitio-tema-es-MX.html" />
+<meta property="og:url" content="/pelican-04-configuracion-del-sitio-tema-es-MX.html" />
 <meta property="og:description" content="Configuración para añadir un tema a un sitio con Pelican" />
 <meta property="og:site_name" content="Blog de Penserbjorne" />
 <meta property="og:article:author" content="Penserbjorne" />
@@ -25,10 +25,9 @@
         <title>Pelican (04), configuración del sitio (tema)  · Blog de Penserbjorne
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="https://penserbjorne.com/theme/css/elegant.prod.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="https://penserbjorne.com/theme/css/custom.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/elegant.prod.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/custom.css" media="screen">
 
-        <link href="https://penserbjorne.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Blog de Penserbjorne - Full Atom Feed" />
 
 
     </head>
@@ -42,18 +41,18 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </a>
-                        <a class="brand" href="https://penserbjorne.com/"><span class=site-name>Blog de Penserbjorne</span></a>
+                        <a class="brand" href="/"><span class=site-name>Blog de Penserbjorne</span></a>
                         <div class="nav-collapse collapse">
                             <ul class="nav pull-right top-menu">
                                 <li >
                                     <a href=
-                                       https://penserbjorne.com
+                                       "/"
                                     >Home</a>
                                 </li>
-                                <li ><a href="https://penserbjorne.com/categories.html">Categories</a></li>
-                                <li ><a href="https://penserbjorne.com/tags.html">Tags</a></li>
-                                <li ><a href="https://penserbjorne.com/archives.html">Archives</a></li>
-                                <li><form class="navbar-search" action="https://penserbjorne.com/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                                <li ><a href="/categories.html">Categories</a></li>
+                                <li ><a href="/tags.html">Tags</a></li>
+                                <li ><a href="/archives.html">Archives</a></li>
+                                <li><form class="navbar-search" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
                             </ul>
                         </div>
                     </div>
@@ -67,7 +66,7 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://penserbjorne.com/pelican-04-configuracion-del-sitio-tema-es-MX.html">
+            <a href="/pelican-04-configuracion-del-sitio-tema-es-MX.html">
                 Pelican (04), configuración del sitio&nbsp;(tema)
             </a>
         </h1>
@@ -79,7 +78,7 @@
             
             <h2>What is&nbsp;this?</h2>
 <p>Andamos con todo, anoche terminamos la
-<a href="{filename}./pelican-03.md">tercera entrada de Pelican</a> para modificar la
+<a href="/pelican-03-configuracion-del-sitio-construccion-y-elementos-basicos-es-MX.html">tercera entrada de Pelican</a> para modificar la
 construcción del sitio y configurar algunas cositas del sitio, sé que no es
 mucho, pero es trabajo honesto&nbsp;haha</p>
 <p>Bueno, esta cuarta entrada será para configurar un tema a nuestro&nbsp;sitio.</p>
@@ -111,7 +110,6 @@ realizar pasos&nbsp;extras.</p>
   Verbose output
 </code></pre></div>
 
-
 <p>Si quieres ver algunos ejemplos de uso más detallados puedes revisar la sección
 correspondiente de la documentación de <code>Pelican</code> dando click
 <a href="https://docs.getpelican.com/en/stable/pelican-themes.html">aquí</a>.</p>
@@ -132,7 +130,6 @@ clonarlos por falta de algún&nbsp;submodulo.</p>
 <div class="highlight"><pre><span></span><code>git clone --recursive https://github.com/getpelican/pelican-themes ~/path-to-projects/pelican-themes
 </code></pre></div>
 
-
 <p>Ya tenemos clonados los temas en nuestro equipo, por lo cual podemos <em>instalar</em>
 uno el sitio que estamos desarrollando. Para esto le indicaremos a
 <code>pelican-themes</code> la ruta donde se encuentran los archivos del&nbsp;tema.</p>
@@ -144,18 +141,15 @@ carpeta donde se encuentran los archivos fuente del tema en este caso es
 <div class="highlight"><pre><span></span><code>pelican-themes --install ~/path-to-projects/pelican-themes/bootstrap2-dark
 </code></pre></div>
 
-
 <p>Si queremos ver cuales temas se encuentran instalados podemos&nbsp;ejecutar:</p>
 <div class="highlight"><pre><span></span><code>pelican-themes --list
 </code></pre></div>
-
 
 <p>El cual nos dará una salida como la&nbsp;siguiente:</p>
 <div class="highlight"><pre><span></span><code>notmyidea
 bootstrap2-dark
 simple
 </code></pre></div>
-
 
 <p>En la salida anterior podemos observar que tenemos tres instalados, los dos que
 vienen predeterminados en <code>Pelican</code> que son <code>notmyidea</code> y <code>simple</code>, y el que
@@ -168,20 +162,18 @@ pelican-themes --remove nombre-del-tema
 pelican-themes --remove nombre-del-tema-1 nombre-del-tema-2 nombre-del-tema-3
 </code></pre></div>
 
-
 <h2>Aplicando el tema&nbsp;instalado</h2>
 <p>Para poder utilizar nuestro tema instalado tenemos que ir al archivo
 <code>pelicanconf.py</code> y asignarle un valor a la variable <code>THEME</code>, en este caso la
 variable quedaría como <code>THEME = u'bootstrap2-dark'</code>.</p>
 <p>Con este pequeño cambio basta para construir el sitio con el tema seleccionado.
-recuerda que utilizaremos los comandos de la <a href="{filename}./pelican-03.md">entrada anterior</a>.</p>
+recuerda que utilizaremos los comandos de la <a href="/pelican-03-configuracion-del-sitio-construccion-y-elementos-basicos-es-MX.html">entrada anterior</a>.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Desarrollo</span>
 invoke livereload
 
 <span class="c1"># Producción</span>
 invoke gh-pages
 </code></pre></div>
-
 
 <p>Para probar otros temas basta con seguir los pasos anteriores hasta encontrar
 uno que sea de tu agrado&nbsp;:)</p>
@@ -205,15 +197,15 @@ por lo que cambiamos al tema <code>elegant</code>.</p>
 temas&nbsp;aplicados.</p>
 <h3>Not my&nbsp;idea</h3>
 <p>Es el tema que trae <code>Pelican</code> por defecto, y no, no es&nbsp;responsivo.</p>
-<p><img alt="Alt Text" src="https://penserbjorne.com/images/07-pelican-04/screenshot-2020-08-21-blog-de-penserbjorne-1.png"></p>
+<p><img alt="Alt Text" src="/images/07-pelican-04/screenshot-2020-08-21-blog-de-penserbjorne-1.png"></p>
 <h3>bootstrap2-black</h3>
 <p>Fue el tema <strong>juakeril</strong> que habíamos elegido, pero no, tampoco es responsivo
 y después se volvió complicado de&nbsp;leer.</p>
-<p><img alt="Alt Text" src="https://penserbjorne.com/images/07-pelican-04/screenshot-2020-08-21-blog-de-penserbjorne-2.png"></p>
+<p><img alt="Alt Text" src="/images/07-pelican-04/screenshot-2020-08-21-blog-de-penserbjorne-2.png"></p>
 <h3>elegant</h3>
 <p>Es el último tema que hemos probado, sí, es responsivo y es fácil de leer en él,
 por lo cual se ha quedado cómo tema final (es el actual a este momento de&nbsp;publicación).</p>
-<p><img alt="Alt Text" src="https://penserbjorne.com/images/07-pelican-04/screenshot-2021-04-04-blog-de-penserbjorne.png"></p>
+<p><img alt="Alt Text" src="/images/07-pelican-04/screenshot-2021-04-04-blog-de-penserbjorne.png"></p>
 <h2>The End of the&nbsp;Post</h2>
 <p>Bueno, ahora sí, nos vemos en otra ocasión <a href="https://www.youtube.com/watch?v=pVeKyqV1jWU">piloto</a>.</p>
 
@@ -236,13 +228,13 @@ por lo cual se ha quedado cómo tema final (es el actual a este momento de&nbsp;
             <time itemprop="dateCreated" datetime="2020-08-21T00:00:00-05:00">ago 21, 2020</time>
 
             <h4>Category</h4>
-            <a class="category-link" href="https://penserbjorne.com/categories.html#pelican-ref">pelican</a>
+            <a class="category-link" href="/categories.html#pelican-ref">pelican</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="https://penserbjorne.com/tags.html#blog-ref">blog
+                <li><a href="/tags.html#blog-ref">blog
                     <span>6</span>
 </a></li>
-                <li><a href="https://penserbjorne.com/tags.html#pelican-ref">pelican
+                <li><a href="/tags.html#pelican-ref">pelican
                     <span>5</span>
 </a></li>
             </ul>

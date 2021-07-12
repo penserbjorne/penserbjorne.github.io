@@ -13,7 +13,7 @@
 <meta name="keywords" content="blog, pelican, pelican, blog, pelican" />
 
 <meta property="og:title" content="Pelican (03), configuración del sitio (construcción y elementos básicos) "/>
-<meta property="og:url" content="https://penserbjorne.com/pelican-03-configuracion-del-sitio-construccion-y-elementos-basicos-es-MX.html" />
+<meta property="og:url" content="/pelican-03-configuracion-del-sitio-construccion-y-elementos-basicos-es-MX.html" />
 <meta property="og:description" content="Configuración para construir y asignar elementos básicos de un sitio con Pelican" />
 <meta property="og:site_name" content="Blog de Penserbjorne" />
 <meta property="og:article:author" content="Penserbjorne" />
@@ -25,10 +25,9 @@
         <title>Pelican (03), configuración del sitio (construcción y elementos básicos)  · Blog de Penserbjorne
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="https://penserbjorne.com/theme/css/elegant.prod.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="https://penserbjorne.com/theme/css/custom.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/elegant.prod.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/custom.css" media="screen">
 
-        <link href="https://penserbjorne.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Blog de Penserbjorne - Full Atom Feed" />
 
 
     </head>
@@ -42,18 +41,18 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </a>
-                        <a class="brand" href="https://penserbjorne.com/"><span class=site-name>Blog de Penserbjorne</span></a>
+                        <a class="brand" href="/"><span class=site-name>Blog de Penserbjorne</span></a>
                         <div class="nav-collapse collapse">
                             <ul class="nav pull-right top-menu">
                                 <li >
                                     <a href=
-                                       https://penserbjorne.com
+                                       "/"
                                     >Home</a>
                                 </li>
-                                <li ><a href="https://penserbjorne.com/categories.html">Categories</a></li>
-                                <li ><a href="https://penserbjorne.com/tags.html">Tags</a></li>
-                                <li ><a href="https://penserbjorne.com/archives.html">Archives</a></li>
-                                <li><form class="navbar-search" action="https://penserbjorne.com/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                                <li ><a href="/categories.html">Categories</a></li>
+                                <li ><a href="/tags.html">Tags</a></li>
+                                <li ><a href="/archives.html">Archives</a></li>
+                                <li><form class="navbar-search" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
                             </ul>
                         </div>
                     </div>
@@ -67,7 +66,7 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://penserbjorne.com/pelican-03-configuracion-del-sitio-construccion-y-elementos-basicos-es-MX.html">
+            <a href="/pelican-03-configuracion-del-sitio-construccion-y-elementos-basicos-es-MX.html">
                 Pelican (03), configuración del sitio (construcción y elementos&nbsp;básicos)
             </a>
         </h1>
@@ -84,8 +83,8 @@ y construir el&nbsp;sitio.</p>
 <p>Te recomendamos revisar las entradas anteriores en donde fuimos construyendo
 el sitio sobre el que vamos a trabajar&nbsp;ahora.</p>
 <ul>
-<li><a href="{filename}./pelican-01.md">Creación de un blog estático con&nbsp;Pelican</a></li>
-<li><a href="{filename}./pelican-02.md">Creación de entradas para un blog estático con&nbsp;Pelican</a></li>
+<li><a href="/pelican-01-creacion-de-un-blog-estatico-con-pelican-es-MX.html">Creación de un blog estático con&nbsp;Pelican</a></li>
+<li><a href="/pelican-02-creacion-de-entradas-para-un-blog-estatico-con-pelican-es-MX.html">Creación de entradas para un blog estático con&nbsp;Pelican</a></li>
 </ul>
 <p>Como ya hemos dicho, toda la documentación necesaria (y extendida) se
 encuentra en <a href="https://docs.getpelican.com">el blog oficial de Pelican</a>, por lo
@@ -111,7 +110,6 @@ el cual nos creo la estructura inicial del sitio con algunos archivos de&nbsp;co
         └── publishconf.py
 </code></pre></div>
 
-
 <p>Si observamos detenidamente, podemos ver que los archivos de los que hablamos
 se encuentran en nuestra subcarpeta <code>pelican</code> y&nbsp;son:</p>
 <ul>
@@ -134,7 +132,6 @@ pelican content -o ..
 pelican --listen -o ..
 </code></pre></div>
 
-
 <p>Estos comando los podemos sustituir utilizando la herramienta
 <a href="https://www.pyinvoke.org/">invoke</a> o la herramienta
 <a href="https://www.gnu.org/software/make/">make</a>.</p>
@@ -143,12 +140,11 @@ interesa leer la versión completa o con <code>make</code> puedes
 <a href="https://docs.getpelican.com/en/stable/publish.html">dar click aquí</a>.</p>
 <p>Para trabajar con <code>invoke</code> necesitamos instalarlo a través de <code>pip</code>.</p>
 <p><strong>Nota:</strong> Recuerda hacerlo después de haber activado el entorno virtual que
-creamos en <a href="{filename}./pelican-01.md">la primera entrada</a> y de haber entrado
+creamos en <a href="/pelican-01-creacion-de-un-blog-estatico-con-pelican-es-MX.html">la primera entrada</a> y de haber entrado
 a la carpeta <code>pelican</code> que se encuentra dentro del&nbsp;repositorio.</p>
 <p>Para instalar <code>invoke</code> podemos ejecutar lo&nbsp;siguiente:</p>
 <div class="highlight"><pre><span></span><code>python -m pip install invoke
 </code></pre></div>
-
 
 <p>Lo divertido de <code>invoke</code> es que funciona utilizando el archivo <code>tasks.py</code>
 el cual contiene <em>tareas</em> definidas a ejecutar, básicamente es un archivo en
@@ -190,13 +186,11 @@ invoke publish
 invoke gh-pages
 </code></pre></div>
 
-
 <p>Considerar que para el comando <code>invoke livereload</code> se requiere instalar la
 herramienta <code>livereload</code> y para el comando <code>invoke gp_pages</code> se requiere la
 herramienta <code>ghp-import</code>, esto lo podemos hacer mediante el siguiente&nbsp;comando:</p>
 <div class="highlight"><pre><span></span><code>python -m pip install livereload ghp-import
 </code></pre></div>
-
 
 <p>A partir de ahora estaremos trabajando con los comandos previos. Ahora, estos
 comandos requieren algunas configuraciones, por ejemplo, los comandos asociados
@@ -250,7 +244,6 @@ fork al&nbsp;sitio.</li>
             <span class="o">(</span><span class="s1">&#39;enalce 3&#39;</span>, <span class="s1">&#39;http://url-3.com/&#39;</span><span class="o">)</span>,<span class="o">)</span>
 </code></pre></div>
 
-
 <p>Las siguientes variables las configuraremos en <code>publishconf.py</code>:</p>
 <ul>
 <li><code>SITEURL</code>: <span class="caps">URL</span> del sitio, tiene que incluir http o https al inicio, por
@@ -279,7 +272,6 @@ invoke clean
 invoke livereload
 </code></pre></div>
 
-
 <p>Cuando hemos terminado de probar queremos construir el sitio para producción y
 enviarlo a nuestro repositorio de <code>GitHub</code>, por lo que podemos&nbsp;utilizar:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Limpiamos archivo previos</span>
@@ -287,7 +279,6 @@ invoke clean
 <span class="c1"># Generamos versión de producción y publicamos actualizaciones</span>
 invoke gh-pages
 </code></pre></div>
-
 
 <p>Pero tenemos un problema, la tarea <code>clean</code> va a borrar todo en el contenido de
 salida, esto incluiría la carpeta <code>pelican</code> por lo cual perderíamos los archivos
@@ -303,7 +294,6 @@ reemplazar por el siguiente segmento de&nbsp;código:</p>
               <span class="s1">&#39;../*.html&#39;</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p>De tal modo que la tarea se vería más o menos&nbsp;así:</p>
 <div class="highlight"><pre><span></span><code><span class="nd">@task</span>
 <span class="k">def</span> <span class="nf">clean</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
@@ -318,7 +308,6 @@ reemplazar por el siguiente segmento de&nbsp;código:</p>
         <span class="n">c</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;rm -rf ../author ../category ../drafts ../feeds ../tag ../theme &#39;</span>
                 <span class="s1">&#39;../*.html&#39;</span><span class="p">)</span>
 </code></pre></div>
-
 
 <h3>Modificando la tarea <code>livereload</code></h3>
 <p>Queremos que cada vez que se haga un <code>livereload</code> también se limpien los
@@ -350,7 +339,6 @@ dentro de <code>livereload</code>, para esto solamente añadiremos la linea <cod
     <span class="n">server</span><span class="o">.</span><span class="n">serve</span><span class="p">(</span><span class="n">port</span><span class="o">=</span><span class="n">CONFIG</span><span class="p">[</span><span class="s1">&#39;port&#39;</span><span class="p">],</span> <span class="n">root</span><span class="o">=</span><span class="n">CONFIG</span><span class="p">[</span><span class="s1">&#39;deploy_path&#39;</span><span class="p">])</span>
 </code></pre></div>
 
-
 <h3>Modificando la tarea <code>gh-pages</code></h3>
 <p>De igual manera  que en la tarea anterior, simplemente vamos a añadir la linea
 de <code>clean(c)</code> para verificar que no haya basura. La linea a añadir la ubicaremos
@@ -361,7 +349,6 @@ por lo que vamos a añadir lo&nbsp;siguiente:</p>
 <span class="n">c</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;git commit -m </span><span class="si">{commit_message}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">CONFIG</span><span class="p">))</span>
 <span class="n">c</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;git push&#39;</span><span class="p">)</span>
 </code></pre></div>
-
 
 <p>La tarea quedaría de la siguiente&nbsp;manera:</p>
 <div class="highlight"><pre><span></span><code><span class="nd">@task</span>
@@ -381,7 +368,6 @@ por lo que vamos a añadir lo&nbsp;siguiente:</p>
     <span class="n">c</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;git push&#39;</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p>Podemos ver que el nombre de la función dentro de <code>tasks.py</code> lleva guion bajo
 mientras que al utilizarlo con <code>invoke</code> lleva guion medio, esto no sé porque
 sea pero hay que dejarlo&nbsp;así.</p>
@@ -395,7 +381,6 @@ invoke livereload
 <span class="c1"># Producción</span>
 invoke gh-pages
 </code></pre></div>
-
 
 <p>Con esto hemos automatizado un poco nuestro pequeño ciclo de desarrollo del&nbsp;sitio.</p>
 <p>Para ver el archivo <code>tasks.py</code> de este blog puedes dar click
@@ -428,13 +413,13 @@ esto lo haremos en la siguiente entrada&nbsp;:)</p>
 <time datetime="2021-04-04T00:00:00-06:00">abr 4, 2021</time>
 
             <h4>Category</h4>
-            <a class="category-link" href="https://penserbjorne.com/categories.html#pelican-ref">pelican</a>
+            <a class="category-link" href="/categories.html#pelican-ref">pelican</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="https://penserbjorne.com/tags.html#blog-ref">blog
+                <li><a href="/tags.html#blog-ref">blog
                     <span>6</span>
 </a></li>
-                <li><a href="https://penserbjorne.com/tags.html#pelican-ref">pelican
+                <li><a href="/tags.html#pelican-ref">pelican
                     <span>5</span>
 </a></li>
             </ul>

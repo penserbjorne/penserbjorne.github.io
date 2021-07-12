@@ -13,7 +13,7 @@
 <meta name="keywords" content="blog, penserbjorne, eda, linux, blog, penserbjorne" />
 
 <meta property="og:title" content="EDA "/>
-<meta property="og:url" content="https://penserbjorne.com/drafts/eda-es-MX.html" />
+<meta property="og:url" content="/drafts/eda-es-MX.html" />
 <meta property="og:description" content="EDA" />
 <meta property="og:site_name" content="Blog de Penserbjorne" />
 <meta property="og:article:author" content="penserbjorne" />
@@ -25,10 +25,9 @@
         <title>EDA  · Blog de Penserbjorne
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="https://penserbjorne.com/theme/css/elegant.prod.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="https://penserbjorne.com/theme/css/custom.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/elegant.prod.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/custom.css" media="screen">
 
-        <link href="https://penserbjorne.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Blog de Penserbjorne - Full Atom Feed" />
 
 
     </head>
@@ -42,18 +41,18 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </a>
-                        <a class="brand" href="https://penserbjorne.com/"><span class=site-name>Blog de Penserbjorne</span></a>
+                        <a class="brand" href="/"><span class=site-name>Blog de Penserbjorne</span></a>
                         <div class="nav-collapse collapse">
                             <ul class="nav pull-right top-menu">
                                 <li >
                                     <a href=
-                                       https://penserbjorne.com
+                                       "/"
                                     >Home</a>
                                 </li>
-                                <li ><a href="https://penserbjorne.com/categories.html">Categories</a></li>
-                                <li ><a href="https://penserbjorne.com/tags.html">Tags</a></li>
-                                <li ><a href="https://penserbjorne.com/archives.html">Archives</a></li>
-                                <li><form class="navbar-search" action="https://penserbjorne.com/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                                <li ><a href="/categories.html">Categories</a></li>
+                                <li ><a href="/tags.html">Tags</a></li>
+                                <li ><a href="/archives.html">Archives</a></li>
+                                <li><form class="navbar-search" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
                             </ul>
                         </div>
                     </div>
@@ -67,7 +66,7 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://penserbjorne.com/drafts/eda-es-MX.html">
+            <a href="/drafts/eda-es-MX.html">
                 <span class="caps">EDA</span>
             </a>
         </h1>
@@ -87,7 +86,6 @@
     -   Revisar&nbsp;https://qucs-s-help.readthedocs.io/en/latest/Intro.html#qucs-0-0-18-structure</p>
 <div class="highlight"><pre><span></span><code><span class="n">Provide</span> <span class="n">Qucs</span> <span class="n">users</span> <span class="n">with</span> <span class="n">a</span> <span class="n">choice</span> <span class="n">of</span> <span class="n">simulation</span> <span class="n">engine</span> <span class="n">selected</span> <span class="n">from</span> <span class="n">qucsator</span><span class="p">,</span> <span class="n">Ngspice</span><span class="p">,</span> <span class="n">Xyce</span> <span class="ow">and</span> <span class="n">SPICE</span> <span class="n">OPUS</span><span class="o">.</span> <span class="n">By</span> <span class="n">selecting</span> <span class="n">Ngspice</span><span class="p">,</span> <span class="n">Xyce</span> <span class="ow">or</span> <span class="n">SPICE</span> <span class="n">OPUS</span> <span class="k">as</span> <span class="n">the</span> <span class="n">Qucs</span> <span class="n">simulation</span> <span class="n">engine</span> <span class="n">users</span> <span class="n">may</span> <span class="n">capitalise</span> <span class="n">on</span> <span class="n">all</span> <span class="n">the</span> <span class="n">features</span> <span class="n">offered</span> <span class="n">by</span> <span class="n">the</span> <span class="n">extensive</span> <span class="n">SPICE</span> <span class="n">developments</span> <span class="n">which</span> <span class="n">have</span> <span class="n">taken</span> <span class="n">place</span> <span class="n">over</span> <span class="n">the</span> <span class="n">last</span> <span class="n">forty</span> <span class="n">years</span><span class="o">.</span> <span class="n">Both</span> <span class="n">Ngspice</span><span class="p">,</span> <span class="n">Xyce</span> <span class="ow">and</span> <span class="n">SPICE</span> <span class="n">OPUS</span> <span class="n">offer</span> <span class="n">improved</span> <span class="n">transient</span> <span class="n">simulation</span> <span class="n">convergence</span> <span class="ow">and</span> <span class="n">speed</span><span class="p">,</span> <span class="n">particularly</span> <span class="k">for</span> <span class="n">large</span> <span class="n">non</span><span class="o">-</span><span class="n">linear</span> <span class="n">circuits</span><span class="o">.</span> <span class="n">Xyce</span> <span class="n">brings</span> <span class="n">an</span> <span class="n">alternative</span> <span class="n">implementation</span> <span class="n">of</span> <span class="n">single</span> <span class="n">tone</span> <span class="n">Harmonic</span> <span class="n">Balance</span> <span class="n">simulation</span> <span class="n">to</span> <span class="n">Qucs</span> <span class="n">which</span> <span class="n">offers</span> <span class="n">much</span> <span class="n">improved</span> <span class="n">convergence</span> <span class="n">properties</span> <span class="k">for</span> <span class="n">both</span> <span class="n">linear</span> <span class="ow">and</span> <span class="n">non</span> <span class="n">linear</span> <span class="n">components</span> <span class="ow">and</span> <span class="n">devices</span><span class="o">.</span> <span class="n">The</span> <span class="n">latest</span> <span class="n">version</span> <span class="n">of</span> <span class="n">Xyce</span><span class="p">,</span> <span class="mf">6.5</span> <span class="n">at</span> <span class="n">the</span> <span class="n">time</span> <span class="n">of</span> <span class="n">writing</span><span class="p">,</span> <span class="n">also</span> <span class="n">offers</span> <span class="n">multi</span><span class="o">-</span><span class="n">tone</span> <span class="n">Harmonic</span> <span class="n">Balance</span> <span class="n">simulation</span><span class="o">.</span> <span class="n">SPICE</span> <span class="n">OPUS</span> <span class="n">adds</span> <span class="n">transient</span> <span class="n">shooting</span> <span class="n">methods</span> <span class="k">for</span> <span class="n">the</span> <span class="n">steady</span> <span class="n">state</span> <span class="n">analysis</span> <span class="n">of</span> <span class="n">large</span> <span class="k">signal</span> <span class="n">AC</span> <span class="n">simulation</span> <span class="ow">and</span> <span class="n">optimization</span><span class="o">.</span>
 </code></pre></div>
-
 
 <ul>
 <li>Ngspice<ul>
@@ -167,13 +165,13 @@
             <time itemprop="dateCreated" datetime="2021-01-15T00:00:00-06:00">ene 15, 2021</time>
 
             <h4>Category</h4>
-            <a class="category-link" href="https://penserbjorne.com/categories.html#eda-linux-ref">eda, linux</a>
+            <a class="category-link" href="/categories.html#eda-linux-ref">eda, linux</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="https://penserbjorne.com/tags.html#blog-ref">blog
+                <li><a href="/tags.html#blog-ref">blog
                     <span>6</span>
 </a></li>
-                <li><a href="https://penserbjorne.com/tags.html#penserbjorne-ref">penserbjorne
+                <li><a href="/tags.html#penserbjorne-ref">penserbjorne
                     <span>1</span>
 </a></li>
             </ul>

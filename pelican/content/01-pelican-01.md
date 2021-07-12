@@ -222,5 +222,5 @@ cambio o modificación volver a generar los archivos.
 Recordando la estructura del sitio, sabemos que las entradas del mismo
 van en la carpeta `content` de nuestra subcarpeta `pelican`. Ahí es donde
 podremos comenzar a crear nuestros archivos en `Markdown`. Esto lo dejaremos
-para la [siguiente entrada]({filename}./pelican-02.md), es momento de pararse
+para la [siguiente entrada]({filename}./02-pelican-02.md), es momento de pararse
 por un poco de agua, algo de comer y a estirar la espalda y las piernas.
