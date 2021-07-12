@@ -3,6 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'Penserbjorne'
+AUTHORS = []
 SITENAME = u'Blog de Penserbjorne'
 SITESUBTITLE = u'No soy nadie. No soy nada.'
 #SITEURL = 'https://penserbjorne.com'
