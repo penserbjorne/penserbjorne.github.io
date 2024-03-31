@@ -1,0 +1,3 @@
+[submodule "themes/hugo-cat"]
+	path = themes/hugo-cat
+	url = https://github.com/httpsecure/hugo-cat.git
