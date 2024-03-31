@@ -1,6 +1,6 @@
-baseURL = '/'
-languageCode = 'en'
-title = 'Hugo Cat'
+baseURL = 'https://penserbjorne.com/'
+languageCode = 'es-mx'
+title = 'Penserbjorne'
 theme = 'hugo-cat'
 PygmentsCodeFences = true
 PygmentsStyle = "solarized-dark256"
@@ -10,12 +10,12 @@ disableHugoGeneratorInject = false
 enableEmoji = true
 
 [params]
-ava = "/img/cat.png"
-owner ="Red Kitty"
-talk = "Hello guys &#128075; im cool kitty..."
+ava = "/img/penserbjorne_400x400.jpg"
+owner ="Paul Aguilar (Æsahættr Penserbjorne)"
+talk = "Hola Mundo &#128075;!"
 blogSection = ["blog"]
-description = "Cat"
-favicon = "/img/logo.svg"
+description = "Sitio web de Paul Aguilar (Æsahættr Penserbjorne)"
+favicon = "/img/logo-daemon-emoji.svg"
 
 [[menu.main]]
 name = "Home"
@@ -43,4 +43,4 @@ weight = 4
   [module.hugoVersion]
     extended = true
     min = "0.111.3"
-  
+
